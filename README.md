@@ -4,11 +4,11 @@
 ```
 > pip install poetry
 > poetry install
-> poetry shell
 ```
 
 **Running the Webserver**
 ```
+> poetry shell
 > python manage.py runserver 0.0.0.0:8000
 ```
 
