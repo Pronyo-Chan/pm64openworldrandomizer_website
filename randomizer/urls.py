@@ -9,5 +9,6 @@ router = routers.SimpleRouter(trailing_slash=False)
 router.register(r'', RandomizerViewSet, basename='randomizer')
 
 urlpatterns = [
-    path('', include(router.urls))
+    path('', include(router.urls)),
+    path('<int:pk>/', include(router.urls))
 ]
