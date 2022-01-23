@@ -107,7 +107,7 @@ class Setting(models.Model):
     starting_map = models.IntegerField(default=0x00010104)
 
     # User Modifiable
-    seed = models.CharField(max_length=32)
+    seed = models.CharField(max_length=32, blank=True, default="I<3PM")
 
     replace_duplicate_keys = models.BooleanField(default=False)
     duplicate_key_replacement = models.IntegerField(default=194)
@@ -194,3 +194,6 @@ class Setting(models.Model):
 
     color_a = models.IntegerField(default=0xEBE677FF)
     color_b = models.IntegerField(default=0x8E5A25FF)
+
+    def __str__(self):
+        return f"Setting ({self.name})"

@@ -11,6 +11,10 @@ class RandomizerViewSet(viewsets.ViewSet):
         return Response({}, status=status.HTTP_200_OK)
 
     def create(self, request):
+        if "seed" not in request.data:
+            return Response({
+                "seed": "Seed must be included"
+            }, status=status.HTTP_400_BAD_REQUEST)
         serializer = SettingSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
