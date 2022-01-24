@@ -52,6 +52,7 @@ class Setting(models.Model):
     WriteSpoilerLog = models.BooleanField(default=False)
     RandomCoinPalette = models.BooleanField(default=False)
     TurnOffMusic = models.BooleanField(default=False)
+    IncludeDojo = models.BooleanField(default=False)
 
     # Other/Hidden Options
     IsDefault = models.BooleanField(default=False)

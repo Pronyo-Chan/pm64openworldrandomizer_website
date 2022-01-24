@@ -60,6 +60,7 @@ class SettingSerializer(serializers.ModelSerializer):
             "WriteSpoilerLog",
             "RandomCoinPalette",
             "TurnOffMusic",
+            "IncludeDojo",
         ]
 
     def create(self):
