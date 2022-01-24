@@ -73,17 +73,17 @@ class SettingSerializer(serializers.ModelSerializer):
         self.validated_data["StartWithLakilester"] = starting_partners.get("Lakilester")
         return Setting(**self.validated_data)
 
-    def validate_initial_coins(self, value):
+    def validate_InitialCoins(self, value):
         if value < 0 or value > 999:
             raise serializers.ValidationError("Initial Coins must be between 0 and 999")
         return value
 
-    def validate_random_partners_min(self, value):
+    def validate_RandomPartnersMin(self, value):
         if value < 1 or value > 8:
             raise serializers.ValidationError("Random Partners Min must be between 1 and 8")
         return value
 
-    def validate_random_partners_max(self, value):
+    def validate_RandomPartnersMax(self, value):
         if value < 1 or value > 8:
             raise serializers.ValidationError("Random Partners Min must be between 1 and 8")
         return value
