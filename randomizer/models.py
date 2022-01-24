@@ -1,127 +1,67 @@
 from django.db import models
 
 
-DEFAULT_SETTINGS = {
-   "SettingsName": "Default Dev Preset",
-   "SettingsVersion": 0.1,
-   "StartingMap": 0x00010104,
-   "ReplaceDuplicateKeys": False,
-   "DuplicateKeyReplacement": 194,
-   "BlocksMatchContent": True,
-   "InitialCoins": 50,
-   "CapEnemyXP": True,
-   "2xDamage": False,
-   "4xDamage": False,
-   "OHKO": False,
-   "FlowerGateOpen": False,
-   "BlueHouseOpen": False,
-   "PlacementAlgorithm": "ForwardFill",
-   "PlacementLogic": "NoGlitches",
-   "ShuffleItems": True,
-   "IncludeCoins": False,
-   "IncludeShops": True,
-   "IncludePanels": True,
-   "KeyitemsOutsideArea": True,
-   "KeyitemsOutsideChapter": True,
-   "ShuffleEntrances": True,
-   "ShuffleEntrancesByArea": True,
-   "ShuffleEntrancesByAll": False,
-   "MatchEntranceTypes": True,
-   "RandomizeOnewayEntrances": False,
-   "UnpairedEntrances": False,
-   "RandomQuiz": True,
-   "SkipQuiz": False,
-   "StartWithRandomPartners": False,
-   "RandomPartnersMin": 1,
-   "RandomPartnersMax": 8,
-   "StartWithGoombario": True,
-   "StartWithKooper": False,
-   "StartWithBombette": False,
-   "StartWithParakarry": False,
-   "StartWithBow": False,
-   "StartWithWatt": False,
-   "StartWithSushie": False,
-   "StartWithLakilester": False,
-   "WriteSpoilerLog": True,
-   "PrettySpoilerlog": True,
-   "ColorA": 0xEBE677FF,
-   "ColorB": 0x8E5A25FF
-}
-
-''' Valid JSON example
-{
-   "seed": "ABC123",
-   "SettingsName": "Default Dev Preset",
-   "SettingsVersion": 0.1,
-   "StartingMap": 1,
-   "ReplaceDuplicateKeys": false,
-   "DuplicateKeyReplacement": 194,
-   "BlocksMatchContent": true,
-   "InitialCoins": 50,
-   "CapEnemyXP": true,
-   "2xDamage": false,
-   "4xDamage": false,
-   "OHKO": false,
-   "FlowerGateOpen": false,
-   "BlueHouseOpen": false,
-   "PlacementAlgorithm": "ForwardFill",
-   "PlacementLogic": "NoGlitches",
-   "ShuffleItems": true,
-   "IncludeCoins": false,
-   "IncludeShops": true,
-   "IncludePanels": true,
-   "KeyitemsOutsideArea": true,
-   "KeyitemsOutsideChapter": true,
-   "ShuffleEntrances": true,
-   "ShuffleEntrancesByArea": true,
-   "ShuffleEntrancesByAll": false,
-   "MatchEntranceTypes": true,
-   "RandomizeOnewayEntrances": false,
-   "UnpairedEntrances": false,
-   "RandomQuiz": true,
-   "SkipQuiz": false,
-   "StartWithRandomPartners": false,
-   "RandomPartnersMin": 1,
-   "RandomPartnersMax": 8,
-   "StartWithGoombario": true,
-   "StartWithKooper": false,
-   "StartWithBombette": false,
-   "StartWithParakarry": false,
-   "StartWithBow": false,
-   "StartWithWatt": false,
-   "StartWithSushie": false,
-   "StartWithLakilester": false,
-   "WriteSpoilerLog": true,
-   "PrettySpoilerlog": true,
-   "ColorA": 1,
-   "ColorB": 2
-}
-'''
-
-
 class Setting(models.Model):
-    default = models.BooleanField(default=False)
+    BlocksMatchContent = models.BooleanField(default=False)
+    AlwaysSpeedySpin = models.BooleanField(default=False)
+    AlwaysISpy = models.BooleanField(default=False)
+    AlwaysPeekaboo = models.BooleanField(default=False)
+    HiddenBlockMode = models.IntegerField(default=1)
+    AllowPhysicsGlitches = models.BooleanField(default=False)
+    InitialCoins = models.BooleanField(default=False)
+    CapEnemyXP = models.BooleanField(default=False)
+    NoXP = models.BooleanField(default=False)
+    DoubleDamage = models.BooleanField(default=False)
+    QuadrupleDamage = models.BooleanField(default=False)
+    OHKO = models.BooleanField(default=False)
+    NoSaveBlocks = models.BooleanField(default=False)
+    NoHeartBlock = models.BooleanField(default=False)
+    FlowerGateOpen = models.BooleanField(default=False)
+    BlueHouseOpen = models.BooleanField(default=False)
+    ToyboxOpen = models.BooleanField(default=False)
+    WhaleOpen = models.BooleanField(default=False)
+    ShuffleChapterDifficulty = models.BooleanField(default=False)
+    RandomFormations = models.BooleanField(default=False)
+    ShuffleItems = models.BooleanField(default=False)
+    IncludeCoins = models.BooleanField(default=False)
+    IncludeShops = models.BooleanField(default=False)
+    IncludePanels = models.BooleanField(default=False)
+    IncludeFavors = models.BooleanField(default=False)
+    IncludeLetterChain = models.BooleanField(default=False)
+    KeyitemsOutsideDungeon = models.BooleanField(default=False)
+    ShuffleBadgesBP = models.BooleanField(default=False)
+    ShuffleBadgesFP = models.BooleanField(default=False)
+    ShufflePartnerFP = models.BooleanField(default=False)
+    ShuffleStarpowerSP = models.BooleanField(default=False)
+    RandomQuiz = models.BooleanField(default=False)
+    SkipQuiz = models.BooleanField(default=False)
+    PartnersInDefaultLocations = models.BooleanField(default=False)
+    PartnersAlwaysUsable = models.BooleanField(default=False)
+    StartWithRandomPartners = models.BooleanField(default=False)
+    RandomPartnersMin = models.IntegerField(default=1)
+    RandomPartnersMax= models.IntegerField(default=8)
 
-    name = models.CharField(max_length=50, default="Default")
-    version = models.CharField(max_length=10, default="0.1")
-    starting_map = models.IntegerField(default=0x00010104)
+    StartWithGoombario = models.BooleanField(default=True)
+    StartWithKooper = models.BooleanField(default=True)
+    StartWithBombette = models.BooleanField(default=True)
+    StartWithBow = models.BooleanField(default=True)
+    StartWithWatt = models.BooleanField(default=True)
+    StartWithSushie = models.BooleanField(default=True)
+    StartWithLakilester = models.BooleanField(default=True)
 
-    # User Modifiable
-    seed = models.CharField(max_length=32, blank=True, default="I<3PM")
+    WriteSpoilerLog = models.BooleanField(default=False)
+    RandomCoinPalette = models.BooleanField(default=False)
+    TurnOffMusic = models.BooleanField(default=False)
 
-    replace_duplicate_keys = models.BooleanField(default=False)
-    duplicate_key_replacement = models.IntegerField(default=194)
-
-    blocks_match_content = models.BooleanField(default=True)
-    initial_coins = models.IntegerField(default=50)
-    cap_enemy_xp = models.BooleanField(default=True)
-    damage_2x = models.BooleanField(default=False)
-    damage_4x = models.BooleanField(default=False)
-    one_hit_ko = models.BooleanField(default=False)
-
-    flower_gate_open = models.BooleanField(default=False)
-    blue_house_open = models.BooleanField(default=False)
-
+    # Other/Hidden Options
+    IsDefault = models.BooleanField(default=False)
+    SettingsName = models.CharField(max_length=100, default="Default Dev Preset")
+    SettingsVersion = models.CharField(max_length=10, default="0.1")
+    StartingMap = models.IntegerField(default=0x00010104)   # mac_00, Entry4
+    PrettySpoilerlog = models.BooleanField(default=True)
+    ColorA = models.IntegerField(default=0xEBE677FF)
+    ColorB = models.IntegerField(default=0x8E5A25FF)
+    
     FORWARD_FILL = "ForwardFill"
     WEIGHTED_FORWARD_FILL = "WeightedForwardFill"
     ASSUMED_FILL = "AssumedFill"
@@ -132,8 +72,7 @@ class Setting(models.Model):
         (ASSUMED_FILL, "Assumed Fill"),
         (CUSTOM_SEED, "Custom Seed"),
     ]
-
-    placement_algorithm = models.CharField(
+    PlacementAlgorithm = models.CharField(
         max_length=50,
         choices=ALGORITHM_CHOICES,
         default=FORWARD_FILL,
@@ -142,15 +81,14 @@ class Setting(models.Model):
     )
 
     NO_GLITCHES = "NoGlitches"
-    GLITCHES = "WeightedForwardFill"
-    NO_LOGIC = "AssumedFill"
+    GLITCHES = "Glitches"
+    NO_LOGIC = "NoLogic"
     LOGIC_CHOICES = [
         (NO_GLITCHES, "No Glitches"),
         (GLITCHES, "Glitches"),
         (NO_LOGIC, "No Logic"),
     ]
-
-    placement_logic = models.CharField(
+    PlacementLogic = models.CharField(
         max_length=50,
         choices=LOGIC_CHOICES,
         default=NO_GLITCHES,
@@ -158,42 +96,17 @@ class Setting(models.Model):
         blank=False,
     )
 
-    shuffle_items = models.BooleanField(default=True)
-    include_coins = models.BooleanField(default=False)
-    include_shops = models.BooleanField(default=True)
-    include_panels = models.BooleanField(default=True)
-
-    key_items_outside_area = models.BooleanField(default=True)
-    key_items_outside_chapter = models.BooleanField(default=True)
-
-    shuffle_entrances = models.BooleanField(default=True)
-    shuffle_entrances_by_area = models.BooleanField(default=True)
-    shuffle_entrances_by_all = models.BooleanField(default=False)
-    match_entrance_types = models.BooleanField(default=True)
-    randomize_oneway_entrances = models.BooleanField(default=False)
-    unpaired_entrances = models.BooleanField(default=False)
-
-    random_quiz = models.BooleanField(default=True)
-    skip_quiz = models.BooleanField(default=False)
-
-    start_with_random_partners = models.BooleanField(default=False)
-    random_partners_min = models.IntegerField(default=1)
-    random_partners_max = models.IntegerField(default=8)
-
-    start_with_goombario = models.BooleanField(default=True)
-    start_with_kooper = models.BooleanField(default=False)
-    start_with_bombette = models.BooleanField(default=False)
-    start_with_parakarry = models.BooleanField(default=False)
-    start_with_bow = models.BooleanField(default=False)
-    start_with_watt = models.BooleanField(default=False)
-    start_with_sushie = models.BooleanField(default=False)
-    start_with_lakilester = models.BooleanField(default=False)
-
-    spoiler_log = models.BooleanField(default=True)
-    pretty_spoiler_log = models.BooleanField(default=True)
-
-    color_a = models.IntegerField(default=0xEBE677FF)
-    color_b = models.IntegerField(default=0x8E5A25FF)
-
     def __str__(self):
-        return f"Setting ({self.name})"
+        return f"Setting ({self.SettingsName})"
+
+    @property
+    def StartWithPartners(self):
+        return {
+            "Goombario": self.StartWithGoombario,
+            "Kooper": self.StartWithKooper,
+            "Bombette": self.StartWithBombette,
+            "Bow": self.StartWithBow,
+            "Watt": self.StartWithWatt,
+            "Sushie": self.StartWithSushie,
+            "Lakilester": self.StartWithLakilester,
+        }

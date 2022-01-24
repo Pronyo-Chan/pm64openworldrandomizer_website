@@ -12,7 +12,7 @@ class RandomizerViewSet(viewsets.ViewSet):
     def get(self, request, pk=None):
         if pk is None:
             try:
-                setting = Setting.objects.get(default=True)
+                setting = Setting.objects.get(IsDefault=True)
             except Setting.DoesNotExist:
                 return Response({}, status=status.HTTP_404_NOT_FOUND)
             except Setting.MultipleObjectsReturned:
@@ -27,10 +27,6 @@ class RandomizerViewSet(viewsets.ViewSet):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def create(self, request):
-        if "seed" not in request.data:
-            return Response({
-                "seed": "Seed must be included"
-            }, status=status.HTTP_400_BAD_REQUEST)
         serializer = SettingSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 

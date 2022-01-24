@@ -3,58 +3,74 @@ from rest_framework import serializers
 from .models import Setting
 
 
+class StartWithPartnersSerializer(serializers.Serializer):
+    Goombario = serializers.BooleanField()
+    Kooper = serializers.BooleanField()
+    Bombette = serializers.BooleanField()
+    Bow = serializers.BooleanField()
+    Watt = serializers.BooleanField()
+    Sushie = serializers.BooleanField()
+    Lakilester = serializers.BooleanField()
+
 class SettingSerializer(serializers.ModelSerializer):
+    StartWithPartners = StartWithPartnersSerializer()
+
     class Meta:
         model = Setting
         fields = [
-            "name",
-            "version",
-            "seed",
-            "starting_map",
-            "replace_duplicate_keys",
-            "duplicate_key_replacement",
-            "blocks_match_content",
-            "initial_coins",
-            "cap_enemy_xp",
-            "damage_2x",
-            "damage_4x",
-            "one_hit_ko",
-            "flower_gate_open",
-            "blue_house_open",
-            "placement_algorithm",
-            "placement_logic",
-            "shuffle_items",
-            "include_coins",
-            "include_shops",
-            "include_panels",
-            "key_items_outside_area",
-            "key_items_outside_chapter",
-            "shuffle_entrances",
-            "shuffle_entrances_by_area",
-            "shuffle_entrances_by_all",
-            "match_entrance_types",
-            "randomize_oneway_entrances",
-            "unpaired_entrances",
-            "random_quiz",
-            "skip_quiz",
-            "start_with_random_partners",
-            "random_partners_min",
-            "random_partners_max",
-            "start_with_goombario",
-            "start_with_kooper",
-            "start_with_bombette",
-            "start_with_parakarry",
-            "start_with_bow",
-            "start_with_watt",
-            "start_with_sushie",
-            "start_with_lakilester",
-            "spoiler_log",
-            "pretty_spoiler_log",
-            "color_a",
-            "color_b",
+            "BlocksMatchContent",
+            "AlwaysSpeedySpin",
+            "AlwaysISpy",
+            "AlwaysPeekaboo",
+            "HiddenBlockMode",
+            "AllowPhysicsGlitches",
+            "InitialCoins",
+            "CapEnemyXP",
+            "NoXP",
+            "DoubleDamage",
+            "QuadrupleDamage",
+            "OHKO",
+            "NoSaveBlocks",
+            "NoHeartBlock",
+            "FlowerGateOpen",
+            "BlueHouseOpen",
+            "ToyboxOpen",
+            "WhaleOpen",
+            "ShuffleChapterDifficulty",
+            "RandomFormations",
+            "ShuffleItems",
+            "IncludeCoins",
+            "IncludeShops",
+            "IncludePanels",
+            "IncludeFavors",
+            "IncludeLetterChain",
+            "KeyitemsOutsideDungeon",
+            "ShuffleBadgesBP",
+            "ShuffleBadgesFP",
+            "ShufflePartnerFP",
+            "ShuffleStarpowerSP",
+            "RandomQuiz",
+            "SkipQuiz",
+            "PartnersInDefaultLocations",
+            "PartnersAlwaysUsable",
+            "StartWithRandomPartners",
+            "RandomPartnersMin",
+            "RandomPartnersMax",
+            "StartWithPartners",
+            "WriteSpoilerLog",
+            "RandomCoinPalette",
+            "TurnOffMusic",
         ]
 
     def create(self):
+        starting_partners = self.validated_data.pop("StartWithPartners")
+        self.validated_data["StartWithGoombario"] = starting_partners.get("Goombario")
+        self.validated_data["StartWithKooper"] = starting_partners.get("Kooper")
+        self.validated_data["StartWithBombette"] = starting_partners.get("Bombette")
+        self.validated_data["StartWithBow"] = starting_partners.get("Bow")
+        self.validated_data["StartWithWatt"] = starting_partners.get("Watt")
+        self.validated_data["StartWithSushie"] = starting_partners.get("Sushie")
+        self.validated_data["StartWithLakilester"] = starting_partners.get("Lakilester")
         return Setting(**self.validated_data)
 
     def validate_initial_coins(self, value):
