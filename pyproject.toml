@@ -8,6 +8,7 @@ authors = ["Josh <54910913+JoshW-7@users.noreply.github.com>"]
 python = "^3.10"
 Django = "^4.0.1"
 djangorestframework = "^3.13.1"
+django-cors-headers = "^3.10.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
