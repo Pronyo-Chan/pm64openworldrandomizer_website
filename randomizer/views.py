@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import FileResponse
 
 from rest_framework import viewsets, status
 from rest_framework.response import Response
@@ -33,5 +34,9 @@ class RandomizerViewSet(viewsets.ViewSet):
         setting = serializer.create()
 
         data = SettingSerializer(setting).data
+        # return Response(data, status=status.HTTP_200_OK)
 
-        return Response(data, status=status.HTTP_200_OK)
+        bpsPatch = open('assets/OWPM_alpha_ISpy.bps', 'rb')
+        response = FileResponse(bpsPatch)
+
+        return response
