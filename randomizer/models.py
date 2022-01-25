@@ -8,7 +8,7 @@ class Setting(models.Model):
     AlwaysPeekaboo = models.BooleanField(default=False)
     HiddenBlockMode = models.IntegerField(default=1)
     AllowPhysicsGlitches = models.BooleanField(default=False)
-    InitialCoins = models.BooleanField(default=False)
+    InitialCoins = models.IntegerField(default=0)
     CapEnemyXP = models.BooleanField(default=False)
     NoXP = models.BooleanField(default=False)
     DoubleDamage = models.BooleanField(default=False)
