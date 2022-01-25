@@ -29,8 +29,9 @@ ALLOWED_HOSTS = []
 
 CORS_ORIGIN_ALLOW_ALL = False
 
-CORS_ALLOWED_ORIGINS  = (
-    'http://localhost:4200', # Allowed host, if CORS_ORIGIN_ALLOW_ALL is False
+CORS_ALLOWED_ORIGINS  = ( # Allowed host, if CORS_ORIGIN_ALLOW_ALL is False
+    'http://localhost:4200', 
+    'https://paper-mario-randomizer-app.ue.r.appspot.com',
 )
 
 
