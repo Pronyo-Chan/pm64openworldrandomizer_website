@@ -2,7 +2,6 @@ from django.db import models
 
 
 class Setting(models.Model):
-    BlocksMatchContent = models.BooleanField(default=False)
     AlwaysSpeedySpin = models.BooleanField(default=False)
     AlwaysISpy = models.BooleanField(default=False)
     AlwaysPeekaboo = models.BooleanField(default=False)

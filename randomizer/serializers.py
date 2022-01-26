@@ -18,7 +18,6 @@ class SettingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Setting
         fields = [
-            "BlocksMatchContent",
             "AlwaysSpeedySpin",
             "AlwaysISpy",
             "AlwaysPeekaboo",
