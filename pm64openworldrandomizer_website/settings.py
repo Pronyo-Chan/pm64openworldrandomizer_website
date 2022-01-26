@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-5&sq&$l6!--wn-pgmeslw=&__v%ha-13$%(vr=2j-p0j%2jxdw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['paper-mario-randomizer-server.ue.r.appspot.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'paper-mario-randomizer-server.ue.r.appspot.com']
 
 CORS_ORIGIN_ALLOW_ALL = False
 
