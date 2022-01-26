@@ -36,6 +36,7 @@ class SettingSerializer(serializers.ModelSerializer):
             "ToyboxOpen",
             "WhaleOpen",
             "ShuffleChapterDifficulty",
+            "ProgressiveScaling",
             "RandomFormations",
             "ShuffleItems",
             "IncludeCoins",

@@ -20,6 +20,7 @@ class Setting(models.Model):
     ToyboxOpen = models.BooleanField(default=False)
     WhaleOpen = models.BooleanField(default=False)
     ShuffleChapterDifficulty = models.BooleanField(default=False)
+    ProgressiveScaling = models.BooleanField(default=False)
     RandomFormations = models.BooleanField(default=False)
     ShuffleItems = models.BooleanField(default=False)
     IncludeCoins = models.BooleanField(default=False)
