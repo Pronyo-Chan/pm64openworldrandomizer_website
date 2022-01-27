@@ -51,6 +51,7 @@ class SettingSerializer(serializers.ModelSerializer):
             "ShuffleStarpowerSP",
             "RandomQuiz",
             "SkipQuiz",
+            "QuizmoAlwaysAppears",
             "PartnersInDefaultLocations",
             "PartnersAlwaysUsable",
             "StartWithRandomPartners",
@@ -59,6 +60,7 @@ class SettingSerializer(serializers.ModelSerializer):
             "StartWithPartners",
             "WriteSpoilerLog",
             "RandomCoinPalette",
+            "RomanNumerals",
             "TurnOffMusic",
             "IncludeDojo",
         ]

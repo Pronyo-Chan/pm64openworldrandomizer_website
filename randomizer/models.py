@@ -35,6 +35,7 @@ class Setting(models.Model):
     ShuffleStarpowerSP = models.BooleanField(default=False)
     RandomQuiz = models.BooleanField(default=False)
     SkipQuiz = models.BooleanField(default=False)
+    QuizmoAlwaysAppears = models.BooleanField(default=False)
     PartnersInDefaultLocations = models.BooleanField(default=False)
     PartnersAlwaysUsable = models.BooleanField(default=False)
     StartWithRandomPartners = models.BooleanField(default=False)
@@ -51,6 +52,7 @@ class Setting(models.Model):
 
     WriteSpoilerLog = models.BooleanField(default=False)
     RandomCoinPalette = models.BooleanField(default=False)
+    RomanNumerals = models.BooleanField(default=False)
     TurnOffMusic = models.BooleanField(default=False)
     IncludeDojo = models.BooleanField(default=False)
 
