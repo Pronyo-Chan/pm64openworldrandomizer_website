@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('randomizer', '0004_setting_includedojo'),
+        ('randomizer_server', '0004_setting_includedojo'),
     ]
 
     operations = [

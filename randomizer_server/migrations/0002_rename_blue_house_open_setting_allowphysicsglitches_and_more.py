@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('randomizer', '0001_initial'),
+        ('randomizer_server', '0001_initial'),
     ]
 
     operations = [

@@ -1,3 +1,9 @@
+import os
+import sys
+
+sys.path.insert(0, os.path.abspath(__file__ + "/../../../PM64OpenWorldRandomizer/tools"))
+from randomizer import main_randomizer
+
 from django.shortcuts import render
 from django.http import FileResponse
 
@@ -7,6 +13,7 @@ from rest_framework.response import Response
 from .models import Setting
 
 from .serializers import SettingSerializer
+
 
 
 class RandomizerViewSet(viewsets.ViewSet):
@@ -38,5 +45,7 @@ class RandomizerViewSet(viewsets.ViewSet):
 
         bpsPatch = open('assets/OWPM_alpha_ISpy.bps', 'rb')
         response = FileResponse(bpsPatch)
+
+        main_randomizer([])
 
         return response

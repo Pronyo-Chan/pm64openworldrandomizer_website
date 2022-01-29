@@ -6,7 +6,7 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('randomizer', '0005_alter_setting_initialcoins'),
+        ('randomizer_server', '0005_alter_setting_initialcoins'),
     ]
 
     operations = [

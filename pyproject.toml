@@ -10,6 +10,11 @@ Django = "^4.0.1"
 djangorestframework = "^3.13.1"
 django-cors-headers = "^3.10.0"
 
+#randomizer modules
+pyyaml = "==6.0" 
+pyqt5 = "==5.15.6" #This version differs from the randomizer packages because 5.15.4 doesnt work with python 3.10
+peewee = "==3.14.4"
+
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
 

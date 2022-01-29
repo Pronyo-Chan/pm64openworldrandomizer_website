@@ -6,7 +6,7 @@ from .views import RandomizerViewSet
 
 
 router = routers.SimpleRouter(trailing_slash=False)
-router.register(r'', RandomizerViewSet, basename='randomizer')
+router.register(r'', RandomizerViewSet, basename='randomizer_server')
 
 urlpatterns = [
     path('', include(router.urls)),

@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('randomizer', '0007_setting_progressivescaling'),
+        ('randomizer_server', '0007_setting_progressivescaling'),
     ]
 
     operations = [

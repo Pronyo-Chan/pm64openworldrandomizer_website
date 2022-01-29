@@ -18,5 +18,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('randomizer_settings/', include('randomizer.urls')),
+    path('randomizer_settings/', include('randomizer_server.urls')),
 ]
