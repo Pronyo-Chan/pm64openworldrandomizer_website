@@ -1,11 +1,14 @@
+from ast import operator
+import io
 import os
 import sys
+import json
 
 sys.path.insert(0, os.path.abspath(__file__ + "/../../../PM64OpenWorldRandomizer/tools"))
-from randomizer import main_randomizer
+from randomizer import web_randomizer
 
 from django.shortcuts import render
-from django.http import FileResponse
+from django.http import FileResponse, HttpResponse
 
 from rest_framework import viewsets, status
 from rest_framework.response import Response
@@ -41,11 +44,10 @@ class RandomizerViewSet(viewsets.ViewSet):
         setting = serializer.create()
 
         data = SettingSerializer(setting).data
-        # return Response(data, status=status.HTTP_200_OK)
 
-        bpsPatch = open('assets/OWPM_alpha_ISpy.bps', 'rb')
-        response = FileResponse(bpsPatch)
-
-        main_randomizer([])
-
-        return response
+        rando_settings = json.dumps(data)
+        operations = web_randomizer(rando_settings)
+        
+        inmemoryfile = io.BytesIO(operations)
+        response = FileResponse(inmemoryfile)
+        return HttpResponse(response, content_type='application/octet-stream', status=status.HTTP_200_OK)
