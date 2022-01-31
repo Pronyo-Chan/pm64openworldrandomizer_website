@@ -4,7 +4,8 @@ import os
 from pathlib import Path
 import sys
 import json
-sys.path.insert(0, str(Path(__file__).parent.parent.parent / 'PM64OpenWorldRandomizer' / 'tools'))
+sys.path.insert(0, str(Path(__file__).parent.parent.parent / 'PM64OpenWorldRandomizer' / 'tools')) #local
+sys.path.insert(0, str(Path(__file__).parent.parent / 'PM64OpenWorldRandomizer' / 'tools')) # PROD
 from randomizer import web_randomizer
 
 from django.shortcuts import render
