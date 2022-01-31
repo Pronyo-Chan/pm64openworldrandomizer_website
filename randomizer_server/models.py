@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Setting(models.Model):
+    SeedID = models.BigIntegerField(primary_key=True)
     AlwaysSpeedySpin = models.BooleanField(default=False)
     AlwaysISpy = models.BooleanField(default=False)
     AlwaysPeekaboo = models.BooleanField(default=False)
@@ -62,8 +63,8 @@ class Setting(models.Model):
     SettingsVersion = models.CharField(max_length=10, default="0.1")
     StartingMap = models.IntegerField(default=0x00010104)   # mac_00, Entry4
     PrettySpoilerlog = models.BooleanField(default=True)
-    ColorA = models.IntegerField(default=0xEBE677FF)
-    ColorB = models.IntegerField(default=0x8E5A25FF)
+    ColorA = models.BigIntegerField(default=0xEBE677FF)
+    ColorB = models.BigIntegerField(default=0x8E5A25FF)
     
     FORWARD_FILL = "ForwardFill"
     WEIGHTED_FORWARD_FILL = "WeightedForwardFill"

@@ -9,7 +9,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # [START gaestd_py_django_secret_config]
-use_local_db = False
+use_local_db = True
 env = environ.Env(DEBUG=(bool, False))
 env_file = os.path.join(BASE_DIR, ".env")
 
@@ -18,6 +18,7 @@ if use_local_db:
 
     env.read_env(env_file)
     use_local_db = True
+    SECRET_KEY = 'secret'
 
 if not use_local_db and os.environ.get("GOOGLE_CLOUD_PROJECT", None):
     # Pull secrets from Secret Manager
@@ -28,15 +29,17 @@ if not use_local_db and os.environ.get("GOOGLE_CLOUD_PROJECT", None):
     name = f"projects/{project_id}/secrets/{settings_name}/versions/latest"
     payload = client.access_secret_version(name=name).payload.data.decode("UTF-8")
 
+    
+
     env.read_env(io.StringIO(payload)) 
+    # SECURITY WARNING: keep the secret key used in production secret!
+    SECRET_KEY = env("SECRET_KEY")
 
 # [END gaestd_py_django_secret_config]
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG")
