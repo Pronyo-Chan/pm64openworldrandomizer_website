@@ -1,10 +1,10 @@
 from ast import operator
 import io
 import os
+from pathlib import Path
 import sys
 import json
-
-sys.path.insert(0, os.path.abspath(__file__ + "/../../../PM64OpenWorldRandomizer/tools"))
+sys.path.insert(0, str(Path(__file__).parent.parent.parent / 'PM64OpenWorldRandomizer' / 'tools'))
 from randomizer import web_randomizer
 
 from django.shortcuts import render
