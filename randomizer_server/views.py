@@ -48,13 +48,11 @@ def post_randomizer_settings(request):
 
     rando_settings = json.dumps(data)
     rando_result = web_randomizer(seedID, rando_settings)
-    
-    response = FileResponse(rando_result.patchBytes)
 
     save_file_to_cloud(str(f'patch/{settings.SeedID}.pmp'), rando_result.patchBytes)
     save_file_to_cloud(str(f'spoiler/{settings.SeedID}.txt'), rando_result.spoilerLogBytes)
 
-    return HttpResponse(response, content_type='application/octet-stream', status=status.HTTP_200_OK)
+    return HttpResponse(seedID, content_type='text', status=status.HTTP_200_OK)
 
 
 @api_view(['GET'])
