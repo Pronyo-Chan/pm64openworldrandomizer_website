@@ -1,8 +1,13 @@
+from email.policy import default
+from xmlrpc.client import DateTime
 from django.db import models
+from django.forms import DateTimeField
+from django.utils.timezone import now
 
 
 class Setting(models.Model):
     SeedID = models.BigIntegerField(primary_key=True)
+    CreationDate = models.DateTimeField(default=now, editable=False)
     AlwaysSpeedySpin = models.BooleanField(default=False)
     AlwaysISpy = models.BooleanField(default=False)
     AlwaysPeekaboo = models.BooleanField(default=False)

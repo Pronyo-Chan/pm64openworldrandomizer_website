@@ -13,12 +13,16 @@ use_local_db = True
 env = environ.Env(DEBUG=(bool, False))
 env_file = os.path.join(BASE_DIR, ".env")
 
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = env("DEBUG")
+
 if use_local_db:
     # Use a local secret file, if provided
 
     env.read_env(env_file)
     use_local_db = True
     SECRET_KEY = 'secret'
+    DEBUG = True
 
 if not use_local_db and os.environ.get("GOOGLE_CLOUD_PROJECT", None):
     # Pull secrets from Secret Manager
@@ -41,8 +45,7 @@ if not use_local_db and os.environ.get("GOOGLE_CLOUD_PROJECT", None):
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env("DEBUG")
+
 
 ALLOWED_HOSTS = ['127.0.0.1', 'paper-mario-randomizer-server.ue.r.appspot.com']
 

@@ -5,7 +5,8 @@ from pathlib import Path
 import sys
 import json
 
-from randomizer_server.services.cloud_storage_service import save_patch_to_cloud
+from randomizer_server.services.cloud_storage_service import save_file_to_cloud
+from randomizer_server.services.database_service import insert_seed_with_unique_ID
 sys.path.insert(0, str(Path(__file__).parent.parent.parent / 'PM64OpenWorldRandomizer' / 'tools')) #local
 sys.path.insert(0, str(Path(__file__).parent.parent / 'PM64OpenWorldRandomizer' / 'tools')) # PROD
 from randomizer import web_randomizer
@@ -47,16 +48,14 @@ class RandomizerViewSet(viewsets.ViewSet):
         settings = serializer.create()
 
         data = SettingSerializer(settings).data
+        seedID = insert_seed_with_unique_ID(settings)
 
         rando_settings = json.dumps(data)
-        rando_result = web_randomizer(rando_settings)
-
-        settings.SeedID = rando_result.seedID
-        settings.save()
+        rando_result = web_randomizer(seedID, rando_settings)
         
-        inmemoryfile = io.BytesIO(rando_result.patchBytes)
-        response = FileResponse(inmemoryfile)
+        response = FileResponse(rando_result.patchBytes)
 
-        save_patch_to_cloud(str(f'{settings.SeedID}.pmp'), inmemoryfile)
+        save_file_to_cloud(str(f'patch/{settings.SeedID}.pmp'), rando_result.patchBytes)
+        save_file_to_cloud(str(f'spoiler/{settings.SeedID}.txt'), rando_result.spoilerLogBytes)
 
         return HttpResponse(response, content_type='application/octet-stream', status=status.HTTP_200_OK)
