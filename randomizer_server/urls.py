@@ -1,14 +1,10 @@
-from django.urls import path, include
-
+from django.urls import re_path 
 from rest_framework import routers
 
-from .views import RandomizerViewSet
+from randomizer_server import views
 
-
-router = routers.SimpleRouter(trailing_slash=False)
-router.register(r'', RandomizerViewSet, basename='randomizer_server')
 
 urlpatterns = [
-    path('', include(router.urls)),
-    path('<int:pk>/', include(router.urls))
+    re_path(r'^randomizer_settings/(?P<pk>\d+)/?$', views.get_randomizer_settings),
+    re_path(r'^randomizer_settings/?$', views.post_randomizer_settings),
 ]

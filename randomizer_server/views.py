@@ -1,6 +1,5 @@
 from ast import operator
-import io
-import os
+from rest_framework.decorators import api_view
 from pathlib import Path
 import sys
 import json
@@ -22,9 +21,9 @@ from .models import Setting
 from .serializers import SettingSerializer
 
 
-
-class RandomizerViewSet(viewsets.ViewSet):
-    def get(self, request, pk=None):
+@api_view(['GET'])
+def get_randomizer_settings(request, pk):
+    if request.method == 'GET':
         if pk is None:
             try:
                 setting = Setting.objects.get(IsDefault=True)
@@ -41,7 +40,10 @@ class RandomizerViewSet(viewsets.ViewSet):
         serializer = SettingSerializer(setting)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-    def create(self, request):
+@api_view(['POST'])
+def post_randomizer_settings(request):
+
+    if request.method == 'POST':
         serializer = SettingSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
@@ -59,3 +61,4 @@ class RandomizerViewSet(viewsets.ViewSet):
         save_file_to_cloud(str(f'spoiler/{settings.SeedID}.txt'), rando_result.spoilerLogBytes)
 
         return HttpResponse(response, content_type='application/octet-stream', status=status.HTTP_200_OK)
+        
