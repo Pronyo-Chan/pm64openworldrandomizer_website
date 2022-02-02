@@ -6,8 +6,8 @@ import json
 
 from randomizer_server.services.cloud_storage_service import get_file_from_cloud, save_file_to_cloud
 from randomizer_server.services.database_service import get_unique_seedID
-sys.path.insert(0, str(Path(__file__).parent.parent.parent / 'PMR-SeedGenerator')) #local
-sys.path.insert(0, str(Path(__file__).parent.parent / 'PMR-SeedGenerator')) # PROD
+print(0, str(Path(__file__).parent / 'PMR-SeedGenerator'))
+sys.path.insert(0, str(Path(__file__).parent.parent / 'PMR-SeedGenerator'))
 from randomizer import web_randomizer
 
 from django.shortcuts import render
