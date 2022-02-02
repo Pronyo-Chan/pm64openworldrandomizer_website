@@ -5,9 +5,9 @@ import sys
 import json
 
 from randomizer_server.services.cloud_storage_service import get_file_from_cloud, save_file_to_cloud
-from randomizer_server.services.database_service import insert_seed_with_unique_ID
-sys.path.insert(0, str(Path(__file__).parent.parent.parent / 'PM64OpenWorldRandomizer' / 'tools')) #local
-sys.path.insert(0, str(Path(__file__).parent.parent / 'PM64OpenWorldRandomizer' / 'tools')) # PROD
+from randomizer_server.services.database_service import get_unique_seedID
+sys.path.insert(0, str(Path(__file__).parent.parent.parent / 'PMR-SeedGenerator')) #local
+sys.path.insert(0, str(Path(__file__).parent.parent / 'PMR-SeedGenerator')) # PROD
 from randomizer import web_randomizer
 
 from django.shortcuts import render
@@ -33,10 +33,13 @@ def get_randomizer_settings(request, pk):
             return Response({}, status=status.HTTP_404_NOT_FOUND)
 
     serializer = SettingSerializer(setting)
-    return Response(serializer.data, status=status.HTTP_200_OK)
+    return Response(serializer.data, status=status.HTTP_200_OK, content_type='application/json')
 
 @api_view(['POST'])
 def post_randomizer_settings(request):
+
+    unique_seed_id = get_unique_seedID()
+    request.data["SeedID"] = unique_seed_id
 
     serializer = SettingSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
@@ -44,15 +47,16 @@ def post_randomizer_settings(request):
     settings = serializer.create()
 
     data = SettingSerializer(settings).data
-    seedID = insert_seed_with_unique_ID(settings)
 
     rando_settings = json.dumps(data)
-    rando_result = web_randomizer(seedID, rando_settings)
+    rando_result = web_randomizer(unique_seed_id, rando_settings)
+
+    settings.save()
 
     save_file_to_cloud(str(f'patch/{settings.SeedID}.pmp'), rando_result.patchBytes)
     save_file_to_cloud(str(f'spoiler/{settings.SeedID}.txt'), rando_result.spoilerLogBytes)
 
-    return HttpResponse(seedID, content_type='text', status=status.HTTP_200_OK)
+    return HttpResponse(unique_seed_id, content_type='text', status=status.HTTP_200_OK)
 
 
 @api_view(['GET'])

@@ -18,6 +18,8 @@ class SettingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Setting
         fields = [
+            "SeedID",
+            "CreationDate",
             "AlwaysSpeedySpin",
             "AlwaysISpy",
             "AlwaysPeekaboo",
