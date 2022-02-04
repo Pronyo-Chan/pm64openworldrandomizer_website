@@ -8,12 +8,11 @@ def save_file_to_cloud(filename, file):
 
     storage_client = storage.Client.from_service_account_json('service_account.json')
 
-    bucket = storage_client.get_bucket('paper-mario-randomizer-server.appspot.com')
+    bucket = storage_client.bucket('paper-mario-randomizer-server.appspot.com')
 
     blob = storage.Blob(filename, bucket)
     blob.upload_from_file(file)
 
-    file.seek(0) #Important to reset the file or else the API will return an empty file
 
 def get_file_from_cloud(filename):
     if not os.path.isfile('service_account.json'):
