@@ -20,6 +20,7 @@ class SettingSerializer(serializers.ModelSerializer):
         fields = [
             "SeedID",
             "CreationDate",
+            "StarRodModVersion",
             "AlwaysSpeedySpin",
             "AlwaysISpy",
             "AlwaysPeekaboo",

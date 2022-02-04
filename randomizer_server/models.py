@@ -8,6 +8,7 @@ from django.utils.timezone import now
 class Setting(models.Model):
     SeedID = models.BigIntegerField(primary_key=True)
     CreationDate = models.DateTimeField(default=now, editable=False)
+    StarRodModVersion = models.IntegerField(default=1)
     AlwaysSpeedySpin = models.BooleanField(default=False)
     AlwaysISpy = models.BooleanField(default=False)
     AlwaysPeekaboo = models.BooleanField(default=False)
