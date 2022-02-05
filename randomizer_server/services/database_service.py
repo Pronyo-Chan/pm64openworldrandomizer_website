@@ -1,18 +1,14 @@
-import os
-import random
-from randomizer_server.models import Setting
-from randomizer_server.serializers import SettingSerializer
 
-def get_unique_seedID():
+import random
+
+def get_unique_seedID(db):
     seedCreated = False
     while seedCreated == False:
         random_seed_ID =  random.randint(0, 0xFFFFFFFF)
-        
-        try:
-            Setting.objects.get(SeedID = random_seed_ID)
-        except Setting.DoesNotExist:
 
-            seedCreated = True
+        document =  db.collection(u'seeds').document(str(random_seed_ID)).get()
+        if not document.exists:
+           seedCreated = True           
 
     return random_seed_ID
 

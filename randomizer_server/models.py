@@ -1,4 +1,4 @@
-from email.policy import default
+""" from email.policy import default
 from xmlrpc.client import DateTime
 from django.db import models
 from django.forms import DateTimeField
@@ -120,3 +120,4 @@ class Setting(models.Model):
             "Sushie": self.StartWithSushie,
             "Lakilester": self.StartWithLakilester,
         }
+ """

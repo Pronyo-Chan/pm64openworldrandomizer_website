@@ -1,4 +1,4 @@
-from rest_framework import serializers
+""" from rest_framework import serializers
 
 from .models import Setting
 
@@ -92,4 +92,4 @@ class SettingSerializer(serializers.ModelSerializer):
     def validate_RandomPartnersMax(self, value):
         if value < 1 or value > 8:
             raise serializers.ValidationError("Random Partners Min must be between 1 and 8")
-        return value
+        return value """
