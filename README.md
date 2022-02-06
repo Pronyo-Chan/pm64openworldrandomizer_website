@@ -24,5 +24,6 @@ Don't forget to run this command to export packages to requirements.txt
 **Running the Webserver**
 ```
 > poetry shell
+>$env:FLASK_APP = "main.py" #first time only
 > flask run
 ```
