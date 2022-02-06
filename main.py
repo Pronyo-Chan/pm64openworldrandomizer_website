@@ -23,9 +23,6 @@ from randomizer import web_randomizer
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
-    app.config.from_mapping(
-        SECRET_KEY='dev',
-    )
 
     CORS(app, origins=["http://localhost:4200", "https://paper-mario-randomizer-app.ue.r.appspot.com"])
 
