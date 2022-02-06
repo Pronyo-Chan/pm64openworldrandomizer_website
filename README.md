@@ -6,7 +6,7 @@
 > poetry install
 ```
 
-**Setting up the database**
+**Setting up the database** **DEPRECATED, NEED UPDATE**
 Local DB: 
 -Install postgresql on your system
 -Run the psql setup with defaults
@@ -24,7 +24,5 @@ Don't forget to run this command to export packages to requirements.txt
 **Running the Webserver**
 ```
 > poetry shell
-> python manage.py runserver 0.0.0.0:8000
+> flask run
 ```
-
-Browswing to `http://127.0.0.1:8000/randomizer_settings` will display the Django REST Framework page, where you can POST a JSON object containing information for randomization settings.
