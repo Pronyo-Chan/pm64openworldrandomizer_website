@@ -24,7 +24,10 @@ def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
 
-    CORS(app, origins=["http://localhost:4200", "https://paper-mario-randomizer-app.ue.r.appspot.com", "https://uat-dot-paper-mario-randomizer-app.ue.r.appspot.com"])
+    if(environ.get("IS_PRODUCTION") == "true"):
+        CORS(app, origins=["https://paper-mario-randomizer-app.ue.r.appspot.com"])
+    else:
+        CORS(app, origins=["http://localhost:4200", "https://uat-dot-paper-mario-randomizer-app.ue.r.appspot.com"])
 
     if test_config is None:
         # load the instance config, if it exists, when not testing
