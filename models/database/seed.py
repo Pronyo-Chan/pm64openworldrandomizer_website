@@ -18,7 +18,7 @@ class Seed:
         RandomFormations: bool, ShuffleItems: bool, IncludeCoins: bool, IncludeShops: bool, IncludePanels: bool, IncludeFavors: bool, IncludeLetterChain: bool, KeyitemsOutsideDungeon: bool,\
         ProgressiveScaling: bool, ShuffleBadgesBP: bool, ShuffleBadgesFP: bool, ShufflePartnerFP: bool, ShuffleStarpowerSP: bool, RandomQuiz: bool, SkipQuiz: bool, QuizmoAlwaysAppears: bool, \
         PartnersInDefaultLocations: bool, PartnersAlwaysUsable: bool, StartWithRandomPartners: bool, RandomPartnersMin: int, RandomPartnersMax: int, StartWithPartners: StartWithPartners, \
-        WriteSpoilerLog: bool, RandomCoinPalette: bool, RomanNumerals: bool, TurnOffMusic: bool, IncludeDojo: bool):
+        WriteSpoilerLog: bool, RandomCoinPalette: bool, RomanNumerals: bool, TurnOffMusic: bool, IncludeDojo: bool, ShortenBowsersCastle: bool):
 
         self.SeedID = SeedID
         self.CreationDate = datetime.now()
@@ -68,6 +68,7 @@ class Seed:
         self.RomanNumerals = RomanNumerals
         self.TurnOffMusic = TurnOffMusic
         self.IncludeDojo = IncludeDojo
+        self.ShortenBowsersCastle = ShortenBowsersCastle
 
         # Other/Hidden Options
         self.SettingsName = "Default Dev Preset"

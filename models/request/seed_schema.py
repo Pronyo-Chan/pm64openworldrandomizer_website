@@ -66,6 +66,7 @@ class SeedRequestSchema(Schema):
     RomanNumerals = fields.Boolean()
     TurnOffMusic = fields.Boolean()
     IncludeDojo = fields.Boolean()
+    ShortenBowsersCastle = fields.Boolean()    
 
     @validates_schema
     def validate_random_partners(self, data, **kwargs):
