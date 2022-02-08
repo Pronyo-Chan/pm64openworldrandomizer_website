@@ -24,7 +24,7 @@ class SeedRequestSchema(Schema):
     AlwaysPeekaboo = fields.Boolean()
     HiddenBlockMode = fields.Int(validate=validate.Range(0, 3))
     AllowPhysicsGlitches = fields.Boolean()
-    InitialCoins = fields.Int(default=validate.Range(0, 999))
+    StartingCoins = fields.Int(default=validate.Range(0, 999))
     CapEnemyXP = fields.Boolean()
     NoXP = fields.Boolean()
     DoubleDamage = fields.Boolean()

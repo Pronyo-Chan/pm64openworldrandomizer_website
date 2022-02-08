@@ -13,7 +13,7 @@ class Seed:
             self.Lakilester = Lakilester
 
     def __init__(self, SeedID: str, StarRodModVersion: int, AlwaysSpeedySpin: str, AlwaysISpy: bool, AlwaysPeekaboo: bool, HiddenBlockMode: int, \
-        AllowPhysicsGlitches: bool, InitialCoins: int, CapEnemyXP: bool, NoXP: bool, DoubleDamage: bool, QuadrupleDamage: bool, OHKO: bool,\
+        AllowPhysicsGlitches: bool, StartingCoins: int, CapEnemyXP: bool, NoXP: bool, DoubleDamage: bool, QuadrupleDamage: bool, OHKO: bool,\
         NoSaveBlocks: bool, NoHeartBlock: bool, FlowerGateOpen: bool, BlueHouseOpen: bool, ToyboxOpen: bool, WhaleOpen: bool, ShuffleChapterDifficulty: bool,\
         RandomFormations: bool, ShuffleItems: bool, IncludeCoins: bool, IncludeShops: bool, IncludePanels: bool, IncludeFavors: bool, IncludeLetterChain: bool, KeyitemsOutsideDungeon: bool,\
         ProgressiveScaling: bool, ShuffleBadgesBP: bool, ShuffleBadgesFP: bool, ShufflePartnerFP: bool, ShuffleStarpowerSP: bool, RandomQuiz: bool, SkipQuiz: bool, QuizmoAlwaysAppears: bool, \
@@ -28,7 +28,7 @@ class Seed:
         self.AlwaysPeekaboo = AlwaysPeekaboo
         self.HiddenBlockMode = HiddenBlockMode
         self.AllowPhysicsGlitches = AllowPhysicsGlitches
-        self.InitialCoins = InitialCoins
+        self.StartingCoins = StartingCoins
         self.CapEnemyXP = CapEnemyXP
         self.NoXP = NoXP
         self.DoubleDamage = DoubleDamage
