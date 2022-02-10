@@ -7,3 +7,6 @@ handlers:
 
 env_variables:
   IS_PRODUCTION: "true"
+  
+ automatic_scaling:
+  max_instances: 4

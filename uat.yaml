@@ -6,3 +6,6 @@ handlers:
   script: auto
 
 service: uat
+
+automatic_scaling:
+  max_instances: 2
