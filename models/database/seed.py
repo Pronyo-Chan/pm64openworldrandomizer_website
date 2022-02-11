@@ -17,8 +17,8 @@ class Seed:
         NoSaveBlocks: bool, NoHeartBlock: bool, FlowerGateOpen: bool, BlueHouseOpen: bool, ToyboxOpen: bool, WhaleOpen: bool, ShuffleChapterDifficulty: bool,\
         RandomFormations: bool, ShuffleItems: bool, IncludeCoins: bool, IncludeShops: bool, IncludePanels: bool, IncludeFavors: bool, IncludeLetterChain: bool, KeyitemsOutsideDungeon: bool,\
         ProgressiveScaling: bool, ShuffleBadgesBP: bool, ShuffleBadgesFP: bool, ShufflePartnerFP: bool, ShuffleStarpowerSP: bool, RandomQuiz: bool, SkipQuiz: bool, QuizmoAlwaysAppears: bool, \
-        PartnersInDefaultLocations: bool, PartnersAlwaysUsable: bool, StartWithRandomPartners: bool, RandomPartnersMin: int, RandomPartnersMax: int, StartWithPartners: StartWithPartners, \
-        WriteSpoilerLog: bool, RandomCoinPalette: bool, RomanNumerals: bool, TurnOffMusic: bool, IncludeDojo: bool, ShortenBowsersCastle: bool):
+        PartnersInDefaultLocations: bool, PartnersAlwaysUsable: bool, StartWithRandomPartners: bool, WriteSpoilerLog: bool, RandomCoinPalette: bool, RomanNumerals: bool, TurnOffMusic: bool, \
+        IncludeDojo: bool, ShortenBowsersCastle: bool, RandomPartnersMin: int = None, RandomPartnersMax: int = None, StartWithPartners: StartWithPartners = None):
 
         self.SeedID = SeedID
         self.CreationDate = datetime.now()
@@ -60,15 +60,18 @@ class Seed:
         self.PartnersInDefaultLocations = PartnersInDefaultLocations
         self.PartnersAlwaysUsable = PartnersAlwaysUsable
         self.StartWithRandomPartners = StartWithRandomPartners
-        self.RandomPartnersMin = RandomPartnersMin
-        self.RandomPartnersMax = RandomPartnersMax
-        self.StartWithPartners = StartWithPartners
         self.WriteSpoilerLog = WriteSpoilerLog
         self.RandomCoinPalette = RandomCoinPalette
         self.RomanNumerals = RomanNumerals
         self.TurnOffMusic = TurnOffMusic
         self.IncludeDojo = IncludeDojo
         self.ShortenBowsersCastle = ShortenBowsersCastle
+
+        if StartWithRandomPartners:
+            self.RandomPartnersMax = RandomPartnersMax
+            self.RandomPartnersMin = RandomPartnersMin
+        else:
+            self.StartWithPartners = StartWithPartners
 
         # Other/Hidden Options
         self.SettingsName = "Default Dev Preset"

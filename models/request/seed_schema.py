@@ -71,4 +71,4 @@ class SeedRequestSchema(Schema):
     @validates_schema
     def validate_random_partners(self, data, **kwargs):
         if data["RandomPartnersMin"] > data["RandomPartnersMax"]:
-            raise ValidationError("field_a must be greater than field_b")
+            raise ValidationError("RandomPartnersMax must be greater or equal to RandomPartnersMin")
