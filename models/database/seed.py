@@ -18,7 +18,8 @@ class Seed:
         RandomFormations: bool, ShuffleItems: bool, IncludeCoins: bool, IncludeShops: bool, IncludePanels: bool, IncludeFavors: bool, IncludeLetterChain: bool, KeyitemsOutsideDungeon: bool,\
         ProgressiveScaling: bool, ShuffleBadgesBP: bool, ShuffleBadgesFP: bool, ShufflePartnerFP: bool, ShuffleStarpowerSP: bool, RandomQuiz: bool, SkipQuiz: bool, QuizmoAlwaysAppears: bool, \
         PartnersInDefaultLocations: bool, PartnersAlwaysUsable: bool, StartWithRandomPartners: bool, WriteSpoilerLog: bool, RandomCoinPalette: bool, RomanNumerals: bool, TurnOffMusic: bool, \
-        IncludeDojo: bool, ShortenBowsersCastle: bool, RandomPartnersMin: int = None, RandomPartnersMax: int = None, StartWithPartners: StartWithPartners = None):
+        IncludeDojo: bool, ShortenBowsersCastle: bool, RandomPartnersMin: int = None, RandomPartnersMax: int = None, StartWithPartners: StartWithPartners = None,
+        Box5ColorA: int = None, Box5ColorB: int = None):
 
         self.SeedID = SeedID
         self.CreationDate = datetime.now()
@@ -67,6 +68,16 @@ class Seed:
         self.IncludeDojo = IncludeDojo
         self.ShortenBowsersCastle = ShortenBowsersCastle
 
+        #Optional so its not breaking, to make mandatory eventually
+        if Box5ColorA:
+            self.Box5ColorA = Box5ColorA
+        else:
+            self.Box5ColorA = 0xEBE677FF
+        if Box5ColorB:
+            self.Box5ColorB = Box5ColorB
+        else:
+            self.Box5ColorB = 0x8E5A25FF
+
         if StartWithRandomPartners:
             self.RandomPartnersMax = RandomPartnersMax
             self.RandomPartnersMin = RandomPartnersMin
@@ -78,9 +89,6 @@ class Seed:
         self.SettingsVersion = "0.1"
         self.StartingMap = 0x00010104   # mac_00, Entry4
         self.PrettySpoilerlog = True
-        self.ColorA = 0xEBE677FF
-        self.ColorB = 0x8E5A25FF
-
         self.PlacementAlgorithm = "ForwardFill"
         self.PlacementLogic = "NoGlitches"
 
