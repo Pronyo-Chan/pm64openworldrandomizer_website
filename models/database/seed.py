@@ -19,7 +19,8 @@ class Seed:
         ProgressiveScaling: bool, ShuffleBadgesBP: bool, ShuffleBadgesFP: bool, ShufflePartnerFP: bool, ShuffleStarpowerSP: bool, RandomQuiz: bool, SkipQuiz: bool, QuizmoAlwaysAppears: bool, \
         PartnersInDefaultLocations: bool, PartnersAlwaysUsable: bool, StartWithRandomPartners: bool, WriteSpoilerLog: bool, RandomCoinPalette: bool, RomanNumerals: bool, TurnOffMusic: bool, \
         IncludeDojo: bool, ShortenBowsersCastle: bool, RandomPartnersMin: int = None, RandomPartnersMax: int = None, StartWithPartners: StartWithPartners = None,
-        Box5ColorA: int = None, Box5ColorB: int = None):
+        Box5ColorA: int = 0xEBE677FF, Box5ColorB: int = 0x8E5A25FF, MarioSetting: int = 0, MarioSprite: int = 0, GoombarioSetting: int = 0, GoombarioSprite: int = 0,
+        KooperSetting: int = 0, KooperSprite: int = 0, BowSetting: int = 0, BowSprite: int = 0, BossesSetting: int = 0, NPCSetting: int = 0):
 
         self.SeedID = SeedID
         self.CreationDate = datetime.now()
@@ -68,15 +69,20 @@ class Seed:
         self.IncludeDojo = IncludeDojo
         self.ShortenBowsersCastle = ShortenBowsersCastle
 
-        #Optional so its not breaking, to make mandatory eventually
-        if Box5ColorA:
-            self.Box5ColorA = Box5ColorA
-        else:
-            self.Box5ColorA = 0xEBE677FF
-        if Box5ColorB:
-            self.Box5ColorB = Box5ColorB
-        else:
-            self.Box5ColorB = 0x8E5A25FF
+        self.Box5ColorA = Box5ColorA
+        self.Box5ColorB = Box5ColorB
+
+        self.MarioSetting = MarioSetting
+        self.MarioSprite = MarioSprite
+        self.GoombarioSetting = GoombarioSetting
+        self.GoombarioSprite = GoombarioSprite
+        self.KooperSetting = KooperSetting
+        self.KooperSprite = KooperSprite
+        self.BowSetting = BowSetting
+        self.BowSprite = BowSprite
+
+        self.BossesSetting = BossesSetting
+        self.NPCSetting = NPCSetting
 
         if StartWithRandomPartners:
             self.RandomPartnersMax = RandomPartnersMax
