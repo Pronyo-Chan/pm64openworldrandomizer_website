@@ -45,8 +45,10 @@ app = create_app()
 db = firestore.client()
 
 firestore_seeds_collection = "seeds"
+environment = "uat"
 if(environ.get("IS_PRODUCTION") == "true"): 
     firestore_seeds_collection = "seeds-prod"
+    environment = "prod"
 
 @app.route('/randomizer_settings/<seed_id>', methods=['GET'])
 def get_randomizer_settings(seed_id):
@@ -75,8 +77,8 @@ def post_randomizer_settings():
 
     db.collection(firestore_seeds_collection).document(str(unique_seed_id)).set(seed.__dict__)
 
-    save_file_to_cloud(str(f'patch/{unique_seed_id}.pmp'), rando_result.patchBytes)
-    save_file_to_cloud(str(f'spoiler/{unique_seed_id}.txt'), rando_result.spoilerLogBytes)
+    save_file_to_cloud(str(f'{environment}/patch/{unique_seed_id}.pmp'), rando_result.patchBytes)
+    save_file_to_cloud(str(f'{environment}/spoiler/{unique_seed_id}.txt'), rando_result.spoilerLogBytes)
 
     return str(unique_seed_id)
 
@@ -88,7 +90,7 @@ def get_spoiler_log(seed_id):
     if not document.exists:
         abort(404)
 
-    spoiler_file = get_file_from_cloud(f'spoiler/{seed_id}.txt')
+    spoiler_file = get_file_from_cloud(f'{environment}/spoiler/{seed_id}.txt')
     if spoiler_file is None:
         abort(404)
 
@@ -102,7 +104,7 @@ def get_patch(seed_id):
     if not document.exists:
         abort(404)
 
-    patch_file = get_file_from_cloud(f"patch/{seed_id}.pmp")
+    patch_file = get_file_from_cloud(f"{environment}/patch/{seed_id}.pmp")
     if patch_file is None:
         abort(404)
 
