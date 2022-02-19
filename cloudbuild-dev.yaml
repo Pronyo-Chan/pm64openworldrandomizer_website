@@ -1,0 +1,44 @@
+
+steps:
+    - name: 'gcr.io/cloud-builders/git'
+      secretEnv: ['SSH_KEY', 'SERVICE_ACCOUNT']
+      entrypoint: 'bash'
+      args:
+      - -c
+      - |
+        echo "$$SSH_KEY" >> /root/.ssh/id_rsa
+        echo "$$SERVICE_ACCOUNT" >> service_account.json
+        chmod 600 /root/.ssh/id_rsa
+        cat <<EOF >/root/.ssh/config
+        Hostname github.com
+        IdentityFile /root/.ssh/id_rsa
+        EOF
+        ssh-keyscan -t rsa github.com > /root/.ssh/known_hosts
+      volumes:
+      - name: 'ssh'
+        path: /root/.ssh
+
+    # Clone the repository
+    - name: 'gcr.io/cloud-builders/git'
+      args:
+      - clone
+      - --branch
+      - dev
+      - git@github.com:icebound777/PMR-SeedGenerator.git
+      volumes:
+      - name: 'ssh'
+        path: /root/.ssh
+                
+      # Deploy to google cloud app egnine
+    - name: 'gcr.io/cloud-builders/gcloud'
+      args: ['app', 'deploy', 'uat.yaml']
+    
+availableSecrets:
+  secretManager:
+  - versionName: projects/937462171520/secrets/github/versions/latest
+    env: 'SSH_KEY'
+  - versionName: projects/937462171520/secrets/service_account_json/versions/latest
+    env: 'SERVICE_ACCOUNT'
+    
+options:
+ logging: CLOUD_LOGGING_ONLY
