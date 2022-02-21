@@ -18,7 +18,7 @@ class Seed:
         RandomFormations: bool, ShuffleItems: bool, IncludeCoins: bool, IncludeShops: bool, IncludePanels: bool, IncludeFavors: bool, IncludeLetterChain: bool, KeyitemsOutsideDungeon: bool,\
         ProgressiveScaling: bool, ShuffleBadgesBP: bool, ShuffleBadgesFP: bool, ShufflePartnerFP: bool, ShuffleStarpowerSP: bool, RandomQuiz: bool, SkipQuiz: bool, QuizmoAlwaysAppears: bool, \
         PartnersInDefaultLocations: bool, PartnersAlwaysUsable: bool, StartWithRandomPartners: bool, WriteSpoilerLog: bool, RandomCoinPalette: bool, RomanNumerals: bool, TurnOffMusic: bool, \
-        IncludeDojo: bool, ShortenBowsersCastle: bool, RandomPartnersMin: int = None, RandomPartnersMax: int = None, StartWithPartners: StartWithPartners = None,
+        IncludeDojo: bool, ShortenBowsersCastle: bool, ShortenCutscenes: bool = False, SkipEpilogue = False, RandomPartnersMin: int = None, RandomPartnersMax: int = None, StartWithPartners: StartWithPartners = None,
         Box5ColorA: int = 0xEBE677FF, Box5ColorB: int = 0x8E5A25FF, MarioSetting: int = 0, MarioSprite: int = 0, GoombarioSetting: int = 0, GoombarioSprite: int = 0,
         KooperSetting: int = 0, KooperSprite: int = 0, BowSetting: int = 0, BowSprite: int = 0, BossesSetting: int = 0, NPCSetting: int = 0):
 
@@ -68,6 +68,8 @@ class Seed:
         self.TurnOffMusic = TurnOffMusic
         self.IncludeDojo = IncludeDojo
         self.ShortenBowsersCastle = ShortenBowsersCastle
+        self.ShortenCutscenes = ShortenCutscenes
+        self.SkipEpilogue = SkipEpilogue
 
         self.Box5ColorA = Box5ColorA
         self.Box5ColorB = Box5ColorB
