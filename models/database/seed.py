@@ -21,9 +21,9 @@ class Seed:
         IncludeDojo: bool, ShortenBowsersCastle: bool, ShortenCutscenes: bool = False, SkipEpilogue = False, RandomPartnersMin: int = None, RandomPartnersMax: int = None, StartWithPartners: StartWithPartners = None,
         Box5ColorA: int = 0xEBE677FF, Box5ColorB: int = 0x8E5A25FF, MarioSetting: int = 0, MarioSprite: int = 0, GoombarioSetting: int = 0, GoombarioSprite: int = 0,
         KooperSetting: int = 0, KooperSprite: int = 0, BowSetting: int = 0, BowSprite: int = 0, BossesSetting: int = 0, NPCSetting: int = 0, StartingMap: int = 0x00010104,
-        StartingMaxHP: int = 10, StartingMaxFP: int = 5, StartingMaxBP: int = 3, StartingItem0: int = 0, StartingItem1: int = 0, StartingItem2: int = 0, StartingItem3: int = 0, StartingItem4: int = 0, StartingItem5: int = 0, 
-        StartingItem6: int = 0, StartingItem7: int = 0, StartingItem8: int = 0, StartingItem9: int = 0, StartingItemA: int = 0, StartingItemB: int = 0, StartingItemC: int = 0, StartingItemD: int = 0, StartingItemE: int = 0,
-        ItemScarcity: int = 0, StartingItemF: int = 0):
+        StartingMaxHP: int = 10, StartingMaxFP: int = 5, StartingMaxBP: int = 3, StartingStarPower: int = 0, StartingItem0: int = 0, StartingItem1: int = 0, StartingItem2: int = 0, StartingItem3: int = 0, \
+        StartingItem4: int = 0, StartingItem5: int = 0, StartingItem6: int = 0, StartingItem7: int = 0, StartingItem8: int = 0, StartingItem9: int = 0, StartingItemA: int = 0, StartingItemB: int = 0, \
+        StartingItemC: int = 0, StartingItemD: int = 0, StartingItemE: int = 0, ItemScarcity: int = 0, StartingItemF: int = 0, StarWaySpiritsNeeded: int = 7):
 
         self.SeedID = SeedID
         self.CreationDate = datetime.now()
@@ -46,7 +46,7 @@ class Seed:
         self.ToyboxOpen = ToyboxOpen
         self.WhaleOpen = WhaleOpen
         self.ShuffleChapterDifficulty = ShuffleChapterDifficulty
-        self.RandomFormations = RandomFormations
+        self.RandomFormations = RandomFormations 
         self.ShuffleItems = ShuffleItems
         self.IncludeCoins = IncludeCoins
         self.IncludeShops = IncludeShops
@@ -95,6 +95,7 @@ class Seed:
         self.StartingMaxFP = StartingMaxFP
         self.StartingMaxBP = StartingMaxBP
         self.StartingLevel = int(1 + ((StartingMaxHP - 10) / 5) + ((StartingMaxFP - 5) / 5) + + ((StartingMaxBP - 3) / 3))
+        self.StartingStarPower = StartingStarPower
 
         self.StartingItem0 = StartingItem0
         self.StartingItem1 = StartingItem1
@@ -114,6 +115,7 @@ class Seed:
         self.StartingItemF = StartingItemF
 
         self.ItemScarcity = ItemScarcity
+        self.StarWaySpiritsNeeded = StarWaySpiritsNeeded
 
         if StartWithRandomPartners:
             self.RandomPartnersMax = RandomPartnersMax
