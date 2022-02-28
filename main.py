@@ -25,7 +25,7 @@ def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
 
     if(environ.get("IS_PRODUCTION") == "true"):
-        CORS(app, origins=["https://paper-mario-randomizer-app.ue.r.appspot.com"])
+        CORS(app, origins=["https://paper-mario-randomizer-app.ue.r.appspot.com, https://pm64randomizer.com"])
     else:
         CORS(app, origins=["http://localhost:4200", "https://uat-dot-paper-mario-randomizer-app.ue.r.appspot.com"])
 
