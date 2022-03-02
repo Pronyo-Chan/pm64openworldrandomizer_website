@@ -126,10 +126,11 @@ class Seed:
 
         # Other/Hidden Options
         self.SettingsName = "Default Dev Preset"
-        self.SettingsVersion = "0.1"
+        self.SettingsVersion = "1.0.0"
         self.PrettySpoilerlog = True
         self.PlacementAlgorithm = "ForwardFill"
         self.PlacementLogic = "NoGlitches"
+        self.PeachCastleReturnPipe = True # Default
 
     
     
