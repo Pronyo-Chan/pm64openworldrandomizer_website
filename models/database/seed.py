@@ -14,7 +14,7 @@ class Seed:
 
     def __init__(self, SeedID: str, StarRodModVersion: int, AlwaysSpeedySpin: str, AlwaysISpy: bool, AlwaysPeekaboo: bool, HiddenBlockMode: int, \
         AllowPhysicsGlitches: bool, StartingCoins: int, CapEnemyXP: bool, NoXP: bool, DoubleDamage: bool, QuadrupleDamage: bool, OHKO: bool,\
-        NoSaveBlocks: bool, NoHeartBlock: bool, FlowerGateOpen: bool, BlueHouseOpen: bool, ToyboxOpen: bool, WhaleOpen: bool, ShuffleChapterDifficulty: bool,\
+        NoSaveBlocks: bool, NoHeartBlocks: bool, FlowerGateOpen: bool, BlueHouseOpen: bool, ToyboxOpen: bool, WhaleOpen: bool, ShuffleChapterDifficulty: bool,\
         RandomFormations: bool, ShuffleItems: bool, IncludeCoins: bool, IncludeShops: bool, IncludePanels: bool, IncludeFavors: bool, IncludeLetterChain: bool, KeyitemsOutsideDungeon: bool,\
         ProgressiveScaling: bool, ShuffleBadgesBP: bool, ShuffleBadgesFP: bool, ShufflePartnerFP: bool, ShuffleStarpowerSP: bool, RandomQuiz: bool, SkipQuiz: bool, QuizmoAlwaysAppears: bool, \
         PartnersInDefaultLocations: bool, PartnersAlwaysUsable: bool, StartWithRandomPartners: bool, WriteSpoilerLog: bool, RomanNumerals: bool, TurnOffMusic: bool, \
@@ -40,7 +40,7 @@ class Seed:
         self.QuadrupleDamage = QuadrupleDamage
         self.OHKO = OHKO
         self.NoSaveBlocks = NoSaveBlocks
-        self.NoHeartBlock = NoHeartBlock
+        self.NoHeartBlocks = NoHeartBlocks
         self.FlowerGateOpen = FlowerGateOpen
         self.BlueHouseOpen = BlueHouseOpen
         self.ToyboxOpen = ToyboxOpen
