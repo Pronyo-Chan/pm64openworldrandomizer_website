@@ -131,6 +131,7 @@ class Seed:
         self.PlacementAlgorithm = "ForwardFill"
         self.PlacementLogic = "NoGlitches"
         self.PeachCastleReturnPipe = True # Default
+        self.ChallengeMode = False # Default
 
     
     
