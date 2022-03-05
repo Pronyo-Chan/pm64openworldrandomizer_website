@@ -73,6 +73,8 @@ def post_randomizer_settings():
     seed_dict["SeedID"] = unique_seed_id
     seed = Seed(**seed_dict)
 
+    print(f'Request settings {seed.__dict__}')
+
     rando_result = web_randomizer(unique_seed_id, json.dumps(seed.__dict__, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"))
 
     db.collection(firestore_seeds_collection).document(str(unique_seed_id)).set(seed.__dict__)
