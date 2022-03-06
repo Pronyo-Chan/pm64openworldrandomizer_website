@@ -9,4 +9,8 @@ env_variables:
   IS_PRODUCTION: "true"
   
 automatic_scaling:
-  max_instances: 3
+  target_cpu_utilization: 0.7
+  min_instances: 1
+  max_instances: 2
+  min_pending_latency: 500ms
+  max_concurrent_requests: 30
