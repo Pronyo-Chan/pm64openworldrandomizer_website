@@ -63,7 +63,7 @@ def get_randomizer_settings(seed_id):
         abort(404)
 
     result = document.to_dict()
-    result.pop("SeedValue")
+    result.pop("SeedValue", None)
             
     return result
 
