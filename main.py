@@ -1,4 +1,5 @@
 # save this as app.py
+import copy
 from os import environ
 from flask import Flask, make_response, request, abort, send_file
 from flask_cors import CORS, cross_origin
@@ -19,6 +20,7 @@ from services.database_service import get_unique_seedID
 
 sys.path.insert(0, str(Path(__file__).parent / 'PMR-SeedGenerator'))
 from randomizer import web_randomizer
+from worldgraph import generate as generate_world_graph
 
 def create_app(test_config=None):
     # create and configure the app
@@ -44,6 +46,8 @@ def create_app(test_config=None):
 app = create_app()
 db = firestore.client()
 
+world_graph = None
+
 firestore_seeds_collection = "seeds"
 environment = "uat"
 if(environ.get("IS_PRODUCTION") == "true"): 
@@ -57,11 +61,19 @@ def get_randomizer_settings(seed_id):
     document =  db.collection(firestore_seeds_collection).document(seed_id).get()
     if not document.exists:
         abort(404)
+
+    result = document.to_dict()
+    result.pop("SeedValue")
             
-    return document.to_dict()
+    return result
 
 @app.route('/randomizer_settings', methods=['POST'])
 def post_randomizer_settings():
+    global world_graph
+    if world_graph is None:
+        print("First instance generation, generating World Graph ...")
+        world_graph = generate_world_graph(None, None)
+
     seed_dict = request.get_json()
     
     try:
@@ -75,7 +87,8 @@ def post_randomizer_settings():
 
     print(f'Request settings {seed.__dict__}')
 
-    rando_result = web_randomizer(unique_seed_id, json.dumps(seed.__dict__, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"))
+    rando_result = web_randomizer(json.dumps(seed.__dict__, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"), copy.deepcopy(world_graph))
+    seed.SeedValue = rando_result.seed_value
 
     db.collection(firestore_seeds_collection).document(str(unique_seed_id)).set(seed.__dict__)
 
