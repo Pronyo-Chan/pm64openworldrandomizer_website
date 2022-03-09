@@ -61,8 +61,11 @@ def get_randomizer_settings(seed_id):
     document =  db.collection(firestore_seeds_collection).document(seed_id).get()
     if not document.exists:
         abort(404)
+
+    result = document.to_dict()
+    result.pop("SeedValue")
             
-    return document.to_dict()
+    return result
 
 @app.route('/randomizer_settings', methods=['POST'])
 def post_randomizer_settings():
@@ -84,7 +87,8 @@ def post_randomizer_settings():
 
     print(f'Request settings {seed.__dict__}')
 
-    rando_result = web_randomizer(unique_seed_id, json.dumps(seed.__dict__, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"), copy.deepcopy(world_graph))
+    rando_result = web_randomizer(json.dumps(seed.__dict__, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"), copy.deepcopy(world_graph))
+    seed.SeedValue = rando_result.seed_value
 
     db.collection(firestore_seeds_collection).document(str(unique_seed_id)).set(seed.__dict__)
 
