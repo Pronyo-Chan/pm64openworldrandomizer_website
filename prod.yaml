@@ -9,4 +9,4 @@ env_variables:
   IS_PRODUCTION: "true"
   
 automatic_scaling:
-  max_instances: 8
+  max_instances: 3
