@@ -6,6 +6,10 @@ handlers:
   script: auto
 
 service: uat
+env_variables:
+  IS_PRODUCTION: "false"
+  IS_UAT: "true"
+  GRAPH_VERSION: "v1"
 
 automatic_scaling:
   max_instances: 1

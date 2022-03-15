@@ -11,6 +11,7 @@ from firebase_admin import firestore
 from pathlib import Path
 import sys
 import json
+import dill
 
 from marshmallow import ValidationError
 from models.database.seed import Seed
@@ -46,12 +47,16 @@ def create_app(test_config=None):
 app = create_app()
 db = firestore.client()
 
-world_graph = None
-
 firestore_seeds_collection = "seeds"
-environment = "uat"
+environment = "local"
+
+if( True or environ.get("IS_UAT") == "true"): 
+    environment = "uat"
+    firestore_graphs_collection = "graphs-uat"
+
 if(environ.get("IS_PRODUCTION") == "true"): 
     firestore_seeds_collection = "seeds-prod"
+    firestore_graphs_collection = "graphs-prod"    
     environment = "prod"
 
 @app.route('/randomizer_settings/<seed_id>', methods=['GET'])
@@ -69,11 +74,9 @@ def get_randomizer_settings(seed_id):
 
 @app.route('/randomizer_settings', methods=['POST'])
 def post_randomizer_settings():
-    global world_graph
-    if world_graph is None:
-        print("First instance generation, generating World Graph ...")
-        world_graph = generate_world_graph(None, None)
-
+        
+    world_graph = init_world_graph()
+        
     seed_dict = request.get_json()
     
     try:
@@ -124,3 +127,23 @@ def get_patch(seed_id):
         abort(404)
 
     return send_file(patch_file, attachment_filename="patch.pmp")
+
+def init_world_graph():
+    if environment == "local":
+        print("Running in local environment, generating world graph...")
+        world_graph = generate_world_graph(None, None)
+    else:
+        graph_version = environ.get("GRAPH_VERSION")
+        graph_document = db.collection(firestore_graphs_collection).document(graph_version).get()
+
+        if not graph_document.exists:
+            print("Could not find world graph version: " + graph_version + " in collection: " + firestore_graphs_collection)
+            print("Generating new graph and saving to db")
+            world_graph = generate_world_graph(None, None)
+            dilled_graph = dill.dumps(world_graph)
+            db.collection(firestore_graphs_collection).document(graph_version).set({'value':dilled_graph})
+        else:
+            db_dill_graph = graph_document.to_dict()['value']
+            world_graph = dill.loads(db_dill_graph)
+            print("Loaded world graph version:" + graph_version + " from collection:" + firestore_graphs_collection)
+    return world_graph
