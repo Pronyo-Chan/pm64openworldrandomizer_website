@@ -23,7 +23,8 @@ class Seed:
         KooperSetting: int = 0, KooperSprite: int = 0, BowSetting: int = 0, BowSprite: int = 0, BossesSetting: int = 0, NPCSetting: int = 0, StartingMap: int = 0x00010104,
         StartingMaxHP: int = 10, StartingMaxFP: int = 5, StartingMaxBP: int = 3, StartingStarPower: int = 0, StartingItem0: int = 0, StartingItem1: int = 0, StartingItem2: int = 0, StartingItem3: int = 0, \
         StartingItem4: int = 0, StartingItem5: int = 0, StartingItem6: int = 0, StartingItem7: int = 0, StartingItem8: int = 0, StartingItem9: int = 0, StartingItemA: int = 0, StartingItemB: int = 0, \
-        StartingItemC: int = 0, StartingItemD: int = 0, StartingItemE: int = 0, ItemScarcity: int = 0, StartingItemF: int = 0, StarWaySpiritsNeeded: int = 7,  SettingsString: str = None,):
+        StartingItemC: int = 0, StartingItemD: int = 0, StartingItemE: int = 0, ItemScarcity: int = 0, StartingItemF: int = 0, StarWaySpiritsNeeded: int = 7,  SettingsString: str = None, \
+        FoliageItemHints = False):
 
         self.SeedID = SeedID
         self.CreationDate = datetime.now()
@@ -119,6 +120,7 @@ class Seed:
 
         self.ItemScarcity = ItemScarcity
         self.StarWaySpiritsNeeded = StarWaySpiritsNeeded
+        self.FoliageItemHints = FoliageItemHints
 
         if StartWithRandomPartners:
             self.RandomPartnersMax = RandomPartnersMax

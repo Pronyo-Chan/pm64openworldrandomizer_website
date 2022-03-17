@@ -1,4 +1,5 @@
 from datetime import datetime
+from attr import field
 from marshmallow import Schema, ValidationError, fields, validates_schema, validate
 
 def validate_random_partners(n):
@@ -66,7 +67,8 @@ class SeedRequestSchema(Schema):
     RomanNumerals = fields.Boolean()
     TurnOffMusic = fields.Boolean()
     IncludeDojo = fields.Boolean()
-    ShortenBowsersCastle = fields.Boolean()    
+    ShortenBowsersCastle = fields.Boolean() 
+    FoliageItemHints = fields.Boolean()   
 
     @validates_schema
     def validate_random_partners(self, data, **kwargs):
