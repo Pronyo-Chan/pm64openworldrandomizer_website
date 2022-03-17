@@ -70,6 +70,7 @@ def get_randomizer_settings(seed_id):
     result = document.to_dict()
     result.pop("SeedValue", None)
             
+    gc.collect()
     return result
 
 @app.route('/randomizer_settings', methods=['POST'])
@@ -98,6 +99,7 @@ def post_randomizer_settings():
     save_file_to_cloud(str(f'{environment}/patch/{unique_seed_id}.pmp'), rando_result.patchBytes)
     save_file_to_cloud(str(f'{environment}/spoiler/{unique_seed_id}.txt'), rando_result.spoilerLogBytes)
 
+    gc.collect()
     return str(unique_seed_id)
 
 @app.route('/spoiler/<seed_id>')
@@ -112,6 +114,7 @@ def get_spoiler_log(seed_id):
     if spoiler_file is None:
         abort(404)
 
+    gc.collect()
     return send_file(spoiler_file, attachment_filename="spoiler.txt")
 
 @app.route('/patch/<seed_id>')
@@ -126,6 +129,7 @@ def get_patch(seed_id):
     if patch_file is None:
         abort(404)
 
+    gc.collect()
     return send_file(patch_file, attachment_filename="patch.pmp")
 
 def init_world_graph():
