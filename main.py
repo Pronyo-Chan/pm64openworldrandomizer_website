@@ -1,6 +1,8 @@
-# save this as app.py
-import copy
+
+import gc
 from os import environ
+
+
 from flask import Flask, make_response, request, abort, send_file
 from flask_cors import CORS, cross_origin
 
@@ -19,13 +21,21 @@ from models.request.seed_schema import SeedRequestSchema
 from services.cloud_storage_service import get_file_from_cloud, save_file_to_cloud
 from services.database_service import get_unique_seedID
 
+#from werkzeug.middleware.profiler import ProfilerMiddleware
+#import memory_profiler as mem_profile
+
 sys.path.insert(0, str(Path(__file__).parent / 'PMR-SeedGenerator'))
 from randomizer import web_randomizer
 from worldgraph import generate as generate_world_graph
 
+
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
+
+    #app.config['PROFILE'] = True
+    #app.config['DEBUG'] = True
+    #app.wsgi_app = ProfilerMiddleware(app.wsgi_app, restrictions=[30])
 
     if(environ.get("IS_PRODUCTION") == "true"):
         CORS(app, origins=["https://paper-mario-randomizer-app.ue.r.appspot.com", "https://pm64randomizer.com", "https://www.pm64randomizer.com", "https://pmr-tracker.phantom-games.com"])
