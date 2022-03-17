@@ -91,7 +91,7 @@ def post_randomizer_settings():
 
     print(f'Request settings {seed.__dict__}')
 
-    rando_result = web_randomizer(json.dumps(seed.__dict__, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"), copy.deepcopy(world_graph))
+    rando_result = web_randomizer(json.dumps(seed.__dict__, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"), world_graph)
     seed.SeedValue = rando_result.seed_value
 
     db.collection(firestore_seeds_collection).document(str(unique_seed_id)).set(seed.__dict__)
