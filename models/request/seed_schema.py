@@ -1,5 +1,3 @@
-from datetime import datetime
-from attr import field
 from marshmallow import Schema, ValidationError, fields, validates_schema, validate
 
 def validate_random_partners(n):
