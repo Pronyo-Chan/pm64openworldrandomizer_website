@@ -24,7 +24,7 @@ class Seed:
         StartingMaxHP: int = 10, StartingMaxFP: int = 5, StartingMaxBP: int = 3, StartingStarPower: int = 0, StartingItem0: int = 0, StartingItem1: int = 0, StartingItem2: int = 0, StartingItem3: int = 0, \
         StartingItem4: int = 0, StartingItem5: int = 0, StartingItem6: int = 0, StartingItem7: int = 0, StartingItem8: int = 0, StartingItem9: int = 0, StartingItemA: int = 0, StartingItemB: int = 0, \
         StartingItemC: int = 0, StartingItemD: int = 0, StartingItemE: int = 0, ItemScarcity: int = 0, StartingItemF: int = 0, StarWaySpiritsNeeded: int = 7,  SettingsString: str = None, \
-        FoliageItemHints = False, RandomText = False):
+        FoliageItemHints = False, RandomText = False, NoHealingItems =  False):
 
         self.SeedID = SeedID
         self.CreationDate = datetime.now()
@@ -122,6 +122,7 @@ class Seed:
         self.StarWaySpiritsNeeded = StarWaySpiritsNeeded
         self.FoliageItemHints = FoliageItemHints
         self.RandomText = RandomText
+        self.NoHealingItems = NoHealingItems
 
         if StartWithRandomPartners:
             self.RandomPartnersMax = RandomPartnersMax

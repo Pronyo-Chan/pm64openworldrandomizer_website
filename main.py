@@ -60,7 +60,7 @@ db = firestore.client()
 firestore_seeds_collection = "seeds"
 environment = "local"
 
-if( True or environ.get("IS_UAT") == "true"): 
+if(environ.get("IS_UAT") == "true"): 
     environment = "uat"
     firestore_graphs_collection = "graphs-uat"
 

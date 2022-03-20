@@ -68,6 +68,7 @@ class SeedRequestSchema(Schema):
     ShortenBowsersCastle = fields.Boolean() 
     FoliageItemHints = fields.Boolean()
     RandomText = fields.Boolean()
+    NoHealingItems = fields.Boolean()
 
     @validates_schema
     def validate_random_partners(self, data, **kwargs):
