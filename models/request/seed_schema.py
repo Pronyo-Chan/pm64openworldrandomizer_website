@@ -70,7 +70,17 @@ class SeedRequestSchema(Schema):
     RandomText = fields.Boolean()
     NoHealingItems = fields.Boolean()
 
+    StartWithRandomItems = fields.Boolean()
+    RandomItemsMin = fields.Int(validate = validate.Range(0, 15))
+    RandomItemsMax = fields.Int(validate = validate.Range(0, 15))
+
     @validates_schema
     def validate_random_partners(self, data, **kwargs):
         if data["RandomPartnersMin"] > data["RandomPartnersMax"]:
             raise ValidationError("RandomPartnersMax must be greater or equal to RandomPartnersMin")
+
+    @validates_schema
+    def validate_random_items(self, data, **kwargs):
+        if data["RandomItemsMin"] > data["RandomItemsMax"]:
+            raise ValidationError("RandomItemsMax must be greater or equal to RandomItemsMin")
+
