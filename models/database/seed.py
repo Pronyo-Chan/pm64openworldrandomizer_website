@@ -117,7 +117,7 @@ class Seed:
         self.StartingItemD = StartingItemD
         self.StartingItemE = StartingItemE
         self.StartingItemF = StartingItemF
-        self.StartWithRandomItems = StartWithRandomPartners
+        self.StartWithRandomItems = StartWithRandomItems
         self.RandomItemsMin = RandomItemsMin
         self.RandomItemsMax = RandomItemsMax
 
