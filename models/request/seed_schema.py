@@ -73,6 +73,7 @@ class SeedRequestSchema(Schema):
     StartWithRandomItems = fields.Boolean()
     RandomItemsMin = fields.Int(validate = validate.Range(0, 16))
     RandomItemsMax = fields.Int(validate = validate.Range(0, 16))
+    AddItemPouches = fields.Boolean()
 
     @validates_schema
     def validate_random_partners(self, data, **kwargs):
