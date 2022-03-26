@@ -71,8 +71,8 @@ class SeedRequestSchema(Schema):
     NoHealingItems = fields.Boolean()
 
     StartWithRandomItems = fields.Boolean()
-    RandomItemsMin = fields.Int(validate = validate.Range(0, 15))
-    RandomItemsMax = fields.Int(validate = validate.Range(0, 15))
+    RandomItemsMin = fields.Int(validate = validate.Range(0, 16))
+    RandomItemsMax = fields.Int(validate = validate.Range(0, 16))
 
     @validates_schema
     def validate_random_partners(self, data, **kwargs):
