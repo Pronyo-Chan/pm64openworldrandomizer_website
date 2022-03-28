@@ -16,7 +16,7 @@ class Seed:
         AllowPhysicsGlitches: bool, StartingCoins: int, CapEnemyXP: bool, NoXP: bool, DoubleDamage: bool, QuadrupleDamage: bool, OHKO: bool,\
         NoSaveBlocks: bool, NoHeartBlocks: bool, FlowerGateOpen: bool, BlueHouseOpen: bool, ToyboxOpen: bool, WhaleOpen: bool, ShuffleChapterDifficulty: bool,\
         RandomFormations: bool, ShuffleItems: bool, IncludeCoins: bool, IncludeShops: bool, IncludePanels: bool, IncludeFavors: bool, IncludeLetterChain: bool, KeyitemsOutsideDungeon: bool,\
-        ProgressiveScaling: bool, ShuffleBadgesBP: bool, ShuffleBadgesFP: bool, ShufflePartnerFP: bool, ShuffleStarpowerSP: bool, RandomQuiz: bool, SkipQuiz: bool, QuizmoAlwaysAppears: bool, \
+        ProgressiveScaling: bool, RandomBadgesBP: int, RandomBadgesFP: int, RandomPartnerFP: int, RandomStarpowerSP: int, RandomQuiz: bool, SkipQuiz: bool, QuizmoAlwaysAppears: bool, \
         PartnersInDefaultLocations: bool, PartnersAlwaysUsable: bool, StartWithRandomPartners: bool, WriteSpoilerLog: bool, RomanNumerals: bool, TurnOffMusic: bool, \
         IncludeDojo: bool, ShortenBowsersCastle: bool, ShortenCutscenes: bool = False, SkipEpilogue = False, RandomPartnersMin: int = None, RandomPartnersMax: int = None, StartWithPartners: StartWithPartners = None,
         Box5ColorA: int = 0xEBE677FF, Box5ColorB: int = 0x8E5A25FF, RandomCoinColor: bool = False, CoinColor: int = 0, MarioSetting: int = 0, MarioSprite: int = 0, GoombarioSetting: int = 0, GoombarioSprite: int = 0,
@@ -58,10 +58,10 @@ class Seed:
         self.IncludeLetterChain = IncludeLetterChain
         self.KeyitemsOutsideDungeon = KeyitemsOutsideDungeon
         self.ProgressiveScaling = ProgressiveScaling
-        self.ShuffleBadgesBP = ShuffleBadgesBP
-        self.ShuffleBadgesFP = ShuffleBadgesFP
-        self.ShufflePartnerFP = ShufflePartnerFP
-        self.ShuffleStarpowerSP = ShuffleStarpowerSP
+        self.RandomBadgesBP = RandomBadgesBP
+        self.RandomBadgesFP = RandomBadgesFP
+        self.RandomPartnerFP = RandomPartnerFP
+        self.RandomStarpowerSP = RandomStarpowerSP
         self.RandomQuiz = RandomQuiz
         self.SkipQuiz = SkipQuiz
         self.QuizmoAlwaysAppears = QuizmoAlwaysAppears
