@@ -75,6 +75,9 @@ class SeedRequestSchema(Schema):
     RandomItemsMax = fields.Int(validate = validate.Range(0, 16))
     AddItemPouches = fields.Boolean()
 
+    RandomChoice = fields.Boolean()
+    MysteryRandomPick = fields.Boolean()
+
     @validates_schema
     def validate_random_partners(self, data, **kwargs):
         if data["RandomPartnersMin"] > data["RandomPartnersMax"]:
