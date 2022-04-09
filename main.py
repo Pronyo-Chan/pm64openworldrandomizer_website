@@ -112,7 +112,7 @@ def post_randomizer_settings():
     gc.collect()
     return str(unique_seed_id)
 
-@app.route('/spoiler/<seed_id>')
+@app.route('/spoiler/<seed_id>', methods=['GET'])
 def get_spoiler_log(seed_id):
     if seed_id is None:
         abort(404)
@@ -127,7 +127,7 @@ def get_spoiler_log(seed_id):
     gc.collect()
     return send_file(spoiler_file, attachment_filename="spoiler.txt")
 
-@app.route('/patch/<seed_id>')
+@app.route('/patch/<seed_id>', methods=['GET'])
 def get_patch(seed_id):
     if seed_id is None:
         abort(404)
@@ -141,6 +141,13 @@ def get_patch(seed_id):
 
     gc.collect()
     return send_file(patch_file, attachment_filename="patch.pmp")
+
+@app.route('/preset-names', methods=['GET'])
+def get_preset_names():
+    presets = json.load(open("presets.json"))
+    preset_names =  [preset["name"] for preset in presets]
+    gc.collect()
+    return str(preset_names)
 
 def init_world_graph():
     if environment == "local":
