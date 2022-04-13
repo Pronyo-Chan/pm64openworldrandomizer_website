@@ -3,6 +3,7 @@
         "name": "Beginner",
         "settings": {
             "AddItemPouches": true,
+            "AllowItemHints": true,
             "AllowPhysicsGlitches": true,
             "AlwaysISpy": false,
             "AlwaysPeekaboo": true,
@@ -111,6 +112,7 @@
         "name": "Open World",
         "settings": {
             "AddItemPouches": true,
+            "AllowItemHints": true,
             "AllowPhysicsGlitches": true,
             "AlwaysISpy": false,
             "AlwaysPeekaboo": true,
@@ -219,6 +221,7 @@
         "name": "Intermediate",
         "settings": {
             "AddItemPouches": true,
+            "AllowItemHints": true,
             "AllowPhysicsGlitches": true,
             "AlwaysISpy": false,
             "AlwaysPeekaboo": true,
@@ -327,6 +330,7 @@
         "name": "Extreme Shuffle",
         "settings": {
             "AddItemPouches": false,
+            "AllowItemHints": false,
             "AllowPhysicsGlitches": true,
             "AlwaysISpy": false,
             "AlwaysPeekaboo": true,

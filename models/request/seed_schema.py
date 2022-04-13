@@ -78,6 +78,7 @@ class SeedRequestSchema(Schema):
     RandomChoice = fields.Boolean()
     MysteryRandomPick = fields.Boolean()
     ItemTrapMode = fields.Int(validate =  validate.Range(0, 3))
+    AllowItemHints = fields.Boolean()
 
     @validates_schema
     def validate_random_partners(self, data, **kwargs):
