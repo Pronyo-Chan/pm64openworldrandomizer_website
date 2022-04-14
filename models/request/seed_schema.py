@@ -80,6 +80,23 @@ class SeedRequestSchema(Schema):
     ItemTrapMode = fields.Int(validate =  validate.Range(0, 3))
     AllowItemHints = fields.Boolean()
 
+    GoombarioSetting = fields.Int()
+    GoombarioSprite= fields.Int()
+    KooperSetting = fields.Int()
+    KooperSprite= fields.Int()
+    #BombetteSetting = fields.Int()
+    #BombetteSprite= fields.Int()
+    #ParakarrySetting = fields.Int()
+    #ParkarrySprite= fields.Int()
+    BowSetting = fields.Int()
+    BowSprite = fields.Int()
+    WattSetting = fields.Int()
+    WattSprite = fields.Int()
+    SushieSetting = fields.Int()
+    SushieSprite = fields.Int()
+    #LakilesterSetting = fields.Int()
+    #LakilesterSprite = fields.Int()
+
     @validates_schema
     def validate_random_partners(self, data, **kwargs):
         if data["RandomPartnersMin"] > data["RandomPartnersMax"]:
