@@ -8,7 +8,7 @@ handlers:
 env_variables:
   IS_PRODUCTION: "true"
   IS_UAT: "false"
-  GRAPH_VERSION: "v1"
+  GRAPH_VERSION: "v2
 
 automatic_scaling:
   max_instances: 3
