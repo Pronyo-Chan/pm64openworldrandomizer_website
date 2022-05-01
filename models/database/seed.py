@@ -152,7 +152,7 @@ class Seed:
         self.SettingsName = "Default Dev Preset"
         self.SettingsVersion = "1.0.0"
         self.PrettySpoilerlog = True
-        self.PlacementAlgorithm = "ForwardFill"
+        self.PlacementAlgorithm = "AssumedFill"
         self.PlacementLogic = "NoGlitches"
         self.PeachCastleReturnPipe = True # Default
         self.ChallengeMode = False # Default
