@@ -86,8 +86,6 @@ def get_randomizer_settings(seed_id):
 @app.route('/randomizer_settings', methods=['POST'])
 def post_randomizer_settings():
         
-    world_graph = init_world_graph()
-        
     seed_dict = request.get_json()
     
     try:
@@ -98,6 +96,8 @@ def post_randomizer_settings():
     unique_seed_id = get_unique_seedID(db, firestore_seeds_collection)
     seed_dict["SeedID"] = unique_seed_id
     seed = Seed(**seed_dict)
+
+    world_graph = init_world_graph(seed.ShortenBowsersCastle)
 
     print(f'Request settings {seed.__dict__}')
 
@@ -149,22 +149,27 @@ def get_preset_names():
     gc.collect()
     return str(preset_names)
 
-def init_world_graph():
+def init_world_graph(shorten_bowsers_castle: bool):
     if environment == "local":
         print("Running in local environment, generating world graph...")
         world_graph = generate_world_graph(None, None)
     else:
+        graph_type = "normal"
+        if shorten_bowsers_castle:
+            graph_type = "sbc"
+
         graph_version = environ.get("GRAPH_VERSION")
-        graph_document = db.collection(firestore_graphs_collection).document(graph_version).get()
+        graph_name = f"{graph_type}_{graph_version}"
+        graph_document = db.collection(firestore_graphs_collection).document(graph_name).get()
 
         if not graph_document.exists:
-            print("Could not find world graph version: " + graph_version + " in collection: " + firestore_graphs_collection)
+            print("Could not find world graph version: " + graph_name + " in collection: " + firestore_graphs_collection)
             print("Generating new graph and saving to db")
             world_graph = generate_world_graph(None, None)
             dilled_graph = dill.dumps(world_graph)
-            db.collection(firestore_graphs_collection).document(graph_version).set({'value':dilled_graph})
+            db.collection(firestore_graphs_collection).document(graph_name).set({'value':dilled_graph})
         else:
             db_dill_graph = graph_document.to_dict()['value']
             world_graph = dill.loads(db_dill_graph)
-            print("Loaded world graph version:" + graph_version + " from collection:" + firestore_graphs_collection)
+            print("Loaded world graph version:" + graph_name + " from collection:" + firestore_graphs_collection)
     return world_graph
