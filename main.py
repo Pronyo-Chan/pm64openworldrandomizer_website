@@ -1,4 +1,4 @@
-
+from datetime import datetime
 import gc
 from os import environ
 
@@ -105,6 +105,31 @@ def post_randomizer_settings():
     seed.SeedValue = rando_result.seed_value
 
     db.collection(firestore_seeds_collection).document(str(unique_seed_id)).set(seed.__dict__)
+
+    save_file_to_cloud(str(f'{environment}/patch/{unique_seed_id}.pmp'), rando_result.patchBytes)
+    save_file_to_cloud(str(f'{environment}/spoiler/{unique_seed_id}.txt'), rando_result.spoilerLogBytes)
+
+    gc.collect()
+    return str(unique_seed_id)
+
+@app.route('/randomizer_preset', methods=['POST'])
+def post_randomizer_preset():
+    presets = json.load(open("presets.json"))
+    request_preset = request.get_json()["preset_name"]
+
+    seed_dict = next(preset["settings"] for preset in presets if request_preset == preset["name"])
+    unique_seed_id = get_unique_seedID(db, firestore_seeds_collection)
+    seed_dict["SeedID"] = unique_seed_id
+    seed_dict["CreationDate"] = datetime.now()
+    
+    world_graph = init_world_graph(seed_dict["ShortenBowsersCastle"])
+
+    print(f'Request settings {seed_dict}')
+
+    rando_result = web_randomizer(json.dumps(seed_dict, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"), world_graph)
+    seed_dict["SeedValue"] = rando_result.seed_value
+
+    db.collection(firestore_seeds_collection).document(str(unique_seed_id)).set(seed_dict)
 
     save_file_to_cloud(str(f'{environment}/patch/{unique_seed_id}.pmp'), rando_result.patchBytes)
     save_file_to_cloud(str(f'{environment}/spoiler/{unique_seed_id}.txt'), rando_result.spoilerLogBytes)
