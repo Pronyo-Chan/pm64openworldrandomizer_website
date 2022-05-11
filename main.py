@@ -149,6 +149,9 @@ def get_spoiler_log(seed_id):
     if not document.exists:
         abort(404)
 
+    if document.to_dict()["WriteSpoilerLog"] is False:
+        abort(400)
+
     spoiler_file = get_file_from_cloud(f'{environment}/spoiler/{seed_id}.txt')
     if spoiler_file is None:
         abort(404)
