@@ -116,11 +116,15 @@ def post_randomizer_settings():
 def post_randomizer_preset():
     presets = json.load(open("presets.json"))
     request_preset = request.get_json()["preset_name"]
+    is_spoiler_seed = request.get_json()["spoiler_seed"]
 
     seed_dict = next(preset["settings"] for preset in presets if request_preset == preset["name"])
     unique_seed_id = get_unique_seedID(db, firestore_seeds_collection)
     seed_dict["SeedID"] = unique_seed_id
     seed_dict["CreationDate"] = datetime.now()
+
+    if is_spoiler_seed:
+        seed_dict["WriteSpoilerLog"] = True
     
     world_graph = init_world_graph(seed_dict["ShortenBowsersCastle"])
 
