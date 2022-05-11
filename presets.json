@@ -1,6 +1,6 @@
 [
     {
-        "name": "Beginner",
+        "name": "beginner",
         "settings": {
             "AddItemPouches": true,
             "AllowItemHints": true,
@@ -115,7 +115,7 @@
         }
     },
     {
-        "name": "Open World",
+        "name": "openworld",
         "settings": {
             "AddItemPouches": true,
             "AllowItemHints": true,
@@ -230,7 +230,7 @@
         }
     },
     {
-        "name": "Intermediate",
+        "name": "intermediate",
         "settings": {
             "AddItemPouches": true,
             "AllowItemHints": true,
@@ -345,7 +345,7 @@
         }
     },
     {
-        "name": "Extreme Shuffle",
+        "name": "extremeshuffle",
         "settings": {
             "AddItemPouches": false,
             "AllowItemHints": false,
@@ -460,7 +460,7 @@
         }
     },
     {
-        "name": "Standard Race",
+        "name": "race",
         "settings": {
             "AddItemPouches": false,
             "AllowItemHints": false,
