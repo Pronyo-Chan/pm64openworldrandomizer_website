@@ -17,7 +17,7 @@ import dill
 
 from marshmallow import ValidationError
 from models.database.seed import Seed
-from models.request.seed_schema import SeedRequestSchema
+from models.request.seed_schema import CURRENT_MOD_VERSION, SeedRequestSchema
 from services.cloud_storage_service import get_file_from_cloud, save_file_to_cloud
 from services.database_service import get_unique_seedID
 
@@ -121,6 +121,7 @@ def post_randomizer_preset():
     unique_seed_id = get_unique_seedID(db, firestore_seeds_collection)
     seed_dict["SeedID"] = unique_seed_id
     seed_dict["CreationDate"] = datetime.now()
+    seed_dict["StarRodModVersion"] = CURRENT_MOD_VERSION # Use latest mod version no matter what's in the preset
 
     if is_spoiler_seed:
         seed_dict["WriteSpoilerLog"] = True
