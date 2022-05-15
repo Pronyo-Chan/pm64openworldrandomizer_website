@@ -1,4 +1,4 @@
-from marshmallow import Schema, ValidationError, fields, validates_schema, validate
+from marshmallow import EXCLUDE, Schema, ValidationError, fields, validates_schema, validate
 
 CURRENT_MOD_VERSION = 4
 
@@ -10,6 +10,8 @@ def validate_random_partners(n):
         raise ValidationError("Quantity must not be greater than 30.")
 
 class StartWithPartnersSchema(Schema):
+    class Meta:
+        unknown = EXCLUDE
 
     Goombario: fields.Boolean()
     Kooper: fields.Boolean()
@@ -20,6 +22,9 @@ class StartWithPartnersSchema(Schema):
     Lakilester: fields.Boolean()
 
 class SeedRequestSchema(Schema):
+    class Meta:
+        unknown = EXCLUDE
+
     # Items
     ShuffleItems = fields.Boolean()
     IncludeCoins = fields.Boolean()
@@ -38,7 +43,7 @@ class SeedRequestSchema(Schema):
     RandomPartnersMin = fields.Int(validate = validate.Range(1, 8))
     RandomPartnersMax= fields.Int(validate = validate.Range(1, 8))
 
-    StartWithPartners = fields.Nested(StartWithPartnersSchema)
+    StartWithPartners = fields.Nested((StartWithPartnersSchema))
 
     # Gameplay
     RandomFormations = fields.Boolean()
@@ -152,11 +157,11 @@ class SeedRequestSchema(Schema):
 
     @validates_schema
     def validate_random_partners(self, data, **kwargs):
-        if data["RandomPartnersMin"] > data["RandomPartnersMax"]:
+        if data["StartWithRandomPartners"] and data["RandomPartnersMin"] > data["RandomPartnersMax"]:
             raise ValidationError("RandomPartnersMax must be greater or equal to RandomPartnersMin")
 
     @validates_schema
     def validate_random_items(self, data, **kwargs):
-        if data["RandomItemsMin"] > data["RandomItemsMax"]:
+        if data["StartWithRandomItems"] and data["RandomItemsMin"] > data["RandomItemsMax"]:
             raise ValidationError("RandomItemsMax must be greater or equal to RandomItemsMin")
 
