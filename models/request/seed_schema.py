@@ -43,7 +43,7 @@ class SeedRequestSchema(Schema):
     IncludeShops = fields.Boolean()
     IncludePanels = fields.Boolean()
     IncludeFavors = fields.Boolean()
-    IncludeLetterChain = fields.Boolean()
+    IncludeLettersMode = fields.Int(validate=validate.Range(0,3))
     KeyitemsOutsideDungeon = fields.Boolean()
     RandomBadgesBP = fields.Int(validate=validate.Range(0, 3))
     RandomBadgesFP = fields.Int(validate=validate.Range(0, 3))
