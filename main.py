@@ -28,7 +28,6 @@ sys.path.insert(0, str(Path(__file__).parent / 'PMR-SeedGenerator'))
 from randomizer import web_randomizer
 from worldgraph import generate as generate_world_graph
 
-
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
@@ -89,7 +88,7 @@ def post_randomizer_settings():
     seed_dict = request.get_json()
     
     try:
-        SeedRequestSchema().from_dict(seed_dict)
+        SeedRequestSchema().load(seed_dict)
     except ValidationError as err:
         return err.messages, 400
 
