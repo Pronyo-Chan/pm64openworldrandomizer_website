@@ -15,7 +15,7 @@ class Seed:
     def __init__(self, SeedID: str, StarRodModVersion: int, AlwaysSpeedySpin: str, AlwaysISpy: bool, AlwaysPeekaboo: bool, HiddenBlockMode: int, \
         AllowPhysicsGlitches: bool, StartingCoins: int, CapEnemyXP: bool, NoXP: bool, DoubleDamage: bool, QuadrupleDamage: bool, OHKO: bool,\
         NoSaveBlocks: bool, NoHeartBlocks: bool, FlowerGateOpen: bool, BlueHouseOpen: bool, ToyboxOpen: bool, WhaleOpen: bool, ShuffleChapterDifficulty: bool,\
-        RandomFormations: bool, ShuffleItems: bool, IncludeCoins: bool, IncludeShops: bool, IncludePanels: bool, IncludeFavors: bool, IncludeLettersMode: int, KeyitemsOutsideDungeon: bool,\
+        RandomFormations: bool, ShuffleItems: bool, IncludeCoins: bool, IncludeShops: bool, IncludePanels: bool, IncludeFavorsMode: int, IncludeLettersMode: int, KeyitemsOutsideDungeon: bool,\
         ProgressiveScaling: bool, RandomBadgesBP: int, RandomBadgesFP: int, RandomPartnerFP: int, RandomStarpowerSP: int, RandomQuiz: bool, SkipQuiz: bool, QuizmoAlwaysAppears: bool, \
         PartnersInDefaultLocations: bool, PartnersAlwaysUsable: bool, StartWithRandomPartners: bool, WriteSpoilerLog: bool, RomanNumerals: bool, TurnOffMusic: bool, \
         IncludeDojo: bool, ShortenBowsersCastle: bool, ShortenCutscenes: bool = False, SkipEpilogue = False, RandomPartnersMin: int = None, RandomPartnersMax: int = None, StartWithPartners: StartWithPartners = None,
@@ -56,7 +56,7 @@ class Seed:
         self.IncludeCoins = IncludeCoins
         self.IncludeShops = IncludeShops
         self.IncludePanels = IncludePanels
-        self.IncludeFavors = IncludeFavors
+        self.IncludeFavorsMode = IncludeFavorsMode
         self.IncludeLettersMode = IncludeLettersMode
         self.KeyitemsOutsideDungeon = KeyitemsOutsideDungeon
         self.ProgressiveScaling = ProgressiveScaling
