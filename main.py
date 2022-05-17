@@ -96,7 +96,7 @@ def post_randomizer_settings():
     seed_dict["SeedID"] = unique_seed_id
     seed = Seed(**seed_dict)
 
-    world_graph = init_world_graph(seed.ShortenBowsersCastle)
+    world_graph = init_world_graph(seed.BowsersCastleMode)
 
     print(f'Request settings {seed.__dict__}')
 
@@ -126,7 +126,7 @@ def post_randomizer_preset():
     if is_spoiler_seed:
         seed_dict["WriteSpoilerLog"] = True
     
-    world_graph = init_world_graph(seed_dict["ShortenBowsersCastle"])
+    world_graph = init_world_graph(seed_dict["BowsersCastleMode"])
 
     print(f'Request settings {seed_dict}')
 
@@ -181,14 +181,16 @@ def get_preset_names():
     gc.collect()
     return str(preset_names)
 
-def init_world_graph(shorten_bowsers_castle: bool):
+def init_world_graph(bowser_castle_mode: int):
     if environment == "local":
         print("Running in local environment, generating world graph...")
         world_graph = generate_world_graph(None, None)
     else:
         graph_type = "normal"
-        if shorten_bowsers_castle:
-            graph_type = "sbc"
+        if bowser_castle_mode == 1:
+            graph_type = "short_castle"
+        elif bowser_castle_mode == 2:
+            graph_type = "boss_rush_castle"
 
         graph_version = environ.get("GRAPH_VERSION")
         graph_name = f"{graph_type}_{graph_version}"

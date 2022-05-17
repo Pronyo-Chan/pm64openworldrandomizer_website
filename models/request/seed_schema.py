@@ -119,7 +119,7 @@ class SeedRequestSchema(Schema):
     RomanNumerals = fields.Boolean()
     TurnOffMusic = fields.Boolean()
     WriteSpoilerLog = fields.Boolean()
-    ShortenBowsersCastle = fields.Boolean() 
+    BowsersCastleMode = fields.Int(validate=validate.Range(0,2)) 
     FoliageItemHints = fields.Boolean()
     ShortenCutscenes = fields.Boolean()
     SkipEpilogue = fields.Boolean()
