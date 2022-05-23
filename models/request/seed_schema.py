@@ -2,13 +2,6 @@ from marshmallow import EXCLUDE, Schema, ValidationError, fields, validates_sche
 
 CURRENT_MOD_VERSION = 4
 
-
-def validate_random_partners(n):
-    if n < 0:
-        raise ValidationError("Quantity must be greater than 0.")
-    if n > 30:
-        raise ValidationError("Quantity must not be greater than 30.")
-
 class StartWithPartnersSchema(Schema):
     class Meta:
         unknown = EXCLUDE
@@ -54,34 +47,6 @@ class SeedRequestSchema(Schema):
     RandomChoice = fields.Boolean()
     MysteryRandomPick = fields.Boolean()
 
-    # Visuals
-    RandomCoinPalette = fields.Boolean()
-    RandomText = fields.Boolean()
-    GoombarioSetting = fields.Int()
-    GoombarioSprite= fields.Int()
-    KooperSetting = fields.Int()
-    KooperSprite= fields.Int()
-    #BombetteSetting = fields.Int()
-    #BombetteSprite= fields.Int()
-    ParakarrySetting = fields.Int()
-    ParakarrySprite= fields.Int()
-    BowSetting = fields.Int()
-    BowSprite = fields.Int()
-    WattSetting = fields.Int()
-    WattSprite = fields.Int()
-    SushieSetting = fields.Int()
-    SushieSprite = fields.Int()
-    #LakilesterSetting = fields.Int()
-    #LakilesterSprite = fields.Int()
-    BossesSetting = fields.Int()
-    NPCSetting = fields.Int()
-    MarioSetting = fields.Int()
-    MarioSprite = fields.Int()
-    Box5ColorA = fields.Int()
-    Box5ColorB = fields.Int()
-    CoinColor = fields.Int()
-    RandomCoinColor = fields.Boolean()
-
     # Difficulty
     StartingCoins = fields.Int(default=validate.Range(0, 999))
     CapEnemyXP = fields.Boolean()
@@ -116,8 +81,6 @@ class SeedRequestSchema(Schema):
     RandomQuiz = fields.Boolean()
     SkipQuiz = fields.Boolean()
     QuizmoAlwaysAppears = fields.Boolean()
-    RomanNumerals = fields.Boolean()
-    TurnOffMusic = fields.Boolean()
     WriteSpoilerLog = fields.Boolean()
     BowsersCastleMode = fields.Int(validate=validate.Range(0,2)) 
     FoliageItemHints = fields.Boolean()

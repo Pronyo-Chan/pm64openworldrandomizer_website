@@ -16,7 +16,9 @@ import json
 import dill
 
 from marshmallow import ValidationError
+from models.database.cosmetic_settings import CosmeticSettings
 from models.database.seed import Seed
+from models.request.cosmetics_schema import CosmeticsShema
 from models.request.seed_schema import CURRENT_MOD_VERSION, SeedRequestSchema
 from services.cloud_storage_service import get_file_from_cloud, save_file_to_cloud
 from services.database_service import get_unique_seedID
@@ -25,7 +27,7 @@ from services.database_service import get_unique_seedID
 #import memory_profiler as mem_profile
 
 sys.path.insert(0, str(Path(__file__).parent / 'PMR-SeedGenerator'))
-from randomizer import web_randomizer
+from randomizer import web_randomizer, web_apply_cosmetic_options
 from worldgraph import generate as generate_world_graph
 
 def create_app(test_config=None):
@@ -142,6 +144,31 @@ def post_randomizer_preset():
 
     gc.collect()
     return str(unique_seed_id)
+
+@app.route('/cosmetics_patch', methods=['GET'])
+def get_cosmetic_patch():
+    cosmetics_dict = request.get_json()
+    
+    try:
+        CosmeticsShema().load(cosmetics_dict)
+    except ValidationError as err:
+        return err.messages, 400
+
+    if cosmetics_dict["SeedID"] is None:
+        abort(404)
+    document =  db.collection(firestore_seeds_collection).document(cosmetics_dict["SeedID"]).get()
+    if not document.exists:
+        abort(404)
+    
+    seed_dict = document.to_dict()
+    cosmetic_settings = CosmeticSettings(**cosmetics_dict)
+
+    print(f'Cosmetics Request Settings {cosmetic_settings.__dict__}')
+
+    cosmetics_patch_operations = web_apply_cosmetic_options(cosmetic_settings.__dict__, seed_dict["PaletteOffset"], seed_dict["CosmeticsOffset"])
+
+    gc.collect()
+    return send_file(cosmetics_patch_operations, attachment_filename="cosmetics.pmp")
 
 @app.route('/spoiler/<seed_id>', methods=['GET'])
 def get_spoiler_log(seed_id):
