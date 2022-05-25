@@ -145,7 +145,7 @@ def post_randomizer_preset():
     gc.collect()
     return str(unique_seed_id)
 
-@app.route('/cosmetics_patch', methods=['GET'])
+@app.route('/cosmetics_patch', methods=['POST'])
 def get_cosmetic_patch():
     cosmetics_dict = request.get_json()
     
