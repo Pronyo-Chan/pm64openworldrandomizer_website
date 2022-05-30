@@ -28,6 +28,7 @@ class SeedRequestSchema(Schema):
     KeyitemsOutsideDungeon = fields.Boolean()
     IncludeDojo = fields.Boolean()
     AddItemPouches = fields.Boolean()
+    IncludeRadioTradeEvent  = fields.Boolean()
     
     # Partners
     PartnersInDefaultLocations = fields.Boolean()
