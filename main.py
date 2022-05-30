@@ -98,7 +98,7 @@ def post_randomizer_settings():
     seed_dict["SeedID"] = unique_seed_id
     seed = Seed(**seed_dict)
 
-    world_graph = init_world_graph(seed.BowsersCastleMode)
+    world_graph = init_world_graph()
 
     print(f'Request settings {seed.__dict__}')
 
@@ -130,7 +130,7 @@ def post_randomizer_preset():
     if is_spoiler_seed:
         seed_dict["WriteSpoilerLog"] = True
     
-    world_graph = init_world_graph(seed_dict["BowsersCastleMode"])
+    world_graph = init_world_graph()
 
     print(f'Request settings {seed_dict}')
 
@@ -210,19 +210,14 @@ def get_preset_names():
     gc.collect()
     return str(preset_names)
 
-def init_world_graph(bowser_castle_mode: int):
+def init_world_graph():
     if environment == "local":
         print("Running in local environment, generating world graph...")
         world_graph = generate_world_graph(None, None)
     else:
-        graph_type = "normal"
-        if bowser_castle_mode == 1:
-            graph_type = "short_castle"
-        elif bowser_castle_mode == 2:
-            graph_type = "boss_rush_castle"
 
         graph_version = environ.get("GRAPH_VERSION")
-        graph_name = f"{graph_type}_{graph_version}"
+        graph_name = f"world_graph_{graph_version}"
         graph_document = db.collection(firestore_graphs_collection).document(graph_name).get()
 
         if not graph_document.exists:
