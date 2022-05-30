@@ -1,6 +1,4 @@
-from marshmallow import EXCLUDE, Schema, ValidationError, fields, validates_schema, validate
-
-CURRENT_MOD_VERSION = 4
+from marshmallow import EXCLUDE, Schema, fields
 
 class CosmeticsShema(Schema):
     class Meta:
