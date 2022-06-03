@@ -30,7 +30,6 @@ class Seed:
 
         self.SeedID = SeedID
         self.CreationDate = datetime.now(timezone.utc)
-        self.RevealLogAtTime = datetime.now(timezone.utc) + timedelta(hours = RevealLogInHours)
         self.StarRodModVersion = StarRodModVersion
         self.SettingsString = SettingsString
 
@@ -148,6 +147,9 @@ class Seed:
             self.RandomPartnersMin = RandomPartnersMin
         else:
             self.StartWithPartners = StartWithPartners
+
+        if WriteSpoilerLog:
+            self.RevealLogAtTime = datetime.now(timezone.utc) + timedelta(hours = RevealLogInHours)
 
         # Other/Hidden Options
         self.SettingsName = "Default Dev Preset"
