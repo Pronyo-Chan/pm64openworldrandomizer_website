@@ -3,12 +3,13 @@ import gc
 from os import environ
 
 
-from flask import Flask, make_response, request, abort, send_file
-from flask_cors import CORS, cross_origin
+from flask import Flask, request, abort, send_file
+from flask_cors import CORS
 
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
+from google.cloud import secretmanager
 
 from pathlib import Path
 import sys
@@ -57,6 +58,9 @@ def create_app(test_config=None):
 
 app = create_app()
 db = firestore.client()
+
+secret_manager = secretmanager.SecretManagerServiceClient()
+api_key = secret_manager.access_secret_version(request={"name": "projects/937462171520/secrets/api-key/versions/1"}).payload.data.decode("UTF-8")
 
 firestore_seeds_collection = "seeds"
 environment = "local"
@@ -169,6 +173,26 @@ def get_cosmetic_patch():
 
     gc.collect()
     return send_file(cosmetics_patch_operations, attachment_filename="cosmetics.pmp")
+
+@app.route('/reveal_spoiler', methods=['POST'])
+def post_reveal_spoiler_log():
+    request_api_key = request.get_json()["api_key"]
+    seed_id = request.get_json()["seed_id"]
+
+    if request_api_key != api_key: #This endpoint is only called by the racetime bot
+        abort(400)
+
+    document =  db.collection(firestore_seeds_collection).document(str(seed_id)).get()
+    if not document.exists:
+        abort(404)
+    
+    seed_dict = document.to_dict()
+
+    seed_dict["WriteSpoilerLog"] = True
+
+    db.collection(firestore_seeds_collection).document(str(seed_id)).set(seed_dict)
+    gc.collect()
+    return '', 200
 
 @app.route('/spoiler/<seed_id>', methods=['GET'])
 def get_spoiler_log(seed_id):
