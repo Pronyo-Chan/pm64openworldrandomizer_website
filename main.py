@@ -179,7 +179,7 @@ def get_spoiler_log(seed_id):
         abort(404)
 
     document_dict = document.to_dict()
-    if document_dict["WriteSpoilerLog"] is False or datetime.now(timezone.utc) < document_dict["RevealLogAtTime"]:
+    if document_dict["WriteSpoilerLog"] is False or ("RevealLogAtTime" in document_dict and datetime.now(timezone.utc) < document_dict["RevealLogAtTime"]):
         abort(400)
 
     spoiler_file = get_file_from_cloud(f'{environment}/spoiler/{seed_id}.txt')
