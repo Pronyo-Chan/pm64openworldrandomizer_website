@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 import gc
 from os import environ
 
@@ -178,7 +178,8 @@ def get_spoiler_log(seed_id):
     if not document.exists:
         abort(404)
 
-    if document.to_dict()["WriteSpoilerLog"] is False:
+    document_dict = document.to_dict()
+    if document_dict["WriteSpoilerLog"] is False or datetime.now(timezone.utc) < document_dict["RevealLogAtTime"]:
         abort(400)
 
     spoiler_file = get_file_from_cloud(f'{environment}/spoiler/{seed_id}.txt')
