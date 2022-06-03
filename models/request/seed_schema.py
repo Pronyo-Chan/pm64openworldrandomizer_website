@@ -147,6 +147,7 @@ class SeedRequestSchema(Schema):
     #Config
     StarRodModVersion = fields.Int(validate=validate.Equal(CURRENT_MOD_VERSION))
     SettingsString = fields.String()
+    RevealLogInHours = fields.Int(validate=validate.Range(0, 700))
 
     @validates_schema
     def validate_random_partners(self, data, **kwargs):
