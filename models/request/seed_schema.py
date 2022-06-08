@@ -1,13 +1,6 @@
 from marshmallow import EXCLUDE, Schema, ValidationError, fields, validates_schema, validate
 
-CURRENT_MOD_VERSION = 4
-
-
-def validate_random_partners(n):
-    if n < 0:
-        raise ValidationError("Quantity must be greater than 0.")
-    if n > 30:
-        raise ValidationError("Quantity must not be greater than 30.")
+CURRENT_MOD_VERSION = 5
 
 class StartWithPartnersSchema(Schema):
     class Meta:
@@ -35,6 +28,7 @@ class SeedRequestSchema(Schema):
     KeyitemsOutsideDungeon = fields.Boolean()
     IncludeDojo = fields.Boolean()
     AddItemPouches = fields.Boolean()
+    IncludeRadioTradeEvent  = fields.Boolean()
     
     # Partners
     PartnersInDefaultLocations = fields.Boolean()
@@ -117,7 +111,6 @@ class SeedRequestSchema(Schema):
     SkipQuiz = fields.Boolean()
     QuizmoAlwaysAppears = fields.Boolean()
     RomanNumerals = fields.Boolean()
-    TurnOffMusic = fields.Boolean()
     WriteSpoilerLog = fields.Boolean()
     BowsersCastleMode = fields.Int(validate=validate.Range(0,2)) 
     FoliageItemHints = fields.Boolean()
@@ -154,6 +147,7 @@ class SeedRequestSchema(Schema):
     #Config
     StarRodModVersion = fields.Int(validate=validate.Equal(CURRENT_MOD_VERSION))
     SettingsString = fields.String()
+    RevealLogInHours = fields.Int(validate=validate.Range(0, 700))
 
     @validates_schema
     def validate_random_partners(self, data, **kwargs):

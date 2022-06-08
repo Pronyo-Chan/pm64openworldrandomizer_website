@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 
 
 class Seed:
@@ -17,7 +17,7 @@ class Seed:
         NoSaveBlocks: bool, NoHeartBlocks: bool, FlowerGateOpen: bool, BlueHouseOpen: bool, ToyboxOpen: bool, WhaleOpen: bool, ShuffleChapterDifficulty: bool,\
         RandomFormations: bool, ShuffleItems: bool, IncludeCoins: bool, IncludeShops: bool, IncludePanels: bool, IncludeFavorsMode: int, IncludeLettersMode: int, KeyitemsOutsideDungeon: bool,\
         ProgressiveScaling: bool, RandomBadgesBP: int, RandomBadgesFP: int, RandomPartnerFP: int, RandomStarpowerSP: int, RandomQuiz: bool, SkipQuiz: bool, QuizmoAlwaysAppears: bool, \
-        PartnersInDefaultLocations: bool, PartnersAlwaysUsable: bool, StartWithRandomPartners: bool, WriteSpoilerLog: bool, RomanNumerals: bool, TurnOffMusic: bool, \
+        PartnersInDefaultLocations: bool, PartnersAlwaysUsable: bool, StartWithRandomPartners: bool, WriteSpoilerLog: bool, RomanNumerals: bool, \
         IncludeDojo: bool, BowsersCastleMode: int, ShortenCutscenes: bool = False, SkipEpilogue = False, RandomPartnersMin: int = None, RandomPartnersMax: int = None, StartWithPartners: StartWithPartners = None,
         Box5ColorA: int = 0xEBE677FF, Box5ColorB: int = 0x8E5A25FF, RandomCoinColor: bool = False, CoinColor: int = 0, MarioSetting: int = 0, MarioSprite: int = 0, GoombarioSetting: int = 0, GoombarioSprite: int = 0,
         KooperSetting: int = 0, KooperSprite: int = 0, BowSetting: int = 0, BowSprite: int = 0, BossesSetting: int = 0, NPCSetting: int = 0, StartingMap: int = 0x00010104,
@@ -26,10 +26,10 @@ class Seed:
         StartingItemC: int = 0, StartingItemD: int = 0, StartingItemE: int = 0, ItemScarcity: int = 0, StartingItemF: int = 0, StarWaySpiritsNeeded: int = 7,  SettingsString: str = None, \
         FoliageItemHints = False, RandomText = False, NoHealingItems =  False, StartWithRandomItems: bool = False, RandomItemsMin: int = 0, RandomItemsMax: int = 0, AddItemPouches = False, \
         RandomChoice: bool = False, MysteryRandomPick: bool = False, ItemTrapMode: int = 0, AllowItemHints: bool = True, WattSetting: int = 0, WattSprite: int = 0, SushieSetting: int = 0, SushieSprite: int = 0, \
-        ParakarrySetting: int = 0, ParakarrySprite: int = 0):
+        ParakarrySetting: int = 0, ParakarrySprite: int = 0, IncludeRadioTradeEvent: bool = False, RevealLogInHours: int = 0):
 
         self.SeedID = SeedID
-        self.CreationDate = datetime.now()
+        self.CreationDate = datetime.now(timezone.utc)
         self.StarRodModVersion = StarRodModVersion
         self.SettingsString = SettingsString
 
@@ -72,11 +72,11 @@ class Seed:
         self.StartWithRandomPartners = StartWithRandomPartners
         self.WriteSpoilerLog = WriteSpoilerLog
         self.RomanNumerals = RomanNumerals
-        self.TurnOffMusic = TurnOffMusic
         self.IncludeDojo = IncludeDojo
         self.BowsersCastleMode = BowsersCastleMode
         self.ShortenCutscenes = ShortenCutscenes
         self.SkipEpilogue = SkipEpilogue
+        self.IncludeRadioTradeEvent = IncludeRadioTradeEvent
 
         self.Box5ColorA = Box5ColorA
         self.Box5ColorB = Box5ColorB
@@ -147,6 +147,9 @@ class Seed:
             self.RandomPartnersMin = RandomPartnersMin
         else:
             self.StartWithPartners = StartWithPartners
+
+        if WriteSpoilerLog:
+            self.RevealLogAtTime = datetime.now(timezone.utc) + timedelta(hours = RevealLogInHours)
 
         # Other/Hidden Options
         self.SettingsName = "Default Dev Preset"

@@ -1,14 +1,15 @@
-from datetime import datetime
+from datetime import datetime, timezone
 import gc
 from os import environ
 
 
-from flask import Flask, make_response, request, abort, send_file
-from flask_cors import CORS, cross_origin
+from flask import Flask, request, abort, send_file
+from flask_cors import CORS
 
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
+from google.cloud import secretmanager
 
 from pathlib import Path
 import sys
@@ -16,7 +17,9 @@ import json
 import dill
 
 from marshmallow import ValidationError
+from models.database.cosmetic_settings import CosmeticSettings
 from models.database.seed import Seed
+from models.request.cosmetics_schema import CosmeticsShema
 from models.request.seed_schema import CURRENT_MOD_VERSION, SeedRequestSchema
 from services.cloud_storage_service import get_file_from_cloud, save_file_to_cloud
 from services.database_service import get_unique_seedID
@@ -25,7 +28,7 @@ from services.database_service import get_unique_seedID
 #import memory_profiler as mem_profile
 
 sys.path.insert(0, str(Path(__file__).parent / 'PMR-SeedGenerator'))
-from randomizer import web_randomizer
+from randomizer import web_randomizer, web_apply_cosmetic_options
 from worldgraph import generate as generate_world_graph
 
 def create_app(test_config=None):
@@ -55,6 +58,9 @@ def create_app(test_config=None):
 
 app = create_app()
 db = firestore.client()
+
+secret_manager = secretmanager.SecretManagerServiceClient()
+api_key = secret_manager.access_secret_version(request={"name": "projects/937462171520/secrets/api-key/versions/1"}).payload.data.decode("UTF-8")
 
 firestore_seeds_collection = "seeds"
 environment = "local"
@@ -96,12 +102,14 @@ def post_randomizer_settings():
     seed_dict["SeedID"] = unique_seed_id
     seed = Seed(**seed_dict)
 
-    world_graph = init_world_graph(seed.BowsersCastleMode)
+    world_graph = init_world_graph()
 
     print(f'Request settings {seed.__dict__}')
 
     rando_result = web_randomizer(json.dumps(seed.__dict__, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"), world_graph)
     seed.SeedValue = rando_result.seed_value
+    seed.PaletteOffset = rando_result.palette_offset
+    seed.CosmeticsOffset = rando_result.cosmetics_offset
 
     db.collection(firestore_seeds_collection).document(str(unique_seed_id)).set(seed.__dict__)
 
@@ -126,7 +134,7 @@ def post_randomizer_preset():
     if is_spoiler_seed:
         seed_dict["WriteSpoilerLog"] = True
     
-    world_graph = init_world_graph(seed_dict["BowsersCastleMode"])
+    world_graph = init_world_graph()
 
     print(f'Request settings {seed_dict}')
 
@@ -141,6 +149,51 @@ def post_randomizer_preset():
     gc.collect()
     return str(unique_seed_id)
 
+@app.route('/cosmetics_patch', methods=['POST'])
+def get_cosmetic_patch():
+    cosmetics_dict = request.get_json()
+    
+    try:
+        CosmeticsShema().load(cosmetics_dict)
+    except ValidationError as err:
+        return err.messages, 400
+
+    if cosmetics_dict["SeedID"] is None:
+        abort(404)
+    document =  db.collection(firestore_seeds_collection).document(cosmetics_dict["SeedID"]).get()
+    if not document.exists:
+        abort(404)
+    
+    seed_dict = document.to_dict()
+    cosmetic_settings = CosmeticSettings(**cosmetics_dict)
+
+    print(f'Cosmetics Request Settings {cosmetic_settings.__dict__}')
+
+    cosmetics_patch_operations = web_apply_cosmetic_options(cosmetic_settings.__dict__, seed_dict["PaletteOffset"], seed_dict["CosmeticsOffset"])
+
+    gc.collect()
+    return send_file(cosmetics_patch_operations, attachment_filename="cosmetics.pmp")
+
+@app.route('/reveal_spoiler', methods=['POST'])
+def post_reveal_spoiler_log():
+    request_api_key = request.get_json()["api_key"]
+    seed_id = request.get_json()["seed_id"]
+
+    if request_api_key != api_key: #This endpoint is only called by the racetime bot
+        abort(400)
+
+    document =  db.collection(firestore_seeds_collection).document(str(seed_id)).get()
+    if not document.exists:
+        abort(404)
+    
+    seed_dict = document.to_dict()
+
+    seed_dict["WriteSpoilerLog"] = True
+
+    db.collection(firestore_seeds_collection).document(str(seed_id)).set(seed_dict)
+    gc.collect()
+    return '', 200
+
 @app.route('/spoiler/<seed_id>', methods=['GET'])
 def get_spoiler_log(seed_id):
     if seed_id is None:
@@ -149,7 +202,8 @@ def get_spoiler_log(seed_id):
     if not document.exists:
         abort(404)
 
-    if document.to_dict()["WriteSpoilerLog"] is False:
+    document_dict = document.to_dict()
+    if document_dict["WriteSpoilerLog"] is False or ("RevealLogAtTime" in document_dict and datetime.now(timezone.utc) < document_dict["RevealLogAtTime"]):
         abort(400)
 
     spoiler_file = get_file_from_cloud(f'{environment}/spoiler/{seed_id}.txt')
@@ -181,19 +235,14 @@ def get_preset_names():
     gc.collect()
     return str(preset_names)
 
-def init_world_graph(bowser_castle_mode: int):
+def init_world_graph():
     if environment == "local":
         print("Running in local environment, generating world graph...")
         world_graph = generate_world_graph(None, None)
     else:
-        graph_type = "normal"
-        if bowser_castle_mode == 1:
-            graph_type = "short_castle"
-        elif bowser_castle_mode == 2:
-            graph_type = "boss_rush_castle"
 
         graph_version = environ.get("GRAPH_VERSION")
-        graph_name = f"{graph_type}_{graph_version}"
+        graph_name = f"world_graph_{graph_version}"
         graph_document = db.collection(firestore_graphs_collection).document(graph_name).get()
 
         if not graph_document.exists:
