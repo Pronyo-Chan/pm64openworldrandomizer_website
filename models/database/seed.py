@@ -148,7 +148,7 @@ class Seed:
         else:
             self.StartWithPartners = StartWithPartners
 
-        if WriteSpoilerLog:
+        if WriteSpoilerLog and RevealLogInHours != 0:
             self.RevealLogAtTime = datetime.now(timezone.utc) + timedelta(hours = RevealLogInHours)
 
         # Other/Hidden Options
