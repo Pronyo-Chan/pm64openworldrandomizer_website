@@ -109,6 +109,8 @@
             "StartingMaxFP": 5,
             "StartingMaxHP": 10,
             "StartingStarPower": 0,
+            "StartingBoots": 0,
+            "StartingHammer": 0,
             "ToyboxOpen": false,
             "WhaleOpen": false,
             "WriteSpoilerLog": true
@@ -224,6 +226,8 @@
             "StartingMaxFP": 5,
             "StartingMaxHP": 10,
             "StartingStarPower": 0,
+            "StartingBoots": 0,
+            "StartingHammer": 0,
             "ToyboxOpen": true,
             "WhaleOpen": true,
             "WriteSpoilerLog": true
@@ -339,6 +343,8 @@
             "StartingMaxFP": 5,
             "StartingMaxHP": 10,
             "StartingStarPower": 0,
+            "StartingBoots": 0,
+            "StartingHammer": 0,
             "ToyboxOpen": false,
             "WhaleOpen": false,
             "WriteSpoilerLog": true
@@ -454,6 +460,8 @@
             "StartingMaxFP": 5,
             "StartingMaxHP": 10,
             "StartingStarPower": 0,
+            "StartingBoots": 0,
+            "StartingHammer": 0,
             "ToyboxOpen": false,
             "WhaleOpen": false,
             "WriteSpoilerLog": true
@@ -565,6 +573,8 @@
             "StartingMaxFP": 5,
             "StartingMaxHP": 10,
             "StartingStarPower": 0,
+            "StartingBoots": 0,
+            "StartingHammer": 0,
             "SushieSetting": 2,
             "SushieSprite": 0,
             "ToyboxOpen": false,
