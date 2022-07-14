@@ -150,6 +150,123 @@ class SeedRequestSchema(Schema):
     StartingBoots = fields.Int()
     StartingHammer = fields.Int()
 
+    # Glitches: Goomba Region
+    PrologueGelEarly = fields.Boolean()
+
+    # Glitches: Toad Town
+    OddKeyEarly = fields.Boolean()
+    BlueHouseSkip = fields.Boolean()
+    BowlessToyBox = fields.Boolean()
+    EarlyStoreroomParakarry = fields.Boolean()
+    EarlyStoreroomHammer= fields.Boolean()
+    WhaleEarly= fields.Boolean()
+    SushielessToadTownStarPiece = fields.Boolean()
+
+    # Glitches: Toad Town Tunnels
+    ClippyBootsStoneBlockSkip = fields.Boolean()
+    ClippyBootsMetalBlockSkip = fields.Boolean()
+    IslandPipeBlooperSkip = fields.Boolean()
+    ParakarrylessSewerStarPiece = fields.Boolean()
+    SewerBlocksWithoutUltraBoots= fields.Boolean()
+
+    # Glitches: Plesant Path
+    KooperlessPleasantPathStarPiece = fields.Boolean()
+    InvisibleBridgeClipLzs= fields.Boolean()
+    InvisibleBridgeClipLaki = fields.Boolean()
+    KooperlessPleasantPathThunderBolt = fields.Boolean()
+
+    # Glitches: Koopa Bros Fortress
+    BombettelessKbfFpPlusLZS= fields.Boolean()
+    BombettelessKbfFpPlusLaki = fields.Boolean()
+    LakiJailbreak = fields.Boolean()
+    BombettelessRightFortressJailKey= fields.Boolean()
+
+    # Glitches: Mt. Rugged
+    MtRuggedQuakeHammerAndLetterWithLaki= fields.Boolean()
+    ParakarrylessMtRuggedSeed = fields.Boolean()
+    BuzzarGapSkipClippy = fields.Boolean()
+    ParakarrylessMtRuggedStarPiece= fields.Boolean()
+
+    # Glitches: Dry Dry Desert
+    DesertBrickBlockItemWithParakarry = fields.Boolean()
+    EarlyRuinsLakiJump = fields.Boolean()
+    EarlyRuinsUltraBoots = fields.Boolean()
+
+    # Glitches: Dry Dry Ruins
+    ArtifactJump = fields.Boolean()
+    RuinsKeyLakiJump = fields.Boolean()
+    ParakarylessSecondSandRoomUltraBoots = fields.Boolean()
+    ParakarylessSecondSandRoomSuperBoots = fields.Boolean()
+    ParakarylessSecondSandRoomNormalBoots = fields.Boolean()
+    ParakarylessSuperHammerRoomUltraBoots = fields.Boolean()
+    ParakarylessSuperHammerRoomNormalBoots = fields.Boolean()
+    RuinsLocksSkipClippy = fields.Boolean()
+
+    # Glitches: Boo's Mansion
+    RecordSkipNoBombettePush= fields.Boolean()
+    RecordSkipBombettePush= fields.Boolean()
+    BoosPortraitWithKooper= fields.Boolean()
+    BoosPortraitWithLaki= fields.Boolean()
+
+    # Glitches: Gusty Gulch
+    GustyGulchGateSkipLZS = fields.Boolean()
+    KooperlessGustyGulchDizzyDialJump = fields.Boolean()
+    KooperlessGustyGulchDizzyDialLaki = fields.Boolean()
+    KooperlessGustyGulchDizzyDialParakarry= fields.Boolean()
+    GustyGulchGapSkip = fields.Boolean()
+
+    # Glitches: Tubba's Castle
+    BowlessTubbasCastle = fields.Boolean()
+    TubbasTableLakiJump = fields.Boolean()
+    TubbasCastleSuperBootsSkip= fields.Boolean()
+    ParakarrylessMegaRush = fields.Boolean()
+
+    # Glitches: Toy Box
+    ParakarrylessBlueBuildingStarPiece= fields.Boolean()
+    GourmetGuySkipJump= fields.Boolean()
+    GourmetGuySkipLaki= fields.Boolean()
+    BowlessGreenStation = fields.Boolean()
+    KooperlessRedStationShootingStar= fields.Boolean()
+
+    # Glitches: Jade Jungle
+    RaphSkipEnglish = fields.Boolean()
+
+    # Glitches: Mt. Lavalava
+    KooperlessLavalavaPowBlock = fields.Boolean()
+    UltraHammerSkip = fields.Boolean()
+    Flarakarry = fields.Boolean()
+    ParakarrylessFlarakarryBombette = fields.Boolean()
+    ParakarrylessFlarakarryLaki = fields.Boolean()
+
+    # Glitches: Flower Fields
+    EarlyLakiLZS = fields.Boolean()
+    EarlyLakiBombettePush = fields.Boolean()
+    BombettelessMegaSmash = fields.Boolean()
+    SunTowerSkip= fields.Boolean()
+    YellowBerryGateSkipLZS = fields.Boolean()
+    YellowBerryGateSkipLaki = fields.Boolean()
+    YellowBerryGateSkipBombettePush = fields.Boolean()
+    RedBerryGateSkipBombettePush = fields.Boolean()
+    RedBerryGateSkipLaki = fields.Boolean()
+    BlueBerryGateSkipBombettePush = fields.Boolean()
+    BlueBerryGateSkipLaki = fields.Boolean()
+    BubbleBerryTreeLakiJump = fields.Boolean()
+
+    # Glitches: Shiver Region
+    MurderSolvedEarlyLaki = fields.Boolean()
+    MurderSolvedEarlyBombettePush = fields.Boolean()
+    Ch7SushieGlitch = fields.Boolean()
+    ShiverMountainHiddenBlockWithoutUltraBootsLaki = fields.Boolean()
+    ShiverMountainHiddenBlockWithoutUltraBootsNoLaki = fields.Boolean()
+
+    # Glitches: Crystal Palace
+    MirrorClip = fields.Boolean()
+
+    # Glitches: Bowser's Castle
+    BowlessBowsersCastleBasement = fields.Boolean()
+    FastFloodRoomKooper = fields.Boolean()
+    FastFloodRoomBombetteUltraBoots = fields.Boolean()
+
     #Config
     StarRodModVersion = fields.Int(validate=validate.Equal(CURRENT_MOD_VERSION))
     SettingsString = fields.String()
