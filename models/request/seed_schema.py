@@ -196,7 +196,6 @@ class SeedRequestSchema(Schema):
     ArtifactJump = fields.Boolean()
     RuinsKeyLakiJump = fields.Boolean()
     ParakarylessSecondSandRoomUltraBoots = fields.Boolean()
-    ParakarylessSecondSandRoomSuperBoots = fields.Boolean()
     ParakarylessSecondSandRoomNormalBoots = fields.Boolean()
     ParakarylessSuperHammerRoomUltraBoots = fields.Boolean()
     ParakarylessSuperHammerRoomNormalBoots = fields.Boolean()

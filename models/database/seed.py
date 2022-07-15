@@ -33,7 +33,7 @@ class Seed:
         KooperlessPleasantPathThunderBolt: bool = False, BombettelessKbfFpPlusLZS: bool = False, BombettelessKbfFpPlusLaki: bool = False, LakiJailbreak: bool = False, BombettelessRightFortressJailKey: bool = False,
         MtRuggedQuakeHammerAndLetterWithLaki: bool = False, ParakarrylessMtRuggedSeed: bool = False, BuzzarGapSkipClippy: bool = False, ParakarrylessMtRuggedStarPiece: bool = False,
         DesertBrickBlockItemWithParakarry: bool = False, EarlyRuinsLakiJump: bool = False, EarlyRuinsUltraBoots: bool = False, ArtifactJump: bool = False, RuinsKeyLakiJump: bool = False,
-        ParakarylessSecondSandRoomUltraBoots: bool = False, ParakarylessSecondSandRoomSuperBoots: bool = False, ParakarylessSecondSandRoomNormalBoots: bool = False, ParakarylessSuperHammerRoomUltraBoots: bool = False,
+        ParakarylessSecondSandRoomUltraBoots: bool = False, ParakarylessSecondSandRoomNormalBoots: bool = False, ParakarylessSuperHammerRoomUltraBoots: bool = False,
         ParakarylessSuperHammerRoomNormalBoots: bool = False, RuinsLocksSkipClippy: bool = False, RecordSkipNoBombettePush: bool = False, RecordSkipBombettePush: bool = False, BoosPortraitWithKooper: bool = False,
         BoosPortraitWithLaki: bool = False, GustyGulchGateSkipLZS: bool = False, KooperlessGustyGulchDizzyDialJump: bool = False, KooperlessGustyGulchDizzyDialLaki: bool = False,
         KooperlessGustyGulchDizzyDialParakarry: bool = False, GustyGulchGapSkip: bool = False, BowlessTubbasCastle: bool = False, TubbasTableLakiJump: bool = False, TubbasCastleSuperBootsSkip: bool = False,
@@ -220,7 +220,6 @@ class Seed:
         self.ArtifactJump = ArtifactJump
         self.RuinsKeyLakiJump = RuinsKeyLakiJump
         self.ParakarylessSecondSandRoomUltraBoots = ParakarylessSecondSandRoomUltraBoots
-        self.ParakarylessSecondSandRoomSuperBoots = ParakarylessSecondSandRoomSuperBoots
         self.ParakarylessSecondSandRoomNormalBoots = ParakarylessSecondSandRoomNormalBoots
         self.ParakarylessSuperHammerRoomUltraBoots = ParakarylessSuperHammerRoomUltraBoots
         self.ParakarylessSuperHammerRoomNormalBoots = ParakarylessSuperHammerRoomNormalBoots
