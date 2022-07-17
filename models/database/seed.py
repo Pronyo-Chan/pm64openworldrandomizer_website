@@ -43,7 +43,7 @@ class Seed:
         SunTowerSkip: bool = False, YellowBerryGateSkipLZS: bool = False, YellowBerryGateSkipLaki: bool = False, YellowBerryGateSkipBombettePush: bool = False, RedBerryGateSkipBombettePush: bool = False,
         RedBerryGateSkipLaki: bool = False, BlueBerryGateSkipBombettePush: bool = False, BlueBerryGateSkipLaki: bool = False, BubbleBerryTreeLakiJump: bool = False, MurderSolvedEarlyLaki: bool = False,
         MurderSolvedEarlyBombettePush: bool = False, Ch7SushieGlitch: bool = False, ShiverMountainHiddenBlockWithoutUltraBootsLaki: bool = False, ShiverMountainHiddenBlockWithoutUltraBootsNoLaki: bool = False,
-        MirrorClip: bool = False, BowlessBowsersCastleBasement: bool = False, FastFloodRoomKooper: bool = False, FastFloodRoomBombetteUltraBoots: bool = False
+        MirrorClip: bool = False, BowlessBowsersCastleBasement: bool = False, FastFloodRoomKooper: bool = False, FastFloodRoomBombetteUltraBoots: bool = False, BreakMetalBlocksWithUltraBoots: bool = False, BreakYellowBlocksWithBombette: bool = False
         ):
 
         self.SeedID = SeedID
@@ -289,6 +289,10 @@ class Seed:
         self.BowlessBowsersCastleBasement = BowlessBowsersCastleBasement
         self.FastFloodRoomKooper = FastFloodRoomKooper
         self.FastFloodRoomBombetteUltraBoots = FastFloodRoomBombetteUltraBoots
+
+        # Glitches: Global
+        self.BreakMetalBlocksWithUltraBoots = BreakMetalBlocksWithUltraBoots
+        self.BreakYellowBlocksWithBombette = BreakYellowBlocksWithBombette
 
         # Other/Hidden Options
         self.SettingsName = "Default Dev Preset"

@@ -266,6 +266,10 @@ class SeedRequestSchema(Schema):
     FastFloodRoomKooper = fields.Boolean()
     FastFloodRoomBombetteUltraBoots = fields.Boolean()
 
+    # Glitches: Global
+    BreakMetalBlocksWithUltraBoots = fields.Boolean()
+    BreakYellowBlocksWithBombette = fields.Boolean()
+
     #Config
     StarRodModVersion = fields.Int(validate=validate.Equal(CURRENT_MOD_VERSION))
     SettingsString = fields.String()
