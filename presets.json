@@ -375,7 +375,7 @@
             "ChallengeMode": false,
             "CoinColor": 0,
             "DoubleDamage": false,
-            "MagicalSeedsRequired": 4,
+            "MagicalSeedsRequired": 5,
             "FoliageItemHints": false,
             "GoombarioSetting": 0,
             "GoombarioSprite": 0,
