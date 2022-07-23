@@ -14,7 +14,7 @@ class Seed:
 
     def __init__(self, SeedID: str, StarRodModVersion: int, AlwaysSpeedySpin: str, AlwaysISpy: bool, AlwaysPeekaboo: bool, HiddenBlockMode: int, \
         AllowPhysicsGlitches: bool, StartingCoins: int, CapEnemyXP: bool, NoXP: bool, DoubleDamage: bool, QuadrupleDamage: bool, OHKO: bool,\
-        NoSaveBlocks: bool, NoHeartBlocks: bool, FlowerGateOpen: bool, BlueHouseOpen: bool, ToyboxOpen: bool, WhaleOpen: bool, ShuffleChapterDifficulty: bool,\
+        NoSaveBlocks: bool, NoHeartBlocks: bool, MagicalSeedsRequired: int, BlueHouseOpen: bool, ToyboxOpen: bool, WhaleOpen: bool, ShuffleChapterDifficulty: bool,\
         RandomFormations: bool, ShuffleItems: bool, IncludeCoins: bool, IncludeShops: bool, IncludePanels: bool, IncludeFavorsMode: int, IncludeLettersMode: int, KeyitemsOutsideDungeon: bool,\
         ProgressiveScaling: bool, RandomBadgesBP: int, RandomBadgesFP: int, RandomPartnerFP: int, RandomStarpowerSP: int, RandomQuiz: bool, SkipQuiz: bool, QuizmoAlwaysAppears: bool, \
         PartnersInDefaultLocations: bool, PartnersAlwaysUsable: bool, StartWithRandomPartners: bool, WriteSpoilerLog: bool, RomanNumerals: bool, \
@@ -26,7 +26,8 @@ class Seed:
         StartingItemC: int = 0, StartingItemD: int = 0, StartingItemE: int = 0, ItemScarcity: int = 0, StartingItemF: int = 0, StarWaySpiritsNeeded: int = 7,  SettingsString: str = None, \
         FoliageItemHints = False, RandomText = False, NoHealingItems =  False, StartWithRandomItems: bool = False, RandomItemsMin: int = 0, RandomItemsMax: int = 0, AddItemPouches = False, \
         RandomChoice: bool = False, MysteryRandomPick: bool = False, ItemTrapMode: int = 0, AllowItemHints: bool = True, WattSetting: int = 0, WattSprite: int = 0, SushieSetting: int = 0, SushieSprite: int = 0, \
-        ParakarrySetting: int = 0, ParakarrySprite: int = 0, IncludeRadioTradeEvent: bool = False, RevealLogInHours: int = 0, StartingBoots: int = 0, StartingHammer: int = 0):
+        ParakarrySetting: int = 0, ParakarrySprite: int = 0, IncludeRadioTradeEvent: bool = False, RevealLogInHours: int = 0, StartingBoots: int = 0, StartingHammer: int = 0,
+        ):
 
         self.SeedID = SeedID
         self.CreationDate = datetime.now(timezone.utc)
@@ -46,7 +47,7 @@ class Seed:
         self.OHKO = OHKO
         self.NoSaveBlocks = NoSaveBlocks
         self.NoHeartBlocks = NoHeartBlocks
-        self.FlowerGateOpen = FlowerGateOpen
+        self.MagicalSeedsRequired = MagicalSeedsRequired
         self.BlueHouseOpen = BlueHouseOpen
         self.ToyboxOpen = ToyboxOpen
         self.WhaleOpen = WhaleOpen

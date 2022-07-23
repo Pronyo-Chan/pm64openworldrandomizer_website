@@ -95,7 +95,7 @@ class SeedRequestSchema(Schema):
     StarWaySpiritsNeeded = fields.Int()
 
     # Open World
-    FlowerGateOpen = fields.Boolean()
+    MagicalSeedsRequired = fields.Int(validate =  validate.Range(0, 5))
     BlueHouseOpen = fields.Boolean()
     ToyboxOpen = fields.Boolean()
     WhaleOpen = fields.Boolean()
