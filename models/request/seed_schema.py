@@ -76,6 +76,7 @@ class SeedRequestSchema(Schema):
     Box5ColorB = fields.Int()
     CoinColor = fields.Int()
     RandomCoinColor = fields.Boolean()
+    RandomPitch = fields.Boolean()
 
     # Difficulty
     StartingCoins = fields.Int(default=validate.Range(0, 999))
