@@ -29,6 +29,7 @@ class SeedRequestSchema(Schema):
     IncludeDojo = fields.Boolean()
     AddItemPouches = fields.Boolean()
     IncludeRadioTradeEvent  = fields.Boolean()
+    ShuffleBlocks = fields.Boolean()
     
     # Partners
     PartnersInDefaultLocations = fields.Boolean()
