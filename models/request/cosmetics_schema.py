@@ -34,3 +34,4 @@ class CosmeticsShema(Schema):
     CoinColor = fields.Int()
     RandomCoinColor = fields.Boolean()
     RomanNumerals = fields.Boolean()
+    RandomPitch = fields.Boolean()

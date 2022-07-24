@@ -110,6 +110,7 @@ def post_randomizer_settings():
     seed.SeedValue = rando_result.seed_value
     seed.PaletteOffset = rando_result.palette_offset
     seed.CosmeticsOffset = rando_result.cosmetics_offset
+    seed.AudioOffset = rando_result.audio_offset
 
     db.collection(firestore_seeds_collection).document(str(unique_seed_id)).set(seed.__dict__)
 
@@ -169,7 +170,7 @@ def get_cosmetic_patch():
 
     print(f'Cosmetics Request Settings {cosmetic_settings.__dict__}')
 
-    cosmetics_patch_operations = web_apply_cosmetic_options(cosmetic_settings.__dict__, seed_dict["PaletteOffset"], seed_dict["CosmeticsOffset"])
+    cosmetics_patch_operations = web_apply_cosmetic_options(cosmetic_settings.__dict__, seed_dict["PaletteOffset"], seed_dict["CosmeticsOffset"], seed_dict["AudioOffset"])
 
     gc.collect()
     return send_file(cosmetics_patch_operations, attachment_filename="cosmetics.pmp")
