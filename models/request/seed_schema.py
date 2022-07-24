@@ -30,6 +30,7 @@ class SeedRequestSchema(Schema):
     AddItemPouches = fields.Boolean()
     IncludeRadioTradeEvent  = fields.Boolean()
     ShuffleBlocks = fields.Boolean()
+    BigChestShuffle = fields.Boolean()
     
     # Partners
     PartnersInDefaultLocations = fields.Boolean()

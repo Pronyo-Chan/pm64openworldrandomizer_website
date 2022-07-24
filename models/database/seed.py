@@ -27,7 +27,7 @@ class Seed:
         FoliageItemHints = False, RandomText = False, NoHealingItems =  False, StartWithRandomItems: bool = False, RandomItemsMin: int = 0, RandomItemsMax: int = 0, AddItemPouches = False, \
         RandomChoice: bool = False, MysteryRandomPick: bool = False, ItemTrapMode: int = 0, AllowItemHints: bool = True, WattSetting: int = 0, WattSprite: int = 0, SushieSetting: int = 0, SushieSprite: int = 0, \
         ParakarrySetting: int = 0, ParakarrySprite: int = 0, IncludeRadioTradeEvent: bool = False, RevealLogInHours: int = 0, StartingBoots: int = 0, StartingHammer: int = 0,
-        ShuffleBlocks: bool = False, RandomPitch: bool = False):
+        ShuffleBlocks: bool = False, RandomPitch: bool = False, BigChestShuffle: bool = False):
 
         self.SeedID = SeedID
         self.CreationDate = datetime.now(timezone.utc)
@@ -146,6 +146,7 @@ class Seed:
         self.AllowItemHints = AllowItemHints
         self.ShuffleBlocks = ShuffleBlocks
         self.RandomPitch = RandomPitch
+        self.BigChestShuffle = BigChestShuffle
 
         if StartWithRandomPartners:
             self.RandomPartnersMax = RandomPartnersMax
