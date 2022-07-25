@@ -71,6 +71,7 @@ class SeedRequestSchema(Schema):
     #LakilesterSprite = fields.Int()
     BossesSetting = fields.Int()
     NPCSetting = fields.Int()
+    EnemiesSetting = fields.Int()
     MarioSetting = fields.Int()
     MarioSprite = fields.Int()
     Box5ColorA = fields.Int()
