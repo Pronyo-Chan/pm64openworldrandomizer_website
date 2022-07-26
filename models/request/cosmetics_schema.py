@@ -27,6 +27,7 @@ class CosmeticsShema(Schema):
     #LakilesterSprite = fields.Int()
     BossesSetting = fields.Int()
     NPCSetting = fields.Int()
+    EnemiesSetting = fields.Int()
     MarioSetting = fields.Int()
     MarioSprite = fields.Int()
     Box5ColorA = fields.Int()
@@ -34,3 +35,4 @@ class CosmeticsShema(Schema):
     CoinColor = fields.Int()
     RandomCoinColor = fields.Boolean()
     RomanNumerals = fields.Boolean()
+    RandomPitch = fields.Boolean()

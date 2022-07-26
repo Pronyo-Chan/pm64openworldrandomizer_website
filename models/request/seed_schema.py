@@ -1,6 +1,6 @@
 from marshmallow import EXCLUDE, Schema, ValidationError, fields, validates_schema, validate
 
-CURRENT_MOD_VERSION = 6
+CURRENT_MOD_VERSION = 7
 
 class StartWithPartnersSchema(Schema):
     class Meta:
@@ -29,6 +29,8 @@ class SeedRequestSchema(Schema):
     IncludeDojo = fields.Boolean()
     AddItemPouches = fields.Boolean()
     IncludeRadioTradeEvent  = fields.Boolean()
+    ShuffleBlocks = fields.Boolean()
+    BigChestShuffle = fields.Boolean()
     
     # Partners
     PartnersInDefaultLocations = fields.Boolean()
@@ -69,12 +71,14 @@ class SeedRequestSchema(Schema):
     #LakilesterSprite = fields.Int()
     BossesSetting = fields.Int()
     NPCSetting = fields.Int()
+    EnemiesSetting = fields.Int()
     MarioSetting = fields.Int()
     MarioSprite = fields.Int()
     Box5ColorA = fields.Int()
     Box5ColorB = fields.Int()
     CoinColor = fields.Int()
     RandomCoinColor = fields.Boolean()
+    RandomPitch = fields.Boolean()
 
     # Difficulty
     StartingCoins = fields.Int(default=validate.Range(0, 999))
@@ -95,7 +99,7 @@ class SeedRequestSchema(Schema):
     StarWaySpiritsNeeded = fields.Int()
 
     # Open World
-    FlowerGateOpen = fields.Boolean()
+    MagicalSeedsRequired = fields.Int(validate =  validate.Range(0, 5))
     BlueHouseOpen = fields.Boolean()
     ToyboxOpen = fields.Boolean()
     WhaleOpen = fields.Boolean()
@@ -143,6 +147,8 @@ class SeedRequestSchema(Schema):
     StartingMaxFP = fields.Int()
     StartingMaxHP = fields.Int()
     StartingStarPower = fields.Int()
+    StartingBoots = fields.Int()
+    StartingHammer = fields.Int()
 
     #Config
     StarRodModVersion = fields.Int(validate=validate.Equal(CURRENT_MOD_VERSION))
