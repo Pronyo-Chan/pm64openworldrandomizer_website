@@ -141,6 +141,11 @@ def post_randomizer_preset():
 
     rando_result = web_randomizer(json.dumps(seed_dict, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"), world_graph)
     seed_dict["SeedValue"] = rando_result.seed_value
+    
+    seed_dict["PaletteOffset"] = rando_result.palette_offset
+    seed_dict["CosmeticsOffset"] = rando_result.cosmetics_offset
+    seed_dict["AudioOffset"] = rando_result.audio_offset
+
 
     db.collection(firestore_seeds_collection).document(str(unique_seed_id)).set(seed_dict)
 
