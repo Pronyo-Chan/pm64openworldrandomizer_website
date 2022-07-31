@@ -27,6 +27,7 @@ class Seed:
         FoliageItemHints = False, RandomText = False, NoHealingItems =  False, StartWithRandomItems: bool = False, RandomItemsMin: int = 0, RandomItemsMax: int = 0, AddItemPouches = False, \
         RandomChoice: bool = False, MysteryRandomPick: bool = False, ItemTrapMode: int = 0, AllowItemHints: bool = True, WattSetting: int = 0, WattSprite: int = 0, SushieSetting: int = 0, SushieSprite: int = 0, \
         ParakarrySetting: int = 0, ParakarrySprite: int = 0, IncludeRadioTradeEvent: bool = False, RevealLogInHours: int = 0, StartingBoots: int = 0, StartingHammer: int = 0,
+        ShuffleBlocks: bool = False, RandomPitch: bool = False, BigChestShuffle: bool = False,
         PrologueGelEarly: bool = False, OddKeyEarly: bool = False, BlueHouseSkip: bool = False, BowlessToyBox: bool = False, EarlyStoreroomParakarry: bool = False, EarlyStoreroomHammer: bool = False,
         WhaleEarly: bool = False, SushielessToadTownStarPiece: bool = False, ClippyBootsStoneBlockSkip: bool = False, ClippyBootsMetalBlockSkip: bool = False, IslandPipeBlooperSkip: bool = False,
         ParakarrylessSewerStarPiece: bool = False, SewerBlocksWithoutUltraBoots: bool = False, KooperlessPleasantPathStarPiece: bool = False, InvisibleBridgeClipLzs: bool = False, InvisibleBridgeClipLaki: bool = False,
@@ -43,7 +44,8 @@ class Seed:
         SunTowerSkip: bool = False, YellowBerryGateSkipLZS: bool = False, YellowBerryGateSkipLaki: bool = False, YellowBerryGateSkipBombettePush: bool = False, RedBerryGateSkipBombettePush: bool = False,
         RedBerryGateSkipLaki: bool = False, BlueBerryGateSkipBombettePush: bool = False, BlueBerryGateSkipLaki: bool = False, BubbleBerryTreeLakiJump: bool = False, MurderSolvedEarlyLaki: bool = False,
         MurderSolvedEarlyBombettePush: bool = False, Ch7SushieGlitch: bool = False, ShiverMountainHiddenBlockWithoutUltraBootsLaki: bool = False, ShiverMountainHiddenBlockWithoutUltraBootsNoLaki: bool = False,
-        MirrorClip: bool = False, BowlessBowsersCastleBasement: bool = False, FastFloodRoomKooper: bool = False, FastFloodRoomBombetteUltraBoots: bool = False, BreakMetalBlocksWithUltraBoots: bool = False, BreakYellowBlocksWithBombette: bool = False
+        MirrorClip: bool = False, BowlessBowsersCastleBasement: bool = False, FastFloodRoomKooper: bool = False, FastFloodRoomBombetteUltraBoots: bool = False, BreakMetalBlocksWithUltraBoots: bool = False,
+        BreakYellowBlocksWithBombette: bool = False, BreakYellowBlocksWithSuperBoots: bool = False
         ):
 
         self.SeedID = SeedID
@@ -293,6 +295,7 @@ class Seed:
         # Glitches: Global
         self.BreakMetalBlocksWithUltraBoots = BreakMetalBlocksWithUltraBoots
         self.BreakYellowBlocksWithBombette = BreakYellowBlocksWithBombette
+        self.BreakYellowBlocksWithSuperBoots = BreakYellowBlocksWithSuperBoots
 
         # Other/Hidden Options
         self.SettingsName = "Default Dev Preset"
