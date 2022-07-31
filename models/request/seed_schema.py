@@ -224,6 +224,7 @@ class SeedRequestSchema(Schema):
     ParakarrylessBlueBuildingStarPiece= fields.Boolean()
     GourmetGuySkipJump= fields.Boolean()
     GourmetGuySkipLaki= fields.Boolean()
+    GourmetGuySkipParakarry= fields.Boolean()
     BowlessGreenStation = fields.Boolean()
     KooperlessRedStationShootingStar= fields.Boolean()
 

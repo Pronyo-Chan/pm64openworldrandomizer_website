@@ -38,7 +38,7 @@ class Seed:
         ParakarylessSuperHammerRoomNormalBoots: bool = False, RuinsLocksSkipClippy: bool = False, RecordSkipNoBombettePush: bool = False, RecordSkipBombettePush: bool = False, BoosPortraitWithKooper: bool = False,
         BoosPortraitWithLaki: bool = False, GustyGulchGateSkipLZS: bool = False, KooperlessGustyGulchDizzyDialJump: bool = False, KooperlessGustyGulchDizzyDialLaki: bool = False,
         KooperlessGustyGulchDizzyDialParakarry: bool = False, GustyGulchGapSkip: bool = False, BowlessTubbasCastle: bool = False, TubbasTableLakiJump: bool = False, TubbasCastleSuperBootsSkip: bool = False,
-        ParakarrylessMegaRush: bool = False, ParakarrylessBlueBuildingStarPiece: bool = False, GourmetGuySkipJump: bool = False, GourmetGuySkipLaki: bool = False, BowlessGreenStation: bool = False,
+        ParakarrylessMegaRush: bool = False, ParakarrylessBlueBuildingStarPiece: bool = False, GourmetGuySkipJump: bool = False, GourmetGuySkipLaki: bool = False, GourmetGuySkipParakarry: bool = False, BowlessGreenStation: bool = False,
         KooperlessRedStationShootingStar: bool = False, RaphSkipEnglish: bool = False, KooperlessLavalavaPowBlock: bool = False, UltraHammerSkip: bool = False, Flarakarry: bool = False,
         ParakarrylessFlarakarryBombette: bool = False, ParakarrylessFlarakarryLaki: bool = False, EarlyLakiLZS: bool = False, EarlyLakiBombettePush: bool = False, BombettelessMegaSmash: bool = False,
         SunTowerSkip: bool = False, YellowBerryGateSkipLZS: bool = False, YellowBerryGateSkipLaki: bool = False, YellowBerryGateSkipBombettePush: bool = False, RedBerryGateSkipBombettePush: bool = False,
@@ -250,6 +250,7 @@ class Seed:
         self.ParakarrylessBlueBuildingStarPiece= ParakarrylessBlueBuildingStarPiece
         self.GourmetGuySkipJump= GourmetGuySkipJump
         self.GourmetGuySkipLaki= GourmetGuySkipLaki
+        self.GourmetGuySkipParakarry= GourmetGuySkipParakarry
         self.BowlessGreenStation = BowlessGreenStation
         self.KooperlessRedStationShootingStar= KooperlessRedStationShootingStar
 
