@@ -28,8 +28,8 @@ class Seed:
         RandomChoice: bool = False, MysteryRandomPick: bool = False, ItemTrapMode: int = 0, AllowItemHints: bool = True, WattSetting: int = 0, WattSprite: int = 0, SushieSetting: int = 0, SushieSprite: int = 0, \
         ParakarrySetting: int = 0, ParakarrySprite: int = 0, IncludeRadioTradeEvent: bool = False, RevealLogInHours: int = 0, StartingBoots: int = 0, StartingHammer: int = 0,
         ShuffleBlocks: bool = False, RandomPitch: bool = False, BigChestShuffle: bool = False,
-        PrologueGelEarly: bool = False, OddKeyEarly: bool = False, BlueHouseSkip: bool = False, BowlessToyBox: bool = False, EarlyStoreroomParakarry: bool = False, EarlyStoreroomHammer: bool = False,
-        WhaleEarly: bool = False, SushielessToadTownStarPiece: bool = False, ClippyBootsStoneBlockSkip: bool = False, ClippyBootsMetalBlockSkip: bool = False, IslandPipeBlooperSkip: bool = False,
+        PrologueGelEarly: bool = False, OddKeyEarly: bool = False, BlueHouseSkip: bool = False, BlueHouseSkipLaki: bool = False, BlueHouseSkipToadLure: bool = False, BowlessToyBox: bool = False, EarlyStoreroomParakarry: bool = False,
+        EarlyStoreroomHammer: bool = False, WhaleEarly: bool = False, SushielessToadTownStarPiece: bool = False, ClippyBootsStoneBlockSkip: bool = False, ClippyBootsMetalBlockSkip: bool = False, IslandPipeBlooperSkip: bool = False,
         ParakarrylessSewerStarPiece: bool = False, SewerBlocksWithoutUltraBoots: bool = False, KooperlessPleasantPathStarPiece: bool = False, InvisibleBridgeClipLzs: bool = False, InvisibleBridgeClipLaki: bool = False,
         KooperlessPleasantPathThunderBolt: bool = False, BombettelessKbfFpPlusLZS: bool = False, BombettelessKbfFpPlusLaki: bool = False, LakiJailbreak: bool = False, BombettelessRightFortressJailKey: bool = False,
         MtRuggedQuakeHammerAndLetterWithLaki: bool = False, ParakarrylessMtRuggedSeed: bool = False, BuzzarGapSkipClippy: bool = False, ParakarrylessMtRuggedStarPiece: bool = False,
@@ -182,6 +182,8 @@ class Seed:
         # Glitches: Toad Town
         self.OddKeyEarly = OddKeyEarly
         self.BlueHouseSkip = BlueHouseSkip
+        self.BlueHouseSkipLaki = BlueHouseSkipLaki
+        self.BlueHouseSkipToadLure = BlueHouseSkipToadLure
         self.BowlessToyBox = BowlessToyBox
         self.EarlyStoreroomParakarry = EarlyStoreroomParakarry
         self.EarlyStoreroomHammer= EarlyStoreroomHammer

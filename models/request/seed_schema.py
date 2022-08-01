@@ -156,6 +156,8 @@ class SeedRequestSchema(Schema):
     # Glitches: Toad Town
     OddKeyEarly = fields.Boolean()
     BlueHouseSkip = fields.Boolean()
+    BlueHouseSkipLaki = fields.Boolean()
+    BlueHouseSkipToadLure = fields.Boolean()
     BowlessToyBox = fields.Boolean()
     EarlyStoreroomParakarry = fields.Boolean()
     EarlyStoreroomHammer= fields.Boolean()
