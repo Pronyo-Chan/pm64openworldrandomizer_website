@@ -271,9 +271,9 @@ class SeedRequestSchema(Schema):
 
     # Glitches: Global
     BreakMetalBlocksWithUltraBoots = fields.Boolean()
-    BreakYellowBlocksWithBombette = fields.Boolean()
     BreakYellowBlocksWithSuperBoots = fields.Boolean()
     KnowsHiddenBlocks = fields.Boolean()
+    KnowsPuzzleSolutions = fields.Boolean()
 
     #Config
     StarRodModVersion = fields.Int(validate=validate.Equal(CURRENT_MOD_VERSION))
