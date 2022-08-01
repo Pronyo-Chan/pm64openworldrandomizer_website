@@ -271,6 +271,7 @@ class SeedRequestSchema(Schema):
     BreakMetalBlocksWithUltraBoots = fields.Boolean()
     BreakYellowBlocksWithBombette = fields.Boolean()
     BreakYellowBlocksWithSuperBoots = fields.Boolean()
+    KnowsHiddenBlocks = fields.Boolean()
 
     #Config
     StarRodModVersion = fields.Int(validate=validate.Equal(CURRENT_MOD_VERSION))
