@@ -555,7 +555,7 @@
             "SettingsString": "(iIcSpf0Kdxl0rbh)(gb1f1p1s0Rm0)(pSaRn1x1(pGktpbwsl))(qh2SiPZgb2CELt7qF)(dd1cxm1kshi0w7lt0y)(mc100h10f5b3s0j0a0irn0x16)(om4btws65796)(cm7p20g20k20a20b20w20s20x2n2e2c5trh))",
             "SettingsVersion": "1.0.0",
             "BowsersCastleMode": 2,
-            "ShuffleBlocks": true,
+            "ShuffleBlocks": false,
             "ShortenCutscenes": true,
             "ShuffleChapterDifficulty": true,
             "ShuffleItems": true,
