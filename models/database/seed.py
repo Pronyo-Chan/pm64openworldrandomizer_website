@@ -39,7 +39,7 @@ class Seed:
         BoosPortraitWithLaki: bool = False, GustyGulchGateSkipLZS: bool = False, KooperlessGustyGulchDizzyDialJump: bool = False, KooperlessGustyGulchDizzyDialLaki: bool = False,
         KooperlessGustyGulchDizzyDialParakarry: bool = False, GustyGulchGapSkip: bool = False, BowlessTubbasCastle: bool = False, TubbasTableLakiJump: bool = False, TubbasCastleSuperBootsSkip: bool = False,
         ParakarrylessMegaRush: bool = False, ParakarrylessBlueBuildingStarPiece: bool = False, GourmetGuySkipJump: bool = False, GourmetGuySkipLaki: bool = False, GourmetGuySkipParakarry: bool = False, BowlessGreenStation: bool = False,
-        KooperlessRedStationShootingStar: bool = False, RaphSkipEnglish: bool = False, KooperlessLavalavaPowBlock: bool = False, UltraHammerSkip: bool = False, Flarakarry: bool = False,
+        KooperlessRedStationShootingStar: bool = False, RaphSkipEnglish: bool = False, Ch5SushieGlitch: bool = False, KooperlessLavalavaPowBlock: bool = False, UltraHammerSkip: bool = False, Flarakarry: bool = False,
         ParakarrylessFlarakarryBombette: bool = False, ParakarrylessFlarakarryLaki: bool = False, EarlyLakiLZS: bool = False, EarlyLakiBombettePush: bool = False, BombettelessMegaSmash: bool = False,
         SunTowerSkip: bool = False, YellowBerryGateSkipLZS: bool = False, YellowBerryGateSkipLaki: bool = False, YellowBerryGateSkipBombettePush: bool = False, RedBerryGateSkipBombettePush: bool = False,
         RedBerryGateSkipLaki: bool = False, BlueBerryGateSkipBombettePush: bool = False, BlueBerryGateSkipLaki: bool = False, BubbleBerryTreeLakiJump: bool = False, MurderSolvedEarlyLaki: bool = False,
@@ -258,6 +258,7 @@ class Seed:
 
         # Glitches: Jade Jungle
         self.RaphSkipEnglish = RaphSkipEnglish
+        self.Ch5SushieGlitch = Ch5SushieGlitch
 
         # Glitches: Mt. Lavalava
         self.KooperlessLavalavaPowBlock = KooperlessLavalavaPowBlock

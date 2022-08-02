@@ -232,6 +232,7 @@ class SeedRequestSchema(Schema):
 
     # Glitches: Jade Jungle
     RaphSkipEnglish = fields.Boolean()
+    Ch5SushieGlitch = fields.Boolean()
 
     # Glitches: Mt. Lavalava
     KooperlessLavalavaPowBlock = fields.Boolean()
