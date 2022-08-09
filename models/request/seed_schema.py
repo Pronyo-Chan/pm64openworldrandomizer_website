@@ -1,6 +1,6 @@
 from marshmallow import EXCLUDE, Schema, ValidationError, fields, validates_schema, validate
 
-CURRENT_MOD_VERSION = 7
+CURRENT_MOD_VERSION = 8
 
 class StartWithPartnersSchema(Schema):
     class Meta:
@@ -30,7 +30,7 @@ class SeedRequestSchema(Schema):
     AddItemPouches = fields.Boolean()
     IncludeRadioTradeEvent  = fields.Boolean()
     ShuffleBlocks = fields.Boolean()
-    BigChestShuffle = fields.Boolean()
+    GearShuffleMode = fields.Int(validate=validate.Range(0,2))
     
     # Partners
     PartnersInDefaultLocations = fields.Boolean()
@@ -120,6 +120,7 @@ class SeedRequestSchema(Schema):
     FoliageItemHints = fields.Boolean()
     ShortenCutscenes = fields.Boolean()
     SkipEpilogue = fields.Boolean()
+    HiddenPanelVisibility = fields.Boolean()
 
     # Starting Items
     StartWithRandomItems = fields.Boolean()
