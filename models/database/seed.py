@@ -308,7 +308,6 @@ class Seed:
         self.SettingsVersion = "1.0.0"
         self.PrettySpoilerlog = True
         self.PlacementAlgorithm = "AssumedFill"
-        self.PlacementLogic = "NoGlitches"
         self.PeachCastleReturnPipe = True # Default
         self.ChallengeMode = False # Default
 
