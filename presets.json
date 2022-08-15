@@ -120,7 +120,114 @@
             "StartingHammer": 0,
             "ToyboxOpen": false,
             "WhaleOpen": false,
-            "WriteSpoilerLog": true
+            "WriteSpoilerLog": true,
+
+            "PrologueGelEarly": false,
+
+            "OddKeyEarly": false,
+            "BlueHouseSkip": false,
+            "BlueHouseSkipLaki": false,
+            "BlueHouseSkipToadLure": false,
+            "BowlessToyBox": false,
+            "EarlyStoreroomParakarry": false,
+            "EarlyStoreroomHammer": false,
+            "WhaleEarly": false,
+            "SushielessToadTownStarPiece": false,
+
+            "ClippyBootsStoneBlockSkip": false,
+            "ClippyBootsMetalBlockSkip": false,
+            "IslandPipeBlooperSkip": false,
+            "ParakarrylessSewerStarPiece": false,
+            "SewerBlocksWithoutUltraBoots": false,
+
+            "KooperlessPleasantPathStarPiece": false,
+            "InvisibleBridgeClipLzs": false,
+            "InvisibleBridgeClipLaki": false,
+            "KooperlessPleasantPathThunderBolt": false,
+
+            "BombettelessKbfFpPlusLZS": false,
+            "BombettelessKbfFpPlusLaki": false,
+            "LakiJailbreak": false,
+            "BombettelessRightFortressJailKey": false,
+
+            "MtRuggedQuakeHammerAndLetterWithLaki": false,
+            "ParakarrylessMtRuggedSeed": false,
+            "BuzzarGapSkipClippy": false,
+            "ParakarrylessMtRuggedStarPiece": false,
+
+            "DesertBrickBlockItemWithParakarry": false,
+            "EarlyRuinsLakiJump": false,
+            "EarlyRuinsUltraBoots": false,
+
+            "ArtifactJump": false,
+            "RuinsKeyLakiJump": false,
+            "ParakarylessSecondSandRoomUltraBoots": false,
+            "ParakarylessSecondSandRoomNormalBoots": false,
+            "ParakarylessSuperHammerRoomUltraBoots": false,
+            "ParakarylessSuperHammerRoomNormalBoots": false,
+            "RuinsLocksSkipClippy": false,
+
+            "RecordSkipNoBombettePush": false,
+            "RecordSkipBombettePush": false,
+            "BoosPortraitWithKooper": false,
+            "BoosPortraitWithLaki": false,
+
+            "GustyGulchGateSkipLZS": false,
+            "KooperlessGustyGulchDizzyDialJump": false,
+            "KooperlessGustyGulchDizzyDialLaki": false,
+            "KooperlessGustyGulchDizzyDialParakarry": false,
+            "GustyGulchGapSkip": false,
+
+            "BowlessTubbasCastle": false,
+            "TubbasTableLakiJump": false,
+            "TubbasCastleSuperBootsSkip": false,
+            "ParakarrylessMegaRush": false,
+
+            "ParakarrylessBlueBuildingStarPiece": false,
+            "GourmetGuySkipJump": false,
+            "GourmetGuySkipLaki": false,
+            "GourmetGuySkipParakarry": false,
+            "BowlessGreenStation": false,
+            "KooperlessRedStationShootingStar": false,
+
+            "RaphSkipEnglish": false,
+            "Ch5SushieGlitch": false,
+
+            "KooperlessLavalavaPowBlock": false,
+            "UltraHammerSkip": false,
+            "Flarakarry": false,
+            "ParakarrylessFlarakarryBombette": false,
+            "ParakarrylessFlarakarryLaki": false,
+
+            "EarlyLakiLZS": false,
+            "EarlyLakiBombettePush": false,
+            "BombettelessMegaSmash": false,
+            "SunTowerSkip": false,
+            "YellowBerryGateSkipLZS": false,
+            "YellowBerryGateSkipLaki": false,
+            "YellowBerryGateSkipBombettePush": false,
+            "RedBerryGateSkipBombettePush": false,
+            "RedBerryGateSkipLaki": false,
+            "BlueBerryGateSkipBombettePush": false,
+            "BlueBerryGateSkipLaki": false,
+            "BubbleBerryTreeLakiJump": false,
+
+            "MurderSolvedEarlyLaki": false,
+            "MurderSolvedEarlyBombettePush": false,
+            "Ch7SushieGlitch": false,
+            "ShiverMountainHiddenBlockWithoutUltraBootsLaki": false,
+            "ShiverMountainHiddenBlockWithoutUltraBootsNoLaki": false,
+
+            "MirrorClip": false,
+
+            "BowlessBowsersCastleBasement": false,
+            "FastFloodRoomKooper": false,
+            "FastFloodRoomBombetteUltraBoots": false,
+
+            "BreakMetalBlocksWithUltraBoots": false,
+            "KnowsPuzzleSolutions": false,
+            "BreakYellowBlocksWithSuperBoots": false,
+            "KnowsHiddenBlocks": false
         }
     },
     {
@@ -244,7 +351,114 @@
             "StartingHammer": 0,
             "ToyboxOpen": true,
             "WhaleOpen": true,
-            "WriteSpoilerLog": true
+            "WriteSpoilerLog": true,
+
+            "PrologueGelEarly": false,
+
+            "OddKeyEarly": false,
+            "BlueHouseSkip": false,
+            "BlueHouseSkipLaki": false,
+            "BlueHouseSkipToadLure": false,
+            "BowlessToyBox": false,
+            "EarlyStoreroomParakarry": false,
+            "EarlyStoreroomHammer": false,
+            "WhaleEarly": false,
+            "SushielessToadTownStarPiece": false,
+
+            "ClippyBootsStoneBlockSkip": false,
+            "ClippyBootsMetalBlockSkip": false,
+            "IslandPipeBlooperSkip": false,
+            "ParakarrylessSewerStarPiece": false,
+            "SewerBlocksWithoutUltraBoots": false,
+
+            "KooperlessPleasantPathStarPiece": false,
+            "InvisibleBridgeClipLzs": false,
+            "InvisibleBridgeClipLaki": false,
+            "KooperlessPleasantPathThunderBolt": false,
+
+            "BombettelessKbfFpPlusLZS": false,
+            "BombettelessKbfFpPlusLaki": false,
+            "LakiJailbreak": false,
+            "BombettelessRightFortressJailKey": false,
+
+            "MtRuggedQuakeHammerAndLetterWithLaki": false,
+            "ParakarrylessMtRuggedSeed": false,
+            "BuzzarGapSkipClippy": false,
+            "ParakarrylessMtRuggedStarPiece": false,
+
+            "DesertBrickBlockItemWithParakarry": false,
+            "EarlyRuinsLakiJump": false,
+            "EarlyRuinsUltraBoots": false,
+
+            "ArtifactJump": false,
+            "RuinsKeyLakiJump": false,
+            "ParakarylessSecondSandRoomUltraBoots": false,
+            "ParakarylessSecondSandRoomNormalBoots": false,
+            "ParakarylessSuperHammerRoomUltraBoots": false,
+            "ParakarylessSuperHammerRoomNormalBoots": false,
+            "RuinsLocksSkipClippy": false,
+
+            "RecordSkipNoBombettePush": false,
+            "RecordSkipBombettePush": false,
+            "BoosPortraitWithKooper": false,
+            "BoosPortraitWithLaki": false,
+
+            "GustyGulchGateSkipLZS": false,
+            "KooperlessGustyGulchDizzyDialJump": false,
+            "KooperlessGustyGulchDizzyDialLaki": false,
+            "KooperlessGustyGulchDizzyDialParakarry": false,
+            "GustyGulchGapSkip": false,
+
+            "BowlessTubbasCastle": false,
+            "TubbasTableLakiJump": false,
+            "TubbasCastleSuperBootsSkip": false,
+            "ParakarrylessMegaRush": false,
+
+            "ParakarrylessBlueBuildingStarPiece": false,
+            "GourmetGuySkipJump": false,
+            "GourmetGuySkipLaki": false,
+            "GourmetGuySkipParakarry": false,
+            "BowlessGreenStation": false,
+            "KooperlessRedStationShootingStar": false,
+
+            "RaphSkipEnglish": false,
+            "Ch5SushieGlitch": false,
+
+            "KooperlessLavalavaPowBlock": false,
+            "UltraHammerSkip": false,
+            "Flarakarry": false,
+            "ParakarrylessFlarakarryBombette": false,
+            "ParakarrylessFlarakarryLaki": false,
+
+            "EarlyLakiLZS": false,
+            "EarlyLakiBombettePush": false,
+            "BombettelessMegaSmash": false,
+            "SunTowerSkip": false,
+            "YellowBerryGateSkipLZS": false,
+            "YellowBerryGateSkipLaki": false,
+            "YellowBerryGateSkipBombettePush": false,
+            "RedBerryGateSkipBombettePush": false,
+            "RedBerryGateSkipLaki": false,
+            "BlueBerryGateSkipBombettePush": false,
+            "BlueBerryGateSkipLaki": false,
+            "BubbleBerryTreeLakiJump": false,
+
+            "MurderSolvedEarlyLaki": false,
+            "MurderSolvedEarlyBombettePush": false,
+            "Ch7SushieGlitch": false,
+            "ShiverMountainHiddenBlockWithoutUltraBootsLaki": false,
+            "ShiverMountainHiddenBlockWithoutUltraBootsNoLaki": false,
+
+            "MirrorClip": false,
+
+            "BowlessBowsersCastleBasement": false,
+            "FastFloodRoomKooper": false,
+            "FastFloodRoomBombetteUltraBoots": false,
+
+            "BreakMetalBlocksWithUltraBoots": false,
+            "KnowsPuzzleSolutions": false,
+            "BreakYellowBlocksWithSuperBoots": false,
+            "KnowsHiddenBlocks": false
         }
     },
     {
@@ -368,7 +582,114 @@
             "StartingHammer": 0,
             "ToyboxOpen": false,
             "WhaleOpen": false,
-            "WriteSpoilerLog": true
+            "WriteSpoilerLog": true,
+
+            "PrologueGelEarly": false,
+
+            "OddKeyEarly": false,
+            "BlueHouseSkip": false,
+            "BlueHouseSkipLaki": false,
+            "BlueHouseSkipToadLure": false,
+            "BowlessToyBox": false,
+            "EarlyStoreroomParakarry": false,
+            "EarlyStoreroomHammer": false,
+            "WhaleEarly": false,
+            "SushielessToadTownStarPiece": false,
+
+            "ClippyBootsStoneBlockSkip": false,
+            "ClippyBootsMetalBlockSkip": false,
+            "IslandPipeBlooperSkip": false,
+            "ParakarrylessSewerStarPiece": false,
+            "SewerBlocksWithoutUltraBoots": false,
+
+            "KooperlessPleasantPathStarPiece": false,
+            "InvisibleBridgeClipLzs": false,
+            "InvisibleBridgeClipLaki": false,
+            "KooperlessPleasantPathThunderBolt": false,
+
+            "BombettelessKbfFpPlusLZS": false,
+            "BombettelessKbfFpPlusLaki": false,
+            "LakiJailbreak": false,
+            "BombettelessRightFortressJailKey": false,
+
+            "MtRuggedQuakeHammerAndLetterWithLaki": false,
+            "ParakarrylessMtRuggedSeed": false,
+            "BuzzarGapSkipClippy": false,
+            "ParakarrylessMtRuggedStarPiece": false,
+
+            "DesertBrickBlockItemWithParakarry": false,
+            "EarlyRuinsLakiJump": false,
+            "EarlyRuinsUltraBoots": false,
+
+            "ArtifactJump": false,
+            "RuinsKeyLakiJump": false,
+            "ParakarylessSecondSandRoomUltraBoots": false,
+            "ParakarylessSecondSandRoomNormalBoots": false,
+            "ParakarylessSuperHammerRoomUltraBoots": false,
+            "ParakarylessSuperHammerRoomNormalBoots": false,
+            "RuinsLocksSkipClippy": false,
+
+            "RecordSkipNoBombettePush": false,
+            "RecordSkipBombettePush": false,
+            "BoosPortraitWithKooper": false,
+            "BoosPortraitWithLaki": false,
+
+            "GustyGulchGateSkipLZS": false,
+            "KooperlessGustyGulchDizzyDialJump": false,
+            "KooperlessGustyGulchDizzyDialLaki": false,
+            "KooperlessGustyGulchDizzyDialParakarry": false,
+            "GustyGulchGapSkip": false,
+
+            "BowlessTubbasCastle": false,
+            "TubbasTableLakiJump": false,
+            "TubbasCastleSuperBootsSkip": false,
+            "ParakarrylessMegaRush": false,
+
+            "ParakarrylessBlueBuildingStarPiece": false,
+            "GourmetGuySkipJump": false,
+            "GourmetGuySkipLaki": false,
+            "GourmetGuySkipParakarry": false,
+            "BowlessGreenStation": false,
+            "KooperlessRedStationShootingStar": false,
+
+            "RaphSkipEnglish": false,
+            "Ch5SushieGlitch": false,
+
+            "KooperlessLavalavaPowBlock": false,
+            "UltraHammerSkip": false,
+            "Flarakarry": false,
+            "ParakarrylessFlarakarryBombette": false,
+            "ParakarrylessFlarakarryLaki": false,
+
+            "EarlyLakiLZS": false,
+            "EarlyLakiBombettePush": false,
+            "BombettelessMegaSmash": false,
+            "SunTowerSkip": false,
+            "YellowBerryGateSkipLZS": false,
+            "YellowBerryGateSkipLaki": false,
+            "YellowBerryGateSkipBombettePush": false,
+            "RedBerryGateSkipBombettePush": false,
+            "RedBerryGateSkipLaki": false,
+            "BlueBerryGateSkipBombettePush": false,
+            "BlueBerryGateSkipLaki": false,
+            "BubbleBerryTreeLakiJump": false,
+
+            "MurderSolvedEarlyLaki": false,
+            "MurderSolvedEarlyBombettePush": false,
+            "Ch7SushieGlitch": false,
+            "ShiverMountainHiddenBlockWithoutUltraBootsLaki": false,
+            "ShiverMountainHiddenBlockWithoutUltraBootsNoLaki": false,
+
+            "MirrorClip": false,
+
+            "BowlessBowsersCastleBasement": false,
+            "FastFloodRoomKooper": false,
+            "FastFloodRoomBombetteUltraBoots": false,
+
+            "BreakMetalBlocksWithUltraBoots": false,
+            "KnowsPuzzleSolutions": false,
+            "BreakYellowBlocksWithSuperBoots": false,
+            "KnowsHiddenBlocks": false
         }
     },
     {
@@ -492,7 +813,114 @@
             "StartingHammer": 0,
             "ToyboxOpen": false,
             "WhaleOpen": false,
-            "WriteSpoilerLog": true
+            "WriteSpoilerLog": true,
+
+            "PrologueGelEarly": false,
+
+            "OddKeyEarly": false,
+            "BlueHouseSkip": false,
+            "BlueHouseSkipLaki": false,
+            "BlueHouseSkipToadLure": false,
+            "BowlessToyBox": false,
+            "EarlyStoreroomParakarry": false,
+            "EarlyStoreroomHammer": false,
+            "WhaleEarly": false,
+            "SushielessToadTownStarPiece": false,
+
+            "ClippyBootsStoneBlockSkip": false,
+            "ClippyBootsMetalBlockSkip": false,
+            "IslandPipeBlooperSkip": false,
+            "ParakarrylessSewerStarPiece": false,
+            "SewerBlocksWithoutUltraBoots": false,
+
+            "KooperlessPleasantPathStarPiece": false,
+            "InvisibleBridgeClipLzs": false,
+            "InvisibleBridgeClipLaki": false,
+            "KooperlessPleasantPathThunderBolt": false,
+
+            "BombettelessKbfFpPlusLZS": false,
+            "BombettelessKbfFpPlusLaki": false,
+            "LakiJailbreak": false,
+            "BombettelessRightFortressJailKey": false,
+
+            "MtRuggedQuakeHammerAndLetterWithLaki": false,
+            "ParakarrylessMtRuggedSeed": false,
+            "BuzzarGapSkipClippy": false,
+            "ParakarrylessMtRuggedStarPiece": false,
+
+            "DesertBrickBlockItemWithParakarry": false,
+            "EarlyRuinsLakiJump": false,
+            "EarlyRuinsUltraBoots": false,
+
+            "ArtifactJump": false,
+            "RuinsKeyLakiJump": false,
+            "ParakarylessSecondSandRoomUltraBoots": false,
+            "ParakarylessSecondSandRoomNormalBoots": false,
+            "ParakarylessSuperHammerRoomUltraBoots": false,
+            "ParakarylessSuperHammerRoomNormalBoots": false,
+            "RuinsLocksSkipClippy": false,
+
+            "RecordSkipNoBombettePush": false,
+            "RecordSkipBombettePush": false,
+            "BoosPortraitWithKooper": false,
+            "BoosPortraitWithLaki": false,
+
+            "GustyGulchGateSkipLZS": false,
+            "KooperlessGustyGulchDizzyDialJump": false,
+            "KooperlessGustyGulchDizzyDialLaki": false,
+            "KooperlessGustyGulchDizzyDialParakarry": false,
+            "GustyGulchGapSkip": false,
+
+            "BowlessTubbasCastle": false,
+            "TubbasTableLakiJump": false,
+            "TubbasCastleSuperBootsSkip": false,
+            "ParakarrylessMegaRush": false,
+
+            "ParakarrylessBlueBuildingStarPiece": false,
+            "GourmetGuySkipJump": false,
+            "GourmetGuySkipLaki": false,
+            "GourmetGuySkipParakarry": false,
+            "BowlessGreenStation": false,
+            "KooperlessRedStationShootingStar": false,
+
+            "RaphSkipEnglish": false,
+            "Ch5SushieGlitch": false,
+
+            "KooperlessLavalavaPowBlock": false,
+            "UltraHammerSkip": false,
+            "Flarakarry": false,
+            "ParakarrylessFlarakarryBombette": false,
+            "ParakarrylessFlarakarryLaki": false,
+
+            "EarlyLakiLZS": false,
+            "EarlyLakiBombettePush": false,
+            "BombettelessMegaSmash": false,
+            "SunTowerSkip": false,
+            "YellowBerryGateSkipLZS": false,
+            "YellowBerryGateSkipLaki": false,
+            "YellowBerryGateSkipBombettePush": false,
+            "RedBerryGateSkipBombettePush": false,
+            "RedBerryGateSkipLaki": false,
+            "BlueBerryGateSkipBombettePush": false,
+            "BlueBerryGateSkipLaki": false,
+            "BubbleBerryTreeLakiJump": false,
+
+            "MurderSolvedEarlyLaki": false,
+            "MurderSolvedEarlyBombettePush": false,
+            "Ch7SushieGlitch": false,
+            "ShiverMountainHiddenBlockWithoutUltraBootsLaki": false,
+            "ShiverMountainHiddenBlockWithoutUltraBootsNoLaki": false,
+
+            "MirrorClip": false,
+
+            "BowlessBowsersCastleBasement": false,
+            "FastFloodRoomKooper": false,
+            "FastFloodRoomBombetteUltraBoots": false,
+
+            "BreakMetalBlocksWithUltraBoots": false,
+            "KnowsPuzzleSolutions": false,
+            "BreakYellowBlocksWithSuperBoots": false,
+            "KnowsHiddenBlocks": false
         }
     },
     {
@@ -616,7 +1044,114 @@
             "WattSetting": 2,
             "WattSprite": 0,
             "WhaleOpen": false,
-            "WriteSpoilerLog": false
+            "WriteSpoilerLog": false,
+
+            "PrologueGelEarly": false,
+
+            "OddKeyEarly": false,
+            "BlueHouseSkip": false,
+            "BlueHouseSkipLaki": false,
+            "BlueHouseSkipToadLure": false,
+            "BowlessToyBox": false,
+            "EarlyStoreroomParakarry": false,
+            "EarlyStoreroomHammer": false,
+            "WhaleEarly": false,
+            "SushielessToadTownStarPiece": false,
+
+            "ClippyBootsStoneBlockSkip": false,
+            "ClippyBootsMetalBlockSkip": false,
+            "IslandPipeBlooperSkip": false,
+            "ParakarrylessSewerStarPiece": false,
+            "SewerBlocksWithoutUltraBoots": false,
+
+            "KooperlessPleasantPathStarPiece": false,
+            "InvisibleBridgeClipLzs": false,
+            "InvisibleBridgeClipLaki": false,
+            "KooperlessPleasantPathThunderBolt": false,
+
+            "BombettelessKbfFpPlusLZS": false,
+            "BombettelessKbfFpPlusLaki": false,
+            "LakiJailbreak": false,
+            "BombettelessRightFortressJailKey": false,
+
+            "MtRuggedQuakeHammerAndLetterWithLaki": false,
+            "ParakarrylessMtRuggedSeed": false,
+            "BuzzarGapSkipClippy": false,
+            "ParakarrylessMtRuggedStarPiece": false,
+
+            "DesertBrickBlockItemWithParakarry": false,
+            "EarlyRuinsLakiJump": false,
+            "EarlyRuinsUltraBoots": false,
+
+            "ArtifactJump": false,
+            "RuinsKeyLakiJump": false,
+            "ParakarylessSecondSandRoomUltraBoots": false,
+            "ParakarylessSecondSandRoomNormalBoots": false,
+            "ParakarylessSuperHammerRoomUltraBoots": false,
+            "ParakarylessSuperHammerRoomNormalBoots": false,
+            "RuinsLocksSkipClippy": false,
+
+            "RecordSkipNoBombettePush": false,
+            "RecordSkipBombettePush": false,
+            "BoosPortraitWithKooper": false,
+            "BoosPortraitWithLaki": false,
+
+            "GustyGulchGateSkipLZS": false,
+            "KooperlessGustyGulchDizzyDialJump": false,
+            "KooperlessGustyGulchDizzyDialLaki": false,
+            "KooperlessGustyGulchDizzyDialParakarry": false,
+            "GustyGulchGapSkip": false,
+
+            "BowlessTubbasCastle": false,
+            "TubbasTableLakiJump": false,
+            "TubbasCastleSuperBootsSkip": false,
+            "ParakarrylessMegaRush": false,
+
+            "ParakarrylessBlueBuildingStarPiece": false,
+            "GourmetGuySkipJump": false,
+            "GourmetGuySkipLaki": false,
+            "GourmetGuySkipParakarry": false,
+            "BowlessGreenStation": false,
+            "KooperlessRedStationShootingStar": false,
+
+            "RaphSkipEnglish": false,
+            "Ch5SushieGlitch": false,
+
+            "KooperlessLavalavaPowBlock": false,
+            "UltraHammerSkip": false,
+            "Flarakarry": false,
+            "ParakarrylessFlarakarryBombette": false,
+            "ParakarrylessFlarakarryLaki": false,
+
+            "EarlyLakiLZS": false,
+            "EarlyLakiBombettePush": false,
+            "BombettelessMegaSmash": false,
+            "SunTowerSkip": false,
+            "YellowBerryGateSkipLZS": false,
+            "YellowBerryGateSkipLaki": false,
+            "YellowBerryGateSkipBombettePush": false,
+            "RedBerryGateSkipBombettePush": false,
+            "RedBerryGateSkipLaki": false,
+            "BlueBerryGateSkipBombettePush": false,
+            "BlueBerryGateSkipLaki": false,
+            "BubbleBerryTreeLakiJump": false,
+
+            "MurderSolvedEarlyLaki": false,
+            "MurderSolvedEarlyBombettePush": false,
+            "Ch7SushieGlitch": false,
+            "ShiverMountainHiddenBlockWithoutUltraBootsLaki": false,
+            "ShiverMountainHiddenBlockWithoutUltraBootsNoLaki": false,
+
+            "MirrorClip": false,
+
+            "BowlessBowsersCastleBasement": false,
+            "FastFloodRoomKooper": false,
+            "FastFloodRoomBombetteUltraBoots": false,
+
+            "BreakMetalBlocksWithUltraBoots": false,
+            "KnowsPuzzleSolutions": false,
+            "BreakYellowBlocksWithSuperBoots": false,
+            "KnowsHiddenBlocks": false
         }
     }
 ]
