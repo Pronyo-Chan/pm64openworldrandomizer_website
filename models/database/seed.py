@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta, timezone
+from services.seed_hash_service import get_items_from_seed_id
 
 
 class Seed:
@@ -50,6 +51,7 @@ class Seed:
         ):
 
         self.SeedID = SeedID
+        self.SeedHashItems = get_items_from_seed_id(SeedID)
         self.CreationDate = datetime.now(timezone.utc)
         self.StarRodModVersion = StarRodModVersion
         self.SettingsString = SettingsString
