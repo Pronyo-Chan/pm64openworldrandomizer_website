@@ -36,8 +36,8 @@ class Seed:
         KooperlessPleasantPathThunderBolt: bool = False, BombettelessKbfFpPlusLZS: bool = False, BombettelessKbfFpPlusLaki: bool = False, LakiJailbreak: bool = False, BombettelessRightFortressJailKey: bool = False,
         MtRuggedQuakeHammerAndLetterWithLaki: bool = False, ParakarrylessMtRuggedSeed: bool = False, BuzzarGapSkipClippy: bool = False, ParakarrylessMtRuggedStarPiece: bool = False,
         DesertBrickBlockItemWithParakarry: bool = False, EarlyRuinsLakiJump: bool = False, EarlyRuinsUltraBoots: bool = False, ArtifactJump: bool = False, RuinsKeyLakiJump: bool = False,
-        ParakarylessSecondSandRoomUltraBoots: bool = False, ParakarylessSecondSandRoomNormalBoots: bool = False, ParakarylessSuperHammerRoomUltraBoots: bool = False,
-        ParakarylessSuperHammerRoomNormalBoots: bool = False, RuinsLocksSkipClippy: bool = False, RecordSkipNoBombettePush: bool = False, RecordSkipBombettePush: bool = False, BoosPortraitWithKooper: bool = False,
+        ParakarrylessSecondSandRoomUltraBoots: bool = False, ParakarrylessSecondSandRoomNormalBoots: bool = False, ParakarrylessSuperHammerRoomUltraBoots: bool = False,
+        ParakarrylessSuperHammerRoomNormalBoots: bool = False, RuinsLocksSkipClippy: bool = False, RecordSkipNoBombettePush: bool = False, RecordSkipBombettePush: bool = False, BoosPortraitWithKooper: bool = False,
         BoosPortraitWithLaki: bool = False, GustyGulchGateSkipLZS: bool = False, KooperlessGustyGulchDizzyDialJump: bool = False, KooperlessGustyGulchDizzyDialLaki: bool = False,
         KooperlessGustyGulchDizzyDialParakarry: bool = False, GustyGulchGapSkip: bool = False, BowlessTubbasCastle: bool = False, TubbasTableLakiJump: bool = False, TubbasCastleSuperBootsSkip: bool = False,
         ParakarrylessMegaRush: bool = False, ParakarrylessBlueBuildingStarPiece: bool = False, GourmetGuySkipJump: bool = False, GourmetGuySkipLaki: bool = False, GourmetGuySkipParakarry: bool = False, BowlessGreenStation: bool = False,
@@ -229,10 +229,10 @@ class Seed:
         # Glitches: Dry Dry Ruins
         self.ArtifactJump = ArtifactJump
         self.RuinsKeyLakiJump = RuinsKeyLakiJump
-        self.ParakarylessSecondSandRoomUltraBoots = ParakarylessSecondSandRoomUltraBoots
-        self.ParakarylessSecondSandRoomNormalBoots = ParakarylessSecondSandRoomNormalBoots
-        self.ParakarylessSuperHammerRoomUltraBoots = ParakarylessSuperHammerRoomUltraBoots
-        self.ParakarylessSuperHammerRoomNormalBoots = ParakarylessSuperHammerRoomNormalBoots
+        self.ParakarrylessSecondSandRoomUltraBoots = ParakarrylessSecondSandRoomUltraBoots
+        self.ParakarrylessSecondSandRoomNormalBoots = ParakarrylessSecondSandRoomNormalBoots
+        self.ParakarrylessSuperHammerRoomUltraBoots = ParakarrylessSuperHammerRoomUltraBoots
+        self.ParakarrylessSuperHammerRoomNormalBoots = ParakarrylessSuperHammerRoomNormalBoots
         self.RuinsLocksSkipClippy = RuinsLocksSkipClippy
 
         # Glitches: Boo's Mansion

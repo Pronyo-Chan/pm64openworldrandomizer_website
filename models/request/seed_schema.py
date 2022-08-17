@@ -198,10 +198,10 @@ class SeedRequestSchema(Schema):
     # Glitches: Dry Dry Ruins
     ArtifactJump = fields.Boolean()
     RuinsKeyLakiJump = fields.Boolean()
-    ParakarylessSecondSandRoomUltraBoots = fields.Boolean()
-    ParakarylessSecondSandRoomNormalBoots = fields.Boolean()
-    ParakarylessSuperHammerRoomUltraBoots = fields.Boolean()
-    ParakarylessSuperHammerRoomNormalBoots = fields.Boolean()
+    ParakarrylessSecondSandRoomUltraBoots = fields.Boolean()
+    ParakarrylessSecondSandRoomNormalBoots = fields.Boolean()
+    ParakarrylessSuperHammerRoomUltraBoots = fields.Boolean()
+    ParakarrylessSuperHammerRoomNormalBoots = fields.Boolean()
     RuinsLocksSkipClippy = fields.Boolean()
 
     # Glitches: Boo's Mansion
