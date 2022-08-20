@@ -120,7 +120,8 @@ class SeedRequestSchema(Schema):
     FoliageItemHints = fields.Boolean()
     ShortenCutscenes = fields.Boolean()
     SkipEpilogue = fields.Boolean()
-    HiddenPanelVisibility = fields.Boolean()
+    HiddenPanelVisibility = fields.Int()
+    CookWithoutFryingPan = fields.Boolean()
 
     # Starting Items
     StartWithRandomItems = fields.Boolean()
