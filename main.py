@@ -140,6 +140,7 @@ def post_randomizer_preset():
     world_graph = init_world_graph()
 
     print(f'Request settings {seed_dict}')
+    SeedRequestSchema().load(seed_dict)
 
     rando_result = web_randomizer(json.dumps(seed_dict, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"), world_graph)
     seed_dict["SeedValue"] = rando_result.seed_value
