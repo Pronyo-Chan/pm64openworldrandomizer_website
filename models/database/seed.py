@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta, timezone
+from services.seed_hash_service import get_items_from_seed_id
 
 
 class Seed:
@@ -18,18 +19,39 @@ class Seed:
         RandomFormations: bool, ShuffleItems: bool, IncludeCoins: bool, IncludeShops: bool, IncludePanels: bool, IncludeFavorsMode: int, IncludeLettersMode: int, KeyitemsOutsideDungeon: bool,\
         ProgressiveScaling: bool, RandomBadgesBP: int, RandomBadgesFP: int, RandomPartnerFP: int, RandomStarpowerSP: int, RandomQuiz: bool, SkipQuiz: bool, QuizmoAlwaysAppears: bool, \
         PartnersInDefaultLocations: bool, PartnersAlwaysUsable: bool, StartWithRandomPartners: bool, WriteSpoilerLog: bool, RomanNumerals: bool, \
-        IncludeDojo: bool, BowsersCastleMode: int, ShortenCutscenes: bool = False, SkipEpilogue = False, RandomPartnersMin: int = None, RandomPartnersMax: int = None, StartWithPartners: StartWithPartners = None,
-        Box5ColorA: int = 0xEBE677FF, Box5ColorB: int = 0x8E5A25FF, RandomCoinColor: bool = False, CoinColor: int = 0, MarioSetting: int = 0, MarioSprite: int = 0, GoombarioSetting: int = 0, GoombarioSprite: int = 0,
-        KooperSetting: int = 0, KooperSprite: int = 0, BowSetting: int = 0, BowSprite: int = 0, BossesSetting: int = 0, NPCSetting: int = 0, EnemiesSetting: int = 0, StartingMap: int = 0x00010104,
-        StartingMaxHP: int = 10, StartingMaxFP: int = 5, StartingMaxBP: int = 3, StartingStarPower: int = 0, StartingItem0: int = 0, StartingItem1: int = 0, StartingItem2: int = 0, StartingItem3: int = 0, \
-        StartingItem4: int = 0, StartingItem5: int = 0, StartingItem6: int = 0, StartingItem7: int = 0, StartingItem8: int = 0, StartingItem9: int = 0, StartingItemA: int = 0, StartingItemB: int = 0, \
-        StartingItemC: int = 0, StartingItemD: int = 0, StartingItemE: int = 0, ItemScarcity: int = 0, StartingItemF: int = 0, StarWaySpiritsNeeded: int = 7,  SettingsString: str = None, \
-        FoliageItemHints = False, RandomText = False, NoHealingItems =  False, StartWithRandomItems: bool = False, RandomItemsMin: int = 0, RandomItemsMax: int = 0, AddItemPouches = False, \
-        RandomChoice: bool = False, MysteryRandomPick: bool = False, ItemTrapMode: int = 0, AllowItemHints: bool = True, WattSetting: int = 0, WattSprite: int = 0, SushieSetting: int = 0, SushieSprite: int = 0, \
-        ParakarrySetting: int = 0, ParakarrySprite: int = 0, IncludeRadioTradeEvent: bool = False, RevealLogInHours: int = 0, StartingBoots: int = 0, StartingHammer: int = 0,
-        ShuffleBlocks: bool = False, RandomPitch: bool = False, BigChestShuffle: bool = False):
+        IncludeDojo: bool, BowsersCastleMode: int, ShortenCutscenes: bool, SkipEpilogue, RandomPartnersMin: int, RandomPartnersMax: int, StartWithPartners: StartWithPartners,
+        Box5ColorA: int, Box5ColorB: int, RandomCoinColor: bool, CoinColor: int, MarioSetting: int, MarioSprite: int, GoombarioSetting: int, GoombarioSprite: int,
+        KooperSetting: int, KooperSprite: int, BowSetting: int, BowSprite: int, BossesSetting: int, NPCSetting: int, EnemiesSetting: int, StartingMap: int,
+        StartingMaxHP: int, StartingMaxFP: int, StartingMaxBP: int, StartingStarPower: int, StartingItem0: int, StartingItem1: int, StartingItem2: int, StartingItem3: int, \
+        StartingItem4: int, StartingItem5: int, StartingItem6: int, StartingItem7: int, StartingItem8: int, StartingItem9: int, StartingItemA: int, StartingItemB: int, \
+        StartingItemC: int, StartingItemD: int, StartingItemE: int, ItemScarcity: int, StartingItemF: int, StarWaySpiritsNeeded: int,  SettingsString: str, \
+        FoliageItemHints, RandomText, NoHealingItems, StartWithRandomItems: bool, RandomItemsMin: int, RandomItemsMax: int, AddItemPouches, \
+        RandomChoice: bool, MysteryRandomPick: bool, ItemTrapMode: int, AllowItemHints: bool, WattSetting: int, WattSprite: int, SushieSetting: int, SushieSprite: int, \
+        ParakarrySetting: int, ParakarrySprite: int, IncludeRadioTradeEvent: bool, RevealLogInHours: int, StartingBoots: int, StartingHammer: int,
+        ShuffleBlocks: bool, RandomPitch: bool, GearShuffleMode: int, HiddenPanelVisibility: bool, BombetteSetting: int, BombetteSprite: int, CookWithoutFryingPan: bool,
+
+        PrologueGelEarly: bool, OddKeyEarly: bool, BlueHouseSkip: bool, BlueHouseSkipLaki: bool, BlueHouseSkipToadLure: bool, BowlessToyBox: bool, EarlyStoreroomParakarry: bool,
+        EarlyStoreroomHammer: bool, WhaleEarly: bool, SushielessToadTownStarPiece: bool, ClippyBootsStoneBlockSkip: bool, ClippyBootsMetalBlockSkip: bool, IslandPipeBlooperSkip: bool,
+        ParakarrylessSewerStarPiece: bool, SewerBlocksWithoutUltraBoots: bool, KooperlessPleasantPathStarPiece: bool, InvisibleBridgeClipLzs: bool, InvisibleBridgeClipLaki: bool,
+        KooperlessPleasantPathThunderBolt: bool, BombettelessKbfFpPlusLZS: bool, BombettelessKbfFpPlusLaki: bool, LakiJailbreak: bool, BombettelessRightFortressJailKey: bool,
+        MtRuggedQuakeHammerAndLetterWithLaki: bool, ParakarrylessMtRuggedSeed: bool, BuzzarGapSkipClippy: bool, ParakarrylessMtRuggedStarPiece: bool,
+        DesertBrickBlockItemWithParakarry: bool, EarlyRuinsLakiJump: bool, EarlyRuinsUltraBoots: bool, ArtifactJump: bool, RuinsKeyLakiJump: bool,
+        ParakarrylessSecondSandRoomUltraBoots: bool, ParakarrylessSecondSandRoomNormalBoots: bool, ParakarrylessSuperHammerRoomUltraBoots: bool,
+        ParakarrylessSuperHammerRoomNormalBoots: bool, RuinsLocksSkipClippy: bool, RecordSkipNoBombettePush: bool, RecordSkipBombettePush: bool, BoosPortraitWithKooper: bool,
+        BoosPortraitWithLaki: bool, GustyGulchGateSkipLZS: bool, KooperlessGustyGulchDizzyDialJump: bool, KooperlessGustyGulchDizzyDialLaki: bool,
+        KooperlessGustyGulchDizzyDialParakarry: bool, GustyGulchGapSkip: bool, BowlessTubbasCastle: bool, TubbasTableLakiJump: bool, TubbasCastleSuperBootsSkip: bool,
+        ParakarrylessMegaRush: bool, ParakarrylessBlueBuildingStarPiece: bool, GourmetGuySkipJump: bool, GourmetGuySkipLaki: bool, GourmetGuySkipParakarry: bool, BowlessGreenStation: bool,
+        KooperlessRedStationShootingStar: bool, RaphSkipEnglish: bool, Ch5SushieGlitch: bool, KooperlessLavalavaPowBlock: bool, UltraHammerSkip: bool, Flarakarry: bool,
+        ParakarrylessFlarakarryBombette: bool, ParakarrylessFlarakarryLaki: bool, EarlyLakiLZS: bool, EarlyLakiBombettePush: bool, BombettelessMegaSmash: bool,
+        SunTowerSkip: bool, YellowBerryGateSkipLZS: bool, YellowBerryGateSkipLaki: bool, YellowBerryGateSkipBombettePush: bool, RedBerryGateSkipBombettePush: bool,
+        RedBerryGateSkipLaki: bool, BlueBerryGateSkipBombettePush: bool, BlueBerryGateSkipLaki: bool, BubbleBerryTreeLakiJump: bool, MurderSolvedEarlyLaki: bool,
+        MurderSolvedEarlyBombettePush: bool, Ch7SushieGlitch: bool, ShiverMountainHiddenBlockWithoutUltraBootsLaki: bool, ShiverMountainHiddenBlockWithoutUltraBootsNoLaki: bool,
+        MirrorClip: bool, BowlessBowsersCastleBasement: bool, FastFloodRoomKooper: bool, FastFloodRoomBombetteUltraBoots: bool, BreakMetalBlocksWithUltraBoots: bool,
+        BreakYellowBlocksWithSuperBoots: bool, KnowsHiddenBlocks: bool, KnowsPuzzleSolutions: bool
+        ):
 
         self.SeedID = SeedID
+        self.SeedHashItems = get_items_from_seed_id(SeedID)
         self.CreationDate = datetime.now(timezone.utc)
         self.StarRodModVersion = StarRodModVersion
         self.SettingsString = SettingsString
@@ -90,6 +112,8 @@ class Seed:
         self.GoombarioSprite = GoombarioSprite
         self.KooperSetting = KooperSetting
         self.KooperSprite = KooperSprite
+        self.BombetteSetting = BombetteSetting
+        self.BombetteSprite = BombetteSprite
         self.BowSetting = BowSetting
         self.BowSprite = BowSprite
 
@@ -146,7 +170,9 @@ class Seed:
         self.AllowItemHints = AllowItemHints
         self.ShuffleBlocks = ShuffleBlocks
         self.RandomPitch = RandomPitch
-        self.BigChestShuffle = BigChestShuffle
+        self.GearShuffleMode = GearShuffleMode
+        self.HiddenPanelVisibility = HiddenPanelVisibility
+        self.CookWithoutFryingPan = CookWithoutFryingPan
 
         if StartWithRandomPartners:
             self.RandomPartnersMax = RandomPartnersMax
@@ -157,12 +183,137 @@ class Seed:
         if WriteSpoilerLog and RevealLogInHours != 0:
             self.RevealLogAtTime = datetime.now(timezone.utc) + timedelta(hours = RevealLogInHours)
 
+        # Glitches: Goomba Region
+        self.PrologueGelEarly = PrologueGelEarly
+
+        # Glitches: Toad Town
+        self.OddKeyEarly = OddKeyEarly
+        self.BlueHouseSkip = BlueHouseSkip
+        self.BlueHouseSkipLaki = BlueHouseSkipLaki
+        self.BlueHouseSkipToadLure = BlueHouseSkipToadLure
+        self.BowlessToyBox = BowlessToyBox
+        self.EarlyStoreroomParakarry = EarlyStoreroomParakarry
+        self.EarlyStoreroomHammer= EarlyStoreroomHammer
+        self.WhaleEarly= WhaleEarly
+        self.SushielessToadTownStarPiece = SushielessToadTownStarPiece
+
+        # Glitches: Toad Town Tunnels
+        self.ClippyBootsStoneBlockSkip = ClippyBootsStoneBlockSkip
+        self.ClippyBootsMetalBlockSkip = ClippyBootsMetalBlockSkip
+        self.IslandPipeBlooperSkip = IslandPipeBlooperSkip
+        self.ParakarrylessSewerStarPiece = ParakarrylessSewerStarPiece
+        self.SewerBlocksWithoutUltraBoots= SewerBlocksWithoutUltraBoots
+
+        # Glitches: Plesant Path
+        self.KooperlessPleasantPathStarPiece = KooperlessPleasantPathStarPiece
+        self.InvisibleBridgeClipLzs= InvisibleBridgeClipLzs
+        self.InvisibleBridgeClipLaki = InvisibleBridgeClipLaki
+        self.KooperlessPleasantPathThunderBolt = KooperlessPleasantPathThunderBolt
+
+        # Glitches: Koopa Bros Fortress
+        self.BombettelessKbfFpPlusLZS= BombettelessKbfFpPlusLZS
+        self.BombettelessKbfFpPlusLaki = BombettelessKbfFpPlusLaki
+        self.LakiJailbreak = LakiJailbreak
+        self.BombettelessRightFortressJailKey= BombettelessRightFortressJailKey
+
+        # Glitches: Mt. Rugged
+        self.MtRuggedQuakeHammerAndLetterWithLaki= MtRuggedQuakeHammerAndLetterWithLaki
+        self.ParakarrylessMtRuggedSeed = ParakarrylessMtRuggedSeed
+        self.BuzzarGapSkipClippy = BuzzarGapSkipClippy
+        self.ParakarrylessMtRuggedStarPiece= ParakarrylessMtRuggedStarPiece
+
+        # Glitches: Dry Dry Desert
+        self.DesertBrickBlockItemWithParakarry = DesertBrickBlockItemWithParakarry
+        self.EarlyRuinsLakiJump = EarlyRuinsLakiJump
+        self.EarlyRuinsUltraBoots = EarlyRuinsUltraBoots
+
+        # Glitches: Dry Dry Ruins
+        self.ArtifactJump = ArtifactJump
+        self.RuinsKeyLakiJump = RuinsKeyLakiJump
+        self.ParakarrylessSecondSandRoomUltraBoots = ParakarrylessSecondSandRoomUltraBoots
+        self.ParakarrylessSecondSandRoomNormalBoots = ParakarrylessSecondSandRoomNormalBoots
+        self.ParakarrylessSuperHammerRoomUltraBoots = ParakarrylessSuperHammerRoomUltraBoots
+        self.ParakarrylessSuperHammerRoomNormalBoots = ParakarrylessSuperHammerRoomNormalBoots
+        self.RuinsLocksSkipClippy = RuinsLocksSkipClippy
+
+        # Glitches: Boo's Mansion
+        self.RecordSkipNoBombettePush= RecordSkipNoBombettePush
+        self.RecordSkipBombettePush= RecordSkipBombettePush
+        self.BoosPortraitWithKooper= BoosPortraitWithKooper
+        self.BoosPortraitWithLaki= BoosPortraitWithLaki
+
+        # Glitches: Gusty Gulch
+        self.GustyGulchGateSkipLZS = GustyGulchGateSkipLZS
+        self.KooperlessGustyGulchDizzyDialJump = KooperlessGustyGulchDizzyDialJump
+        self.KooperlessGustyGulchDizzyDialLaki = KooperlessGustyGulchDizzyDialLaki
+        self.KooperlessGustyGulchDizzyDialParakarry= KooperlessGustyGulchDizzyDialParakarry
+        self.GustyGulchGapSkip = GustyGulchGapSkip
+
+        # Glitches: Tubba's Castle
+        self.BowlessTubbasCastle = BowlessTubbasCastle
+        self.TubbasTableLakiJump = TubbasTableLakiJump
+        self.TubbasCastleSuperBootsSkip= TubbasCastleSuperBootsSkip
+        self.ParakarrylessMegaRush = ParakarrylessMegaRush
+
+        # Glitches: Toy Box
+        self.ParakarrylessBlueBuildingStarPiece= ParakarrylessBlueBuildingStarPiece
+        self.GourmetGuySkipJump= GourmetGuySkipJump
+        self.GourmetGuySkipLaki= GourmetGuySkipLaki
+        self.GourmetGuySkipParakarry= GourmetGuySkipParakarry
+        self.BowlessGreenStation = BowlessGreenStation
+        self.KooperlessRedStationShootingStar= KooperlessRedStationShootingStar
+
+        # Glitches: Jade Jungle
+        self.RaphSkipEnglish = RaphSkipEnglish
+        self.Ch5SushieGlitch = Ch5SushieGlitch
+
+        # Glitches: Mt. Lavalava
+        self.KooperlessLavalavaPowBlock = KooperlessLavalavaPowBlock
+        self.UltraHammerSkip = UltraHammerSkip
+        self.Flarakarry = Flarakarry
+        self.ParakarrylessFlarakarryBombette = ParakarrylessFlarakarryBombette
+        self.ParakarrylessFlarakarryLaki = ParakarrylessFlarakarryLaki
+
+        # Glitches: Flower Fields
+        self.EarlyLakiLZS = EarlyLakiLZS
+        self.EarlyLakiBombettePush = EarlyLakiBombettePush
+        self.BombettelessMegaSmash = BombettelessMegaSmash
+        self.SunTowerSkip= SunTowerSkip
+        self.YellowBerryGateSkipLZS = YellowBerryGateSkipLZS
+        self.YellowBerryGateSkipLaki = YellowBerryGateSkipLaki
+        self.YellowBerryGateSkipBombettePush = YellowBerryGateSkipBombettePush
+        self.RedBerryGateSkipBombettePush = RedBerryGateSkipBombettePush
+        self.RedBerryGateSkipLaki = RedBerryGateSkipLaki
+        self.BlueBerryGateSkipBombettePush = BlueBerryGateSkipBombettePush
+        self.BlueBerryGateSkipLaki = BlueBerryGateSkipLaki
+        self.BubbleBerryTreeLakiJump = BubbleBerryTreeLakiJump
+
+        # Glitches: Shiver Region
+        self.MurderSolvedEarlyLaki = MurderSolvedEarlyLaki
+        self.MurderSolvedEarlyBombettePush = MurderSolvedEarlyBombettePush
+        self.Ch7SushieGlitch = Ch7SushieGlitch
+        self.ShiverMountainHiddenBlockWithoutUltraBootsLaki = ShiverMountainHiddenBlockWithoutUltraBootsLaki
+        self.ShiverMountainHiddenBlockWithoutUltraBootsNoLaki = ShiverMountainHiddenBlockWithoutUltraBootsNoLaki
+
+        # Glitches: Crystal Palace
+        self.MirrorClip = MirrorClip
+
+        # Glitches: Bowser's Castle
+        self.BowlessBowsersCastleBasement = BowlessBowsersCastleBasement
+        self.FastFloodRoomKooper = FastFloodRoomKooper
+        self.FastFloodRoomBombetteUltraBoots = FastFloodRoomBombetteUltraBoots
+
+        # Glitches: Global
+        self.BreakMetalBlocksWithUltraBoots = BreakMetalBlocksWithUltraBoots
+        self.BreakYellowBlocksWithSuperBoots = BreakYellowBlocksWithSuperBoots
+        self.KnowsHiddenBlocks = KnowsHiddenBlocks
+        self.KnowsPuzzleSolutions = KnowsPuzzleSolutions
+
         # Other/Hidden Options
         self.SettingsName = "Default Dev Preset"
         self.SettingsVersion = "1.0.0"
         self.PrettySpoilerlog = True
         self.PlacementAlgorithm = "AssumedFill"
-        self.PlacementLogic = "NoGlitches"
         self.PeachCastleReturnPipe = True # Default
         self.ChallengeMode = False # Default
 
