@@ -976,7 +976,7 @@
             "MarioSprite": 0,
             "MysteryRandomPick": false,
             "NPCSetting": 2,
-            "EnemiesSetting": 0,
+            "EnemiesSetting": 2,
             "NoHealingItems": false,
             "NoHeartBlocks": false,
             "NoSaveBlocks": false,
