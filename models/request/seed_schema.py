@@ -152,17 +152,26 @@ class SeedRequestSchema(Schema):
 
     # Glitches: Goomba Region
     PrologueGelEarly = fields.Boolean(required=True)
+    ReverseGoombaKingBridge = fields.Boolean(required=True)
+    GoombaVillageEntryFenceClip = fields.Boolean(required=True)
+    GoombaVillageNpcLureExit = fields.Boolean(required=True)
+    HammerlessJrPlaygroundLaki = fields.Boolean(required=True)
+    GoombaVillageLakiExit = fields.Boolean(required=True)
+    PrologueSushieGlitch = fields.Boolean(required=True)
 
     # Glitches: Toad Town
     OddKeyEarly = fields.Boolean(required=True)
     BlueHouseSkip = fields.Boolean(required=True)
     BlueHouseSkipLaki = fields.Boolean(required=True)
     BlueHouseSkipToadLure = fields.Boolean(required=True)
-    BowlessToyBox = fields.Boolean(required=True)
+    BowlessToyBoxHammer = fields.Boolean(required=True)
+    BowlessToyBoxHammerlessLure = fields.Boolean(required=True)
     EarlyStoreroomParakarry = fields.Boolean(required=True)
     EarlyStoreroomHammer= fields.Boolean(required=True)
+    EarlyStoreroomHammerlessLure= fields.Boolean(required=True)
     WhaleEarly= fields.Boolean(required=True)
     SushielessToadTownStarPiece = fields.Boolean(required=True)
+    ToadTownSushieGlitch = fields.Boolean(required=True)
 
     # Glitches: Toad Town Tunnels
     ClippyBootsStoneBlockSkip = fields.Boolean(required=True)
@@ -170,6 +179,9 @@ class SeedRequestSchema(Schema):
     IslandPipeBlooperSkip = fields.Boolean(required=True)
     ParakarrylessSewerStarPiece = fields.Boolean(required=True)
     SewerBlocksWithoutUltraBoots= fields.Boolean(required=True)
+    FirstBlockToShiverCityWithoutSuperBoots = fields.Boolean(required=True)
+    BlocksToShiverCityWithKooperShellItemThrow = fields.Boolean(required=True)
+    SewerYellowBlockWithUltraBoots = fields.Boolean(required=True)
 
     # Glitches: Plesant Path
     KooperlessPleasantPathStarPiece = fields.Boolean(required=True)
@@ -182,12 +194,14 @@ class SeedRequestSchema(Schema):
     BombettelessKbfFpPlusLaki = fields.Boolean(required=True)
     LakiJailbreak = fields.Boolean(required=True)
     BombettelessRightFortressJailKey= fields.Boolean(required=True)
+    WaterStaircaseSkip= fields.Boolean(required=True)
 
     # Glitches: Mt. Rugged
     MtRuggedQuakeHammerAndLetterWithLaki= fields.Boolean(required=True)
     ParakarrylessMtRuggedSeed = fields.Boolean(required=True)
     BuzzarGapSkipClippy = fields.Boolean(required=True)
     ParakarrylessMtRuggedStarPiece= fields.Boolean(required=True)
+    MtRuggedCoinsWithKooper= fields.Boolean(required=True)
 
     # Glitches: Dry Dry Desert
     DesertBrickBlockItemWithParakarry = fields.Boolean(required=True)
@@ -195,7 +209,8 @@ class SeedRequestSchema(Schema):
     EarlyRuinsUltraBoots = fields.Boolean(required=True)
 
     # Glitches: Dry Dry Ruins
-    ArtifactJump = fields.Boolean(required=True)
+    ArtifactJumpLaki = fields.Boolean(required=True)
+    ArtifactJumpUltraBoots = fields.Boolean(required=True)
     RuinsKeyLakiJump = fields.Boolean(required=True)
     ParakarrylessSecondSandRoomUltraBoots = fields.Boolean(required=True)
     ParakarrylessSecondSandRoomNormalBoots = fields.Boolean(required=True)
@@ -211,6 +226,7 @@ class SeedRequestSchema(Schema):
 
     # Glitches: Gusty Gulch
     GustyGulchGateSkipLZS = fields.Boolean(required=True)
+    GustyGulchGateSkipLaki = fields.Boolean(required=True)
     KooperlessGustyGulchDizzyDialJump = fields.Boolean(required=True)
     KooperlessGustyGulchDizzyDialLaki = fields.Boolean(required=True)
     KooperlessGustyGulchDizzyDialParakarry= fields.Boolean(required=True)
@@ -219,6 +235,7 @@ class SeedRequestSchema(Schema):
     # Glitches: Tubba's Castle
     BowlessTubbasCastle = fields.Boolean(required=True)
     TubbasTableLakiJump = fields.Boolean(required=True)
+    TubbasTableUltraBoots = fields.Boolean(required=True)
     TubbasCastleSuperBootsSkip= fields.Boolean(required=True)
     ParakarrylessMegaRush = fields.Boolean(required=True)
 
@@ -228,7 +245,13 @@ class SeedRequestSchema(Schema):
     GourmetGuySkipLaki= fields.Boolean(required=True)
     GourmetGuySkipParakarry= fields.Boolean(required=True)
     BowlessGreenStation = fields.Boolean(required=True)
-    KooperlessRedStationShootingStar= fields.Boolean(required=True)
+    KooperlessRedStationShootingStar = fields.Boolean(required=True)
+    ParakarrylessBlueBlockCityGap = fields.Boolean(required=True)
+    BlueSwitchSkipLaki = fields.Boolean(required=True)
+    BlueSwitchSkipUltraBoots = fields.Boolean(required=True)
+    RedBarricadeSkip = fields.Boolean(required=True)
+    HammerlessBlueStationLaki = fields.Boolean(required=True)
+    HammerlessPinkStationLaki = fields.Boolean(required=True)
 
     # Glitches: Jade Jungle
     RaphSkipEnglish = fields.Boolean(required=True)
@@ -237,9 +260,11 @@ class SeedRequestSchema(Schema):
     # Glitches: Mt. Lavalava
     KooperlessLavalavaPowBlock = fields.Boolean(required=True)
     UltraHammerSkip = fields.Boolean(required=True)
+    UltraHammerSkipLaki = fields.Boolean(required=True)
     Flarakarry = fields.Boolean(required=True)
     ParakarrylessFlarakarryBombette = fields.Boolean(required=True)
     ParakarrylessFlarakarryLaki = fields.Boolean(required=True)
+    VolcanoSushieGlitch = fields.Boolean(required=True)
 
     # Glitches: Flower Fields
     EarlyLakiLZS = fields.Boolean(required=True)
@@ -259,14 +284,19 @@ class SeedRequestSchema(Schema):
     MurderSolvedEarlyLaki = fields.Boolean(required=True)
     MurderSolvedEarlyBombettePush = fields.Boolean(required=True)
     Ch7SushieGlitch = fields.Boolean(required=True)
+    StarStoneWithCh7SushieGlitch = fields.Boolean(required=True)
     ShiverMountainHiddenBlockWithoutUltraBootsLaki = fields.Boolean(required=True)
     ShiverMountainHiddenBlockWithoutUltraBootsNoLaki = fields.Boolean(required=True)
+    SnowmenSkipLaki = fields.Boolean(required=True)
+    ShiverMountainSwitchSkip = fields.Boolean(required=True)
+    SushielessWarehouseKey = fields.Boolean(required=True)
 
     # Glitches: Crystal Palace
     MirrorClip = fields.Boolean(required=True)
 
     # Glitches: Bowser's Castle
     BowlessBowsersCastleBasement = fields.Boolean(required=True)
+    BombettelessBowsersCastleBasement = fields.Boolean(required=True)
     FastFloodRoomKooper = fields.Boolean(required=True)
     FastFloodRoomBombetteUltraBoots = fields.Boolean(required=True)
 
@@ -275,6 +305,7 @@ class SeedRequestSchema(Schema):
     BreakYellowBlocksWithSuperBoots = fields.Boolean(required=True)
     KnowsHiddenBlocks = fields.Boolean(required=True)
     KnowsPuzzleSolutions = fields.Boolean(required=True)
+    ReachHighBlocksWithSuperBoots = fields.Boolean(required=True)
 
     #Config
     StarRodModVersion = fields.Int(required=True, validate=validate.Equal(CURRENT_MOD_VERSION))
