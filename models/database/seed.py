@@ -50,7 +50,7 @@ class Seed:
         RedBerryGateSkipLaki: bool, BlueBerryGateSkipBombettePush: bool, BlueBerryGateSkipLaki: bool, BubbleBerryTreeLakiJump: bool, MurderSolvedEarlyLaki: bool,
         MurderSolvedEarlyBombettePush: bool, Ch7SushieGlitch: bool, StarStoneWithCh7SushieGlitch: bool, ShiverMountainHiddenBlockWithoutUltraBootsLaki: bool, ShiverMountainHiddenBlockWithoutUltraBootsNoLaki: bool,
         SnowmenSkipLaki: bool, ShiverMountainSwitchSkip: bool, SushielessWarehouseKey: bool, MirrorClip: bool, BowlessBowsersCastleBasement: bool, BombettelessBowsersCastleBasement: bool, FastFloodRoomKooper: bool,
-        FastFloodRoomBombetteUltraBoots: bool, BreakMetalBlocksWithUltraBoots: bool, BreakYellowBlocksWithSuperBoots: bool, KnowsHiddenBlocks: bool, KnowsPuzzleSolutions: bool, ReachHighBlocksWithSuperBoots: bool
+        FastFloodRoomBombetteUltraBoots: bool, BreakStoneBlocksWithUltraBoots: bool, BreakYellowBlocksWithSuperBoots: bool, KnowsHiddenBlocks: bool, KnowsPuzzleSolutions: bool, ReachHighBlocksWithSuperBoots: bool
         ):
 
         self.SeedID = SeedID
@@ -337,7 +337,7 @@ class Seed:
         self.FastFloodRoomBombetteUltraBoots = FastFloodRoomBombetteUltraBoots
 
         # Glitches: Global
-        self.BreakMetalBlocksWithUltraBoots = BreakMetalBlocksWithUltraBoots
+        self.BreakStoneBlocksWithUltraBoots = BreakStoneBlocksWithUltraBoots
         self.BreakYellowBlocksWithSuperBoots = BreakYellowBlocksWithSuperBoots
         self.KnowsHiddenBlocks = KnowsHiddenBlocks
         self.KnowsPuzzleSolutions = KnowsPuzzleSolutions

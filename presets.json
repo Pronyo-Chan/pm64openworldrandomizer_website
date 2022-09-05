@@ -256,7 +256,7 @@
             "FastFloodRoomKooper": false,
             "FastFloodRoomBombetteUltraBoots": false,
 
-            "BreakMetalBlocksWithUltraBoots": false,
+            "BreakStoneBlocksWithUltraBoots": false,
             "KnowsPuzzleSolutions": false,
             "BreakYellowBlocksWithSuperBoots": false,
             "KnowsHiddenBlocks": false,
@@ -520,7 +520,7 @@
             "FastFloodRoomKooper": false,
             "FastFloodRoomBombetteUltraBoots": false,
 
-            "BreakMetalBlocksWithUltraBoots": false,
+            "BreakStoneBlocksWithUltraBoots": false,
             "KnowsPuzzleSolutions": false,
             "BreakYellowBlocksWithSuperBoots": false,
             "KnowsHiddenBlocks": false,
@@ -784,7 +784,7 @@
             "FastFloodRoomKooper": false,
             "FastFloodRoomBombetteUltraBoots": false,
 
-            "BreakMetalBlocksWithUltraBoots": false,
+            "BreakStoneBlocksWithUltraBoots": false,
             "KnowsPuzzleSolutions": false,
             "BreakYellowBlocksWithSuperBoots": false,
             "KnowsHiddenBlocks": false,
@@ -1048,7 +1048,7 @@
             "FastFloodRoomKooper": false,
             "FastFloodRoomBombetteUltraBoots": false,
 
-            "BreakMetalBlocksWithUltraBoots": false,
+            "BreakStoneBlocksWithUltraBoots": false,
             "KnowsPuzzleSolutions": false,
             "BreakYellowBlocksWithSuperBoots": false,
             "KnowsHiddenBlocks": false,
@@ -1312,7 +1312,7 @@
             "FastFloodRoomKooper": false,
             "FastFloodRoomBombetteUltraBoots": false,
 
-            "BreakMetalBlocksWithUltraBoots": false,
+            "BreakStoneBlocksWithUltraBoots": false,
             "KnowsPuzzleSolutions": false,
             "BreakYellowBlocksWithSuperBoots": false,
             "KnowsHiddenBlocks": false,

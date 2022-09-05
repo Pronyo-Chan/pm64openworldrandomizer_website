@@ -301,7 +301,7 @@ class SeedRequestSchema(Schema):
     FastFloodRoomBombetteUltraBoots = fields.Boolean(required=True)
 
     # Glitches: Global
-    BreakMetalBlocksWithUltraBoots = fields.Boolean(required=True)
+    BreakStoneBlocksWithUltraBoots = fields.Boolean(required=True)
     BreakYellowBlocksWithSuperBoots = fields.Boolean(required=True)
     KnowsHiddenBlocks = fields.Boolean(required=True)
     KnowsPuzzleSolutions = fields.Boolean(required=True)
