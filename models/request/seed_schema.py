@@ -92,7 +92,7 @@ class SeedRequestSchema(Schema):
     NoHealingItems = fields.Boolean(required=True)
     NoHeartBlocks = fields.Boolean(required=True)
     ItemTrapMode = fields.Int(required=True, validate=validate.Range(0, 3))
-    ItemScarcity = fields.Int(required=True, validate=validate.Range(50, 125))
+    ItemQuality = fields.Int(required=True, validate=validate.Range(25, 125))
     RandomConsumableMode = fields.Int(required=True, validate=validate.Range(0, 3))
     AllowItemHints = fields.Boolean(required=True)
     StarWaySpiritsNeeded = fields.Int(required=True)
