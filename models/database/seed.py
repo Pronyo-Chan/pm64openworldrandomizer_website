@@ -29,7 +29,7 @@ class Seed:
         RandomChoice: bool, MysteryRandomPick: bool, ItemTrapMode: int, AllowItemHints: bool, WattSetting: int, WattSprite: int, SushieSetting: int, SushieSprite: int, \
         ParakarrySetting: int, ParakarrySprite: int, IncludeRadioTradeEvent: bool, RevealLogInHours: int, StartingBoots: int, StartingHammer: int,
         ShuffleBlocks: bool, RandomPitch: bool, GearShuffleMode: int, HiddenPanelVisibility: bool, BombetteSetting: int, BombetteSprite: int, CookWithoutFryingPan: bool,
-        RipCheatoItemsInLogic: int,
+        RipCheatoItemsInLogic: int, MerlowRewardPricing: int,
 
         PrologueGelEarly: bool, ReverseGoombaKingBridge: bool, GoombaVillageEntryFenceClip: bool, GoombaVillageNpcLureExit: bool, HammerlessJrPlaygroundLaki: bool, GoombaVillageLakiExit: bool,
         PrologueSushieGlitch: bool, OddKeyEarly: bool, BlueHouseSkip: bool, BlueHouseSkipLaki: bool, BlueHouseSkipToadLure: bool, BowlessToyBoxHammer: bool, BowlessToyBoxHammerlessLure: bool,
@@ -178,6 +178,7 @@ class Seed:
         self.HiddenPanelVisibility = HiddenPanelVisibility
         self.CookWithoutFryingPan = CookWithoutFryingPan
         self.RipCheatoItemsInLogic = RipCheatoItemsInLogic
+        self.MerlowRewardPricing = MerlowRewardPricing
 
         if StartWithRandomPartners:
             self.RandomPartnersMax = RandomPartnersMax

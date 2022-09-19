@@ -121,6 +121,7 @@ class SeedRequestSchema(Schema):
     HiddenPanelVisibility = fields.Int(required=True)
     CookWithoutFryingPan = fields.Boolean(required=True)
     RipCheatoItemsInLogic = fields.Int(required=True, validate=validate.Range(0, 11))
+    MerlowRewardPricing = fields.Int(required=True, validate=validate.Range(0, 1))
 
     # Starting Items
     StartWithRandomItems = fields.Boolean(required=True)
