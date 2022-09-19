@@ -120,6 +120,7 @@ class SeedRequestSchema(Schema):
     SkipEpilogue = fields.Boolean(required=True)
     HiddenPanelVisibility = fields.Int(required=True)
     CookWithoutFryingPan = fields.Boolean(required=True)
+    RipCheatoItemsInLogic = fields.Int(required=True, validate=validate.Range(0, 11))
 
     # Starting Items
     StartWithRandomItems = fields.Boolean(required=True)
