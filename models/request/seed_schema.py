@@ -101,6 +101,7 @@ class SeedRequestSchema(Schema):
     BlueHouseOpen = fields.Boolean(required=True)
     ToyboxOpen = fields.Boolean(required=True)
     WhaleOpen = fields.Boolean(required=True)
+    PrologueOpen = fields.Boolean(required=True)
     StartingMap = fields.Int(required=True)
 
     # Quality of Life

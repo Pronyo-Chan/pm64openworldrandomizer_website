@@ -124,6 +124,7 @@
             "StartingHammer": 0,
             "ToyboxOpen": false,
             "WhaleOpen": false,
+            "PrologueOpen": false,
             "WriteSpoilerLog": true,
 
             "PrologueGelEarly": false,
@@ -390,6 +391,7 @@
             "StartingHammer": 0,
             "ToyboxOpen": true,
             "WhaleOpen": true,
+            "PrologueOpen": true,
             "WriteSpoilerLog": true,
 
             "PrologueGelEarly": false,
@@ -656,6 +658,7 @@
             "StartingHammer": 0,
             "ToyboxOpen": false,
             "WhaleOpen": false,
+            "PrologueOpen": false,
             "WriteSpoilerLog": true,
 
             "PrologueGelEarly": false,
@@ -922,6 +925,7 @@
             "StartingHammer": 0,
             "ToyboxOpen": false,
             "WhaleOpen": false,
+            "PrologueOpen": false,
             "WriteSpoilerLog": true,
 
             "PrologueGelEarly": false,
@@ -1188,6 +1192,7 @@
             "WattSetting": 2,
             "WattSprite": 0,
             "WhaleOpen": false,
+            "PrologueOpen": false,
             "WriteSpoilerLog": false,
 
             "PrologueGelEarly": false,
