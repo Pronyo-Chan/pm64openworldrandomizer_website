@@ -1,6 +1,6 @@
 from marshmallow import EXCLUDE, Schema, ValidationError, fields, validates_schema, validate
 
-CURRENT_MOD_VERSION = 9
+CURRENT_MOD_VERSION = 10
 
 class StartWithPartnersSchema(Schema):
     class Meta:
@@ -238,7 +238,8 @@ class SeedRequestSchema(Schema):
 
     # Glitches: Tubba's Castle
     BowlessTubbasCastle = fields.Boolean(required=True)
-    TubbasTableLakiJump = fields.Boolean(required=True)
+    TubbasTableLakiJumpClock = fields.Boolean(required=True)
+    TubbasTableLakiJumpStudy = fields.Boolean(required=True)
     TubbasTableUltraBoots = fields.Boolean(required=True)
     TubbasCastleSuperBootsSkip= fields.Boolean(required=True)
     ParakarrylessMegaRush = fields.Boolean(required=True)

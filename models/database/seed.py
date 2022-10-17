@@ -42,7 +42,7 @@ class Seed:
         RuinsKeyLakiJump: bool, ParakarrylessSecondSandRoomUltraBoots: bool, ParakarrylessSecondSandRoomNormalBoots: bool, ParakarrylessSuperHammerRoomUltraBoots: bool,
         ParakarrylessSuperHammerRoomNormalBoots: bool, RuinsLocksSkipClippy: bool, RecordSkipNoBombettePush: bool, RecordSkipBombettePush: bool, BoosPortraitWithKooper: bool,
         BoosPortraitWithLaki: bool, GustyGulchGateSkipLZS: bool, GustyGulchGateSkipLaki: bool, KooperlessGustyGulchDizzyDialJump: bool, KooperlessGustyGulchDizzyDialLaki: bool,
-        KooperlessGustyGulchDizzyDialParakarry: bool, GustyGulchGapSkip: bool, BowlessTubbasCastle: bool, TubbasTableLakiJump: bool, TubbasTableUltraBoots: bool, TubbasCastleSuperBootsSkip: bool,
+        KooperlessGustyGulchDizzyDialParakarry: bool, GustyGulchGapSkip: bool, BowlessTubbasCastle: bool, TubbasTableLakiJumpClock: bool, TubbasTableLakiJumpStudy: bool, TubbasTableUltraBoots: bool, TubbasCastleSuperBootsSkip: bool,
         ParakarrylessMegaRush: bool, ParakarrylessBlueBuildingStarPiece: bool, GourmetGuySkipJump: bool, GourmetGuySkipLaki: bool, GourmetGuySkipParakarry: bool, BowlessGreenStation: bool,
         KooperlessRedStationShootingStar: bool, ParakarrylessBlueBlockCityGap: bool, BlueSwitchSkipLaki: bool, BlueSwitchSkipUltraBoots: bool, RedBarricadeSkip: bool, HammerlessBlueStationLaki: bool,
         HammerlessPinkStationLaki: bool, RaphSkipEnglish: bool, Ch5SushieGlitch: bool, KooperlessLavalavaPowBlock: bool, UltraHammerSkip: bool, UltraHammerSkipLaki: bool, Flarakarry: bool,
@@ -275,7 +275,8 @@ class Seed:
 
         # Glitches: Tubba's Castle
         self.BowlessTubbasCastle = BowlessTubbasCastle
-        self.TubbasTableLakiJump = TubbasTableLakiJump
+        self.TubbasTableLakiJumpClock = TubbasTableLakiJumpClock
+        self.TubbasTableLakiJumpStudy = TubbasTableLakiJumpStudy
         self.TubbasTableUltraBoots = TubbasTableUltraBoots
         self.TubbasCastleSuperBootsSkip= TubbasCastleSuperBootsSkip
         self.ParakarrylessMegaRush = ParakarrylessMegaRush
