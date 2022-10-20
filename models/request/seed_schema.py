@@ -263,9 +263,11 @@ class SeedRequestSchema(Schema):
     Ch5SushieGlitch = fields.Boolean(required=True)
 
     # Glitches: Mt. Lavalava
-    KooperlessLavalavaPowBlock = fields.Boolean(required=True)
+    KooperlessLavalavaPowBlockParakarry = fields.Boolean(required=True)
+    KooperlessLavalavaPowBlockSuperBoots = fields.Boolean(required=True)
     UltraHammerSkip = fields.Boolean(required=True)
     UltraHammerSkipLaki = fields.Boolean(required=True)
+    UltraHammerSkipSushie = fields.Boolean(required=True)
     Flarakarry = fields.Boolean(required=True)
     ParakarrylessFlarakarryBombette = fields.Boolean(required=True)
     ParakarrylessFlarakarryLaki = fields.Boolean(required=True)
