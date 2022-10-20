@@ -251,6 +251,7 @@ class SeedRequestSchema(Schema):
     GourmetGuySkipParakarry= fields.Boolean(required=True)
     BowlessGreenStation = fields.Boolean(required=True)
     KooperlessRedStationShootingStar = fields.Boolean(required=True)
+    GearlessRedStationShootingStar = fields.Boolean(required=True)
     ParakarrylessBlueBlockCityGap = fields.Boolean(required=True)
     BlueSwitchSkipLaki = fields.Boolean(required=True)
     BlueSwitchSkipUltraBoots = fields.Boolean(required=True)
