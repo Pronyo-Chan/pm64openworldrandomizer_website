@@ -32,11 +32,12 @@ class Seed:
         RipCheatoItemsInLogic: int, MerlowRewardPricing: int, PrologueOpen: bool,
 
         PrologueGelEarly: bool, ReverseGoombaKingBridge: bool, GoombaVillageEntryFenceClip: bool, GoombaVillageNpcLureExit: bool, HammerlessJrPlaygroundLaki: bool, GoombaVillageLakiExit: bool,
-        PrologueSushieGlitch: bool, OddKeyEarly: bool, BlueHouseSkip: bool, BlueHouseSkipLaki: bool, BlueHouseSkipToadLure: bool, BowlessToyBoxHammer: bool, BowlessToyBoxHammerlessLure: bool,
+        PrologueSushieGlitchKsj: bool, PrologueSushieGlitchUltraBootsLaki: bool, OddKeyEarly: bool, BlueHouseSkip: bool, BlueHouseSkipLaki: bool, BlueHouseSkipToadLure: bool, BowlessToyBoxHammer: bool, BowlessToyBoxHammerlessLure: bool,
         EarlyStoreroomParakarry: bool, EarlyStoreroomHammer: bool, EarlyStoreroomHammerlessLure: bool, WhaleEarly: bool, SushielessToadTownStarPiece: bool, ClippyBootsStoneBlockSkip: bool,
         ToadTownSushieGlitch: bool, ClippyBootsMetalBlockSkip: bool, IslandPipeBlooperSkip: bool, ParakarrylessSewerStarPiece: bool, SewerBlocksWithoutUltraBoots: bool,
-        FirstBlockToShiverCityWithoutSuperBoots: bool, BlocksToShiverCityWithKooperShellItemThrow: bool, SewerYellowBlockWithUltraBoots: bool, KooperlessPleasantPathStarPiece: bool, InvisibleBridgeClipLzs: bool,
-        InvisibleBridgeClipLaki: bool, KooperlessPleasantPathThunderBolt: bool, BombettelessKbfFpPlusLZS: bool, BombettelessKbfFpPlusLaki: bool, LakiJailbreak: bool, BombettelessRightFortressJailKey: bool,
+        FirstBlockToShiverCityWithoutSuperBoots: bool, BlocksToShiverCityWithKooperShellItemThrow: bool, SewerYellowBlockWithUltraBoots: bool,
+        KooperlessPleasantPathStarPiece: bool, HammerlessPleasantPathBridgeUltraBootsParakarry: bool, InvisibleBridgeClipLzs: bool, InvisibleBridgeClipLaki: bool,
+        KooperlessPleasantPathThunderBolt: bool, BombettelessKbfFpPlusLZS: bool, BombettelessKbfFpPlusLaki: bool, LakiJailbreak: bool, BombettelessRightFortressJailKey: bool,
         WaterStaircaseSkip: bool, MtRuggedQuakeHammerAndLetterWithLaki: bool, ParakarrylessMtRuggedSeed: bool, BuzzarGapSkipClippy: bool, ParakarrylessMtRuggedStarPiece: bool,
         MtRuggedCoinsWithKooper: bool, DesertBrickBlockItemWithParakarry: bool, EarlyRuinsLakiJump: bool, EarlyRuinsUltraBoots: bool, ArtifactJumpLaki: bool, ArtifactJumpUltraBoots: bool,
         RuinsKeyLakiJump: bool, ParakarrylessSecondSandRoomUltraBoots: bool, ParakarrylessSecondSandRoomNormalBoots: bool, ParakarrylessSuperHammerRoomUltraBoots: bool,
@@ -198,7 +199,8 @@ class Seed:
         self.GoombaVillageNpcLureExit = GoombaVillageNpcLureExit
         self.HammerlessJrPlaygroundLaki = HammerlessJrPlaygroundLaki
         self.GoombaVillageLakiExit = GoombaVillageLakiExit
-        self.PrologueSushieGlitch = PrologueSushieGlitch
+        self.PrologueSushieGlitchKsj = PrologueSushieGlitchKsj
+        self.PrologueSushieGlitchUltraBootsLaki = PrologueSushieGlitchUltraBootsLaki
 
         # Glitches: Toad Town
         self.OddKeyEarly = OddKeyEarly
@@ -226,6 +228,7 @@ class Seed:
 
         # Glitches: Plesant Path
         self.KooperlessPleasantPathStarPiece = KooperlessPleasantPathStarPiece
+        self.HammerlessPleasantPathBridgeUltraBootsParakarry = HammerlessPleasantPathBridgeUltraBootsParakarry
         self.InvisibleBridgeClipLzs= InvisibleBridgeClipLzs
         self.InvisibleBridgeClipLaki = InvisibleBridgeClipLaki
         self.KooperlessPleasantPathThunderBolt = KooperlessPleasantPathThunderBolt

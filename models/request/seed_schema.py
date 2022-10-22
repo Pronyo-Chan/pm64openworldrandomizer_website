@@ -161,7 +161,8 @@ class SeedRequestSchema(Schema):
     GoombaVillageNpcLureExit = fields.Boolean(required=True)
     HammerlessJrPlaygroundLaki = fields.Boolean(required=True)
     GoombaVillageLakiExit = fields.Boolean(required=True)
-    PrologueSushieGlitch = fields.Boolean(required=True)
+    PrologueSushieGlitchKsj = fields.Boolean(required=True)
+    PrologueSushieGlitchUltraBootsLaki = fields.Boolean(required=True)
 
     # Glitches: Toad Town
     OddKeyEarly = fields.Boolean(required=True)
@@ -189,6 +190,7 @@ class SeedRequestSchema(Schema):
 
     # Glitches: Plesant Path
     KooperlessPleasantPathStarPiece = fields.Boolean(required=True)
+    HammerlessPleasantPathBridgeUltraBootsParakarry = fields.Boolean(required=True)
     InvisibleBridgeClipLzs= fields.Boolean(required=True)
     InvisibleBridgeClipLaki = fields.Boolean(required=True)
     KooperlessPleasantPathThunderBolt = fields.Boolean(required=True)
