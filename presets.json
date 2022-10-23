@@ -201,7 +201,8 @@
             "GustyGulchGapSkip": false,
 
             "BowlessTubbasCastle": false,
-            "TubbasTableLakiJump": false,
+            "TubbasTableLakiJumpClock": false,
+            "TubbasTableLakiJumpStudy": false,
             "TubbasTableUltraBoots": false,
             "TubbasCastleSuperBootsSkip": false,
             "ParakarrylessMegaRush": false,
@@ -469,7 +470,8 @@
             "GustyGulchGapSkip": false,
 
             "BowlessTubbasCastle": false,
-            "TubbasTableLakiJump": false,
+            "TubbasTableLakiJumpClock": false,
+            "TubbasTableLakiJumpStudy": false,
             "TubbasTableUltraBoots": false,
             "TubbasCastleSuperBootsSkip": false,
             "ParakarrylessMegaRush": false,
@@ -737,7 +739,8 @@
             "GustyGulchGapSkip": false,
 
             "BowlessTubbasCastle": false,
-            "TubbasTableLakiJump": false,
+            "TubbasTableLakiJumpClock": false,
+            "TubbasTableLakiJumpStudy": false,
             "TubbasTableUltraBoots": false,
             "TubbasCastleSuperBootsSkip": false,
             "ParakarrylessMegaRush": false,
@@ -1005,7 +1008,8 @@
             "GustyGulchGapSkip": false,
 
             "BowlessTubbasCastle": false,
-            "TubbasTableLakiJump": false,
+            "TubbasTableLakiJumpClock": false,
+            "TubbasTableLakiJumpStudy": false,
             "TubbasTableUltraBoots": false,
             "TubbasCastleSuperBootsSkip": false,
             "ParakarrylessMegaRush": false,
@@ -1273,7 +1277,8 @@
             "GustyGulchGapSkip": false,
 
             "BowlessTubbasCastle": false,
-            "TubbasTableLakiJump": false,
+            "TubbasTableLakiJumpClock": false,
+            "TubbasTableLakiJumpStudy": false,
             "TubbasTableUltraBoots": false,
             "TubbasCastleSuperBootsSkip": false,
             "ParakarrylessMegaRush": false,
