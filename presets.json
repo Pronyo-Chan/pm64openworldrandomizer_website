@@ -1103,7 +1103,7 @@
             "HiddenPanelVisibility": 1,
             "CookWithoutFryingPan": false,
             "RipCheatoItemsInLogic": 6,
-            "MerlowRewardPricing": 1,
+            "MerlowRewardPricing": 0,
             "IncludeCoins": false,
             "IncludeDojo": false,
             "IncludeFavorsMode": 0,
