@@ -264,6 +264,7 @@ class SeedRequestSchema(Schema):
     # Glitches: Jade Jungle
     RaphSkipEnglish = fields.Boolean(required=True)
     Ch5SushieGlitch = fields.Boolean(required=True)
+    SushielessJungleStarpieceAndLetter = fields.Boolean(required=True)
 
     # Glitches: Mt. Lavalava
     KooperlessLavalavaPowBlockParakarry = fields.Boolean(required=True)
@@ -299,7 +300,8 @@ class SeedRequestSchema(Schema):
     ShiverMountainHiddenBlockWithoutUltraBootsNoLaki = fields.Boolean(required=True)
     SnowmenSkipLaki = fields.Boolean(required=True)
     ShiverMountainSwitchSkip = fields.Boolean(required=True)
-    SushielessWarehouseKey = fields.Boolean(required=True)
+    SushielessWarehouseKeyBombette = fields.Boolean(required=True)
+    SushielessWarehouseKeyKooper = fields.Boolean(required=True)
 
     # Glitches: Crystal Palace
     MirrorClip = fields.Boolean(required=True)
