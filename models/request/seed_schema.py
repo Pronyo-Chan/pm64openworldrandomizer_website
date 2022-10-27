@@ -207,7 +207,9 @@ class SeedRequestSchema(Schema):
     ParakarrylessMtRuggedSeed = fields.Boolean(required=True)
     BuzzarGapSkipClippy = fields.Boolean(required=True)
     ParakarrylessMtRuggedStarPiece= fields.Boolean(required=True)
-    MtRuggedCoinsWithKooper= fields.Boolean(required=True)
+    MtRuggedCoinsWithKooper = fields.Boolean(required=True)
+    MtRuggedStationJumplessClimbBombette = fields.Boolean(required=True)
+    MtRuggedStationJumplessClimbLaki = fields.Boolean(required=True)
 
     # Glitches: Dry Dry Desert
     DesertBrickBlockItemWithParakarry = fields.Boolean(required=True)

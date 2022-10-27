@@ -39,7 +39,7 @@ class Seed:
         KooperlessPleasantPathStarPiece: bool, HammerlessPleasantPathBridgeUltraBootsParakarry: bool, InvisibleBridgeClipLzs: bool, InvisibleBridgeClipLaki: bool,
         KooperlessPleasantPathThunderBolt: bool, BombettelessKbfFpPlusLZS: bool, BombettelessKbfFpPlusLaki: bool, LakiJailbreak: bool, BombettelessRightFortressJailKey: bool,
         WaterStaircaseSkip: bool, MtRuggedQuakeHammerAndLetterWithLaki: bool, ParakarrylessMtRuggedSeed: bool, BuzzarGapSkipClippy: bool, ParakarrylessMtRuggedStarPiece: bool,
-        MtRuggedCoinsWithKooper: bool, DesertBrickBlockItemWithParakarry: bool, EarlyRuinsLakiJump: bool, EarlyRuinsUltraBoots: bool, ArtifactJumpLaki: bool, ArtifactJumpUltraBoots: bool,
+        MtRuggedCoinsWithKooper: bool, MtRuggedStationJumplessClimbBombette: bool, MtRuggedStationJumplessClimbLaki: bool, DesertBrickBlockItemWithParakarry: bool, EarlyRuinsLakiJump: bool, EarlyRuinsUltraBoots: bool, ArtifactJumpLaki: bool, ArtifactJumpUltraBoots: bool,
         RuinsKeyLakiJump: bool, ParakarrylessSecondSandRoomUltraBoots: bool, ParakarrylessSecondSandRoomNormalBoots: bool, ParakarrylessSuperHammerRoomUltraBoots: bool,
         ParakarrylessSuperHammerRoomNormalBoots: bool, RuinsLocksSkipClippy: bool, RecordSkipNoBombettePush: bool, RecordSkipBombettePush: bool, BoosPortraitWithKooper: bool,
         BoosPortraitWithLaki: bool, GustyGulchGateSkipLZS: bool, GustyGulchGateSkipLaki: bool, KooperlessGustyGulchDizzyDialJump: bool, KooperlessGustyGulchDizzyDialLaki: bool,
@@ -246,6 +246,8 @@ class Seed:
         self.BuzzarGapSkipClippy = BuzzarGapSkipClippy
         self.ParakarrylessMtRuggedStarPiece = ParakarrylessMtRuggedStarPiece
         self.MtRuggedCoinsWithKooper = MtRuggedCoinsWithKooper
+        self.MtRuggedStationJumplessClimbBombette = MtRuggedStationJumplessClimbBombette
+        self.MtRuggedStationJumplessClimbLaki = MtRuggedStationJumplessClimbLaki
 
         # Glitches: Dry Dry Desert
         self.DesertBrickBlockItemWithParakarry = DesertBrickBlockItemWithParakarry
