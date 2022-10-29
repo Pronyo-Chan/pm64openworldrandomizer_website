@@ -197,6 +197,7 @@
             "RecordSkipBombettePush": false,
             "BoosPortraitWithKooper": false,
             "BoosPortraitWithLaki": false,
+            "JumplessMansionEntry": false,
 
             "GustyGulchGateSkipLZS": false,
             "GustyGulchGateSkipLaki": false,
@@ -231,6 +232,7 @@
 
             "KooperlessLavalavaPowBlockParakarry": false,
             "KooperlessLavalavaPowBlockSuperBoots": false,
+            "JumplessLavalavaPowBlock": false,
             "UltraHammerSkip": false,
             "UltraHammerSkipLaki": false,
             "UltraHammerSkipSushie": false,
@@ -475,6 +477,7 @@
             "RecordSkipBombettePush": false,
             "BoosPortraitWithKooper": false,
             "BoosPortraitWithLaki": false,
+            "JumplessMansionEntry": false,
 
             "GustyGulchGateSkipLZS": false,
             "GustyGulchGateSkipLaki": false,
@@ -509,6 +512,7 @@
 
             "KooperlessLavalavaPowBlockParakarry": false,
             "KooperlessLavalavaPowBlockSuperBoots": false,
+            "JumplessLavalavaPowBlock": false,
             "UltraHammerSkip": false,
             "UltraHammerSkipLaki": false,
             "UltraHammerSkipSushie": false,
@@ -753,6 +757,7 @@
             "RecordSkipBombettePush": false,
             "BoosPortraitWithKooper": false,
             "BoosPortraitWithLaki": false,
+            "JumplessMansionEntry": false,
 
             "GustyGulchGateSkipLZS": false,
             "GustyGulchGateSkipLaki": false,
@@ -787,6 +792,7 @@
 
             "KooperlessLavalavaPowBlockParakarry": false,
             "KooperlessLavalavaPowBlockSuperBoots": false,
+            "JumplessLavalavaPowBlock": false,
             "UltraHammerSkip": false,
             "UltraHammerSkipLaki": false,
             "UltraHammerSkipSushie": false,
@@ -1031,6 +1037,7 @@
             "RecordSkipBombettePush": false,
             "BoosPortraitWithKooper": false,
             "BoosPortraitWithLaki": false,
+            "JumplessMansionEntry": false,
 
             "GustyGulchGateSkipLZS": false,
             "GustyGulchGateSkipLaki": false,
@@ -1065,6 +1072,7 @@
 
             "KooperlessLavalavaPowBlockParakarry": false,
             "KooperlessLavalavaPowBlockSuperBoots": false,
+            "JumplessLavalavaPowBlock": false,
             "UltraHammerSkip": false,
             "UltraHammerSkipLaki": false,
             "UltraHammerSkipSushie": false,
@@ -1309,6 +1317,7 @@
             "RecordSkipBombettePush": false,
             "BoosPortraitWithKooper": false,
             "BoosPortraitWithLaki": false,
+            "JumplessMansionEntry": false,
 
             "GustyGulchGateSkipLZS": false,
             "GustyGulchGateSkipLaki": false,
@@ -1343,6 +1352,7 @@
 
             "KooperlessLavalavaPowBlockParakarry": false,
             "KooperlessLavalavaPowBlockSuperBoots": false,
+            "JumplessLavalavaPowBlock": false,
             "UltraHammerSkip": false,
             "UltraHammerSkipLaki": false,
             "UltraHammerSkipSushie": false,

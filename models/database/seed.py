@@ -43,11 +43,12 @@ class Seed:
         DesertBrickBlockItemWithParakarry: bool, EarlyRuinsLakiJump: bool, EarlyRuinsUltraBoots: bool, ArtifactJumpLaki: bool, ArtifactJumpUltraBoots: bool,
         RuinsKeyLakiJump: bool, ParakarrylessSecondSandRoomUltraBoots: bool, ParakarrylessSecondSandRoomNormalBoots: bool, ParakarrylessSuperHammerRoomUltraBoots: bool,
         ParakarrylessSuperHammerRoomNormalBoots: bool, RuinsLocksSkipClippy: bool, RecordSkipNoBombettePush: bool, RecordSkipBombettePush: bool, BoosPortraitWithKooper: bool,
-        BoosPortraitWithLaki: bool, GustyGulchGateSkipLZS: bool, GustyGulchGateSkipLaki: bool, KooperlessGustyGulchDizzyDialJump: bool, KooperlessGustyGulchDizzyDialLaki: bool,
+        BoosPortraitWithLaki: bool, JumplessMansionEntry: bool, GustyGulchGateSkipLZS: bool, GustyGulchGateSkipLaki: bool, KooperlessGustyGulchDizzyDialJump: bool, KooperlessGustyGulchDizzyDialLaki: bool,
         KooperlessGustyGulchDizzyDialParakarry: bool, GustyGulchGapSkip: bool, BowlessTubbasCastle: bool, TubbasTableLakiJumpClock: bool, TubbasTableLakiJumpStudy: bool, TubbasTableUltraBoots: bool, TubbasCastleSuperBootsSkip: bool,
         ParakarrylessMegaRush: bool, ParakarrylessBlueBuildingStarPiece: bool, GourmetGuySkipJump: bool, GourmetGuySkipLaki: bool, GourmetGuySkipParakarry: bool, BowlessGreenStation: bool,
         KooperlessRedStationShootingStar: bool, GearlessRedStationShootingStar: bool, ParakarrylessBlueBlockCityGap: bool, BlueSwitchSkipLaki: bool, BlueSwitchSkipUltraBoots: bool, RedBarricadeSkip: bool, HammerlessBlueStationLaki: bool,
-        HammerlessPinkStationLaki: bool, RaphSkipEnglish: bool, Ch5SushieGlitch: bool, SushielessJungleStarpieceAndLetter: bool, KooperlessLavalavaPowBlockParakarry: bool, KooperlessLavalavaPowBlockSuperBoots: bool, UltraHammerSkip: bool, UltraHammerSkipLaki: bool, UltraHammerSkipSushie: bool,
+        HammerlessPinkStationLaki: bool, RaphSkipEnglish: bool, Ch5SushieGlitch: bool, SushielessJungleStarpieceAndLetter: bool, KooperlessLavalavaPowBlockParakarry: bool, KooperlessLavalavaPowBlockSuperBoots: bool,
+        JumplessLavalavaPowBlock: bool,  UltraHammerSkip: bool, UltraHammerSkipLaki: bool, UltraHammerSkipSushie: bool,
         Flarakarry: bool, ParakarrylessFlarakarryBombette: bool, ParakarrylessFlarakarryLaki: bool, VolcanoSushieGlitch: bool, EarlyLakiLZS: bool, EarlyLakiBombettePush: bool, BombettelessMegaSmash: bool,
         SunTowerSkip: bool, YellowBerryGateSkipLZS: bool, YellowBerryGateSkipLaki: bool, YellowBerryGateSkipBombettePush: bool, RedBerryGateSkipBombettePush: bool,
         RedBerryGateSkipLaki: bool, BlueBerryGateSkipBombettePush: bool, BlueBerryGateSkipLaki: bool, BubbleBerryTreeLakiJump: bool, MurderSolvedEarlyLaki: bool,
@@ -267,10 +268,11 @@ class Seed:
         self.RuinsLocksSkipClippy = RuinsLocksSkipClippy
 
         # Glitches: Boo's Mansion
-        self.RecordSkipNoBombettePush= RecordSkipNoBombettePush
-        self.RecordSkipBombettePush= RecordSkipBombettePush
-        self.BoosPortraitWithKooper= BoosPortraitWithKooper
-        self.BoosPortraitWithLaki= BoosPortraitWithLaki
+        self.RecordSkipNoBombettePush = RecordSkipNoBombettePush
+        self.RecordSkipBombettePush = RecordSkipBombettePush
+        self.BoosPortraitWithKooper = BoosPortraitWithKooper
+        self.BoosPortraitWithLaki = BoosPortraitWithLaki
+        self.JumplessMansionEntry = JumplessMansionEntry
 
         # Glitches: Gusty Gulch
         self.GustyGulchGateSkipLZS = GustyGulchGateSkipLZS
@@ -311,6 +313,7 @@ class Seed:
         # Glitches: Mt. Lavalava
         self.KooperlessLavalavaPowBlockParakarry = KooperlessLavalavaPowBlockParakarry
         self.KooperlessLavalavaPowBlockSuperBoots = KooperlessLavalavaPowBlockSuperBoots
+        self.JumplessLavalavaPowBlock = JumplessLavalavaPowBlock
         self.UltraHammerSkip = UltraHammerSkip
         self.UltraHammerSkipLaki = UltraHammerSkipLaki
         self.UltraHammerSkipSushie = UltraHammerSkipSushie

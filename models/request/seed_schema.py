@@ -228,10 +228,11 @@ class SeedRequestSchema(Schema):
     RuinsLocksSkipClippy = fields.Boolean(required=True)
 
     # Glitches: Boo's Mansion
-    RecordSkipNoBombettePush= fields.Boolean(required=True)
-    RecordSkipBombettePush= fields.Boolean(required=True)
-    BoosPortraitWithKooper= fields.Boolean(required=True)
-    BoosPortraitWithLaki= fields.Boolean(required=True)
+    RecordSkipNoBombettePush = fields.Boolean(required=True)
+    RecordSkipBombettePush = fields.Boolean(required=True)
+    BoosPortraitWithKooper = fields.Boolean(required=True)
+    BoosPortraitWithLaki = fields.Boolean(required=True)
+    JumplessMansionEntry = fields.Boolean(required=True)
 
     # Glitches: Gusty Gulch
     GustyGulchGateSkipLZS = fields.Boolean(required=True)
@@ -272,6 +273,7 @@ class SeedRequestSchema(Schema):
     # Glitches: Mt. Lavalava
     KooperlessLavalavaPowBlockParakarry = fields.Boolean(required=True)
     KooperlessLavalavaPowBlockSuperBoots = fields.Boolean(required=True)
+    JumplessLavalavaPowBlock = fields.Boolean(required=True)
     UltraHammerSkip = fields.Boolean(required=True)
     UltraHammerSkipLaki = fields.Boolean(required=True)
     UltraHammerSkipSushie = fields.Boolean(required=True)
