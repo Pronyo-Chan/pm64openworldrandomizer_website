@@ -211,6 +211,7 @@ class SeedRequestSchema(Schema):
     MtRuggedStationJumplessClimbBombette = fields.Boolean(required=True)
     MtRuggedStationJumplessClimbLaki = fields.Boolean(required=True)
     MtRuggedSlideJumplessClimbLaki = fields.Boolean(required=True)
+    JumplessMtRuggedTrainPlatformParakarry = fields.Boolean(required=True)
 
     # Glitches: Dry Dry Desert
     DesertBrickBlockItemWithParakarry = fields.Boolean(required=True)
@@ -295,6 +296,7 @@ class SeedRequestSchema(Schema):
     BlueBerryGateSkipBombettePush = fields.Boolean(required=True)
     BlueBerryGateSkipLaki = fields.Boolean(required=True)
     BubbleBerryTreeLakiJump = fields.Boolean(required=True)
+    BubbleBerryTreeUltraBoots = fields.Boolean(required=True)
 
     # Glitches: Shiver Region
     MurderSolvedEarlyLaki = fields.Boolean(required=True)

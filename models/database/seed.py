@@ -39,7 +39,7 @@ class Seed:
         KooperlessPleasantPathStarPiece: bool, HammerlessPleasantPathBridgeUltraBootsParakarry: bool, InvisibleBridgeClipLzs: bool, InvisibleBridgeClipLaki: bool,
         KooperlessPleasantPathThunderBolt: bool, BombettelessKbfFpPlusLZS: bool, BombettelessKbfFpPlusLaki: bool, LakiJailbreak: bool, BombettelessRightFortressJailKey: bool,
         WaterStaircaseSkip: bool, MtRuggedQuakeHammerAndLetterWithLaki: bool, ParakarrylessMtRuggedSeed: bool, BuzzarGapSkipClippy: bool, ParakarrylessMtRuggedStarPiece: bool,
-        MtRuggedCoinsWithKooper: bool, MtRuggedStationJumplessClimbBombette: bool, MtRuggedStationJumplessClimbLaki: bool, MtRuggedSlideJumplessClimbLaki: bool,
+        MtRuggedCoinsWithKooper: bool, MtRuggedStationJumplessClimbBombette: bool, MtRuggedStationJumplessClimbLaki: bool, MtRuggedSlideJumplessClimbLaki: bool, JumplessMtRuggedTrainPlatformParakarry: bool,
         DesertBrickBlockItemWithParakarry: bool, EarlyRuinsLakiJump: bool, EarlyRuinsUltraBoots: bool, ArtifactJumpLaki: bool, ArtifactJumpUltraBoots: bool,
         RuinsKeyLakiJump: bool, ParakarrylessSecondSandRoomUltraBoots: bool, ParakarrylessSecondSandRoomNormalBoots: bool, ParakarrylessSuperHammerRoomUltraBoots: bool,
         ParakarrylessSuperHammerRoomNormalBoots: bool, RuinsLocksSkipClippy: bool, RecordSkipNoBombettePush: bool, RecordSkipBombettePush: bool, BoosPortraitWithKooper: bool,
@@ -51,7 +51,7 @@ class Seed:
         JumplessLavalavaPowBlock: bool,  UltraHammerSkip: bool, UltraHammerSkipLaki: bool, UltraHammerSkipSushie: bool,
         Flarakarry: bool, ParakarrylessFlarakarryBombette: bool, ParakarrylessFlarakarryLaki: bool, VolcanoSushieGlitch: bool, EarlyLakiLZS: bool, EarlyLakiBombettePush: bool, BombettelessMegaSmash: bool,
         SunTowerSkip: bool, YellowBerryGateSkipLZS: bool, YellowBerryGateSkipLaki: bool, YellowBerryGateSkipBombettePush: bool, RedBerryGateSkipBombettePush: bool,
-        RedBerryGateSkipLaki: bool, BlueBerryGateSkipBombettePush: bool, BlueBerryGateSkipLaki: bool, BubbleBerryTreeLakiJump: bool, MurderSolvedEarlyLaki: bool,
+        RedBerryGateSkipLaki: bool, BlueBerryGateSkipBombettePush: bool, BlueBerryGateSkipLaki: bool, BubbleBerryTreeLakiJump: bool, BubbleBerryTreeUltraBoots: bool, MurderSolvedEarlyLaki: bool,
         MurderSolvedEarlyBombettePush: bool, Ch7SushieGlitch: bool, StarStoneWithCh7SushieGlitch: bool, ShiverMountainHiddenBlockWithoutUltraBootsLaki: bool, ShiverMountainHiddenBlockWithoutUltraBootsNoLaki: bool,
         SnowmenSkipLaki: bool, ShiverMountainSwitchSkip: bool, SushielessWarehouseKeyBombette: bool, SushielessWarehouseKeyKooper: bool, MirrorClip: bool, BowlessBowsersCastleBasement: bool, BombettelessBowsersCastleBasement: bool, FastFloodRoomKooper: bool,
         FastFloodRoomBombetteUltraBoots: bool, BreakStoneBlocksWithUltraBoots: bool, BreakYellowBlocksWithSuperBoots: bool, KnowsHiddenBlocks: bool, KnowsPuzzleSolutions: bool, ReachHighBlocksWithSuperBoots: bool
@@ -251,6 +251,7 @@ class Seed:
         self.MtRuggedStationJumplessClimbBombette = MtRuggedStationJumplessClimbBombette
         self.MtRuggedStationJumplessClimbLaki = MtRuggedStationJumplessClimbLaki
         self.MtRuggedSlideJumplessClimbLaki = MtRuggedSlideJumplessClimbLaki
+        self.JumplessMtRuggedTrainPlatformParakarry = JumplessMtRuggedTrainPlatformParakarry
 
         # Glitches: Dry Dry Desert
         self.DesertBrickBlockItemWithParakarry = DesertBrickBlockItemWithParakarry
@@ -335,6 +336,7 @@ class Seed:
         self.BlueBerryGateSkipBombettePush = BlueBerryGateSkipBombettePush
         self.BlueBerryGateSkipLaki = BlueBerryGateSkipLaki
         self.BubbleBerryTreeLakiJump = BubbleBerryTreeLakiJump
+        self.BubbleBerryTreeUltraBoots = BubbleBerryTreeUltraBoots
 
         # Glitches: Shiver Region
         self.MurderSolvedEarlyLaki = MurderSolvedEarlyLaki
