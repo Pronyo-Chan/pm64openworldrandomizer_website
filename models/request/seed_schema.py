@@ -1,6 +1,6 @@
 from marshmallow import EXCLUDE, Schema, ValidationError, fields, validates_schema, validate
 
-CURRENT_MOD_VERSION = 10
+CURRENT_MOD_VERSION = 11
 
 class StartWithPartnersSchema(Schema):
     class Meta:
