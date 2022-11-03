@@ -47,8 +47,8 @@ class Seed:
         KooperlessGustyGulchDizzyDialParakarry: bool, GustyGulchGapSkip: bool, BowlessTubbasCastle: bool, TubbasTableLakiJumpClock: bool, TubbasTableLakiJumpStudy: bool, TubbasTableUltraBoots: bool, TubbasCastleSuperBootsSkip: bool,
         ParakarrylessMegaRush: bool, ParakarrylessBlueBuildingStarPiece: bool, GourmetGuySkipJump: bool, GourmetGuySkipLaki: bool, GourmetGuySkipParakarry: bool, BowlessGreenStation: bool,
         KooperlessRedStationShootingStar: bool, GearlessRedStationShootingStar: bool, ParakarrylessBlueBlockCityGap: bool, BlueSwitchSkipLaki: bool, BlueSwitchSkipUltraBoots: bool, RedBarricadeSkip: bool, HammerlessBlueStationLaki: bool,
-        HammerlessPinkStationLaki: bool, RaphSkipEnglish: bool, Ch5SushieGlitch: bool, SushielessJungleStarpieceAndLetter: bool, KooperlessLavalavaPowBlockParakarry: bool, KooperlessLavalavaPowBlockSuperBoots: bool,
-        JumplessLavalavaPowBlock: bool,  UltraHammerSkip: bool, UltraHammerSkipLaki: bool, UltraHammerSkipSushie: bool,
+        HammerlessPinkStationLaki: bool, RaphSkipEnglish: bool, Ch5SushieGlitch: bool, SushielessJungleStarpieceAndLetter: bool, JumplessDeepJungleLaki: bool, KooperlessLavalavaPowBlockParakarry: bool,
+        KooperlessLavalavaPowBlockSuperBoots: bool, JumplessLavalavaPowBlock: bool,  UltraHammerSkip: bool, UltraHammerSkipLaki: bool, UltraHammerSkipSushie: bool,
         Flarakarry: bool, ParakarrylessFlarakarryBombette: bool, ParakarrylessFlarakarryLaki: bool, VolcanoSushieGlitch: bool, EarlyLakiLZS: bool, EarlyLakiBombettePush: bool, BombettelessMegaSmash: bool,
         SunTowerSkip: bool, YellowBerryGateSkipLZS: bool, YellowBerryGateSkipLaki: bool, YellowBerryGateSkipBombettePush: bool, RedBerryGateSkipBombettePush: bool,
         RedBerryGateSkipLaki: bool, BlueBerryGateSkipBombettePush: bool, BlueBerryGateSkipLaki: bool, BubbleBerryTreeLakiJump: bool, BubbleBerryTreeUltraBoots: bool, MurderSolvedEarlyLaki: bool,
@@ -310,6 +310,7 @@ class Seed:
         self.RaphSkipEnglish = RaphSkipEnglish
         self.Ch5SushieGlitch = Ch5SushieGlitch
         self.SushielessJungleStarpieceAndLetter = SushielessJungleStarpieceAndLetter
+        self.JumplessDeepJungleLaki = JumplessDeepJungleLaki
 
         # Glitches: Mt. Lavalava
         self.KooperlessLavalavaPowBlockParakarry = KooperlessLavalavaPowBlockParakarry

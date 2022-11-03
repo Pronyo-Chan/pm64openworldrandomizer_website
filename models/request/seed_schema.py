@@ -270,6 +270,7 @@ class SeedRequestSchema(Schema):
     RaphSkipEnglish = fields.Boolean(required=True)
     Ch5SushieGlitch = fields.Boolean(required=True)
     SushielessJungleStarpieceAndLetter = fields.Boolean(required=True)
+    JumplessDeepJungleLaki = fields.Boolean(required=True)
 
     # Glitches: Mt. Lavalava
     KooperlessLavalavaPowBlockParakarry = fields.Boolean(required=True)
