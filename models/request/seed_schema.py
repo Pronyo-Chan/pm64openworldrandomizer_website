@@ -187,6 +187,7 @@ class SeedRequestSchema(Schema):
     FirstBlockToShiverCityWithoutSuperBoots = fields.Boolean(required=True)
     BlocksToShiverCityWithKooperShellItemThrow = fields.Boolean(required=True)
     SewerYellowBlockWithUltraBoots = fields.Boolean(required=True)
+    JumplessSewerShootingStar = fields.Boolean(required=True)
 
     # Glitches: Plesant Path
     KooperlessPleasantPathStarPiece = fields.Boolean(required=True)
