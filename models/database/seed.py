@@ -39,7 +39,7 @@ class Seed:
         KooperlessPleasantPathStarPiece: bool, HammerlessPleasantPathBridgeUltraBootsParakarry: bool, InvisibleBridgeClipLzs: bool, InvisibleBridgeClipLaki: bool,
         KooperlessPleasantPathThunderBolt: bool, BombettelessKbfFpPlusLZS: bool, BombettelessKbfFpPlusLaki: bool, LakiJailbreak: bool, BombettelessRightFortressJailKey: bool,
         WaterStaircaseSkip: bool, MtRuggedQuakeHammerAndLetterWithLaki: bool, ParakarrylessMtRuggedSeed: bool, BuzzarGapSkipClippy: bool, ParakarrylessMtRuggedStarPiece: bool,
-        MtRuggedCoinsWithKooper: bool, MtRuggedStationJumplessClimbBombette: bool, MtRuggedStationJumplessClimbLaki: bool, MtRuggedSlideJumplessClimbLaki: bool, JumplessMtRuggedTrainPlatformParakarry: bool,
+        MtRuggedCoinsWithKooper: bool, MtRuggedStationJumplessClimbBombette: bool, MtRuggedStationJumplessClimbLaki: bool, JumplessMtRuggedTrainPlatformParakarry: bool,
         DesertBrickBlockItemWithParakarry: bool, EarlyRuinsLakiJump: bool, EarlyRuinsUltraBoots: bool, ArtifactJumpLaki: bool, ArtifactJumpUltraBoots: bool,
         RuinsKeyLakiJump: bool, ParakarrylessSecondSandRoomUltraBoots: bool, ParakarrylessSecondSandRoomNormalBoots: bool, ParakarrylessSuperHammerRoomUltraBoots: bool,
         ParakarrylessSuperHammerRoomNormalBoots: bool, RuinsLocksSkipClippy: bool, RecordSkipNoBombettePush: bool, RecordSkipBombettePush: bool, BoosPortraitWithKooper: bool,
@@ -251,7 +251,6 @@ class Seed:
         self.MtRuggedCoinsWithKooper = MtRuggedCoinsWithKooper
         self.MtRuggedStationJumplessClimbBombette = MtRuggedStationJumplessClimbBombette
         self.MtRuggedStationJumplessClimbLaki = MtRuggedStationJumplessClimbLaki
-        self.MtRuggedSlideJumplessClimbLaki = MtRuggedSlideJumplessClimbLaki
         self.JumplessMtRuggedTrainPlatformParakarry = JumplessMtRuggedTrainPlatformParakarry
 
         # Glitches: Dry Dry Desert
