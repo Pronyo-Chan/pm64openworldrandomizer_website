@@ -1,13 +1,26 @@
 from models.viewmodels.seed.StatsAndGear import StatsAndGear
 from models.viewmodels.seed.cosmetics import Cosmetics
 from models.viewmodels.seed.general_difficulty import GeneralDifficulty
+from models.viewmodels.seed.open_world import OpenWorld
 from models.viewmodels.seed.partners import Partners
 from models.viewmodels.seed.items import Items
 from models.viewmodels.seed.gameplay import Gameplay
 from models.viewmodels.seed.glitches import glitches_names
+from models.viewmodels.seed.quality_of_life import QualityOfLife
+from models.viewmodels.seed.seed_info import SeedInfo
+from models.viewmodels.seed.spoiler import Spoiler
 
 class SeedViewModel:
     def __init__(self, seed_document: dict):
+
+        self.SeedInfo = SeedInfo(
+            seed_id = seed_document["SeedID"],
+            creation_date = seed_document["CreationDate"],
+            seed_hash_items = seed_document["SeedHashItems"],
+            settings_string = seed_document["SettingsString"],
+            star_rod_mod_version = seed_document["StarRodModVersion"]
+        ).__dict__
+
         self.Items = Items(
             add_item_pouches = seed_document["AddItemPouches"],
             gear_shuffle_mode = seed_document["GearShuffleMode"],
@@ -114,5 +127,36 @@ class SeedViewModel:
             starting_item_D = seed_document["StartingItemD"],
             starting_item_E = seed_document["StartingItemE"],
             starting_item_F = seed_document["StartingItemF"]
+        ).__dict__
+
+        self.OpenWorld = OpenWorld(
+            starting_location = seed_document["StartingMap"],
+            magical_seeds_required = seed_document["MagicalSeedsRequired"],
+            blue_house_open = seed_document["BlueHouseOpen"],
+            toybox_open = seed_document["ToyboxOpen"],
+            prologue_open = seed_document["PrologueOpen"],
+            whale_open = seed_document["WhaleOpen"]
+        ).__dict__
+
+        self.QualityOfLife = QualityOfLife(
+            hidden_block_mode = seed_document["HiddenBlockMode"],
+            bowsers_castle_mode = seed_document["BowsersCastleMode"],
+            always_speedy_spin = seed_document["AlwaysSpeedySpin"],
+            allow_physics_glitches = seed_document["AllowPhysicsGlitches"],
+            always_peekaboo = seed_document["AlwaysPeekaboo"],
+            skip_quiz = seed_document["SkipQuiz"],
+            always_i_spy = seed_document["AlwaysISpy"],
+            quizmo_always_appears = seed_document["QuizmoAlwaysAppears"],
+            foliage_item_hints = seed_document["FoliageItemHints"],
+            hidden_panel_visibility = seed_document["HiddenPanelVisibility"],
+            cook_without_frying_pan = seed_document["CookWithoutFryingPan"],
+            shorten_cutscenes = seed_document["ShortenCutscenes"],
+            skip_epilogue = seed_document["SkipEpilogue"],
+        ).__dict__
+
+        self.Spoiler = Spoiler(
+            include_spoiler_log = seed_document["WriteSpoilerLog"],
+            allow_item_hints = seed_document["AllowItemHints"],
+            reveal_log_at_time = seed_document.get("RevealLogAtTime") # nullable
         ).__dict__
         
