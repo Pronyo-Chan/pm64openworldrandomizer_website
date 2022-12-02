@@ -1,4 +1,4 @@
-from models.viewmodels.seed.StatsAndGear import StatsAndGear
+from models.viewmodels.seed.stats_and_gear import StatsAndGear
 from models.viewmodels.seed.cosmetics import Cosmetics
 from models.viewmodels.seed.general_difficulty import GeneralDifficulty
 from models.viewmodels.seed.open_world import OpenWorld
@@ -40,9 +40,10 @@ class SeedViewModel:
         self.Partners = Partners(
             partners_in_default_locations = seed_document["PartnersInDefaultLocations"],
             partners_always_usable = seed_document["PartnersAlwaysUsable"],
-            random_partners_max = seed_document["RandomPartnersMax"],
-            random_partners_min = seed_document["RandomPartnersMin"],
-            start_with_random_partners = seed_document["StartWithRandomPartners"]
+            random_partners_max = seed_document.get("RandomPartnersMax"),
+            random_partners_min = seed_document.get("RandomPartnersMin"),
+            start_with_random_partners = seed_document["StartWithRandomPartners"],
+            start_with_partners = seed_document.get("StartWithPartners")
         ).__dict__
 
         self.Gameplay = Gameplay(
