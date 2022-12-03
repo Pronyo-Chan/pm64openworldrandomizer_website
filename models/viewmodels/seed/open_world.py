@@ -22,4 +22,4 @@ class OpenWorld:
         self.OpenBlueHouse = blue_house_open
         self.OpenToyBox = toybox_open
         self.OpenPrologue = prologue_open
-        self.WhaleOpen = whale_open
+        self.OpenWhale = whale_open
