@@ -19,10 +19,11 @@ goombario_color_choices = {
 }
 
 kooper_color_choices = {
-    0: "Green",
-    1: "Red",
-    2: "Purple",
-    3: "Grey",
+    0: "Default",
+    1: "Green",
+    2: "Red",
+    3: "Purple",
+    4: "Grey",
 }
 
 bombette_color_choices = {
@@ -105,7 +106,7 @@ class Cosmetics:
         parakarry_setting: int, parakarry_sprite: int, bow_setting: int, bow_sprite: int,
         watt_setting: int, watt_sprite: int, sushie_setting: int, sushie_sprite: int,
         bosses_setting: int, enemies_setting: int, npc_setting: int, box5_color_a: int,
-        coin_color: int, random_coin_color: bool
+        coin_color: int, random_coin_color: bool, random_text: bool, roman_numerals: bool, random_pitch: bool
     ):
 
         self.Mario = get_character_color_description(mario_setting, mario_sprite, mario_color_choices)
@@ -122,3 +123,7 @@ class Cosmetics:
 
         self.StatusMenu = box_colors.get(box5_color_a)
         self.CoinColor = "Random" if random_coin_color else coin_colors.get(coin_color)
+
+        self.RandomText = random_text
+        self.RomanNumerals = roman_numerals
+        self.RandomPitch = random_pitch

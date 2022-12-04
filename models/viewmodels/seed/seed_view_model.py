@@ -78,7 +78,10 @@ class SeedViewModel:
             enemies_setting = seed_document["EnemiesSetting"],
             coin_color = seed_document["CoinColor"],
             random_coin_color = seed_document["RandomCoinColor"],
-            box5_color_a = seed_document["Box5ColorA"]
+            box5_color_a = seed_document["Box5ColorA"],
+            roman_numerals = seed_document["RomanNumerals"],
+            random_text = seed_document["RandomText"],
+            random_pitch = seed_document["RandomPitch"]
         ).__dict__
 
         self.Glitches = [g for g in glitches_names if seed_document[g] is True]
