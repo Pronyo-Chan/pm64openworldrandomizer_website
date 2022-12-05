@@ -21,6 +21,7 @@ from models.database.cosmetic_settings import CosmeticSettings
 from models.database.seed import Seed
 from models.request.cosmetics_schema import CosmeticsShema
 from models.request.seed_schema import CURRENT_MOD_VERSION, SeedRequestSchema
+from models.viewmodels.seed.seed_view_model import SeedViewModel
 from services.cloud_storage_service import get_file_from_cloud, save_file_to_cloud
 from services.database_service import get_unique_seedID
 from services.seed_hash_service import get_items_from_seed_id
@@ -88,6 +89,20 @@ def get_randomizer_settings(seed_id):
             
     gc.collect()
     return result
+
+@app.route('/randomizer_settings_v2/<seed_id>', methods=['GET'])
+def get_randomizer_settings_v2(seed_id):
+    if seed_id is None:
+        abort(404)
+    document =  db.collection(firestore_seeds_collection).document(seed_id).get()
+    if not document.exists:
+        abort(404)
+
+    document_dict = document.to_dict()
+    result = SeedViewModel(document_dict)
+            
+    gc.collect()
+    return result.__dict__
 
 @app.route('/randomizer_settings', methods=['POST'])
 def post_randomizer_settings():
