@@ -29,10 +29,11 @@ kooper_color_choices = {
 bombette_color_choices = {
     0: "Default",
     1: "Orange",
-    2: "Purple",
-    3: "Green",
-    4: "Yellow",
-    5: "Blue"
+    2: "Green",
+    3: "Yellow",
+    4: "Blue",
+    5: "Red",
+    6: "Purple"
 }
 
 parakarry_color_choices = {
@@ -61,7 +62,8 @@ sushie_color_choices = {
     0: "Default",
     1: "Red",
     2: "Yellow",
-    3: "Green"
+    3: "Green",
+    4: "Blue"
 }
 
 lakilester_color_choices = {
