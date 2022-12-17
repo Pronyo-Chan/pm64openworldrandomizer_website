@@ -90,21 +90,24 @@ coin_colors = {
     4 : "Silver"
 }
 
-def get_character_color_description(character_setting, character_sprite, character_color_choices):
-    if character_setting == 0:
+def get_palette_description(setting, sprite = None, character_color_choices = None):
+    if setting == 0:
         return "Default"
 
-    elif character_setting == 1:
-        return character_color_choices[character_sprite]
+    elif setting == 1:
+        return character_color_choices[sprite]
 
-    elif character_setting == 2:
+    elif setting == 2:
         return "Random Pick"
 
-    elif character_setting == 3:
+    elif setting == 3:
         return "Random Pick (No Vanilla)"
 
-    elif character_setting == 4:
+    elif setting == 4:
         return "Random On Every Load"
+    
+    else:
+        raise Exception(f"Couldn't find description for palette with setting: {setting}, sprite: {sprite}, color choices: {character_color_choices}")
             
 class Cosmetics:
 
@@ -119,19 +122,20 @@ class Cosmetics:
         random_pitch: bool
     ):
 
-        self.Mario = get_character_color_description(mario_setting, mario_sprite, mario_color_choices)
-        self.Goombario = get_character_color_description(goombario_setting, goombario_sprite, goombario_color_choices)
-        self.Kooper = get_character_color_description(kooper_setting, kooper_sprite, kooper_color_choices)
-        self.Bombette = get_character_color_description(bombette_setting, bombette_sprite, bombette_color_choices)
-        self.Parakarry = get_character_color_description(parakarry_setting, parakarry_sprite, parakarry_color_choices)
-        self.Bow = get_character_color_description(bow_setting, bow_sprite, bow_color_choices)
-        self.Watt = get_character_color_description(watt_setting, watt_sprite, watt_color_choices)
-        self.Sushie = get_character_color_description(sushie_setting, sushie_sprite, sushie_color_choices)
-        self.Lakilester = get_character_color_description(lakilester_setting, lakilester_sprite, lakilester_color_choices)
-        self.Bosses = bosses_setting
-        self.NPC = npc_setting
-        self.Enemies = enemies_setting
-        self.Hammer = hammer_setting
+        self.Mario = get_palette_description(mario_setting, mario_sprite, mario_color_choices)
+        self.Goombario = get_palette_description(goombario_setting, goombario_sprite, goombario_color_choices)
+        self.Kooper = get_palette_description(kooper_setting, kooper_sprite, kooper_color_choices)
+        self.Bombette = get_palette_description(bombette_setting, bombette_sprite, bombette_color_choices)
+        self.Parakarry = get_palette_description(parakarry_setting, parakarry_sprite, parakarry_color_choices)
+        self.Bow = get_palette_description(bow_setting, bow_sprite, bow_color_choices)
+        self.Watt = get_palette_description(watt_setting, watt_sprite, watt_color_choices)
+        self.Sushie = get_palette_description(sushie_setting, sushie_sprite, sushie_color_choices)
+        self.Lakilester = get_palette_description(lakilester_setting, lakilester_sprite, lakilester_color_choices)
+        
+        self.Bosses = get_palette_description(bosses_setting)
+        self.NPC = get_palette_description(npc_setting)
+        self.Enemies = get_palette_description(enemies_setting)
+        self.Hammer = get_palette_description(hammer_setting)
 
         self.StatusMenu = box_colors.get(box5_color_a)
         self.CoinColor = "Random" if random_coin_color else coin_colors.get(coin_color)
