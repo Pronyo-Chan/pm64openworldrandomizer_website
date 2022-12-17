@@ -64,6 +64,12 @@ sushie_color_choices = {
     3: "Green"
 }
 
+lakilester_color_choices = {
+    0: "Default",
+    1: "Blue",
+    2: "Dark"
+}
+
 box_colors = {
     0xEBE677FF : "Default",
     0x8D8FFFFF : "Blue",
@@ -105,8 +111,10 @@ class Cosmetics:
         kooper_setting: int, kooper_sprite: int, bombette_setting: int, bombette_sprite: int,
         parakarry_setting: int, parakarry_sprite: int, bow_setting: int, bow_sprite: int,
         watt_setting: int, watt_sprite: int, sushie_setting: int, sushie_sprite: int,
-        bosses_setting: int, enemies_setting: int, npc_setting: int, box5_color_a: int,
-        coin_color: int, random_coin_color: bool, random_text: bool, roman_numerals: bool, random_pitch: bool
+        lakilester_setting: int, lakilester_sprite: int, bosses_setting: int,
+        enemies_setting: int, hammer_setting: int, npc_setting: int, box5_color_a: int,
+        coin_color: int, random_coin_color: bool, random_text: bool, roman_numerals: bool,
+        random_pitch: bool
     ):
 
         self.Mario = get_character_color_description(mario_setting, mario_sprite, mario_color_choices)
@@ -117,9 +125,11 @@ class Cosmetics:
         self.Bow = get_character_color_description(bow_setting, bow_sprite, bow_color_choices)
         self.Watt = get_character_color_description(watt_setting, watt_sprite, watt_color_choices)
         self.Sushie = get_character_color_description(sushie_setting, sushie_sprite, sushie_color_choices)
+        self.Lakilester = get_character_color_description(lakilester_setting, lakilester_sprite, lakilester_color_choices)
         self.Bosses = bosses_setting
         self.NPC = npc_setting
         self.Enemies = enemies_setting
+        self.Hammer = hammer_setting
 
         self.StatusMenu = box_colors.get(box5_color_a)
         self.CoinColor = "Random" if random_coin_color else coin_colors.get(coin_color)

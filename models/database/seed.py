@@ -21,13 +21,13 @@ class Seed:
         PartnersInDefaultLocations: bool, PartnersAlwaysUsable: bool, StartWithRandomPartners: bool, WriteSpoilerLog: bool, RomanNumerals: bool, \
         IncludeDojo: bool, BowsersCastleMode: int, ShortenCutscenes: bool, SkipEpilogue, RandomPartnersMin: int, RandomPartnersMax: int, StartWithPartners: StartWithPartners,
         Box5ColorA: int, Box5ColorB: int, RandomCoinColor: bool, CoinColor: int, MarioSetting: int, MarioSprite: int, GoombarioSetting: int, GoombarioSprite: int,
-        KooperSetting: int, KooperSprite: int, BowSetting: int, BowSprite: int, BossesSetting: int, NPCSetting: int, EnemiesSetting: int, StartingMap: int,
+        KooperSetting: int, KooperSprite: int, BowSetting: int, BowSprite: int, BossesSetting: int, NPCSetting: int, EnemiesSetting: int, HammerSetting:int, StartingMap: int,
         StartingMaxHP: int, StartingMaxFP: int, StartingMaxBP: int, StartingStarPower: int, StartingItem0: int, StartingItem1: int, StartingItem2: int, StartingItem3: int, \
         StartingItem4: int, StartingItem5: int, StartingItem6: int, StartingItem7: int, StartingItem8: int, StartingItem9: int, StartingItemA: int, StartingItemB: int, \
         StartingItemC: int, StartingItemD: int, StartingItemE: int, RandomConsumableMode: int, ItemQuality: int, StartingItemF: int, StarWaySpiritsNeeded: int,  SettingsString: str, \
         FoliageItemHints, RandomText, NoHealingItems, StartWithRandomItems: bool, RandomItemsMin: int, RandomItemsMax: int, AddItemPouches, \
         RandomChoice: bool, MysteryRandomPick: bool, ItemTrapMode: int, AllowItemHints: bool, WattSetting: int, WattSprite: int, SushieSetting: int, SushieSprite: int, \
-        ParakarrySetting: int, ParakarrySprite: int, IncludeRadioTradeEvent: bool, RevealLogInHours: int, StartingBoots: int, StartingHammer: int,
+        LakilesterSetting: int, LakilesterSprite: int, ParakarrySetting: int, ParakarrySprite: int, IncludeRadioTradeEvent: bool, RevealLogInHours: int, StartingBoots: int, StartingHammer: int,
         ShuffleBlocks: bool, RandomPitch: bool, GearShuffleMode: int, HiddenPanelVisibility: bool, BombetteSetting: int, BombetteSprite: int, CookWithoutFryingPan: bool,
         RipCheatoItemsInLogic: int, MerlowRewardPricing: int, PrologueOpen: bool,
 
@@ -128,12 +128,15 @@ class Seed:
         self.WattSprite = WattSprite
         self.SushieSetting = SushieSetting
         self.SushieSprite = SushieSprite
+        self.LakilesterSetting = LakilesterSetting
+        self.LakilesterSprite = LakilesterSprite
         self.ParakarrySetting = ParakarrySetting
         self.ParakarrySprite = ParakarrySprite
 
         self.BossesSetting = BossesSetting
         self.NPCSetting = NPCSetting
         self.EnemiesSetting = EnemiesSetting
+        self.HammerSetting = HammerSetting
 
         self.StartingMap = StartingMap
         self.StartingMaxHP = StartingMaxHP
