@@ -107,7 +107,8 @@ def get_palette_description(setting, sprite = None, character_color_choices = No
         return "Random On Every Load"
     
     else:
-        raise Exception(f"Couldn't find description for palette with setting: {setting}, sprite: {sprite}, color choices: {character_color_choices}")
+        return "Default"
+        #raise Exception(f"Couldn't find description for palette with setting: {setting}, sprite: {sprite}, color choices: {character_color_choices}")
             
 class Cosmetics:
 
