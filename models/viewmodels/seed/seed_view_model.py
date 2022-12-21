@@ -87,7 +87,7 @@ class SeedViewModel:
             random_pitch = seed_document["RandomPitch"]
         ).__dict__
 
-        self.Glitches = [g for g in glitches_names if seed_document[g] is True]
+        self.Glitches = [g for g in glitches_names if seed_document.get(g) is True]
 
         self.GeneralDifficulty = GeneralDifficulty(
             progressive_scaling = seed_document["ProgressiveScaling"],
