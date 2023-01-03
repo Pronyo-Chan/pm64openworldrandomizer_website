@@ -142,7 +142,7 @@ class Seed:
         self.StartingMaxHP = StartingMaxHP
         self.StartingMaxFP = StartingMaxFP
         self.StartingMaxBP = StartingMaxBP
-        self.StartingLevel = int(1 + ((StartingMaxHP - 10) / 5) + ((StartingMaxFP - 5) / 5) + + ((StartingMaxBP - 3) / 3))
+        self.StartingLevel = int(((StartingMaxHP - 5) / 5) + ((StartingMaxFP - 5) / 5) + + ((StartingMaxBP - 3) / 3))
         self.StartingStarPower = StartingStarPower
         self.StartingBoots = StartingBoots
         self.StartingHammer = StartingHammer
