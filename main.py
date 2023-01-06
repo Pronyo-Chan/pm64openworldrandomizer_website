@@ -24,7 +24,6 @@ from models.request.seed_schema import CURRENT_MOD_VERSION, SeedRequestSchema
 from models.viewmodels.seed.seed_view_model import SeedViewModel
 from services.cloud_storage_service import get_file_from_cloud, save_file_to_cloud
 from services.database_service import get_unique_seedID
-from services.seed_hash_service import get_items_from_seed_id
 
 #from werkzeug.middleware.profiler import ProfilerMiddleware
 #import memory_profiler as mem_profile
@@ -127,6 +126,7 @@ def post_randomizer_settings():
     seed.PaletteOffset = rando_result.palette_offset
     seed.CosmeticsOffset = rando_result.cosmetics_offset
     seed.AudioOffset = rando_result.audio_offset
+    seed.SeedHashItems = rando_result.hash_items
 
     db.collection(firestore_seeds_collection).document(str(unique_seed_id)).set(seed.__dict__)
 
@@ -145,7 +145,7 @@ def post_randomizer_preset():
     seed_dict = next(preset["settings"] for preset in presets if request_preset == preset["name"])
     unique_seed_id = get_unique_seedID(db, firestore_seeds_collection)
     seed_dict["SeedID"] = unique_seed_id
-    seed_dict["SeedHashItems"] = get_items_from_seed_id(unique_seed_id)
+    
     seed_dict["CreationDate"] = datetime.now()
     seed_dict["StarRodModVersion"] = CURRENT_MOD_VERSION # Use latest mod version no matter what's in the preset
 
@@ -159,6 +159,7 @@ def post_randomizer_preset():
 
     rando_result = web_randomizer(json.dumps(seed_dict, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"), world_graph)
     seed_dict["SeedValue"] = rando_result.seed_value
+    seed_dict["SeedHashItems"] = rando_result.hash_items
     
     seed_dict["PaletteOffset"] = rando_result.palette_offset
     seed_dict["CosmeticsOffset"] = rando_result.cosmetics_offset
