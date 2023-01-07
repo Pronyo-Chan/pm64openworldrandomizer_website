@@ -69,7 +69,9 @@ sushie_color_choices = {
 lakilester_color_choices = {
     0: "Default",
     1: "Blue",
-    2: "Dark"
+    2: "Dark",
+    3: "Red",
+    4: "Green"
 }
 
 box_colors = {

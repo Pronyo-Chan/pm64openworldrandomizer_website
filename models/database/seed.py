@@ -1,5 +1,4 @@
 from datetime import datetime, timedelta, timezone
-from services.seed_hash_service import get_items_from_seed_id
 
 
 class Seed:
@@ -58,7 +57,6 @@ class Seed:
         ):
 
         self.SeedID = SeedID
-        self.SeedHashItems = get_items_from_seed_id(SeedID)
         self.CreationDate = datetime.now(timezone.utc)
         self.StarRodModVersion = StarRodModVersion
         self.SettingsString = SettingsString
@@ -142,7 +140,7 @@ class Seed:
         self.StartingMaxHP = StartingMaxHP
         self.StartingMaxFP = StartingMaxFP
         self.StartingMaxBP = StartingMaxBP
-        self.StartingLevel = int(1 + ((StartingMaxHP - 10) / 5) + ((StartingMaxFP - 5) / 5) + + ((StartingMaxBP - 3) / 3))
+        self.StartingLevel = int(((StartingMaxHP - 5) / 5) + ((StartingMaxFP - 5) / 5) + + ((StartingMaxBP - 3) / 3))
         self.StartingStarPower = StartingStarPower
         self.StartingBoots = StartingBoots
         self.StartingHammer = StartingHammer
@@ -373,7 +371,6 @@ class Seed:
         # Other/Hidden Options
         self.SettingsName = "Default Dev Preset"
         self.SettingsVersion = "1.0.0"
-        self.PrettySpoilerlog = True
         self.PlacementAlgorithm = "AssumedFill"
         self.PeachCastleReturnPipe = True # Default
         self.ChallengeMode = False # Default
