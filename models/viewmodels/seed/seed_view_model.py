@@ -34,7 +34,9 @@ class SeedViewModel:
             key_items_outside_dungeon = seed_document["KeyitemsOutsideDungeon"],
             rip_cheato_items_in_logic = seed_document["RipCheatoItemsInLogic"],
             shuffle_blocks = seed_document["ShuffleBlocks"],
-            shuffle_items = seed_document["ShuffleItems"]
+            shuffle_items = seed_document["ShuffleItems"],
+            progression_on_merlow = seed_document.get("ProgressionOnMerlow"),
+            progression_on_rowf = seed_document.get("ProgressionOnRowf"),
         ).__dict__
 
         self.Partners = Partners(

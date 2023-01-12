@@ -1,7 +1,7 @@
 class Items:
     def __init__(self, add_item_pouches: bool, gear_shuffle_mode: int, include_coins: bool, include_dojo: bool, include_favors_mode: int,
         include_letters_mode: int, include_panels: bool, include_radio_trade_events: bool, include_shops: bool, key_items_outside_dungeon: bool,
-        shuffle_blocks: bool, shuffle_items: bool, rip_cheato_items_in_logic
+        shuffle_blocks: bool, shuffle_items: bool, rip_cheato_items_in_logic: bool, progression_on_rowf: bool, progression_on_merlow: bool,
     ):
 
         self.ShuffleItems = shuffle_items
@@ -17,3 +17,5 @@ class Items:
         self.LetterDeliveryRewards = include_letters_mode
         self.KoopaKootFavors = include_favors_mode
         self.RipCheatoItemsInLogic = rip_cheato_items_in_logic
+        self.ProgressionOnRowf = progression_on_rowf
+        self.ProgressionOnMerlow = progression_on_merlow

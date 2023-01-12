@@ -31,6 +31,9 @@ class SeedRequestSchema(Schema):
     IncludeRadioTradeEvent  = fields.Boolean(required=True)
     ShuffleBlocks = fields.Boolean(required=True)
     GearShuffleMode = fields.Int(required=True, validate=validate.Range(0,2))
+    RipCheatoItemsInLogic = fields.Int(required=True, validate=validate.Range(0, 11))
+    ProgressionOnRowf = fields.Boolean(required=True)
+    ProgressionOnMerlow = fields.Boolean(required=True)
     
     # Partners
     PartnersInDefaultLocations = fields.Boolean(required=True)
@@ -123,7 +126,6 @@ class SeedRequestSchema(Schema):
     SkipEpilogue = fields.Boolean(required=True)
     HiddenPanelVisibility = fields.Int(required=True)
     CookWithoutFryingPan = fields.Boolean(required=True)
-    RipCheatoItemsInLogic = fields.Int(required=True, validate=validate.Range(0, 11))
     MerlowRewardPricing = fields.Int(required=True, validate=validate.Range(0, 1))
 
     # Starting Items
