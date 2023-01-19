@@ -13,7 +13,7 @@ class Seed:
             self.Lakilester = Lakilester
 
     def __init__(self, SeedID: str, StarRodModVersion: int, AlwaysSpeedySpin: str, AlwaysISpy: bool, AlwaysPeekaboo: bool, HiddenBlockMode: int, \
-        AllowPhysicsGlitches: bool, StartingCoins: int, CapEnemyXP: bool, NoXP: bool, DoubleDamage: bool, QuadrupleDamage: bool, OHKO: bool,\
+        AllowPhysicsGlitches: bool, StartingCoins: int, CapEnemyXP: bool, XPMultiplier: float, DoubleDamage: bool, QuadrupleDamage: bool, OHKO: bool,\
         NoSaveBlocks: bool, NoHeartBlocks: bool, MagicalSeedsRequired: int, BlueHouseOpen: bool, ToyboxOpen: bool, WhaleOpen: bool, ShuffleChapterDifficulty: bool,\
         RandomFormations: bool, ShuffleItems: bool, IncludeCoins: bool, IncludeShops: bool, IncludePanels: bool, IncludeFavorsMode: int, IncludeLettersMode: int, KeyitemsOutsideDungeon: bool,\
         ProgressiveScaling: bool, RandomBadgesBP: int, RandomBadgesFP: int, RandomPartnerFP: int, RandomStarpowerSP: int, RandomQuiz: bool, SkipQuiz: bool, QuizmoAlwaysAppears: bool, \
@@ -68,7 +68,7 @@ class Seed:
         self.AllowPhysicsGlitches = AllowPhysicsGlitches
         self.StartingCoins = StartingCoins
         self.CapEnemyXP = CapEnemyXP
-        self.NoXP = NoXP
+        self.XPMultiplier = XPMultiplier
         self.DoubleDamage = DoubleDamage
         self.QuadrupleDamage = QuadrupleDamage
         self.OHKO = OHKO

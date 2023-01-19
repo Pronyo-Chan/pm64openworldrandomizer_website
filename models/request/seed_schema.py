@@ -1,6 +1,6 @@
 from marshmallow import EXCLUDE, Schema, ValidationError, fields, validates_schema, validate
 
-CURRENT_MOD_VERSION = 13
+CURRENT_MOD_VERSION = 14
 
 class StartWithPartnersSchema(Schema):
     class Meta:
@@ -86,7 +86,7 @@ class SeedRequestSchema(Schema):
     # Difficulty
     StartingCoins = fields.Int(required=True, validate=validate.Range(0, 999))
     CapEnemyXP = fields.Boolean(required=True)
-    NoXP = fields.Boolean(required=True)
+    XPMultiplier = fields.Float(required=True, validate=validate.Range(0, 2))
     DoubleDamage = fields.Boolean(required=True)
     QuadrupleDamage = fields.Boolean(required=True)
     OHKO = fields.Boolean(required=True)
