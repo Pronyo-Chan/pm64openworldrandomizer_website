@@ -14,7 +14,8 @@ class OpenWorld:
         blue_house_open: bool, 
         toybox_open: bool, 
         prologue_open: bool, 
-        whale_open: bool, 
+        whale_open: bool,
+        mt_rugged_open: bool
     ):
 
         self.StartingLocation = starting_maps.get(starting_location)
@@ -23,3 +24,4 @@ class OpenWorld:
         self.OpenToyBox = toybox_open
         self.OpenPrologue = prologue_open
         self.OpenWhale = whale_open
+        self.OpenMtRugged = mt_rugged_open

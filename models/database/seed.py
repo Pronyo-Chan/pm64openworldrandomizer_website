@@ -28,7 +28,7 @@ class Seed:
         RandomChoice: bool, MysteryRandomPick: bool, ItemTrapMode: int, AllowItemHints: bool, WattSetting: int, WattSprite: int, SushieSetting: int, SushieSprite: int, \
         LakilesterSetting: int, LakilesterSprite: int, ParakarrySetting: int, ParakarrySprite: int, IncludeRadioTradeEvent: bool, RevealLogInHours: int, StartingBoots: int, StartingHammer: int,
         ShuffleBlocks: bool, RandomPitch: bool, GearShuffleMode: int, HiddenPanelVisibility: bool, BombetteSetting: int, BombetteSprite: int, CookWithoutFryingPan: bool,
-        RipCheatoItemsInLogic: int, MerlowRewardPricing: int, PrologueOpen: bool, ProgressionOnRowf: bool, ProgressionOnMerlow: bool,
+        RipCheatoItemsInLogic: int, MerlowRewardPricing: int, PrologueOpen: bool, ProgressionOnRowf: bool, ProgressionOnMerlow: bool, MtRuggedOpen: bool,
 
         PrologueGelEarly: bool, ReverseGoombaKingBridge: bool, GoombaVillageEntryFenceClip: bool, GoombaVillageNpcLureExit: bool, HammerlessJrPlaygroundLaki: bool, GoombaVillageLakiExit: bool,
         PrologueSushieGlitchKsj: bool, PrologueSushieGlitchUltraBootsLaki: bool, OddKeyEarly: bool, BlueHouseSkip: bool, BlueHouseSkipLaki: bool, BlueHouseSkipToadLure: bool, BowlessToyBoxHammer: bool, BowlessToyBoxHammerlessLure: bool,
@@ -78,6 +78,7 @@ class Seed:
         self.BlueHouseOpen = BlueHouseOpen
         self.ToyboxOpen = ToyboxOpen
         self.WhaleOpen = WhaleOpen
+        self.MtRuggedOpen = MtRuggedOpen
         self.ShuffleChapterDifficulty = ShuffleChapterDifficulty
         self.RandomFormations = RandomFormations 
         self.ShuffleItems = ShuffleItems

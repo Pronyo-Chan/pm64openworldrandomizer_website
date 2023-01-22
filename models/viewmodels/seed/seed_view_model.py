@@ -144,7 +144,8 @@ class SeedViewModel:
             blue_house_open = seed_document["BlueHouseOpen"],
             toybox_open = seed_document["ToyboxOpen"],
             prologue_open = seed_document["PrologueOpen"],
-            whale_open = seed_document["WhaleOpen"]
+            whale_open = seed_document["WhaleOpen"],
+            mt_rugged_open = seed_document.get("MtRuggedOpen")
         ).__dict__
 
         self.QualityOfLife = QualityOfLife(
