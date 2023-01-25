@@ -15,6 +15,7 @@ class OpenWorld:
         toybox_open: bool, 
         prologue_open: bool, 
         whale_open: bool,
+        ch7_bridge_visible: bool,
         mt_rugged_open: bool
     ):
 
@@ -24,4 +25,5 @@ class OpenWorld:
         self.OpenToyBox = toybox_open
         self.OpenPrologue = prologue_open
         self.OpenWhale = whale_open
+        self.Ch7BridgeVisible = ch7_bridge_visible
         self.OpenMtRugged = mt_rugged_open

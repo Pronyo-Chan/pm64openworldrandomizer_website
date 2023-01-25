@@ -145,6 +145,7 @@ class SeedViewModel:
             toybox_open = seed_document["ToyboxOpen"],
             prologue_open = seed_document["PrologueOpen"],
             whale_open = seed_document["WhaleOpen"],
+            ch7_bridge_visible = seed_document.get("Ch7BridgeVisible"),
             mt_rugged_open = seed_document.get("MtRuggedOpen")
         ).__dict__
 
