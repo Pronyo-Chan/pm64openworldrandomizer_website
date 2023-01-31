@@ -109,7 +109,9 @@ class SeedRequestSchema(Schema):
     Ch7BridgeVisible = fields.Boolean(required=True)
     MtRuggedOpen = fields.Boolean(required=True)
     PrologueOpen = fields.Boolean(required=True)
-    StartingMap = fields.Int(required=True)
+    StartingMap = fields.Int(required=True)    
+    BowsersCastleMode = fields.Int(required=True, validate=validate.Range(0,2))
+    ShuffleDungeonEntrances = fields.Boolean(required=True)
 
     # Quality of Life
     AlwaysSpeedySpin = fields.Boolean(required=True)
@@ -122,7 +124,6 @@ class SeedRequestSchema(Schema):
     QuizmoAlwaysAppears = fields.Boolean(required=True)
     RomanNumerals = fields.Boolean(required=True)
     WriteSpoilerLog = fields.Boolean(required=True)
-    BowsersCastleMode = fields.Int(required=True, validate=validate.Range(0,2)) 
     FoliageItemHints = fields.Boolean(required=True)
     ShortenCutscenes = fields.Boolean(required=True)
     SkipEpilogue = fields.Boolean(required=True)

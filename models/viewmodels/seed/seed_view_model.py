@@ -146,12 +146,13 @@ class SeedViewModel:
             prologue_open = seed_document["PrologueOpen"],
             whale_open = seed_document["WhaleOpen"],
             ch7_bridge_visible = seed_document.get("Ch7BridgeVisible"),
-            mt_rugged_open = seed_document.get("MtRuggedOpen")
+            mt_rugged_open = seed_document.get("MtRuggedOpen"),
+            bowsers_castle_mode = seed_document["BowsersCastleMode"],
+            shuffle_dungeon_entrances = seed_document.get("ShuffleDungeonEntrances")
         ).__dict__
 
         self.QualityOfLife = QualityOfLife(
             hidden_block_mode = seed_document["HiddenBlockMode"],
-            bowsers_castle_mode = seed_document["BowsersCastleMode"],
             always_speedy_spin = seed_document["AlwaysSpeedySpin"],
             allow_physics_glitches = seed_document["AllowPhysicsGlitches"],
             always_peekaboo = seed_document["AlwaysPeekaboo"],

@@ -7,7 +7,7 @@ class Gameplay:
         random_starpower_sp: int,
         random_formations: bool,
         mystery_random_pick: bool,
-        random_choice: bool
+        random_choice: bool,
     ):
 
         self.BadgesBP = random_badges_bp
