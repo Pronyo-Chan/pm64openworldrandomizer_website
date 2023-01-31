@@ -101,7 +101,7 @@ class SeedRequestSchema(Schema):
     AllowItemHints = fields.Boolean(required=True)
     StarWaySpiritsNeeded = fields.Int(required=True)
 
-    # Open World
+    # World
     MagicalSeedsRequired = fields.Int(required=True, validate=validate.Range(0, 5))
     BlueHouseOpen = fields.Boolean(required=True)
     ToyboxOpen = fields.Boolean(required=True)

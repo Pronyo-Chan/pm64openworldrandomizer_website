@@ -1,7 +1,7 @@
 from models.viewmodels.seed.stats_and_gear import StatsAndGear
 from models.viewmodels.seed.cosmetics import Cosmetics
 from models.viewmodels.seed.general_difficulty import GeneralDifficulty
-from models.viewmodels.seed.open_world import OpenWorld
+from models.viewmodels.seed.open_world import World
 from models.viewmodels.seed.partners import Partners
 from models.viewmodels.seed.items import Items
 from models.viewmodels.seed.gameplay import Gameplay
@@ -138,7 +138,7 @@ class SeedViewModel:
             starting_item_F = seed_document["StartingItemF"]
         ).__dict__
 
-        self.OpenWorld = OpenWorld(
+        self.World = World(
             starting_location = seed_document["StartingMap"],
             magical_seeds_required = seed_document["MagicalSeedsRequired"],
             blue_house_open = seed_document["BlueHouseOpen"],

@@ -6,7 +6,7 @@ starting_maps = {
     0xFFFFFFFF: "Random"
 }
 
-class OpenWorld:
+class World:
     def __init__(
         self,
         starting_location: int,
