@@ -197,7 +197,7 @@ def get_cosmetic_patch():
     cosmetics_patch_operations = web_apply_cosmetic_options(cosmetic_settings.__dict__, seed_dict["PaletteOffset"], seed_dict["CosmeticsOffset"], seed_dict["AudioOffset"])
 
     gc.collect()
-    return send_file(cosmetics_patch_operations, attachment_filename="cosmetics.pmp")
+    return send_file(cosmetics_patch_operations, download_name="cosmetics.pmp")
 
 @app.route('/reveal_spoiler', methods=['POST'])
 def post_reveal_spoiler_log():
