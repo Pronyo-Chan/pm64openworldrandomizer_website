@@ -236,7 +236,7 @@ def get_spoiler_log(seed_id):
         abort(404)
 
     gc.collect()
-    return send_file(spoiler_file, attachment_filename="spoiler.txt")
+    return send_file(spoiler_file, download_name="spoiler.txt")
 
 @app.route('/patch/<seed_id>', methods=['GET'])
 def get_patch(seed_id):
@@ -251,7 +251,7 @@ def get_patch(seed_id):
         abort(404)
 
     gc.collect()
-    return send_file(patch_file, attachment_filename="patch.pmp")
+    return send_file(patch_file, download_name="patch.pmp")
 
 @app.route('/preset-names', methods=['GET'])
 def get_preset_names():
