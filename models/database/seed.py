@@ -13,8 +13,8 @@ class Seed:
             self.Lakilester = Lakilester
 
     def __init__(self, SeedID: str, StarRodModVersion: int, AlwaysSpeedySpin: str, AlwaysISpy: bool, AlwaysPeekaboo: bool, HiddenBlockMode: int, \
-        AllowPhysicsGlitches: bool, StartingCoins: int, CapEnemyXP: bool, NoXP: bool, DoubleDamage: bool, QuadrupleDamage: bool, OHKO: bool,\
-        NoSaveBlocks: bool, NoHeartBlocks: bool, MagicalSeedsRequired: int, BlueHouseOpen: bool, ToyboxOpen: bool, WhaleOpen: bool, ShuffleChapterDifficulty: bool,\
+        AllowPhysicsGlitches: bool, StartingCoins: int, CapEnemyXP: bool, XPMultiplier: float, DoubleDamage: bool, QuadrupleDamage: bool, OHKO: bool,\
+        NoSaveBlocks: bool, NoHeartBlocks: bool, MagicalSeedsRequired: int, BlueHouseOpen: bool, ToyboxOpen: bool, WhaleOpen: bool, Ch7BridgeVisible: bool, ShuffleChapterDifficulty: bool,\
         RandomFormations: bool, ShuffleItems: bool, IncludeCoins: bool, IncludeShops: bool, IncludePanels: bool, IncludeFavorsMode: int, IncludeLettersMode: int, KeyitemsOutsideDungeon: bool,\
         ProgressiveScaling: bool, RandomBadgesBP: int, RandomBadgesFP: int, RandomPartnerFP: int, RandomStarpowerSP: int, RandomQuiz: bool, SkipQuiz: bool, QuizmoAlwaysAppears: bool, \
         PartnersInDefaultLocations: bool, PartnersAlwaysUsable: bool, StartWithRandomPartners: bool, WriteSpoilerLog: bool, RomanNumerals: bool, \
@@ -28,7 +28,7 @@ class Seed:
         RandomChoice: bool, MysteryRandomPick: bool, ItemTrapMode: int, AllowItemHints: bool, WattSetting: int, WattSprite: int, SushieSetting: int, SushieSprite: int, \
         LakilesterSetting: int, LakilesterSprite: int, ParakarrySetting: int, ParakarrySprite: int, IncludeRadioTradeEvent: bool, RevealLogInHours: int, StartingBoots: int, StartingHammer: int,
         ShuffleBlocks: bool, RandomPitch: bool, GearShuffleMode: int, HiddenPanelVisibility: bool, BombetteSetting: int, BombetteSprite: int, CookWithoutFryingPan: bool,
-        RipCheatoItemsInLogic: int, MerlowRewardPricing: int, PrologueOpen: bool, ProgressionOnRowf: bool, ProgressionOnMerlow: bool,
+        RipCheatoItemsInLogic: int, MerlowRewardPricing: int, PrologueOpen: bool, ProgressionOnRowf: bool, ProgressionOnMerlow: bool, MtRuggedOpen: bool, ShuffleDungeonEntrances : bool,
 
         PrologueGelEarly: bool, ReverseGoombaKingBridge: bool, GoombaVillageEntryFenceClip: bool, GoombaVillageNpcLureExit: bool, HammerlessJrPlaygroundLaki: bool, GoombaVillageLakiExit: bool,
         PrologueSushieGlitchKsj: bool, PrologueSushieGlitchUltraBootsLaki: bool, OddKeyEarly: bool, BlueHouseSkip: bool, BlueHouseSkipLaki: bool, BlueHouseSkipToadLure: bool, BowlessToyBoxHammer: bool, BowlessToyBoxHammerlessLure: bool,
@@ -68,7 +68,7 @@ class Seed:
         self.AllowPhysicsGlitches = AllowPhysicsGlitches
         self.StartingCoins = StartingCoins
         self.CapEnemyXP = CapEnemyXP
-        self.NoXP = NoXP
+        self.XPMultiplier = XPMultiplier
         self.DoubleDamage = DoubleDamage
         self.QuadrupleDamage = QuadrupleDamage
         self.OHKO = OHKO
@@ -78,6 +78,8 @@ class Seed:
         self.BlueHouseOpen = BlueHouseOpen
         self.ToyboxOpen = ToyboxOpen
         self.WhaleOpen = WhaleOpen
+        self.Ch7BridgeVisible = Ch7BridgeVisible
+        self.MtRuggedOpen = MtRuggedOpen
         self.ShuffleChapterDifficulty = ShuffleChapterDifficulty
         self.RandomFormations = RandomFormations 
         self.ShuffleItems = ShuffleItems
@@ -187,6 +189,7 @@ class Seed:
         self.PrologueOpen = PrologueOpen
         self.ProgressionOnRowf = ProgressionOnRowf
         self.ProgressionOnMerlow = ProgressionOnMerlow
+        self.ShuffleDungeonEntrances = ShuffleDungeonEntrances
 
         if StartWithRandomPartners:
             self.RandomPartnersMax = RandomPartnersMax

@@ -1,7 +1,7 @@
 from models.viewmodels.seed.stats_and_gear import StatsAndGear
 from models.viewmodels.seed.cosmetics import Cosmetics
 from models.viewmodels.seed.general_difficulty import GeneralDifficulty
-from models.viewmodels.seed.open_world import OpenWorld
+from models.viewmodels.seed.open_world import World
 from models.viewmodels.seed.partners import Partners
 from models.viewmodels.seed.items import Items
 from models.viewmodels.seed.gameplay import Gameplay
@@ -99,7 +99,7 @@ class SeedViewModel:
             item_trap_mode = seed_document["ItemTrapMode"],
             merlow_reward_pricing = seed_document["MerlowRewardPricing"],
             cap_enemy_xp = seed_document["CapEnemyXP"],
-            no_xp = seed_document["NoXP"],
+            xp_multiplier = seed_document["XPMultiplier"],
             one_hit_ko = seed_document["OHKO"],
             no_save_blocks = seed_document["NoSaveBlocks"],
             no_heart_blocks = seed_document["NoHeartBlocks"],
@@ -138,18 +138,21 @@ class SeedViewModel:
             starting_item_F = seed_document["StartingItemF"]
         ).__dict__
 
-        self.OpenWorld = OpenWorld(
+        self.World = World(
             starting_location = seed_document["StartingMap"],
             magical_seeds_required = seed_document["MagicalSeedsRequired"],
             blue_house_open = seed_document["BlueHouseOpen"],
             toybox_open = seed_document["ToyboxOpen"],
             prologue_open = seed_document["PrologueOpen"],
-            whale_open = seed_document["WhaleOpen"]
+            whale_open = seed_document["WhaleOpen"],
+            ch7_bridge_visible = seed_document.get("Ch7BridgeVisible"),
+            mt_rugged_open = seed_document.get("MtRuggedOpen"),
+            bowsers_castle_mode = seed_document["BowsersCastleMode"],
+            shuffle_dungeon_entrances = seed_document.get("ShuffleDungeonEntrances")
         ).__dict__
 
         self.QualityOfLife = QualityOfLife(
             hidden_block_mode = seed_document["HiddenBlockMode"],
-            bowsers_castle_mode = seed_document["BowsersCastleMode"],
             always_speedy_spin = seed_document["AlwaysSpeedySpin"],
             allow_physics_glitches = seed_document["AllowPhysicsGlitches"],
             always_peekaboo = seed_document["AlwaysPeekaboo"],

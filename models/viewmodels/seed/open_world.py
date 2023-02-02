@@ -6,7 +6,7 @@ starting_maps = {
     0xFFFFFFFF: "Random"
 }
 
-class OpenWorld:
+class World:
     def __init__(
         self,
         starting_location: int,
@@ -14,7 +14,11 @@ class OpenWorld:
         blue_house_open: bool, 
         toybox_open: bool, 
         prologue_open: bool, 
-        whale_open: bool, 
+        whale_open: bool,
+        ch7_bridge_visible: bool,
+        mt_rugged_open: bool,
+        bowsers_castle_mode: bool,
+        shuffle_dungeon_entrances: bool
     ):
 
         self.StartingLocation = starting_maps.get(starting_location)
@@ -23,3 +27,7 @@ class OpenWorld:
         self.OpenToyBox = toybox_open
         self.OpenPrologue = prologue_open
         self.OpenWhale = whale_open
+        self.Ch7BridgeVisible = ch7_bridge_visible
+        self.OpenMtRugged = mt_rugged_open
+        self.BowsersCastleMode = bowsers_castle_mode
+        self.ShuffleDungeonEntrances = shuffle_dungeon_entrances

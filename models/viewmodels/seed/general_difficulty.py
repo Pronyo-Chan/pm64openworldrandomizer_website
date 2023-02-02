@@ -1,6 +1,6 @@
 class GeneralDifficulty:
     def __init__(self, progressive_scaling: bool, shuffle_chapter_difficulty: bool, double_damage: bool, quadruple_damage: bool,
-        item_trap_mode: int, merlow_reward_pricing: bool, cap_enemy_xp: bool, no_xp: bool, one_hit_ko: bool, no_save_blocks: bool,
+        item_trap_mode: int, merlow_reward_pricing: bool, cap_enemy_xp: bool, xp_multiplier: float, one_hit_ko: bool, no_save_blocks: bool,
         no_heart_blocks: bool, no_healing_items: bool, random_consumable_mode: bool, item_quality: int, starway_spirits_needed: int
     ):
 
@@ -21,7 +21,7 @@ class GeneralDifficulty:
         self.ItemTraps = item_trap_mode
         self.MerlowRewardsPricing = merlow_reward_pricing
         self.CapEnemyXP = cap_enemy_xp
-        self.NoXP = no_xp
+        self.XPMultiplier = xp_multiplier
         self.OneHitKO = one_hit_ko
         self.NoSaveBlocks = no_save_blocks
         self.NoHeartBlocks = no_heart_blocks

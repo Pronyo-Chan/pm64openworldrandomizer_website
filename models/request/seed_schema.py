@@ -1,6 +1,6 @@
 from marshmallow import EXCLUDE, Schema, ValidationError, fields, validates_schema, validate
 
-CURRENT_MOD_VERSION = 13
+CURRENT_MOD_VERSION = 14
 
 class StartWithPartnersSchema(Schema):
     class Meta:
@@ -86,7 +86,7 @@ class SeedRequestSchema(Schema):
     # Difficulty
     StartingCoins = fields.Int(required=True, validate=validate.Range(0, 999))
     CapEnemyXP = fields.Boolean(required=True)
-    NoXP = fields.Boolean(required=True)
+    XPMultiplier = fields.Float(required=True, validate=validate.Range(0, 2))
     DoubleDamage = fields.Boolean(required=True)
     QuadrupleDamage = fields.Boolean(required=True)
     OHKO = fields.Boolean(required=True)
@@ -101,13 +101,17 @@ class SeedRequestSchema(Schema):
     AllowItemHints = fields.Boolean(required=True)
     StarWaySpiritsNeeded = fields.Int(required=True)
 
-    # Open World
+    # World
     MagicalSeedsRequired = fields.Int(required=True, validate=validate.Range(0, 5))
     BlueHouseOpen = fields.Boolean(required=True)
     ToyboxOpen = fields.Boolean(required=True)
     WhaleOpen = fields.Boolean(required=True)
+    Ch7BridgeVisible = fields.Boolean(required=True)
+    MtRuggedOpen = fields.Boolean(required=True)
     PrologueOpen = fields.Boolean(required=True)
-    StartingMap = fields.Int(required=True)
+    StartingMap = fields.Int(required=True)    
+    BowsersCastleMode = fields.Int(required=True, validate=validate.Range(0,2))
+    ShuffleDungeonEntrances = fields.Boolean(required=True)
 
     # Quality of Life
     AlwaysSpeedySpin = fields.Boolean(required=True)
@@ -120,7 +124,6 @@ class SeedRequestSchema(Schema):
     QuizmoAlwaysAppears = fields.Boolean(required=True)
     RomanNumerals = fields.Boolean(required=True)
     WriteSpoilerLog = fields.Boolean(required=True)
-    BowsersCastleMode = fields.Int(required=True, validate=validate.Range(0,2)) 
     FoliageItemHints = fields.Boolean(required=True)
     ShortenCutscenes = fields.Boolean(required=True)
     SkipEpilogue = fields.Boolean(required=True)
