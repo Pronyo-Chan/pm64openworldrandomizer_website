@@ -99,7 +99,7 @@ class SeedViewModel:
             item_trap_mode = seed_document["ItemTrapMode"],
             merlow_reward_pricing = seed_document["MerlowRewardPricing"],
             cap_enemy_xp = seed_document["CapEnemyXP"],
-            xp_multiplier = seed_document["XPMultiplier"],
+            xp_multiplier = seed_document.get("XPMultiplier"),
             one_hit_ko = seed_document["OHKO"],
             no_save_blocks = seed_document["NoSaveBlocks"],
             no_heart_blocks = seed_document["NoHeartBlocks"],
