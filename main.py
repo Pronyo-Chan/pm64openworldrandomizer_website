@@ -2,6 +2,7 @@ from datetime import datetime, timezone
 import gc
 from os import environ
 
+from ratelimit import limits, exception
 
 from flask import Flask, request, abort, send_file
 from flask_cors import CORS
@@ -75,6 +76,10 @@ if(environ.get("IS_PRODUCTION") == "true"):
     firestore_graphs_collection = "graphs-prod"    
     environment = "prod"
 
+@app.errorhandler(exception.RateLimitException)
+def handle_bad_request(e):
+    return 'Too many seeds generated', 429
+
 @app.route('/randomizer_settings/<seed_id>', methods=['GET'])
 def get_randomizer_settings(seed_id):
     if seed_id is None:
@@ -104,6 +109,7 @@ def get_randomizer_settings_v2(seed_id):
     return result.__dict__
 
 @app.route('/randomizer_settings', methods=['POST'])
+@limits(calls=10, period=3600) #max 1 call per second
 def post_randomizer_settings():
         
     seed_dict = request.get_json()
