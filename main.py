@@ -2,6 +2,7 @@ from datetime import datetime, timezone
 import gc
 from os import environ
 
+from flask_limiter import Limiter
 
 from flask import Flask, request, abort, send_file
 from flask_cors import CORS
@@ -32,6 +33,12 @@ sys.path.insert(0, str(Path(__file__).parent / 'PMR-SeedGenerator'))
 from randomizer import web_randomizer, web_apply_cosmetic_options
 from worldgraph import generate as generate_world_graph
 
+def get_client_ip():
+    if request.headers.getlist("X-Forwarded-For"):
+        return request.headers.getlist("X-Forwarded-For")[0]
+    else:
+        return request.remote_addr
+
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
@@ -58,6 +65,7 @@ def create_app(test_config=None):
     return app
 
 app = create_app()
+limiter = Limiter(key_func=get_client_ip, app=app, storage_uri="memory://")
 db = firestore.client()
 
 secret_manager = secretmanager.SecretManagerServiceClient()
@@ -104,8 +112,8 @@ def get_randomizer_settings_v2(seed_id):
     return result.__dict__
 
 @app.route('/randomizer_settings', methods=['POST'])
+@limiter.limit("10/hour")
 def post_randomizer_settings():
-        
     seed_dict = request.get_json()
     
     try:
