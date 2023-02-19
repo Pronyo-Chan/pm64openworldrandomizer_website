@@ -9,7 +9,7 @@ service: uat
 env_variables:
   IS_PRODUCTION: "false"
   IS_UAT: "true"
-  GRAPH_VERSION: "v14"
+  GRAPH_VERSION: "v15"
 
 automatic_scaling:
   max_instances: 1
