@@ -1,6 +1,6 @@
 from marshmallow import EXCLUDE, Schema, ValidationError, fields, validates_schema, validate
 
-CURRENT_MOD_VERSION = 14
+CURRENT_MOD_VERSION = 15
 
 class StartWithPartnersSchema(Schema):
     class Meta:
@@ -20,7 +20,10 @@ class SeedRequestSchema(Schema):
 
     # Items
     ShuffleItems = fields.Boolean(required=True)
-    IncludeCoins = fields.Boolean(required=True)
+    IncludeCoinsOverworld = fields.Boolean(required=True)
+    IncludeCoinsBlocks = fields.Boolean(required=True)
+    IncludeCoinsFavors = fields.Boolean(required=True)
+    IncludeCoinsFoliage = fields.Boolean(required=True)
     IncludeShops = fields.Boolean(required=True)
     IncludePanels = fields.Boolean(required=True)
     IncludeFavorsMode = fields.Int(required=True, validate=validate.Range(0,2))

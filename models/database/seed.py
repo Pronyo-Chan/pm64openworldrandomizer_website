@@ -15,8 +15,8 @@ class Seed:
     def __init__(self, SeedID: str, StarRodModVersion: int, AlwaysSpeedySpin: str, AlwaysISpy: bool, AlwaysPeekaboo: bool, HiddenBlockMode: int, \
         AllowPhysicsGlitches: bool, StartingCoins: int, CapEnemyXP: bool, XPMultiplier: float, DoubleDamage: bool, QuadrupleDamage: bool, OHKO: bool,\
         NoSaveBlocks: bool, NoHeartBlocks: bool, MagicalSeedsRequired: int, BlueHouseOpen: bool, ToyboxOpen: bool, WhaleOpen: bool, Ch7BridgeVisible: bool, ShuffleChapterDifficulty: bool,\
-        RandomFormations: bool, ShuffleItems: bool, IncludeCoins: bool, IncludeShops: bool, IncludePanels: bool, IncludeFavorsMode: int, IncludeLettersMode: int, KeyitemsOutsideDungeon: bool,\
-        ProgressiveScaling: bool, RandomBadgesBP: int, RandomBadgesFP: int, RandomPartnerFP: int, RandomStarpowerSP: int, RandomQuiz: bool, SkipQuiz: bool, QuizmoAlwaysAppears: bool, \
+        RandomFormations: bool, ShuffleItems: bool, IncludeCoinsOverworld: bool, IncludeCoinsBlocks: bool, IncludeCoinsFoliage: bool, IncludeCoinsFavors: bool, IncludeShops: bool, IncludePanels: bool,\
+        IncludeFavorsMode: int, IncludeLettersMode: int, KeyitemsOutsideDungeon: bool, ProgressiveScaling: bool, RandomBadgesBP: int, RandomBadgesFP: int, RandomPartnerFP: int, RandomStarpowerSP: int, RandomQuiz: bool, SkipQuiz: bool, QuizmoAlwaysAppears: bool, \
         PartnersInDefaultLocations: bool, PartnersAlwaysUsable: bool, StartWithRandomPartners: bool, WriteSpoilerLog: bool, RomanNumerals: bool, \
         IncludeDojo: bool, BowsersCastleMode: int, ShortenCutscenes: bool, SkipEpilogue, RandomPartnersMin: int, RandomPartnersMax: int, StartWithPartners: StartWithPartners,
         Box5ColorA: int, Box5ColorB: int, RandomCoinColor: bool, CoinColor: int, MarioSetting: int, MarioSprite: int, GoombarioSetting: int, GoombarioSprite: int,
@@ -83,7 +83,10 @@ class Seed:
         self.ShuffleChapterDifficulty = ShuffleChapterDifficulty
         self.RandomFormations = RandomFormations 
         self.ShuffleItems = ShuffleItems
-        self.IncludeCoins = IncludeCoins
+        self.IncludeCoinsOverworld = IncludeCoinsOverworld
+        self.IncludeCoinsBlocks = IncludeCoinsBlocks
+        self.IncludeCoinsFavors = IncludeCoinsFavors
+        self.IncludeCoinsFoliage = IncludeCoinsFoliage
         self.IncludeShops = IncludeShops
         self.IncludePanels = IncludePanels
         self.IncludeFavorsMode = IncludeFavorsMode

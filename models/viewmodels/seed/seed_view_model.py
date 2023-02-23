@@ -24,7 +24,10 @@ class SeedViewModel:
         self.Items = Items(
             add_item_pouches = seed_document["AddItemPouches"],
             gear_shuffle_mode = seed_document["GearShuffleMode"],
-            include_coins= seed_document["IncludeCoins"],
+            include_coins_overworld = seed_document.get("IncludeCoinsOverworld"),
+            include_coins_blocks = seed_document.get("IncludeCoinsBlocks"),
+            include_coins_favors = seed_document.get("IncludeCoinsFavors"),
+            include_coins_foliage = seed_document.get("IncludeCoinsFoliage"),
             include_dojo = seed_document["IncludeDojo"],
             include_favors_mode = seed_document["IncludeFavorsMode"],
             include_letters_mode = seed_document["IncludeLettersMode"],
