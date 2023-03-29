@@ -111,6 +111,20 @@ def get_palette_description(setting, sprite = None, character_color_choices = No
     else:
         return "Default"
         #raise Exception(f"Couldn't find description for palette with setting: {setting}, sprite: {sprite}, color choices: {character_color_choices}")
+
+def get_shuffle_music_description(shuffle_music, shuffle_music_mode):
+    if not shuffle_music:
+        return "Off"
+    
+    if shuffle_music_mode == 0:
+        return "Shuffle By Mood"
+    
+    if shuffle_music_mode == 1:
+        return "Shuffle By Type"
+    
+    if shuffle_music_mode == 2:
+        return "Full Shuffle"
+    
             
 class Cosmetics:
 
@@ -122,7 +136,7 @@ class Cosmetics:
         lakilester_setting: int, lakilester_sprite: int, bosses_setting: int,
         enemies_setting: int, hammer_setting: int, npc_setting: int, box5_color_a: int,
         coin_color: int, random_coin_color: bool, random_text: bool, roman_numerals: bool,
-        random_pitch: bool
+        random_pitch: bool, shuffle_music: bool, shuffle_music_mode: int, shuffle_jingles: bool
     ):
 
         self.Mario = get_palette_description(mario_setting, mario_sprite, mario_color_choices)
@@ -146,3 +160,5 @@ class Cosmetics:
         self.RandomText = random_text
         self.RomanNumerals = roman_numerals
         self.RandomPitch = random_pitch
+        self.ShuffleMusic = get_shuffle_music_description(shuffle_music, shuffle_music_mode)
+        self.ShuffleJingles = shuffle_jingles

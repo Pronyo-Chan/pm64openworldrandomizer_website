@@ -1,6 +1,6 @@
 from marshmallow import EXCLUDE, Schema, ValidationError, fields, validates_schema, validate
 
-CURRENT_MOD_VERSION = 15
+CURRENT_MOD_VERSION = 16
 
 class StartWithPartnersSchema(Schema):
     class Meta:
@@ -85,6 +85,9 @@ class SeedRequestSchema(Schema):
     CoinColor = fields.Int(required=True)
     RandomCoinColor = fields.Boolean(required=True)
     RandomPitch = fields.Boolean(required=True)
+    ShuffleMusic = fields.Boolean(required=True)
+    ShuffleMusicMode = fields.Int(required=True)
+    ShuffleJingles = fields.Boolean(required=True)
 
     # Difficulty
     StartingCoins = fields.Int(required=True, validate=validate.Range(0, 999))

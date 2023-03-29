@@ -89,7 +89,10 @@ class SeedViewModel:
             box5_color_a = seed_document["Box5ColorA"],
             roman_numerals = seed_document["RomanNumerals"],
             random_text = seed_document["RandomText"],
-            random_pitch = seed_document["RandomPitch"]
+            random_pitch = seed_document["RandomPitch"],
+            shuffle_music = seed_document.get("ShuffleMusic"),
+            shuffle_music_mode = seed_document.get("ShuffleMusicMode"),
+            shuffle_jingles = seed_document.get("ShuffleJingles"),
         ).__dict__
 
         self.Glitches = [g for g in glitches_names if seed_document.get(g) is True]

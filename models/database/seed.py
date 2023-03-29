@@ -29,6 +29,7 @@ class Seed:
         LakilesterSetting: int, LakilesterSprite: int, ParakarrySetting: int, ParakarrySprite: int, IncludeRadioTradeEvent: bool, RevealLogInHours: int, StartingBoots: int, StartingHammer: int,
         ShuffleBlocks: bool, RandomPitch: bool, GearShuffleMode: int, HiddenPanelVisibility: bool, BombetteSetting: int, BombetteSprite: int, CookWithoutFryingPan: bool,
         RipCheatoItemsInLogic: int, MerlowRewardPricing: int, PrologueOpen: bool, ProgressionOnRowf: bool, ProgressionOnMerlow: bool, MtRuggedOpen: bool, ShuffleDungeonEntrances : bool,
+        ShuffleMusic: bool, ShuffleMusicMode: int, ShuffleJingles: bool,
 
         PrologueGelEarly: bool, ReverseGoombaKingBridge: bool, GoombaVillageEntryFenceClip: bool, GoombaVillageNpcLureExit: bool, HammerlessJrPlaygroundLaki: bool, GoombaVillageLakiExit: bool,
         PrologueSushieGlitchKsj: bool, PrologueSushieGlitchUltraBootsLaki: bool, OddKeyEarly: bool, BlueHouseSkip: bool, BlueHouseSkipLaki: bool, BlueHouseSkipToadLure: bool, BowlessToyBoxHammer: bool, BowlessToyBoxHammerlessLure: bool,
@@ -184,6 +185,9 @@ class Seed:
         self.AllowItemHints = AllowItemHints
         self.ShuffleBlocks = ShuffleBlocks
         self.RandomPitch = RandomPitch
+        self.ShuffleMusic = ShuffleMusic
+        self.ShuffleMusicMode = ShuffleMusicMode
+        self.ShuffleJingles = ShuffleJingles
         self.GearShuffleMode = GearShuffleMode
         self.HiddenPanelVisibility = HiddenPanelVisibility
         self.CookWithoutFryingPan = CookWithoutFryingPan
