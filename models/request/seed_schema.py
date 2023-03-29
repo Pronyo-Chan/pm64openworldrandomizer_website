@@ -280,6 +280,7 @@ class SeedRequestSchema(Schema):
 
     # Glitches: Jade Jungle
     RaphSkipEnglish = fields.Boolean(required=True)
+    RaphSkipParakarry = fields.Boolean(required=True)
     Ch5SushieGlitch = fields.Boolean(required=True)
     SushielessJungleStarpieceAndLetter = fields.Boolean(required=True)
     JumplessDeepJungleLaki = fields.Boolean(required=True)
