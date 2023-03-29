@@ -200,11 +200,15 @@ def get_cosmetic_patch():
         abort(404)
     
     seed_dict = document.to_dict()
+
+    if not seed_dict.get("MusicOffset"): # Can be cleaned up once music shuffle has been deployed for a month
+        return "Deprecated seed version", 400
+    
     cosmetic_settings = CosmeticSettings(**cosmetics_dict)
 
     print(f'Cosmetics Request Settings {cosmetic_settings.__dict__}')
 
-    cosmetics_patch_operations = web_apply_cosmetic_options(cosmetic_settings.__dict__, seed_dict["PaletteOffset"], seed_dict["CosmeticsOffset"], seed_dict["AudioOffset"], seed_dict.get("MusicOffset"))
+    cosmetics_patch_operations = web_apply_cosmetic_options(cosmetic_settings.__dict__, seed_dict["PaletteOffset"], seed_dict["CosmeticsOffset"], seed_dict["AudioOffset"], seed_dict["MusicOffset"])
 
     gc.collect()
     return send_file(cosmetics_patch_operations, download_name="cosmetics.pmp")
