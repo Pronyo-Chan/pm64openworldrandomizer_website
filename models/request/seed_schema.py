@@ -118,6 +118,10 @@ class SeedRequestSchema(Schema):
     StartingMap = fields.Int(required=True)    
     BowsersCastleMode = fields.Int(required=True, validate=validate.Range(0,2))
     ShuffleDungeonEntrances = fields.Boolean(required=True)
+    StarHunt = fields.Boolean(required=True)
+    StarHuntEndsGame = fields.Boolean(required=True)
+    StarHuntRequired = fields.Int(required=True, validate=validate.Range(0,120))
+    StarHuntPlaced = fields.Int(required=True, validate=validate.Range(0,120))
 
     # Quality of Life
     AlwaysSpeedySpin = fields.Boolean(required=True)

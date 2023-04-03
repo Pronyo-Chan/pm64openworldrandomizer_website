@@ -154,7 +154,11 @@ class SeedViewModel:
             ch7_bridge_visible = seed_document.get("Ch7BridgeVisible"),
             mt_rugged_open = seed_document.get("MtRuggedOpen"),
             bowsers_castle_mode = seed_document["BowsersCastleMode"],
-            shuffle_dungeon_entrances = seed_document.get("ShuffleDungeonEntrances")
+            shuffle_dungeon_entrances = seed_document.get("ShuffleDungeonEntrances"),
+            star_hunt = seed_document.get("StarHunt"),
+            star_hunt_ends_game = seed_document.get("StarHuntEndsGame"),
+            star_hunt_required = seed_document.get("StarHuntRequired"),
+            star_hunt_placed = seed_document.get("StarHuntPlaced"),
         ).__dict__
 
         self.QualityOfLife = QualityOfLife(

@@ -29,7 +29,7 @@ class Seed:
         LakilesterSetting: int, LakilesterSprite: int, ParakarrySetting: int, ParakarrySprite: int, IncludeRadioTradeEvent: bool, RevealLogInHours: int, StartingBoots: int, StartingHammer: int,
         ShuffleBlocks: bool, RandomPitch: bool, GearShuffleMode: int, HiddenPanelVisibility: bool, BombetteSetting: int, BombetteSprite: int, CookWithoutFryingPan: bool,
         RipCheatoItemsInLogic: int, MerlowRewardPricing: int, PrologueOpen: bool, ProgressionOnRowf: bool, ProgressionOnMerlow: bool, MtRuggedOpen: bool, ShuffleDungeonEntrances : bool,
-        ShuffleMusic: bool, ShuffleMusicMode: int, ShuffleJingles: bool,
+        ShuffleMusic: bool, ShuffleMusicMode: int, ShuffleJingles: bool, StarHunt: bool, StarHuntEndsGame: bool, StarHuntRequired: int, StarHuntPlaced: int,
 
         PrologueGelEarly: bool, ReverseGoombaKingBridge: bool, GoombaVillageEntryFenceClip: bool, GoombaVillageNpcLureExit: bool, HammerlessJrPlaygroundLaki: bool, GoombaVillageLakiExit: bool,
         PrologueSushieGlitchKsj: bool, PrologueSushieGlitchUltraBootsLaki: bool, OddKeyEarly: bool, BlueHouseSkip: bool, BlueHouseSkipLaki: bool, BlueHouseSkipToadLure: bool, BowlessToyBoxHammer: bool, BowlessToyBoxHammerlessLure: bool,
@@ -197,6 +197,12 @@ class Seed:
         self.ProgressionOnRowf = ProgressionOnRowf
         self.ProgressionOnMerlow = ProgressionOnMerlow
         self.ShuffleDungeonEntrances = ShuffleDungeonEntrances
+
+        
+        self.StarHunt = StarHunt
+        self.StarHuntEndsGame = StarHuntEndsGame
+        self.StarHuntRequired = StarHuntRequired
+        self.StarHuntPlaced = StarHuntPlaced
 
         if StartWithRandomPartners:
             self.RandomPartnersMax = RandomPartnersMax
