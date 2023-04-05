@@ -112,7 +112,8 @@ class SeedViewModel:
             no_healing_items = seed_document["NoHealingItems"],
             random_consumable_mode = seed_document["RandomConsumableMode"],
             item_quality = seed_document["ItemQuality"],
-            starway_spirits_needed = seed_document["StarWaySpiritsNeeded"]
+            starway_spirits_needed = seed_document["StarWaySpiritsNeeded"],
+            badge_synergy = seed_document.get("BadgeSynergy")
         ).__dict__
 
         self.StatsAndGear = StatsAndGear(
