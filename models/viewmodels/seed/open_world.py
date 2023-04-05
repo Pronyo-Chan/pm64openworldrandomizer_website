@@ -22,7 +22,7 @@ class World:
         star_hunt: bool,
         star_hunt_ends_game: bool,
         star_hunt_required: int,
-        star_hunt_placed: int,
+        star_hunt_total: int,
 
     ):
 
@@ -40,4 +40,4 @@ class World:
         self.StarHunt = star_hunt
         self.StarHuntEndsGame = star_hunt_ends_game
         self.StarHuntRequired = star_hunt_required
-        self.StarHuntPlaced = star_hunt_placed
+        self.StarHuntTotal = star_hunt_total
