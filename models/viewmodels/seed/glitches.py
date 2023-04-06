@@ -113,6 +113,7 @@ glitches_names = [
 
     # Glitches: Jade Jungle
     "RaphSkipEnglish",
+    "RaphSkipParakarry",
     "Ch5SushieGlitch",
     "SushielessJungleStarpieceAndLetter",
     "JumplessDeepJungleLaki",

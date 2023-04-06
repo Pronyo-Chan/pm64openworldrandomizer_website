@@ -29,6 +29,7 @@ class Seed:
         LakilesterSetting: int, LakilesterSprite: int, ParakarrySetting: int, ParakarrySprite: int, IncludeRadioTradeEvent: bool, RevealLogInHours: int, StartingBoots: int, StartingHammer: int,
         ShuffleBlocks: bool, RandomPitch: bool, GearShuffleMode: int, HiddenPanelVisibility: bool, BombetteSetting: int, BombetteSprite: int, CookWithoutFryingPan: bool,
         RipCheatoItemsInLogic: int, MerlowRewardPricing: int, PrologueOpen: bool, ProgressionOnRowf: bool, ProgressionOnMerlow: bool, MtRuggedOpen: bool, ShuffleDungeonEntrances : bool,
+        ShuffleMusic: bool, ShuffleMusicMode: int, ShuffleJingles: bool, StarHunt: bool, StarHuntEndsGame: bool, StarHuntRequired: int, StarHuntTotal: int, BadgeSynergy: bool,
 
         PrologueGelEarly: bool, ReverseGoombaKingBridge: bool, GoombaVillageEntryFenceClip: bool, GoombaVillageNpcLureExit: bool, HammerlessJrPlaygroundLaki: bool, GoombaVillageLakiExit: bool,
         PrologueSushieGlitchKsj: bool, PrologueSushieGlitchUltraBootsLaki: bool, OddKeyEarly: bool, BlueHouseSkip: bool, BlueHouseSkipLaki: bool, BlueHouseSkipToadLure: bool, BowlessToyBoxHammer: bool, BowlessToyBoxHammerlessLure: bool,
@@ -46,7 +47,7 @@ class Seed:
         KooperlessGustyGulchDizzyDialParakarry: bool, GustyGulchGapSkip: bool, BowlessTubbasCastle: bool, TubbasTableLakiJumpClock: bool, TubbasTableLakiJumpStudy: bool, TubbasTableUltraBoots: bool, TubbasCastleSuperBootsSkip: bool,
         ParakarrylessMegaRush: bool, ParakarrylessBlueBuildingStarPiece: bool, GourmetGuySkipJump: bool, GourmetGuySkipLaki: bool, GourmetGuySkipParakarry: bool, BowlessGreenStation: bool,
         KooperlessRedStationShootingStar: bool, GearlessRedStationShootingStar: bool, ParakarrylessBlueBlockCityGap: bool, BlueSwitchSkipLaki: bool, BlueSwitchSkipUltraBoots: bool, RedBarricadeSkip: bool, HammerlessBlueStationLaki: bool,
-        HammerlessPinkStationLaki: bool, RaphSkipEnglish: bool, Ch5SushieGlitch: bool, SushielessJungleStarpieceAndLetter: bool, JumplessDeepJungleLaki: bool, KooperlessLavalavaPowBlockParakarry: bool,
+        HammerlessPinkStationLaki: bool, RaphSkipEnglish: bool, RaphSkipParakarry: bool, Ch5SushieGlitch: bool, SushielessJungleStarpieceAndLetter: bool, JumplessDeepJungleLaki: bool, KooperlessLavalavaPowBlockParakarry: bool,
         KooperlessLavalavaPowBlockSuperBoots: bool, JumplessLavalavaPowBlock: bool,  UltraHammerSkip: bool, UltraHammerSkipLaki: bool, UltraHammerSkipSushie: bool,
         Flarakarry: bool, ParakarrylessFlarakarryBombette: bool, ParakarrylessFlarakarryLaki: bool, VolcanoSushieGlitch: bool, EarlyLakiLZS: bool, EarlyLakiBombettePush: bool, BombettelessMegaSmash: bool,
         SunTowerSkip: bool, YellowBerryGateSkipLZS: bool, YellowBerryGateSkipLaki: bool, YellowBerryGateSkipBombettePush: bool, RedBerryGateSkipBombettePush: bool,
@@ -174,6 +175,7 @@ class Seed:
         self.ItemQuality = ItemQuality
         self.RandomConsumableMode = RandomConsumableMode
         self.StarWaySpiritsNeeded = StarWaySpiritsNeeded
+        self.BadgeSynergy = BadgeSynergy
         self.FoliageItemHints = FoliageItemHints
         self.RandomText = RandomText
         self.NoHealingItems = NoHealingItems
@@ -184,6 +186,9 @@ class Seed:
         self.AllowItemHints = AllowItemHints
         self.ShuffleBlocks = ShuffleBlocks
         self.RandomPitch = RandomPitch
+        self.ShuffleMusic = ShuffleMusic
+        self.ShuffleMusicMode = ShuffleMusicMode
+        self.ShuffleJingles = ShuffleJingles
         self.GearShuffleMode = GearShuffleMode
         self.HiddenPanelVisibility = HiddenPanelVisibility
         self.CookWithoutFryingPan = CookWithoutFryingPan
@@ -193,6 +198,12 @@ class Seed:
         self.ProgressionOnRowf = ProgressionOnRowf
         self.ProgressionOnMerlow = ProgressionOnMerlow
         self.ShuffleDungeonEntrances = ShuffleDungeonEntrances
+
+        
+        self.StarHunt = StarHunt
+        self.StarHuntEndsGame = StarHuntEndsGame
+        self.StarHuntRequired = StarHuntRequired
+        self.StarHuntTotal = StarHuntTotal
 
         if StartWithRandomPartners:
             self.RandomPartnersMax = RandomPartnersMax
@@ -317,6 +328,7 @@ class Seed:
 
         # Glitches: Jade Jungle
         self.RaphSkipEnglish = RaphSkipEnglish
+        self.RaphSkipParakarry = RaphSkipParakarry
         self.Ch5SushieGlitch = Ch5SushieGlitch
         self.SushielessJungleStarpieceAndLetter = SushielessJungleStarpieceAndLetter
         self.JumplessDeepJungleLaki = JumplessDeepJungleLaki

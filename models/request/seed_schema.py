@@ -1,6 +1,6 @@
 from marshmallow import EXCLUDE, Schema, ValidationError, fields, validates_schema, validate
 
-CURRENT_MOD_VERSION = 15
+CURRENT_MOD_VERSION = 16
 
 class StartWithPartnersSchema(Schema):
     class Meta:
@@ -85,6 +85,9 @@ class SeedRequestSchema(Schema):
     CoinColor = fields.Int(required=True)
     RandomCoinColor = fields.Boolean(required=True)
     RandomPitch = fields.Boolean(required=True)
+    ShuffleMusic = fields.Boolean(required=True)
+    ShuffleMusicMode = fields.Int(required=True)
+    ShuffleJingles = fields.Boolean(required=True)
 
     # Difficulty
     StartingCoins = fields.Int(required=True, validate=validate.Range(0, 999))
@@ -103,6 +106,7 @@ class SeedRequestSchema(Schema):
     RandomConsumableMode = fields.Int(required=True, validate=validate.Range(0, 3))
     AllowItemHints = fields.Boolean(required=True)
     StarWaySpiritsNeeded = fields.Int(required=True)
+    BadgeSynergy = fields.Boolean(required=True)
 
     # World
     MagicalSeedsRequired = fields.Int(required=True, validate=validate.Range(0, 5))
@@ -115,6 +119,10 @@ class SeedRequestSchema(Schema):
     StartingMap = fields.Int(required=True)    
     BowsersCastleMode = fields.Int(required=True, validate=validate.Range(0,2))
     ShuffleDungeonEntrances = fields.Boolean(required=True)
+    StarHunt = fields.Boolean(required=True)
+    StarHuntEndsGame = fields.Boolean(required=True)
+    StarHuntRequired = fields.Int(required=True, validate=validate.Range(0,120))
+    StarHuntTotal = fields.Int(required=True, validate=validate.Range(0,120))
 
     # Quality of Life
     AlwaysSpeedySpin = fields.Boolean(required=True)
@@ -277,6 +285,7 @@ class SeedRequestSchema(Schema):
 
     # Glitches: Jade Jungle
     RaphSkipEnglish = fields.Boolean(required=True)
+    RaphSkipParakarry = fields.Boolean(required=True)
     Ch5SushieGlitch = fields.Boolean(required=True)
     SushielessJungleStarpieceAndLetter = fields.Boolean(required=True)
     JumplessDeepJungleLaki = fields.Boolean(required=True)

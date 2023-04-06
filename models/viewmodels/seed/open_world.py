@@ -18,7 +18,12 @@ class World:
         ch7_bridge_visible: bool,
         mt_rugged_open: bool,
         bowsers_castle_mode: bool,
-        shuffle_dungeon_entrances: bool
+        shuffle_dungeon_entrances: bool,
+        star_hunt: bool,
+        star_hunt_ends_game: bool,
+        star_hunt_required: int,
+        star_hunt_total: int,
+
     ):
 
         self.StartingLocation = starting_maps.get(starting_location)
@@ -31,3 +36,8 @@ class World:
         self.OpenMtRugged = mt_rugged_open
         self.BowsersCastleMode = bowsers_castle_mode
         self.ShuffleDungeonEntrances = shuffle_dungeon_entrances
+        
+        self.StarHunt = star_hunt
+        self.StarHuntEndsGame = star_hunt_ends_game
+        self.StarHuntRequired = star_hunt_required
+        self.StarHuntTotal = star_hunt_total

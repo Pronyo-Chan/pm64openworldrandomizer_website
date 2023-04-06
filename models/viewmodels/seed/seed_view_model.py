@@ -89,7 +89,10 @@ class SeedViewModel:
             box5_color_a = seed_document["Box5ColorA"],
             roman_numerals = seed_document["RomanNumerals"],
             random_text = seed_document["RandomText"],
-            random_pitch = seed_document["RandomPitch"]
+            random_pitch = seed_document["RandomPitch"],
+            shuffle_music = seed_document.get("ShuffleMusic"),
+            shuffle_music_mode = seed_document.get("ShuffleMusicMode"),
+            shuffle_jingles = seed_document.get("ShuffleJingles"),
         ).__dict__
 
         self.Glitches = [g for g in glitches_names if seed_document.get(g) is True]
@@ -109,7 +112,8 @@ class SeedViewModel:
             no_healing_items = seed_document["NoHealingItems"],
             random_consumable_mode = seed_document["RandomConsumableMode"],
             item_quality = seed_document["ItemQuality"],
-            starway_spirits_needed = seed_document["StarWaySpiritsNeeded"]
+            starway_spirits_needed = seed_document["StarWaySpiritsNeeded"],
+            badge_synergy = seed_document.get("BadgeSynergy")
         ).__dict__
 
         self.StatsAndGear = StatsAndGear(
@@ -151,7 +155,11 @@ class SeedViewModel:
             ch7_bridge_visible = seed_document.get("Ch7BridgeVisible"),
             mt_rugged_open = seed_document.get("MtRuggedOpen"),
             bowsers_castle_mode = seed_document["BowsersCastleMode"],
-            shuffle_dungeon_entrances = seed_document.get("ShuffleDungeonEntrances")
+            shuffle_dungeon_entrances = seed_document.get("ShuffleDungeonEntrances"),
+            star_hunt = seed_document.get("StarHunt"),
+            star_hunt_ends_game = seed_document.get("StarHuntEndsGame"),
+            star_hunt_required = seed_document.get("StarHuntRequired"),
+            star_hunt_total = seed_document.get("StarHuntTotal"),
         ).__dict__
 
         self.QualityOfLife = QualityOfLife(
