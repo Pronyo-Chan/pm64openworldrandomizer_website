@@ -23,7 +23,7 @@ class Seed:
         KooperSetting: int, KooperSprite: int, BowSetting: int, BowSprite: int, BossesSetting: int, NPCSetting: int, EnemiesSetting: int, HammerSetting:int, StartingMap: int,
         StartingMaxHP: int, StartingMaxFP: int, StartingMaxBP: int, StartingStarPower: int, StartingItem0: int, StartingItem1: int, StartingItem2: int, StartingItem3: int, \
         StartingItem4: int, StartingItem5: int, StartingItem6: int, StartingItem7: int, StartingItem8: int, StartingItem9: int, StartingItemA: int, StartingItemB: int, \
-        StartingItemC: int, StartingItemD: int, StartingItemE: int, RandomConsumableMode: int, ItemQuality: int, StartingItemF: int, StarWaySpiritsNeeded: int,  SettingsString: str, \
+        StartingItemC: int, StartingItemD: int, StartingItemE: int, RandomConsumableMode: int, ItemQuality: int, StartingItemF: int, StarWaySpiritsNeededCnt: int,  SettingsString: str, \
         FoliageItemHints, RandomText, NoHealingItems, StartWithRandomItems: bool, RandomItemsMin: int, RandomItemsMax: int, AddItemPouches, \
         RandomChoice: bool, MysteryRandomPick: bool, ItemTrapMode: int, AllowItemHints: bool, WattSetting: int, WattSprite: int, SushieSetting: int, SushieSprite: int, \
         LakilesterSetting: int, LakilesterSprite: int, ParakarrySetting: int, ParakarrySprite: int, IncludeRadioTradeEvent: bool, RevealLogInHours: int, StartingBoots: int, StartingHammer: int,
@@ -174,7 +174,7 @@ class Seed:
 
         self.ItemQuality = ItemQuality
         self.RandomConsumableMode = RandomConsumableMode
-        self.StarWaySpiritsNeeded = StarWaySpiritsNeeded
+        self.StarWaySpiritsNeededCnt = StarWaySpiritsNeededCnt
         self.BadgeSynergy = BadgeSynergy
         self.FoliageItemHints = FoliageItemHints
         self.RandomText = RandomText
