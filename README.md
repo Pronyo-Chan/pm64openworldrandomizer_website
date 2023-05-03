@@ -7,10 +7,10 @@
 ```
 
 **Setting up the database and storage**
-Local DB: 
-You can test with the dev environment db/storage by having the json key in the project's root folder (Ask Pronyo)
-Else, it's possible to set a local DB but not storage afaik. Just use dev but don't spam because egress data (that comes out of the cloud)
-is billed (altough very little)
+This project entirely relies on a firestore db and google cloud storage, if you want to actually run it locally
+you would need a service_account.json key in the root folder, linked to a google cloud account setup with the proper infrastructure.
+
+I'm making it open source so the code is visible, not really for local development/testing from the community.
 
 **Deploying to Google Cloud**
 Don't forget to run this command to export packages to requirements.txt
