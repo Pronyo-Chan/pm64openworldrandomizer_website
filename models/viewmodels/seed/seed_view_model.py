@@ -113,6 +113,8 @@ class SeedViewModel:
             random_consumable_mode = seed_document["RandomConsumableMode"],
             item_quality = seed_document["ItemQuality"],
             starway_spirits_needed = seed_document.get("StarWaySpiritsNeededCnt") or seed_document.get("StarWaySpiritsNeeded"),
+            require_specific_spirits = seed_document.get("RequireSpecificSpirits"),
+            limit_chapter_logic = seed_document.get("LimitChapterLogic"),
             badge_synergy = seed_document.get("BadgeSynergy")
         ).__dict__
 

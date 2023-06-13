@@ -106,6 +106,8 @@ class SeedRequestSchema(Schema):
     RandomConsumableMode = fields.Int(required=True, validate=validate.Range(0, 3))
     AllowItemHints = fields.Boolean(required=True)
     StarWaySpiritsNeededCnt = fields.Int(required=True)
+    RequireSpecificSpirits = fields.Boolean(required=True)
+    LimitChapterLogic = fields.Boolean(required=True)
     BadgeSynergy = fields.Boolean(required=True)
 
     # World
