@@ -156,6 +156,7 @@ class SeedViewModel:
             whale_open = seed_document["WhaleOpen"],
             ch7_bridge_visible = seed_document.get("Ch7BridgeVisible"),
             mt_rugged_open = seed_document.get("MtRuggedOpen"),
+            forever_forest_open = seed_document.get("ForeverForestOpen"),
             bowsers_castle_mode = seed_document["BowsersCastleMode"],
             shuffle_dungeon_entrances = seed_document.get("ShuffleDungeonEntrances"),
             star_hunt = seed_document.get("StarHunt"),

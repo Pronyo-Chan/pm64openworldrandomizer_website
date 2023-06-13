@@ -117,6 +117,7 @@ class SeedRequestSchema(Schema):
     WhaleOpen = fields.Boolean(required=True)
     Ch7BridgeVisible = fields.Boolean(required=True)
     MtRuggedOpen = fields.Boolean(required=True)
+    ForeverForestOpen = fields.Boolean(required=True)
     PrologueOpen = fields.Boolean(required=True)
     StartingMap = fields.Int(required=True)    
     BowsersCastleMode = fields.Int(required=True, validate=validate.Range(0,2))
