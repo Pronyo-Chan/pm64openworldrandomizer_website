@@ -1,6 +1,6 @@
 from marshmallow import EXCLUDE, Schema, ValidationError, fields, validates_schema, validate
 
-CURRENT_MOD_VERSION = 16
+CURRENT_MOD_VERSION = 17
 
 class StartWithPartnersSchema(Schema):
     class Meta:
@@ -106,6 +106,8 @@ class SeedRequestSchema(Schema):
     RandomConsumableMode = fields.Int(required=True, validate=validate.Range(0, 3))
     AllowItemHints = fields.Boolean(required=True)
     StarWaySpiritsNeededCnt = fields.Int(required=True)
+    RequireSpecificSpirits = fields.Boolean(required=True)
+    LimitChapterLogic = fields.Boolean(required=True)
     BadgeSynergy = fields.Boolean(required=True)
 
     # World
@@ -115,6 +117,7 @@ class SeedRequestSchema(Schema):
     WhaleOpen = fields.Boolean(required=True)
     Ch7BridgeVisible = fields.Boolean(required=True)
     MtRuggedOpen = fields.Boolean(required=True)
+    ForeverForestOpen = fields.Boolean(required=True)
     PrologueOpen = fields.Boolean(required=True)
     StartingMap = fields.Int(required=True)    
     BowsersCastleMode = fields.Int(required=True, validate=validate.Range(0,2))

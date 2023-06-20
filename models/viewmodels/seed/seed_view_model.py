@@ -113,6 +113,8 @@ class SeedViewModel:
             random_consumable_mode = seed_document["RandomConsumableMode"],
             item_quality = seed_document["ItemQuality"],
             starway_spirits_needed = seed_document.get("StarWaySpiritsNeededCnt") or seed_document.get("StarWaySpiritsNeeded"),
+            require_specific_spirits = seed_document.get("RequireSpecificSpirits"),
+            limit_chapter_logic = seed_document.get("LimitChapterLogic"),
             badge_synergy = seed_document.get("BadgeSynergy")
         ).__dict__
 
@@ -154,6 +156,7 @@ class SeedViewModel:
             whale_open = seed_document["WhaleOpen"],
             ch7_bridge_visible = seed_document.get("Ch7BridgeVisible"),
             mt_rugged_open = seed_document.get("MtRuggedOpen"),
+            forever_forest_open = seed_document.get("ForeverForestOpen"),
             bowsers_castle_mode = seed_document["BowsersCastleMode"],
             shuffle_dungeon_entrances = seed_document.get("ShuffleDungeonEntrances"),
             star_hunt = seed_document.get("StarHunt"),

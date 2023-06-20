@@ -28,8 +28,9 @@ class Seed:
         RandomChoice: bool, MysteryRandomPick: bool, ItemTrapMode: int, AllowItemHints: bool, WattSetting: int, WattSprite: int, SushieSetting: int, SushieSprite: int, \
         LakilesterSetting: int, LakilesterSprite: int, ParakarrySetting: int, ParakarrySprite: int, IncludeRadioTradeEvent: bool, RevealLogInHours: int, StartingBoots: int, StartingHammer: int,
         ShuffleBlocks: bool, RandomPitch: bool, GearShuffleMode: int, HiddenPanelVisibility: bool, BombetteSetting: int, BombetteSprite: int, CookWithoutFryingPan: bool,
-        RipCheatoItemsInLogic: int, MerlowRewardPricing: int, PrologueOpen: bool, ProgressionOnRowf: bool, ProgressionOnMerlow: bool, MtRuggedOpen: bool, ShuffleDungeonEntrances : bool,
-        ShuffleMusic: bool, ShuffleMusicMode: int, ShuffleJingles: bool, StarHunt: bool, StarHuntEndsGame: bool, StarHuntRequired: int, StarHuntTotal: int, BadgeSynergy: bool,
+        RipCheatoItemsInLogic: int, MerlowRewardPricing: int, PrologueOpen: bool, ProgressionOnRowf: bool, ProgressionOnMerlow: bool, MtRuggedOpen: bool, ForeverForestOpen: bool,
+        ShuffleDungeonEntrances : bool, ShuffleMusic: bool, ShuffleMusicMode: int, ShuffleJingles: bool, StarHunt: bool, StarHuntEndsGame: bool, StarHuntRequired: int,
+        StarHuntTotal: int, BadgeSynergy: bool, RequireSpecificSpirits: bool, LimitChapterLogic: bool,
 
         PrologueGelEarly: bool, ReverseGoombaKingBridge: bool, GoombaVillageEntryFenceClip: bool, GoombaVillageNpcLureExit: bool, HammerlessJrPlaygroundLaki: bool, GoombaVillageLakiExit: bool,
         PrologueSushieGlitchKsj: bool, PrologueSushieGlitchUltraBootsLaki: bool, OddKeyEarly: bool, BlueHouseSkip: bool, BlueHouseSkipLaki: bool, BlueHouseSkipToadLure: bool, BowlessToyBoxHammer: bool, BowlessToyBoxHammerlessLure: bool,
@@ -81,6 +82,7 @@ class Seed:
         self.WhaleOpen = WhaleOpen
         self.Ch7BridgeVisible = Ch7BridgeVisible
         self.MtRuggedOpen = MtRuggedOpen
+        self.ForeverForestOpen = ForeverForestOpen
         self.ShuffleChapterDifficulty = ShuffleChapterDifficulty
         self.RandomFormations = RandomFormations 
         self.ShuffleItems = ShuffleItems
@@ -175,6 +177,8 @@ class Seed:
         self.ItemQuality = ItemQuality
         self.RandomConsumableMode = RandomConsumableMode
         self.StarWaySpiritsNeededCnt = StarWaySpiritsNeededCnt
+        self.RequireSpecificSpirits = RequireSpecificSpirits
+        self.LimitChapterLogic = LimitChapterLogic
         self.BadgeSynergy = BadgeSynergy
         self.FoliageItemHints = FoliageItemHints
         self.RandomText = RandomText

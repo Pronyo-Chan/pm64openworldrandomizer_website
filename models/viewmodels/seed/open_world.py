@@ -17,6 +17,7 @@ class World:
         whale_open: bool,
         ch7_bridge_visible: bool,
         mt_rugged_open: bool,
+        forever_forest_open: bool,
         bowsers_castle_mode: bool,
         shuffle_dungeon_entrances: bool,
         star_hunt: bool,
@@ -34,6 +35,7 @@ class World:
         self.OpenWhale = whale_open
         self.Ch7BridgeVisible = ch7_bridge_visible
         self.OpenMtRugged = mt_rugged_open
+        self.OpenForeverForest = forever_forest_open
         self.BowsersCastleMode = bowsers_castle_mode
         self.ShuffleDungeonEntrances = shuffle_dungeon_entrances
         
