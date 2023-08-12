@@ -1,6 +1,6 @@
 from marshmallow import EXCLUDE, Schema, ValidationError, fields, validates_schema, validate
 
-CURRENT_MOD_VERSION = 17
+CURRENT_MOD_VERSION = 18
 
 class StartWithPartnersSchema(Schema):
     class Meta:
@@ -100,6 +100,7 @@ class SeedRequestSchema(Schema):
     ShuffleChapterDifficulty = fields.Boolean(required=True)
     ProgressiveScaling = fields.Boolean(required=True)
     NoHealingItems = fields.Boolean(required=True)
+    DropStarPoints = fields.Boolean(required=True)
     NoHeartBlocks = fields.Boolean(required=True)
     ItemTrapMode = fields.Int(required=True, validate=validate.Range(0, 3))
     ItemQuality = fields.Int(required=True, validate=validate.Range(25, 125))

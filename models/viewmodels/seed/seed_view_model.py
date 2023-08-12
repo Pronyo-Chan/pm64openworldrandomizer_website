@@ -115,7 +115,8 @@ class SeedViewModel:
             starway_spirits_needed = seed_document.get("StarWaySpiritsNeededCnt") or seed_document.get("StarWaySpiritsNeeded"),
             require_specific_spirits = seed_document.get("RequireSpecificSpirits"),
             limit_chapter_logic = seed_document.get("LimitChapterLogic"),
-            badge_synergy = seed_document.get("BadgeSynergy")
+            badge_synergy = seed_document.get("BadgeSynergy"),
+            drop_star_points = seed_document.get("DropStarPoints")
         ).__dict__
 
         self.StatsAndGear = StatsAndGear(
