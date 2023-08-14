@@ -30,7 +30,7 @@ class Seed:
         ShuffleBlocks: bool, RandomPitch: bool, GearShuffleMode: int, HiddenPanelVisibility: bool, BombetteSetting: int, BombetteSprite: int, CookWithoutFryingPan: bool,
         RipCheatoItemsInLogic: int, MerlowRewardPricing: int, PrologueOpen: bool, ProgressionOnRowf: bool, ProgressionOnMerlow: bool, MtRuggedOpen: bool, ForeverForestOpen: bool,
         ShuffleDungeonEntrances : bool, ShuffleMusic: bool, ShuffleMusicMode: int, ShuffleJingles: bool, StarHunt: bool, StarHuntEndsGame: bool, StarHuntRequired: int,
-        StarHuntTotal: int, BadgeSynergy: bool, RequireSpecificSpirits: bool, LimitChapterLogic: bool,
+        StarHuntTotal: int, BadgeSynergy: bool, RequireSpecificSpirits: bool, LimitChapterLogic: bool, DropStarPoints: bool,
 
         PrologueGelEarly: bool, ReverseGoombaKingBridge: bool, GoombaVillageEntryFenceClip: bool, GoombaVillageNpcLureExit: bool, HammerlessJrPlaygroundLaki: bool, GoombaVillageLakiExit: bool,
         PrologueSushieGlitchKsj: bool, PrologueSushieGlitchUltraBootsLaki: bool, OddKeyEarly: bool, BlueHouseSkip: bool, BlueHouseSkipLaki: bool, BlueHouseSkipToadLure: bool, BowlessToyBoxHammer: bool, BowlessToyBoxHammerlessLure: bool,
@@ -183,6 +183,7 @@ class Seed:
         self.FoliageItemHints = FoliageItemHints
         self.RandomText = RandomText
         self.NoHealingItems = NoHealingItems
+        self.DropStarPoints = DropStarPoints
 
         self.RandomChoice = RandomChoice
         self.MysteryRandomPick = MysteryRandomPick
