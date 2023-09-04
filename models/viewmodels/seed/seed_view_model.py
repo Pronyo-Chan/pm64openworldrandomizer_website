@@ -23,7 +23,6 @@ class SeedViewModel:
         ).__dict__
 
         self.Items = Items(
-            add_item_pouches = seed_document["AddItemPouches"],
             gear_shuffle_mode = seed_document["GearShuffleMode"],
             include_coins_overworld = seed_document.get("IncludeCoinsOverworld"),
             include_coins_blocks = seed_document.get("IncludeCoinsBlocks"),
@@ -120,7 +119,12 @@ class SeedViewModel:
         self.ItemPool = ItemPool(
             item_trap_mode = seed_document["ItemTrapMode"],
             random_consumable_mode = seed_document["RandomConsumableMode"],
-            item_quality = seed_document["ItemQuality"]
+            item_quality = seed_document["ItemQuality"],
+            add_item_pouches = seed_document["AddItemPouches"],
+            add_unused_badge_duplicates = seed_document.get("AddUnusedBadgeDuplicates"),
+            add_beta_items = seed_document.get("AddBetaItems"),
+            progressive_badges = seed_document.get("ProgressiveBadges"),
+            badge_pool_limit = seed_document.get("BadgePoolLimit")
         ).__dict__
 
         self.StatsAndGear = StatsAndGear(
