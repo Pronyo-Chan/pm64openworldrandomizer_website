@@ -1,3 +1,4 @@
+from models.viewmodels.seed.item_pool import ItemPool
 from models.viewmodels.seed.stats_and_gear import StatsAndGear
 from models.viewmodels.seed.cosmetics import Cosmetics
 from models.viewmodels.seed.general_difficulty import GeneralDifficulty
@@ -22,7 +23,6 @@ class SeedViewModel:
         ).__dict__
 
         self.Items = Items(
-            add_item_pouches = seed_document["AddItemPouches"],
             gear_shuffle_mode = seed_document["GearShuffleMode"],
             include_coins_overworld = seed_document.get("IncludeCoinsOverworld"),
             include_coins_blocks = seed_document.get("IncludeCoinsBlocks"),
@@ -102,7 +102,6 @@ class SeedViewModel:
             shuffle_chapter_difficulty = seed_document["ShuffleChapterDifficulty"],
             double_damage = seed_document["DoubleDamage"],
             quadruple_damage = seed_document["QuadrupleDamage"],
-            item_trap_mode = seed_document["ItemTrapMode"],
             merlow_reward_pricing = seed_document["MerlowRewardPricing"],
             cap_enemy_xp = seed_document["CapEnemyXP"],
             xp_multiplier = seed_document.get("XPMultiplier"),
@@ -110,13 +109,22 @@ class SeedViewModel:
             no_save_blocks = seed_document["NoSaveBlocks"],
             no_heart_blocks = seed_document["NoHeartBlocks"],
             no_healing_items = seed_document["NoHealingItems"],
-            random_consumable_mode = seed_document["RandomConsumableMode"],
-            item_quality = seed_document["ItemQuality"],
             starway_spirits_needed = seed_document.get("StarWaySpiritsNeededCnt") or seed_document.get("StarWaySpiritsNeeded"),
             require_specific_spirits = seed_document.get("RequireSpecificSpirits"),
             limit_chapter_logic = seed_document.get("LimitChapterLogic"),
             badge_synergy = seed_document.get("BadgeSynergy"),
             drop_star_points = seed_document.get("DropStarPoints")
+        ).__dict__
+
+        self.ItemPool = ItemPool(
+            item_trap_mode = seed_document["ItemTrapMode"],
+            random_consumable_mode = seed_document["RandomConsumableMode"],
+            item_quality = seed_document["ItemQuality"],
+            add_item_pouches = seed_document["AddItemPouches"],
+            add_unused_badge_duplicates = seed_document.get("AddUnusedBadgeDuplicates"),
+            add_beta_items = seed_document.get("AddBetaItems"),
+            progressive_badges = seed_document.get("ProgressiveBadges"),
+            badge_pool_limit = seed_document.get("BadgePoolLimit")
         ).__dict__
 
         self.StatsAndGear = StatsAndGear(

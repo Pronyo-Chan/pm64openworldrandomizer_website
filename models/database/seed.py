@@ -25,6 +25,7 @@ class Seed:
         StartingItem4: int, StartingItem5: int, StartingItem6: int, StartingItem7: int, StartingItem8: int, StartingItem9: int, StartingItemA: int, StartingItemB: int, \
         StartingItemC: int, StartingItemD: int, StartingItemE: int, RandomConsumableMode: int, ItemQuality: int, StartingItemF: int, StarWaySpiritsNeededCnt: int,  SettingsString: str, \
         FoliageItemHints, RandomText, NoHealingItems, StartWithRandomItems: bool, RandomItemsMin: int, RandomItemsMax: int, AddItemPouches, \
+        AddUnusedBadgeDuplicates: bool, AddBetaItems: bool, ProgressiveBadges: bool, BadgePoolLimit: int,
         RandomChoice: bool, MysteryRandomPick: bool, ItemTrapMode: int, AllowItemHints: bool, WattSetting: int, WattSprite: int, SushieSetting: int, SushieSprite: int, \
         LakilesterSetting: int, LakilesterSprite: int, ParakarrySetting: int, ParakarrySprite: int, IncludeRadioTradeEvent: bool, RevealLogInHours: int, StartingBoots: int, StartingHammer: int,
         ShuffleBlocks: bool, RandomPitch: bool, GearShuffleMode: int, HiddenPanelVisibility: bool, BombetteSetting: int, BombetteSprite: int, CookWithoutFryingPan: bool,
@@ -172,10 +173,7 @@ class Seed:
         self.StartWithRandomItems = StartWithRandomItems
         self.RandomItemsMin = RandomItemsMin
         self.RandomItemsMax = RandomItemsMax
-        self.AddItemPouches = AddItemPouches
 
-        self.ItemQuality = ItemQuality
-        self.RandomConsumableMode = RandomConsumableMode
         self.StarWaySpiritsNeededCnt = StarWaySpiritsNeededCnt
         self.RequireSpecificSpirits = RequireSpecificSpirits
         self.LimitChapterLogic = LimitChapterLogic
@@ -185,9 +183,17 @@ class Seed:
         self.NoHealingItems = NoHealingItems
         self.DropStarPoints = DropStarPoints
 
+        self.ItemQuality = ItemQuality
+        self.RandomConsumableMode = RandomConsumableMode
+        self.AddItemPouches = AddItemPouches
+        self.ItemTrapMode = ItemTrapMode
+        self.AddUnusedBadgeDuplicates = AddUnusedBadgeDuplicates
+        self.AddBetaItems = AddBetaItems
+        self.ProgressiveBadges = ProgressiveBadges
+        self.BadgePoolLimit = BadgePoolLimit
+
         self.RandomChoice = RandomChoice
         self.MysteryRandomPick = MysteryRandomPick
-        self.ItemTrapMode = ItemTrapMode
         self.AllowItemHints = AllowItemHints
         self.ShuffleBlocks = ShuffleBlocks
         self.RandomPitch = RandomPitch

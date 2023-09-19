@@ -1,6 +1,6 @@
 from marshmallow import EXCLUDE, Schema, ValidationError, fields, validates_schema, validate
 
-CURRENT_MOD_VERSION = 18
+CURRENT_MOD_VERSION = 19
 
 class StartWithPartnersSchema(Schema):
     class Meta:
@@ -30,7 +30,6 @@ class SeedRequestSchema(Schema):
     IncludeLettersMode = fields.Int(required=True, validate=validate.Range(0,3))
     KeyitemsOutsideDungeon = fields.Boolean(required=True)
     IncludeDojo = fields.Boolean(required=True)
-    AddItemPouches = fields.Boolean(required=True)
     IncludeRadioTradeEvent  = fields.Boolean(required=True)
     ShuffleBlocks = fields.Boolean(required=True)
     GearShuffleMode = fields.Int(required=True, validate=validate.Range(0,2))
@@ -102,14 +101,21 @@ class SeedRequestSchema(Schema):
     NoHealingItems = fields.Boolean(required=True)
     DropStarPoints = fields.Boolean(required=True)
     NoHeartBlocks = fields.Boolean(required=True)
-    ItemTrapMode = fields.Int(required=True, validate=validate.Range(0, 3))
-    ItemQuality = fields.Int(required=True, validate=validate.Range(25, 125))
-    RandomConsumableMode = fields.Int(required=True, validate=validate.Range(0, 3))
     AllowItemHints = fields.Boolean(required=True)
     StarWaySpiritsNeededCnt = fields.Int(required=True)
     RequireSpecificSpirits = fields.Boolean(required=True)
     LimitChapterLogic = fields.Boolean(required=True)
     BadgeSynergy = fields.Boolean(required=True)
+
+    # Item Pool    
+    ItemTrapMode = fields.Int(required=True, validate=validate.Range(0, 3))
+    AddItemPouches = fields.Boolean(required=True)
+    ItemQuality = fields.Int(required=True, validate=validate.Range(25, 125))
+    RandomConsumableMode = fields.Int(required=True, validate=validate.Range(0, 3))
+    AddUnusedBadgeDuplicates = fields.Boolean(required=True)    
+    AddBetaItems = fields.Boolean(required=True)
+    ProgressiveBadges = fields.Boolean(required=True)
+    BadgePoolLimit = fields.Int(required=True, validate=validate.Range(0, 128))
 
     # World
     MagicalSeedsRequired = fields.Int(required=True, validate=validate.Range(0, 5))
