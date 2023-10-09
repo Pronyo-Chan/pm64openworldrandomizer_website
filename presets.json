@@ -2156,7 +2156,7 @@
             "WattSprite": 0,
             "WhaleEarly": false,
             "WhaleOpen": false,
-            "WriteSpoilerLog": true,
+            "WriteSpoilerLog": false,
             "XPMultiplier": 1.5,
             "YellowBerryGateSkipBombettePush": false,
             "YellowBerryGateSkipLZS": false,
