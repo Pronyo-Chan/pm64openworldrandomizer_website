@@ -11,4 +11,4 @@ env_variables:
   GRAPH_VERSION: "v19"
 
 automatic_scaling:
-  max_instances: 3
+  max_instances: 1
