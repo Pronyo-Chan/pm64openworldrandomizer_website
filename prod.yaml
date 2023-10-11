@@ -10,7 +10,7 @@ env_variables:
   IS_UAT: "false"
   GRAPH_VERSION: "v19"
 
-entrypoint: gunicorn -b :8080 -w 2 main:app
+entrypoint: gunicorn -b :8080 -w 3 main:app
 
 automatic_scaling:
   max_instances: 2
