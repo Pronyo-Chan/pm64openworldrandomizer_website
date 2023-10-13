@@ -24,6 +24,7 @@ class SeedViewModel:
 
         self.Items = Items(
             gear_shuffle_mode = seed_document["GearShuffleMode"],
+            partner_upgrade_shuffle = seed_document.get("PartnerUpgradeShuffle"),
             include_coins_overworld = seed_document.get("IncludeCoinsOverworld"),
             include_coins_blocks = seed_document.get("IncludeCoinsBlocks"),
             include_coins_favors = seed_document.get("IncludeCoinsFavors"),
