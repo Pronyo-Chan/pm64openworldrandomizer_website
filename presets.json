@@ -222,6 +222,7 @@
             "RuinsLocksSkipClippy": false,
 
             "RecordSkipNoBombettePush": false,
+            "ForeverForestBackwards": false,
             "RecordSkipBombettePush": false,
             "BoosPortraitWithKooper": false,
             "BoosPortraitWithLaki": false,
@@ -533,6 +534,7 @@
             "ParakarrylessSuperHammerRoomNormalBoots": false,
             "RuinsLocksSkipClippy": false,
 
+            "ForeverForestBackwards": false,
             "RecordSkipNoBombettePush": false,
             "RecordSkipBombettePush": false,
             "BoosPortraitWithKooper": false,
@@ -845,6 +847,7 @@
             "ParakarrylessSuperHammerRoomNormalBoots": false,
             "RuinsLocksSkipClippy": false,
 
+            "ForeverForestBackwards": false,
             "RecordSkipNoBombettePush": false,
             "RecordSkipBombettePush": false,
             "BoosPortraitWithKooper": false,
@@ -1157,6 +1160,7 @@
             "ParakarrylessSuperHammerRoomNormalBoots": false,
             "RuinsLocksSkipClippy": false,
 
+            "ForeverForestBackwards": false,
             "RecordSkipNoBombettePush": false,
             "RecordSkipBombettePush": false,
             "BoosPortraitWithKooper": false,
@@ -1469,6 +1473,7 @@
             "ParakarrylessSuperHammerRoomNormalBoots": false,
             "RuinsLocksSkipClippy": false,
 
+            "ForeverForestBackwards": false,
             "RecordSkipNoBombettePush": false,
             "RecordSkipBombettePush": false,
             "BoosPortraitWithKooper": false,
@@ -1781,6 +1786,7 @@
             "ParakarrylessSuperHammerRoomNormalBoots": false,
             "RuinsLocksSkipClippy": false,
 
+            "ForeverForestBackwards": false,
             "RecordSkipNoBombettePush": false,
             "RecordSkipBombettePush": false,
             "BoosPortraitWithKooper": false,
@@ -2074,6 +2080,7 @@
             "RaphSkipEnglish": false,
             "RaphSkipParakarry": false,
             "ReachHighBlocksWithSuperBoots": false,
+            "ForeverForestBackwards": false,
             "RecordSkipBombettePush": false,
             "RecordSkipNoBombettePush": false,
             "RedBarricadeSkip": false,

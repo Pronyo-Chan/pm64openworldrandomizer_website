@@ -257,6 +257,7 @@ class SeedRequestSchema(Schema):
     RuinsLocksSkipClippy = fields.Boolean(required=True)
 
     # Glitches: Boo's Mansion
+    ForeverForestBackwards = fields.Boolean(required=True)
     RecordSkipNoBombettePush = fields.Boolean(required=True)
     RecordSkipBombettePush = fields.Boolean(required=True)
     BoosPortraitWithKooper = fields.Boolean(required=True)

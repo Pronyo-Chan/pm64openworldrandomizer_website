@@ -44,7 +44,7 @@ class Seed:
         MtRuggedCoinsWithKooper: bool, MtRuggedStationJumplessClimbBombette: bool, MtRuggedStationJumplessClimbLaki: bool, JumplessMtRuggedTrainPlatformParakarry: bool,
         DesertBrickBlockItemWithParakarry: bool, EarlyRuinsLakiJump: bool, EarlyRuinsUltraBoots: bool, ArtifactJumpLaki: bool, ArtifactJumpUltraBoots: bool,
         RuinsKeyLakiJump: bool, ParakarrylessSecondSandRoomUltraBoots: bool, ParakarrylessSecondSandRoomNormalBoots: bool, ParakarrylessSuperHammerRoomUltraBoots: bool,
-        ParakarrylessSuperHammerRoomNormalBoots: bool, RuinsLocksSkipClippy: bool, RecordSkipNoBombettePush: bool, RecordSkipBombettePush: bool, BoosPortraitWithKooper: bool,
+        ParakarrylessSuperHammerRoomNormalBoots: bool, RuinsLocksSkipClippy: bool, ForeverForestBackwards: bool, RecordSkipNoBombettePush: bool, RecordSkipBombettePush: bool, BoosPortraitWithKooper: bool,
         BoosPortraitWithLaki: bool, JumplessMansionEntry: bool, GustyGulchGateSkipLZS: bool, GustyGulchGateSkipLaki: bool, KooperlessGustyGulchDizzyDialJump: bool, KooperlessGustyGulchDizzyDialLaki: bool,
         KooperlessGustyGulchDizzyDialParakarry: bool, GustyGulchGapSkip: bool, BowlessTubbasCastle: bool, TubbasTableLakiJumpClock: bool, TubbasTableLakiJumpStudy: bool, TubbasTableUltraBoots: bool, TubbasCastleSuperBootsSkip: bool,
         ParakarrylessMegaRush: bool, ParakarrylessBlueBuildingStarPiece: bool, GourmetGuySkipJump: bool, GourmetGuySkipLaki: bool, GourmetGuySkipParakarry: bool, BowlessGreenStation: bool,
@@ -301,6 +301,7 @@ class Seed:
         self.RuinsLocksSkipClippy = RuinsLocksSkipClippy
 
         # Glitches: Boo's Mansion
+        self.ForeverForestBackwards = ForeverForestBackwards
         self.RecordSkipNoBombettePush = RecordSkipNoBombettePush
         self.RecordSkipBombettePush = RecordSkipBombettePush
         self.BoosPortraitWithKooper = BoosPortraitWithKooper
