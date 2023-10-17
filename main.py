@@ -5,7 +5,7 @@ from os import environ
 from flask_limiter import Limiter
 
 from flask import Flask, request, abort, send_file
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 
 import firebase_admin
 from firebase_admin import credentials
@@ -83,6 +83,7 @@ if(environ.get("IS_PRODUCTION") == "true"):
     firestore_graphs_collection = "graphs-prod"    
     environment = "prod"
 
+@cross_origin()
 @app.route('/randomizer_settings/<seed_id>', methods=['GET'])
 def get_randomizer_settings(seed_id):
     if seed_id is None:
