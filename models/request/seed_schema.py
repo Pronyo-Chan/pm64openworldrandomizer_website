@@ -1,6 +1,6 @@
 from marshmallow import EXCLUDE, Schema, ValidationError, fields, validates_schema, validate
 
-CURRENT_MOD_VERSION = 19
+CURRENT_MOD_VERSION = 20
 
 class StartWithPartnersSchema(Schema):
     class Meta:
@@ -33,6 +33,7 @@ class SeedRequestSchema(Schema):
     IncludeRadioTradeEvent  = fields.Boolean(required=True)
     ShuffleBlocks = fields.Boolean(required=True)
     GearShuffleMode = fields.Int(required=True, validate=validate.Range(0,2))
+    PartnerUpgradeShuffle = fields.Int(required=True, validate=validate.Range(0,2))
     RipCheatoItemsInLogic = fields.Int(required=True, validate=validate.Range(0, 11))
     ProgressionOnRowf = fields.Boolean(required=True)
     ProgressionOnMerlow = fields.Boolean(required=True)
@@ -256,6 +257,7 @@ class SeedRequestSchema(Schema):
     RuinsLocksSkipClippy = fields.Boolean(required=True)
 
     # Glitches: Boo's Mansion
+    ForeverForestBackwards = fields.Boolean(required=True)
     RecordSkipNoBombettePush = fields.Boolean(required=True)
     RecordSkipBombettePush = fields.Boolean(required=True)
     BoosPortraitWithKooper = fields.Boolean(required=True)

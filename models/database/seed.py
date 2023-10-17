@@ -28,7 +28,7 @@ class Seed:
         AddUnusedBadgeDuplicates: bool, AddBetaItems: bool, ProgressiveBadges: bool, BadgePoolLimit: int,
         RandomChoice: bool, MysteryRandomPick: bool, ItemTrapMode: int, AllowItemHints: bool, WattSetting: int, WattSprite: int, SushieSetting: int, SushieSprite: int, \
         LakilesterSetting: int, LakilesterSprite: int, ParakarrySetting: int, ParakarrySprite: int, IncludeRadioTradeEvent: bool, RevealLogInHours: int, StartingBoots: int, StartingHammer: int,
-        ShuffleBlocks: bool, RandomPitch: bool, GearShuffleMode: int, HiddenPanelVisibility: bool, BombetteSetting: int, BombetteSprite: int, CookWithoutFryingPan: bool,
+        ShuffleBlocks: bool, RandomPitch: bool, GearShuffleMode: int, PartnerUpgradeShuffle: int, HiddenPanelVisibility: bool, BombetteSetting: int, BombetteSprite: int, CookWithoutFryingPan: bool,
         RipCheatoItemsInLogic: int, MerlowRewardPricing: int, PrologueOpen: bool, ProgressionOnRowf: bool, ProgressionOnMerlow: bool, MtRuggedOpen: bool, ForeverForestOpen: bool,
         ShuffleDungeonEntrances : bool, ShuffleMusic: bool, ShuffleMusicMode: int, ShuffleJingles: bool, StarHunt: bool, StarHuntEndsGame: bool, StarHuntRequired: int,
         StarHuntTotal: int, BadgeSynergy: bool, RequireSpecificSpirits: bool, LimitChapterLogic: bool, DropStarPoints: bool,
@@ -44,7 +44,7 @@ class Seed:
         MtRuggedCoinsWithKooper: bool, MtRuggedStationJumplessClimbBombette: bool, MtRuggedStationJumplessClimbLaki: bool, JumplessMtRuggedTrainPlatformParakarry: bool,
         DesertBrickBlockItemWithParakarry: bool, EarlyRuinsLakiJump: bool, EarlyRuinsUltraBoots: bool, ArtifactJumpLaki: bool, ArtifactJumpUltraBoots: bool,
         RuinsKeyLakiJump: bool, ParakarrylessSecondSandRoomUltraBoots: bool, ParakarrylessSecondSandRoomNormalBoots: bool, ParakarrylessSuperHammerRoomUltraBoots: bool,
-        ParakarrylessSuperHammerRoomNormalBoots: bool, RuinsLocksSkipClippy: bool, RecordSkipNoBombettePush: bool, RecordSkipBombettePush: bool, BoosPortraitWithKooper: bool,
+        ParakarrylessSuperHammerRoomNormalBoots: bool, RuinsLocksSkipClippy: bool, ForeverForestBackwards: bool, RecordSkipNoBombettePush: bool, RecordSkipBombettePush: bool, BoosPortraitWithKooper: bool,
         BoosPortraitWithLaki: bool, JumplessMansionEntry: bool, GustyGulchGateSkipLZS: bool, GustyGulchGateSkipLaki: bool, KooperlessGustyGulchDizzyDialJump: bool, KooperlessGustyGulchDizzyDialLaki: bool,
         KooperlessGustyGulchDizzyDialParakarry: bool, GustyGulchGapSkip: bool, BowlessTubbasCastle: bool, TubbasTableLakiJumpClock: bool, TubbasTableLakiJumpStudy: bool, TubbasTableUltraBoots: bool, TubbasCastleSuperBootsSkip: bool,
         ParakarrylessMegaRush: bool, ParakarrylessBlueBuildingStarPiece: bool, GourmetGuySkipJump: bool, GourmetGuySkipLaki: bool, GourmetGuySkipParakarry: bool, BowlessGreenStation: bool,
@@ -201,6 +201,7 @@ class Seed:
         self.ShuffleMusicMode = ShuffleMusicMode
         self.ShuffleJingles = ShuffleJingles
         self.GearShuffleMode = GearShuffleMode
+        self.PartnerUpgradeShuffle = PartnerUpgradeShuffle
         self.HiddenPanelVisibility = HiddenPanelVisibility
         self.CookWithoutFryingPan = CookWithoutFryingPan
         self.RipCheatoItemsInLogic = RipCheatoItemsInLogic
@@ -300,6 +301,7 @@ class Seed:
         self.RuinsLocksSkipClippy = RuinsLocksSkipClippy
 
         # Glitches: Boo's Mansion
+        self.ForeverForestBackwards = ForeverForestBackwards
         self.RecordSkipNoBombettePush = RecordSkipNoBombettePush
         self.RecordSkipBombettePush = RecordSkipBombettePush
         self.BoosPortraitWithKooper = BoosPortraitWithKooper

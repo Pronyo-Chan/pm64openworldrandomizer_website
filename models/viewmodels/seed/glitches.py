@@ -74,6 +74,7 @@ glitches_names = [
     "RuinsLocksSkipClippy",
 
     # Glitches: Boo's Mansion
+    "ForeverForestBackwards",
     "RecordSkipNoBombettePush",
     "RecordSkipBombettePush",
     "BoosPortraitWithKooper",
