@@ -5,7 +5,7 @@ from os import environ
 from flask_limiter import Limiter
 
 from flask import Flask, request, abort, send_file
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
 
 import firebase_admin
 from firebase_admin import credentials
@@ -47,10 +47,7 @@ def create_app(test_config=None):
     #app.config['DEBUG'] = True
     #app.wsgi_app = ProfilerMiddleware(app.wsgi_app, restrictions=[30])
 
-    if(environ.get("IS_PRODUCTION") == "true"):
-        CORS(app, origins=["https://paper-mario-randomizer-app.ue.r.appspot.com", "https://pm64randomizer.com", "https://www.pm64randomizer.com", "https://pmr-tracker.phantom-games.com"])
-    else:
-        CORS(app, origins=["http://localhost:4200", "https://uat-dot-paper-mario-randomizer-app.ue.r.appspot.com"])
+    CORS(app)
 
     if test_config is None:
         # load the instance config, if it exists, when not testing
@@ -83,7 +80,6 @@ if(environ.get("IS_PRODUCTION") == "true"):
     firestore_graphs_collection = "graphs-prod"    
     environment = "prod"
 
-@cross_origin()
 @app.route('/randomizer_settings/<seed_id>', methods=['GET'])
 def get_randomizer_settings(seed_id):
     if seed_id is None:
