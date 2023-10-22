@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta, timezone
+import random
 
 
 class Seed:
@@ -408,5 +409,5 @@ class Seed:
         self.PeachCastleReturnPipe = True # Default
         self.ChallengeMode = False # Default
 
-    
+        self.SeedValue = random.randint(0, 0xFFFFFFFF)    
     

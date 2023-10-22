@@ -69,6 +69,7 @@ secret_manager = secretmanager.SecretManagerServiceClient()
 api_key = secret_manager.access_secret_version(request={"name": "projects/937462171520/secrets/api-key/versions/1"}).payload.data.decode("UTF-8")
 
 firestore_seeds_collection = "seeds"
+firestore_failure_collection = "seeds-fail"
 environment = "local"
 
 if(environ.get("IS_UAT") == "true"): 
@@ -77,6 +78,7 @@ if(environ.get("IS_UAT") == "true"):
 
 if(environ.get("IS_PRODUCTION") == "true"): 
     firestore_seeds_collection = "seeds-prod"
+    firestore_failure_collection = "seeds-fail-prod"
     firestore_graphs_collection = "graphs-prod"    
     environment = "prod"
 
@@ -126,8 +128,13 @@ def post_randomizer_settings():
 
     print(f'Request settings {seed.__dict__}')
 
-    rando_result = web_randomizer(json.dumps(seed.__dict__, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"), world_graph)
-    seed.SeedValue = rando_result.seed_value
+    try:
+        rando_result = web_randomizer(json.dumps(seed.__dict__, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"), world_graph)
+    except Exception as err:
+        print(err)
+        db.collection(firestore_failure_collection).document(str(unique_seed_id)).set(seed.__dict__)
+        raise err
+    
     seed.PaletteOffset = rando_result.palette_offset
     seed.CosmeticsOffset = rando_result.cosmetics_offset
     seed.AudioOffset = rando_result.audio_offset
