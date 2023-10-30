@@ -271,6 +271,11 @@ def get_preset_names():
     gc.collect()
     return str(preset_names)
 
+@app.route('/_ah/warmup')
+def warmup():
+    # Server stub to warmup service
+    return "", 200, {}
+
 def init_world_graph():
     if environment == "local":
         print("Running in local environment, generating world graph...")
