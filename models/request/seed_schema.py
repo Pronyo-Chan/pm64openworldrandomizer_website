@@ -1,6 +1,6 @@
 from marshmallow import EXCLUDE, Schema, ValidationError, fields, validates_schema, validate
 
-CURRENT_MOD_VERSION = 20
+CURRENT_MOD_VERSION = 21
 
 class StartWithPartnersSchema(Schema):
     class Meta:
@@ -80,6 +80,7 @@ class SeedRequestSchema(Schema):
     HammerSetting = fields.Int(required=True)
     MarioSetting = fields.Int(required=True)
     MarioSprite = fields.Int(required=True)
+    ColorMode = fields.Int(required=True)
     Box5ColorA = fields.Int(required=True)
     Box5ColorB = fields.Int(required=True)
     CoinColor = fields.Int(required=True)

@@ -92,6 +92,17 @@ coin_colors = {
     4 : "Silver"
 }
 
+def get_box_color(color_mode, box5_color_a):
+    print(box5_color_a)
+    if color_mode == 0:
+        return box_colors.get(box5_color_a)
+
+    elif color_mode == 1:
+        return "Random Pick"
+
+    if color_mode == 2:
+        return "Animated"
+
 def get_palette_description(setting, sprite = None, character_color_choices = None):
     if setting == 0:
         return "Default"
@@ -134,7 +145,7 @@ class Cosmetics:
         parakarry_setting: int, parakarry_sprite: int, bow_setting: int, bow_sprite: int,
         watt_setting: int, watt_sprite: int, sushie_setting: int, sushie_sprite: int,
         lakilester_setting: int, lakilester_sprite: int, bosses_setting: int,
-        enemies_setting: int, hammer_setting: int, npc_setting: int, box5_color_a: int,
+        enemies_setting: int, hammer_setting: int, npc_setting: int, color_mode: int, box5_color_a: int,
         coin_color: int, random_coin_color: bool, random_text: bool, roman_numerals: bool,
         random_pitch: bool, shuffle_music: bool, shuffle_music_mode: int, shuffle_jingles: bool
     ):
@@ -154,8 +165,8 @@ class Cosmetics:
         self.Enemies = get_palette_description(enemies_setting)
         self.Hammer = get_palette_description(hammer_setting)
 
-        self.StatusMenu = box_colors.get(box5_color_a)
-        self.CoinColor = "Random" if random_coin_color else coin_colors.get(coin_color)
+        self.StatusMenu = get_box_color(color_mode, box5_color_a)
+        self.CoinColor = "Random Pick" if random_coin_color else coin_colors.get(coin_color)
 
         self.RandomText = random_text
         self.RomanNumerals = roman_numerals

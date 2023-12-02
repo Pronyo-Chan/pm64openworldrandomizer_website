@@ -87,6 +87,7 @@ class SeedViewModel:
             hammer_setting = seed_document.get("HammerSetting"),
             coin_color = seed_document["CoinColor"],
             random_coin_color = seed_document["RandomCoinColor"],
+            color_mode = seed_document.get("ColorMode"),
             box5_color_a = seed_document["Box5ColorA"],
             roman_numerals = seed_document["RomanNumerals"],
             random_text = seed_document["RandomText"],
