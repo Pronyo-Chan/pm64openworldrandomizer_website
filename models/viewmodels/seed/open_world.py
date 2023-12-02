@@ -24,7 +24,7 @@ class World:
         star_hunt_ends_game: bool,
         star_hunt_required: int,
         star_hunt_total: int,
-
+        mirror_mode: bool
     ):
 
         self.StartingLocation = starting_maps.get(starting_location)
@@ -38,6 +38,7 @@ class World:
         self.OpenForeverForest = forever_forest_open
         self.BowsersCastleMode = bowsers_castle_mode
         self.ShuffleDungeonEntrances = shuffle_dungeon_entrances
+        self.MirrorMode = mirror_mode
         
         self.StarHunt = star_hunt
         self.StarHuntEndsGame = star_hunt_ends_game

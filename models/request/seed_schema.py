@@ -135,6 +135,7 @@ class SeedRequestSchema(Schema):
     StarHuntEndsGame = fields.Boolean(required=True)
     StarHuntRequired = fields.Int(required=True, validate=validate.Range(0,120))
     StarHuntTotal = fields.Int(required=True, validate=validate.Range(0,120))
+    MirrorMode = fields.Boolean(required=True)
 
     # Quality of Life
     AlwaysSpeedySpin = fields.Boolean(required=True)

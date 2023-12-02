@@ -174,6 +174,7 @@ class SeedViewModel:
             star_hunt_ends_game = seed_document.get("StarHuntEndsGame"),
             star_hunt_required = seed_document.get("StarHuntRequired"),
             star_hunt_total = seed_document.get("StarHuntTotal"),
+            mirror_mode = seed_document.get("MirrorMode"),
         ).__dict__
 
         self.QualityOfLife = QualityOfLife(
