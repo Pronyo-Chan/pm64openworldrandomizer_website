@@ -15,5 +15,5 @@ class QualityOfLife:
         self.FoliageItemHints = foliage_item_hints
         self.VisibleHiddenPanels = hidden_panel_visibility == 1
         self.CookWithoutFryingPan = cook_without_frying_pan
-        self.CutsceneMode = cutscene_mode if cutscene_mode else int(shorten_cutscenes)
+        self.CutsceneMode = cutscene_mode if cutscene_mode is not None else int(shorten_cutscenes)
         self.SkipEpilogue = skip_epilogue
