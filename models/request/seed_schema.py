@@ -149,7 +149,7 @@ class SeedRequestSchema(Schema):
     RomanNumerals = fields.Boolean(required=True)
     WriteSpoilerLog = fields.Boolean(required=True)
     FoliageItemHints = fields.Boolean(required=True)
-    ShortenCutscenes = fields.Boolean(required=True)
+    CutsceneMode = fields.Int(required=True, validate=validate.Range(0,2))
     SkipEpilogue = fields.Boolean(required=True)
     HiddenPanelVisibility = fields.Int(required=True)
     CookWithoutFryingPan = fields.Boolean(required=True)

@@ -188,7 +188,8 @@ class SeedViewModel:
             foliage_item_hints = seed_document["FoliageItemHints"],
             hidden_panel_visibility = seed_document["HiddenPanelVisibility"],
             cook_without_frying_pan = seed_document["CookWithoutFryingPan"],
-            shorten_cutscenes = seed_document["ShortenCutscenes"],
+            shorten_cutscenes = seed_document.get("ShortenCutscenes"),
+            cutscene_mode = seed_document.get("CutsceneMode"),
             skip_epilogue = seed_document["SkipEpilogue"],
         ).__dict__
 

@@ -19,7 +19,7 @@ class Seed:
         RandomFormations: bool, ShuffleItems: bool, IncludeCoinsOverworld: bool, IncludeCoinsBlocks: bool, IncludeCoinsFoliage: bool, IncludeCoinsFavors: bool, IncludeShops: bool, IncludePanels: bool,\
         IncludeFavorsMode: int, IncludeLettersMode: int, KeyitemsOutsideDungeon: bool, ProgressiveScaling: bool, RandomBadgesBP: int, RandomBadgesFP: int, RandomPartnerFP: int, RandomStarpowerSP: int, RandomQuiz: bool, SkipQuiz: bool, QuizmoAlwaysAppears: bool, \
         PartnersInDefaultLocations: bool, PartnersAlwaysUsable: bool, StartWithRandomPartners: bool, WriteSpoilerLog: bool, RomanNumerals: bool, \
-        IncludeDojo: bool, BowsersCastleMode: int, ShortenCutscenes: bool, SkipEpilogue, RandomPartnersMin: int, RandomPartnersMax: int, StartWithPartners: StartWithPartners,
+        IncludeDojo: bool, BowsersCastleMode: int, CutsceneMode: int, SkipEpilogue, RandomPartnersMin: int, RandomPartnersMax: int, StartWithPartners: StartWithPartners,
         ColorMode: int, Box5ColorA: int, Box5ColorB: int, RandomCoinColor: bool, CoinColor: int, MarioSetting: int, MarioSprite: int, GoombarioSetting: int, GoombarioSprite: int,
         KooperSetting: int, KooperSprite: int, BowSetting: int, BowSprite: int, BossesSetting: int, NPCSetting: int, EnemiesSetting: int, HammerSetting:int, StartingMap: int,
         StartingMaxHP: int, StartingMaxFP: int, StartingMaxBP: int, StartingStarPower: int, StartingItem0: int, StartingItem1: int, StartingItem2: int, StartingItem3: int, \
@@ -112,7 +112,7 @@ class Seed:
         self.RomanNumerals = RomanNumerals
         self.IncludeDojo = IncludeDojo
         self.BowsersCastleMode = BowsersCastleMode
-        self.ShortenCutscenes = ShortenCutscenes
+        self.CutsceneMode = CutsceneMode
         self.SkipEpilogue = SkipEpilogue
         self.IncludeRadioTradeEvent = IncludeRadioTradeEvent
 
