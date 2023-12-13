@@ -93,7 +93,6 @@ coin_colors = {
 }
 
 def get_box_color(color_mode, box5_color_a):
-    print(box5_color_a)
     if color_mode == 0:
         return box_colors.get(box5_color_a)
 
