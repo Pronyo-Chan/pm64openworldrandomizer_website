@@ -24,7 +24,7 @@ class World:
         star_hunt_ends_game: bool,
         star_hunt_required: int,
         star_hunt_total: int,
-        mirror_mode: bool
+        mirror_mode: int
     ):
 
         self.StartingLocation = starting_maps.get(starting_location)
