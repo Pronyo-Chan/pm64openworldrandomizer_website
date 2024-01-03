@@ -301,6 +301,7 @@
 
             "MirrorClip": false,
             "MirrorMode": 0,
+            "StaticMapMirroring": false,
 
             "BowlessBowsersCastleBasement": false,
             "BombettelessBowsersCastleBasement": false,
@@ -616,6 +617,7 @@
 
             "MirrorClip": false,
             "MirrorMode": 0,
+            "StaticMapMirroring": false,
 
             "BowlessBowsersCastleBasement": false,
             "BombettelessBowsersCastleBasement": false,
@@ -931,6 +933,7 @@
 
             "MirrorClip": false,
             "MirrorMode": 0,
+            "StaticMapMirroring": false,
 
             "BowlessBowsersCastleBasement": false,
             "BombettelessBowsersCastleBasement": false,
@@ -1246,6 +1249,7 @@
 
             "MirrorClip": false,
             "MirrorMode": 0,
+            "StaticMapMirroring": false,
 
             "BowlessBowsersCastleBasement": false,
             "BombettelessBowsersCastleBasement": false,
@@ -1561,6 +1565,7 @@
 
             "MirrorClip": false,
             "MirrorMode": 0,
+            "StaticMapMirroring": false,
 
             "BowlessBowsersCastleBasement": false,
             "BombettelessBowsersCastleBasement": false,
@@ -1876,6 +1881,7 @@
 
             "MirrorClip": false,
             "MirrorMode": 0,
+            "StaticMapMirroring": false,
 
             "BowlessBowsersCastleBasement": false,
             "BombettelessBowsersCastleBasement": false,
@@ -2032,6 +2038,7 @@
             "MerlowRewardPricing": 0,
             "MirrorClip": false,
             "MirrorMode": 0,
+            "StaticMapMirroring": false,
             "MtRuggedCoinsWithKooper": false,
             "MtRuggedOpen": false,
             "MtRuggedQuakeHammerAndLetterWithLaki": false,

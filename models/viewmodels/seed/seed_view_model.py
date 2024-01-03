@@ -175,6 +175,7 @@ class SeedViewModel:
             star_hunt_required = seed_document.get("StarHuntRequired"),
             star_hunt_total = seed_document.get("StarHuntTotal"),
             mirror_mode = seed_document.get("MirrorMode"),
+            static_map_mirroring = seed_document.get("StaticMapMirroring"),
         ).__dict__
 
         self.QualityOfLife = QualityOfLife(

@@ -136,6 +136,7 @@ class SeedRequestSchema(Schema):
     StarHuntRequired = fields.Int(required=True, validate=validate.Range(0,120))
     StarHuntTotal = fields.Int(required=True, validate=validate.Range(0,120))
     MirrorMode = fields.Int(required=True)
+    StaticMapMirroring = fields.Boolean(required=True)
 
     # Quality of Life
     AlwaysSpeedySpin = fields.Boolean(required=True)
