@@ -1,6 +1,6 @@
 from marshmallow import EXCLUDE, Schema, ValidationError, fields, validates_schema, validate
 
-CURRENT_MOD_VERSION = 20
+CURRENT_MOD_VERSION = 21
 
 class StartWithPartnersSchema(Schema):
     class Meta:
@@ -80,6 +80,7 @@ class SeedRequestSchema(Schema):
     HammerSetting = fields.Int(required=True)
     MarioSetting = fields.Int(required=True)
     MarioSprite = fields.Int(required=True)
+    ColorMode = fields.Int(required=True)
     Box5ColorA = fields.Int(required=True)
     Box5ColorB = fields.Int(required=True)
     CoinColor = fields.Int(required=True)
@@ -134,6 +135,8 @@ class SeedRequestSchema(Schema):
     StarHuntEndsGame = fields.Boolean(required=True)
     StarHuntRequired = fields.Int(required=True, validate=validate.Range(0,120))
     StarHuntTotal = fields.Int(required=True, validate=validate.Range(0,120))
+    MirrorMode = fields.Int(required=True)
+    StaticMapMirroring = fields.Boolean(required=True)
 
     # Quality of Life
     AlwaysSpeedySpin = fields.Boolean(required=True)
@@ -147,7 +150,7 @@ class SeedRequestSchema(Schema):
     RomanNumerals = fields.Boolean(required=True)
     WriteSpoilerLog = fields.Boolean(required=True)
     FoliageItemHints = fields.Boolean(required=True)
-    ShortenCutscenes = fields.Boolean(required=True)
+    CutsceneMode = fields.Int(required=True, validate=validate.Range(0,2))
     SkipEpilogue = fields.Boolean(required=True)
     HiddenPanelVisibility = fields.Int(required=True)
     CookWithoutFryingPan = fields.Boolean(required=True)

@@ -87,6 +87,7 @@ class SeedViewModel:
             hammer_setting = seed_document.get("HammerSetting"),
             coin_color = seed_document["CoinColor"],
             random_coin_color = seed_document["RandomCoinColor"],
+            color_mode = seed_document.get("ColorMode"),
             box5_color_a = seed_document["Box5ColorA"],
             roman_numerals = seed_document["RomanNumerals"],
             random_text = seed_document["RandomText"],
@@ -173,6 +174,8 @@ class SeedViewModel:
             star_hunt_ends_game = seed_document.get("StarHuntEndsGame"),
             star_hunt_required = seed_document.get("StarHuntRequired"),
             star_hunt_total = seed_document.get("StarHuntTotal"),
+            mirror_mode = seed_document.get("MirrorMode"),
+            static_map_mirroring = seed_document.get("StaticMapMirroring"),
         ).__dict__
 
         self.QualityOfLife = QualityOfLife(
@@ -186,7 +189,8 @@ class SeedViewModel:
             foliage_item_hints = seed_document["FoliageItemHints"],
             hidden_panel_visibility = seed_document["HiddenPanelVisibility"],
             cook_without_frying_pan = seed_document["CookWithoutFryingPan"],
-            shorten_cutscenes = seed_document["ShortenCutscenes"],
+            shorten_cutscenes = seed_document.get("ShortenCutscenes"),
+            cutscene_mode = seed_document.get("CutsceneMode"),
             skip_epilogue = seed_document["SkipEpilogue"],
         ).__dict__
 

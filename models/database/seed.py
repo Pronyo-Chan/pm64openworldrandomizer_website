@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta, timezone
+import random
 
 
 class Seed:
@@ -18,8 +19,8 @@ class Seed:
         RandomFormations: bool, ShuffleItems: bool, IncludeCoinsOverworld: bool, IncludeCoinsBlocks: bool, IncludeCoinsFoliage: bool, IncludeCoinsFavors: bool, IncludeShops: bool, IncludePanels: bool,\
         IncludeFavorsMode: int, IncludeLettersMode: int, KeyitemsOutsideDungeon: bool, ProgressiveScaling: bool, RandomBadgesBP: int, RandomBadgesFP: int, RandomPartnerFP: int, RandomStarpowerSP: int, RandomQuiz: bool, SkipQuiz: bool, QuizmoAlwaysAppears: bool, \
         PartnersInDefaultLocations: bool, PartnersAlwaysUsable: bool, StartWithRandomPartners: bool, WriteSpoilerLog: bool, RomanNumerals: bool, \
-        IncludeDojo: bool, BowsersCastleMode: int, ShortenCutscenes: bool, SkipEpilogue, RandomPartnersMin: int, RandomPartnersMax: int, StartWithPartners: StartWithPartners,
-        Box5ColorA: int, Box5ColorB: int, RandomCoinColor: bool, CoinColor: int, MarioSetting: int, MarioSprite: int, GoombarioSetting: int, GoombarioSprite: int,
+        IncludeDojo: bool, BowsersCastleMode: int, CutsceneMode: int, SkipEpilogue, RandomPartnersMin: int, RandomPartnersMax: int, StartWithPartners: StartWithPartners,
+        ColorMode: int, Box5ColorA: int, Box5ColorB: int, RandomCoinColor: bool, CoinColor: int, MarioSetting: int, MarioSprite: int, GoombarioSetting: int, GoombarioSprite: int,
         KooperSetting: int, KooperSprite: int, BowSetting: int, BowSprite: int, BossesSetting: int, NPCSetting: int, EnemiesSetting: int, HammerSetting:int, StartingMap: int,
         StartingMaxHP: int, StartingMaxFP: int, StartingMaxBP: int, StartingStarPower: int, StartingItem0: int, StartingItem1: int, StartingItem2: int, StartingItem3: int, \
         StartingItem4: int, StartingItem5: int, StartingItem6: int, StartingItem7: int, StartingItem8: int, StartingItem9: int, StartingItemA: int, StartingItemB: int, \
@@ -31,7 +32,7 @@ class Seed:
         ShuffleBlocks: bool, RandomPitch: bool, GearShuffleMode: int, PartnerUpgradeShuffle: int, HiddenPanelVisibility: bool, BombetteSetting: int, BombetteSprite: int, CookWithoutFryingPan: bool,
         RipCheatoItemsInLogic: int, MerlowRewardPricing: int, PrologueOpen: bool, ProgressionOnRowf: bool, ProgressionOnMerlow: bool, MtRuggedOpen: bool, ForeverForestOpen: bool,
         ShuffleDungeonEntrances : bool, ShuffleMusic: bool, ShuffleMusicMode: int, ShuffleJingles: bool, StarHunt: bool, StarHuntEndsGame: bool, StarHuntRequired: int,
-        StarHuntTotal: int, BadgeSynergy: bool, RequireSpecificSpirits: bool, LimitChapterLogic: bool, DropStarPoints: bool,
+        StarHuntTotal: int, BadgeSynergy: bool, RequireSpecificSpirits: bool, LimitChapterLogic: bool, DropStarPoints: bool, MirrorMode: int, StaticMapMirroring: bool,
 
         PrologueGelEarly: bool, ReverseGoombaKingBridge: bool, GoombaVillageEntryFenceClip: bool, GoombaVillageNpcLureExit: bool, HammerlessJrPlaygroundLaki: bool, GoombaVillageLakiExit: bool,
         PrologueSushieGlitchKsj: bool, PrologueSushieGlitchUltraBootsLaki: bool, OddKeyEarly: bool, BlueHouseSkip: bool, BlueHouseSkipLaki: bool, BlueHouseSkipToadLure: bool, BowlessToyBoxHammer: bool, BowlessToyBoxHammerlessLure: bool,
@@ -111,10 +112,11 @@ class Seed:
         self.RomanNumerals = RomanNumerals
         self.IncludeDojo = IncludeDojo
         self.BowsersCastleMode = BowsersCastleMode
-        self.ShortenCutscenes = ShortenCutscenes
+        self.CutsceneMode = CutsceneMode
         self.SkipEpilogue = SkipEpilogue
         self.IncludeRadioTradeEvent = IncludeRadioTradeEvent
 
+        self.ColorMode = ColorMode
         self.Box5ColorA = Box5ColorA
         self.Box5ColorB = Box5ColorB
         self.RandomCoinColor = RandomCoinColor
@@ -210,7 +212,8 @@ class Seed:
         self.ProgressionOnRowf = ProgressionOnRowf
         self.ProgressionOnMerlow = ProgressionOnMerlow
         self.ShuffleDungeonEntrances = ShuffleDungeonEntrances
-
+        self.MirrorMode = MirrorMode
+        self.StaticMapMirroring = StaticMapMirroring
         
         self.StarHunt = StarHunt
         self.StarHuntEndsGame = StarHuntEndsGame
@@ -408,5 +411,5 @@ class Seed:
         self.PeachCastleReturnPipe = True # Default
         self.ChallengeMode = False # Default
 
-    
+        self.SeedValue = random.randint(0, 0xFFFFFFFF)    
     

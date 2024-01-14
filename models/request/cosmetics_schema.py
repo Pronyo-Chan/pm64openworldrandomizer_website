@@ -30,6 +30,7 @@ class CosmeticsShema(Schema):
     HammerSetting = fields.Int(required=True)
     MarioSetting = fields.Int(required=True)
     MarioSprite = fields.Int(required=True)
+    ColorMode = fields.Int(required=True)
     Box5ColorA = fields.Int(required=True)
     Box5ColorB = fields.Int(required=True)
     CoinColor = fields.Int(required=True)
