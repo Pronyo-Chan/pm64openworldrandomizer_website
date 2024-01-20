@@ -92,6 +92,7 @@ class SeedViewModel:
             roman_numerals = seed_document["RomanNumerals"],
             random_text = seed_document["RandomText"],
             random_pitch = seed_document["RandomPitch"],
+            mute_danger_beeps = seed_document.get("MuteDangerBeeps"),
             shuffle_music = seed_document.get("ShuffleMusic"),
             shuffle_music_mode = seed_document.get("ShuffleMusicMode"),
             shuffle_jingles = seed_document.get("ShuffleJingles"),

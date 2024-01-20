@@ -146,7 +146,7 @@ class Cosmetics:
         lakilester_setting: int, lakilester_sprite: int, bosses_setting: int,
         enemies_setting: int, hammer_setting: int, npc_setting: int, color_mode: int, box5_color_a: int,
         coin_color: int, random_coin_color: bool, random_text: bool, roman_numerals: bool,
-        random_pitch: bool, shuffle_music: bool, shuffle_music_mode: int, shuffle_jingles: bool
+        random_pitch: bool, shuffle_music: bool, shuffle_music_mode: int, shuffle_jingles: bool, mute_danger_beeps: bool
     ):
 
         self.Mario = get_palette_description(mario_setting, mario_sprite, mario_color_choices)
@@ -170,5 +170,6 @@ class Cosmetics:
         self.RandomText = random_text
         self.RomanNumerals = roman_numerals
         self.RandomPitch = random_pitch
+        self.MuteDangerBeeps = mute_danger_beeps
         self.ShuffleMusic = get_shuffle_music_description(shuffle_music, shuffle_music_mode)
         self.ShuffleJingles = shuffle_jingles

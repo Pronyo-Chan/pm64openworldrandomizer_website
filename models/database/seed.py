@@ -29,7 +29,7 @@ class Seed:
         AddUnusedBadgeDuplicates: bool, AddBetaItems: bool, ProgressiveBadges: bool, BadgePoolLimit: int,
         RandomChoice: bool, MysteryRandomPick: bool, ItemTrapMode: int, AllowItemHints: bool, WattSetting: int, WattSprite: int, SushieSetting: int, SushieSprite: int, \
         LakilesterSetting: int, LakilesterSprite: int, ParakarrySetting: int, ParakarrySprite: int, IncludeRadioTradeEvent: bool, RevealLogInHours: int, StartingBoots: int, StartingHammer: int,
-        ShuffleBlocks: bool, RandomPitch: bool, GearShuffleMode: int, PartnerUpgradeShuffle: int, HiddenPanelVisibility: bool, BombetteSetting: int, BombetteSprite: int, CookWithoutFryingPan: bool,
+        ShuffleBlocks: bool, RandomPitch: bool, MuteDangerBeeps: bool, GearShuffleMode: int, PartnerUpgradeShuffle: int, HiddenPanelVisibility: bool, BombetteSetting: int, BombetteSprite: int, CookWithoutFryingPan: bool,
         RipCheatoItemsInLogic: int, MerlowRewardPricing: int, PrologueOpen: bool, ProgressionOnRowf: bool, ProgressionOnMerlow: bool, MtRuggedOpen: bool, ForeverForestOpen: bool,
         ShuffleDungeonEntrances : bool, ShuffleMusic: bool, ShuffleMusicMode: int, ShuffleJingles: bool, StarHunt: bool, StarHuntEndsGame: bool, StarHuntRequired: int,
         StarHuntTotal: int, BadgeSynergy: bool, RequireSpecificSpirits: bool, LimitChapterLogic: bool, DropStarPoints: bool, MirrorMode: int, StaticMapMirroring: bool,
@@ -199,6 +199,7 @@ class Seed:
         self.AllowItemHints = AllowItemHints
         self.ShuffleBlocks = ShuffleBlocks
         self.RandomPitch = RandomPitch
+        self.MuteDangerBeeps = MuteDangerBeeps
         self.ShuffleMusic = ShuffleMusic
         self.ShuffleMusicMode = ShuffleMusicMode
         self.ShuffleJingles = ShuffleJingles

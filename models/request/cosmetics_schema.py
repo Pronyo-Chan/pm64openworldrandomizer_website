@@ -37,6 +37,7 @@ class CosmeticsShema(Schema):
     RandomCoinColor = fields.Boolean(required=True)
     RomanNumerals = fields.Boolean(required=True)
     RandomPitch = fields.Boolean(required=True)
+    MuteDangerBeeps = fields.Boolean(required=True)
     ShuffleMusic = fields.Boolean(required=True)
     ShuffleMusicMode = fields.Int(required=True)
     ShuffleJingles = fields.Boolean(required=True)

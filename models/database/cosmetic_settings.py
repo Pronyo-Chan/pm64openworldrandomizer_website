@@ -5,7 +5,7 @@ class CosmeticSettings:
         CoinColor: int = 0, MarioSetting: int = 0, MarioSprite: int = 0, GoombarioSetting: int = 0, GoombarioSprite: int = 0, KooperSetting: int = 0, \
         KooperSprite: int = 0, BowSetting: int = 0, BowSprite: int = 0, BossesSetting: int = 0, NPCSetting: int = 0, EnemiesSetting: int = 0, WattSetting: int = 0, WattSprite: int = 0, \
         SushieSetting: int = 0, SushieSprite: int = 0, LakilesterSetting: int = 0, LakilesterSprite: int = 0, ParakarrySetting: int = 0, ParakarrySprite: int = 0, RandomPitch: bool = False, BombetteSetting: int = 0, BombetteSprite: int = 0, \
-        HammerSetting: int = 0, ShuffleMusic: bool = False, ShuffleMusicMode: int = 0, ShuffleJingles: bool = False):
+        HammerSetting: int = 0, ShuffleMusic: bool = False, ShuffleMusicMode: int = 0, ShuffleJingles: bool = False, MuteDangerBeeps =False):
 
         self.SeedID = SeedID
         self.ColorMode = ColorMode
@@ -42,6 +42,7 @@ class CosmeticSettings:
         self.HammerSetting = HammerSetting
 
         self.RandomPitch = RandomPitch
+        self.MuteDangerBeeps = MuteDangerBeeps
         self.ShuffleMusic = ShuffleMusic
         self.ShuffleMusicMode = ShuffleMusicMode
         self.ShuffleJingles = ShuffleJingles
