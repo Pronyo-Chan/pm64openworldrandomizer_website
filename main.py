@@ -118,6 +118,7 @@ def post_randomizer_settings():
     try:
         SeedRequestSchema().load(seed_dict)
     except ValidationError as err:
+        print(err)
         return err.messages, 400
 
     unique_seed_id = get_unique_seedID(db, firestore_seeds_collection)
@@ -195,6 +196,7 @@ def get_cosmetic_patch():
     try:
         CosmeticsShema().load(cosmetics_dict)
     except ValidationError as err:
+        print(err)
         return err.messages, 400
 
     if cosmetics_dict["SeedID"] is None:
@@ -204,9 +206,6 @@ def get_cosmetic_patch():
         abort(404)
     
     seed_dict = document.to_dict()
-
-    if not seed_dict.get("MusicOffset"): # Can be cleaned up once music shuffle has been deployed for a month
-        return "Deprecated seed version", 400
     
     cosmetic_settings = CosmeticSettings(**cosmetics_dict)
 
