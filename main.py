@@ -131,6 +131,9 @@ def post_randomizer_settings():
 
     try:
         rando_result = web_randomizer(json.dumps(seed.__dict__, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"), world_graph)
+    except AssertionError as err:
+        print(err)
+        return str(err), 400
     except Exception as err:
         print(err)
         db.collection(firestore_failure_collection).document(str(unique_seed_id)).set(seed.__dict__)
