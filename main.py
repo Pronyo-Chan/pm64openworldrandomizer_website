@@ -138,14 +138,29 @@ def post_randomizer_settings():
         print(err)
         db.collection(firestore_failure_collection).document(str(unique_seed_id)).set(seed.__dict__)
         raise err
-    
-    seed.PaletteOffset = rando_result.palette_offset
-    seed.CosmeticsOffset = rando_result.cosmetics_offset
-    seed.AudioOffset = rando_result.audio_offset
-    seed.MusicOffset = rando_result.music_offset
-    seed.SeedHashItems = rando_result.hash_items
 
-    db.collection(firestore_seeds_collection).document(str(unique_seed_id)).set(seed.__dict__)
+    # Transfer back the settings model data from the generator
+    seed_dict = rando_result.web_settings
+    seed_dict["PaletteOffset"] = rando_result.palette_offset
+    seed_dict["CosmeticsOffset"] = rando_result.cosmetics_offset
+    seed_dict["AudioOffset"] = rando_result.audio_offset
+    seed_dict["MusicOffset"] = rando_result.music_offset
+    seed_dict["SeedHashItems"] = rando_result.hash_items
+
+    seed_dict["SeedID"] = seed.SeedID
+    seed_dict["CreationDate"] = seed.CreationDate
+    seed_dict["StarRodModVersion"] = seed.StarRodModVersion
+    seed_dict["SettingsString"] = seed.SettingsString
+    if seed.RevealLogAtTime:
+        seed_dict["RevealLogAtTime"] = seed.RevealLogAtTime
+    seed_dict["SettingsName"] = seed.SettingsName
+    seed_dict["SettingsVersion"] = seed.SettingsVersion
+    seed_dict["PlacementAlgorithm"] = seed.PlacementAlgorithm
+    seed_dict["PeachCastleReturnPipe"] = seed.PeachCastleReturnPipe
+    seed_dict["ChallengeMode"] = seed.ChallengeMode
+    seed_dict["SeedValue"] = seed.SeedValue
+
+    db.collection(firestore_seeds_collection).document(str(unique_seed_id)).set(seed_dict)
 
     save_file_to_cloud(str(f'{environment}/patch/{unique_seed_id}.pmp'), rando_result.patchBytes)
     save_file_to_cloud(str(f'{environment}/spoiler/{unique_seed_id}.txt'), rando_result.spoilerLogBytes)
