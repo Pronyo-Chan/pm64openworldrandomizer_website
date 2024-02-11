@@ -1,4 +1,5 @@
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
+import random
 import gc
 from os import environ
 
@@ -113,54 +114,46 @@ def get_randomizer_settings_v2(seed_id):
 @app.route('/randomizer_settings', methods=['POST'])
 @limiter.limit("10/hour")
 def post_randomizer_settings():
-    seed_dict = request.get_json()
+    seed_request = request.get_json()
     
     try:
-        SeedRequestSchema().load(seed_dict)
+        SeedRequestSchema().load(seed_request)
     except ValidationError as err:
         print(err)
         return err.messages, 400
 
     unique_seed_id = get_unique_seedID(db, firestore_seeds_collection)
-    seed_dict["SeedID"] = unique_seed_id
-    seed = Seed(**seed_dict)
+    seed_request["SeedID"] = unique_seed_id
+    seed_request["SeedValue"] = random.randint(0, 0xFFFFFFFF)    
 
     world_graph = init_world_graph()
 
-    print(f'Request settings {seed.__dict__}')
+    print(f'Request settings {seed_request}')
 
     try:
-        rando_result = web_randomizer(json.dumps(seed.__dict__, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"), world_graph)
-    except AssertionError as err:
-        print(err)
-        return str(err), 400
+        rando_result = web_randomizer(json.dumps(seed_request, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"), world_graph)
     except Exception as err:
         print(err)
-        db.collection(firestore_failure_collection).document(str(unique_seed_id)).set(seed.__dict__)
+        db.collection(firestore_failure_collection).document(str(unique_seed_id)).set(seed_request)
         raise err
 
     # Transfer back the settings model data from the generator
-    seed_dict = rando_result.web_settings
-    seed_dict["PaletteOffset"] = rando_result.palette_offset
-    seed_dict["CosmeticsOffset"] = rando_result.cosmetics_offset
-    seed_dict["AudioOffset"] = rando_result.audio_offset
-    seed_dict["MusicOffset"] = rando_result.music_offset
-    seed_dict["SeedHashItems"] = rando_result.hash_items
+    seed_result = rando_result.web_settings
+    seed_result["PaletteOffset"] = rando_result.palette_offset
+    seed_result["CosmeticsOffset"] = rando_result.cosmetics_offset
+    seed_result["AudioOffset"] = rando_result.audio_offset
+    seed_result["MusicOffset"] = rando_result.music_offset
+    seed_result["SeedHashItems"] = rando_result.hash_items
 
-    seed_dict["SeedID"] = seed.SeedID
-    seed_dict["CreationDate"] = seed.CreationDate
-    seed_dict["StarRodModVersion"] = seed.StarRodModVersion
-    seed_dict["SettingsString"] = seed.SettingsString
-    if seed.RevealLogAtTime:
-        seed_dict["RevealLogAtTime"] = seed.RevealLogAtTime
-    seed_dict["SettingsName"] = seed.SettingsName
-    seed_dict["SettingsVersion"] = seed.SettingsVersion
-    seed_dict["PlacementAlgorithm"] = seed.PlacementAlgorithm
-    seed_dict["PeachCastleReturnPipe"] = seed.PeachCastleReturnPipe
-    seed_dict["ChallengeMode"] = seed.ChallengeMode
-    seed_dict["SeedValue"] = seed.SeedValue
+    seed_result["SeedID"] = seed_request["SeedID"]
+    seed_result["CreationDate"] = datetime.now(timezone.utc)
+    seed_result["StarRodModVersion"] = seed_request["StarRodModVersion"]
+    seed_result["SettingsString"] = seed_request["SettingsString"]
+    if seed_request.get("WriteSpoilerLog") and seed_request.get("RevealLogInHours") != 0:
+        seed_result["RevealLogAtTime"] = datetime.now(timezone.utc) + timedelta(hours = seed_request.get("RevealLogInHours"))
+    seed_result["SeedValue"] = seed_request["SeedValue"]
 
-    db.collection(firestore_seeds_collection).document(str(unique_seed_id)).set(seed_dict)
+    db.collection(firestore_seeds_collection).document(str(unique_seed_id)).set(seed_result)
 
     save_file_to_cloud(str(f'{environment}/patch/{unique_seed_id}.pmp'), rando_result.patchBytes)
     save_file_to_cloud(str(f'{environment}/spoiler/{unique_seed_id}.txt'), rando_result.spoilerLogBytes)
