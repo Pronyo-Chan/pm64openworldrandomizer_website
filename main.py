@@ -20,7 +20,6 @@ import dill
 
 from marshmallow import ValidationError
 from models.database.cosmetic_settings import CosmeticSettings
-from models.database.seed import Seed
 from models.request.cosmetics_schema import CosmeticsShema
 from models.request.seed_schema import CURRENT_MOD_VERSION, SeedRequestSchema
 from models.viewmodels.seed.seed_view_model import SeedViewModel
