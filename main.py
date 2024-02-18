@@ -148,8 +148,8 @@ def post_randomizer_settings():
     seed_result["CreationDate"] = datetime.now(timezone.utc)
     seed_result["StarRodModVersion"] = seed_request["StarRodModVersion"]
     seed_result["SettingsString"] = seed_request["SettingsString"]
-    if seed_request.get("WriteSpoilerLog") and seed_request.get("RevealLogInHours") != 0:
-        seed_result["RevealLogAtTime"] = datetime.now(timezone.utc) + timedelta(hours = seed_request.get("RevealLogInHours"))
+    if seed_request["WriteSpoilerLog"] and seed_request["RevealLogInHours"] != 0:
+        seed_result["RevealLogAtTime"] = datetime.now(timezone.utc) + timedelta(hours = seed_request["RevealLogInHours"])
     seed_result["SeedValue"] = seed_request["SeedValue"]
 
     db.collection(firestore_seeds_collection).document(str(unique_seed_id)).set(seed_result)

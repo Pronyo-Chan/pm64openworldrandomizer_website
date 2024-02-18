@@ -8,9 +8,17 @@ Install python 3.11 and pipenv to easily install all the python dependencies:
 ```
 Then, start a virtual environment and start the server with the following commands:
 
+*Windows*
 ```
-> poetry shell
+> pipenv shell
 > $env:FLASK_APP = "main.py" #once per terminal only
+> flask run
+```
+
+*Unix*
+```
+> pipenv shell
+> export FLASK_APP = "main.py" #once per terminal only
 > flask run
 ```
 **Setting up the database and storage**
