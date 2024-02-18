@@ -7,6 +7,5 @@ class SeedRequestSchema(Schema):
         unknown = EXCLUDE
 
     #Config
-    StarRodModVersion = fields.Int(required=True, validate=validate.Equal(CURRENT_MOD_VERSION))
-    SettingsString = fields.String(required=True)
-    RevealLogInHours = fields.Int(required=True, validate=validate.Range(0, 700))
+    StarRodModVersion = fields.Int(required=False, validate=validate.Equal(CURRENT_MOD_VERSION))
+    RevealLogInHours = fields.Int(required=False, validate=validate.Range(0, 700))
