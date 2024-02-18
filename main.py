@@ -123,7 +123,9 @@ def post_randomizer_settings():
 
     unique_seed_id = get_unique_seedID(db, firestore_seeds_collection)
     seed_request["SeedID"] = unique_seed_id
-    seed_request["SeedValue"] = random.randint(0, 0xFFFFFFFF)    
+    seed_request["SeedValue"] = random.randint(0, 0xFFFFFFFF)
+    if seed_request.get("StarRodModVersion") is None:
+        seed_request["StarRodModVersion"] = CURRENT_MOD_VERSION
 
     world_graph = init_world_graph()
 
@@ -147,8 +149,8 @@ def post_randomizer_settings():
     seed_result["SeedID"] = seed_request["SeedID"]
     seed_result["CreationDate"] = datetime.now(timezone.utc)
     seed_result["StarRodModVersion"] = seed_request["StarRodModVersion"]
-    seed_result["SettingsString"] = seed_request["SettingsString"]
-    if seed_request["WriteSpoilerLog"] and seed_request["RevealLogInHours"] != 0:
+    seed_result["SettingsString"] = seed_request.get("SettingsString")
+    if seed_request.get("WriteSpoilerLog") and seed_request.get("RevealLogInHours") != 0:
         seed_result["RevealLogAtTime"] = datetime.now(timezone.utc) + timedelta(hours = seed_request["RevealLogInHours"])
     seed_result["SeedValue"] = seed_request["SeedValue"]
 
@@ -189,7 +191,6 @@ def post_randomizer_preset():
     seed_dict["CosmeticsOffset"] = rando_result.cosmetics_offset
     seed_dict["AudioOffset"] = rando_result.audio_offset
     seed_dict["MusicOffset"] = rando_result.music_offset
-
 
     db.collection(firestore_seeds_collection).document(str(unique_seed_id)).set(seed_dict)
 
