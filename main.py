@@ -60,6 +60,7 @@ def create_app(test_config=None):
     if environment != "local":
         cred = credentials.Certificate('service_account.json')
         firebase_admin.initialize_app(cred)
+        global db
         db = firestore.client()
 
     return app
