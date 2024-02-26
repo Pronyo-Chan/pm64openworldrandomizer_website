@@ -26,6 +26,7 @@ from models.viewmodels.seed.seed_view_model import SeedViewModel
 from services.cloud_storage_service import get_file_from_cloud, save_file_to_cloud
 from services.database_service import get_unique_seedID, get_document, set_document
 import services.local_storage as local_storage
+from services.seed_util import build_database_seed
 
 #from werkzeug.middleware.profiler import ProfilerMiddleware
 #import memory_profiler as mem_profile
@@ -145,21 +146,7 @@ def post_randomizer_settings():
         set_document(db, firestore_failure_collection, str(unique_seed_id), seed_request)
         raise err
 
-    # Transfer back the settings model data from the generator
-    seed_result = rando_result.web_settings
-    seed_result["PaletteOffset"] = rando_result.palette_offset
-    seed_result["CosmeticsOffset"] = rando_result.cosmetics_offset
-    seed_result["AudioOffset"] = rando_result.audio_offset
-    seed_result["MusicOffset"] = rando_result.music_offset
-    seed_result["SeedHashItems"] = rando_result.hash_items
-
-    seed_result["SeedID"] = seed_request["SeedID"]
-    seed_result["CreationDate"] = datetime.now(timezone.utc)
-    seed_result["StarRodModVersion"] = seed_request["StarRodModVersion"]
-    seed_result["SettingsString"] = seed_request.get("SettingsString")
-    if seed_request.get("WriteSpoilerLog") and seed_request.get("RevealLogInHours") != 0:
-        seed_result["RevealLogAtTime"] = datetime.now(timezone.utc) + timedelta(hours = seed_request["RevealLogInHours"])
-    seed_result["SeedValue"] = seed_request["SeedValue"]
+    seed_result = build_database_seed(seed_request, rando_result)
 
     set_document(db, firestore_seeds_collection, str(unique_seed_id), seed_result)
 
@@ -175,31 +162,32 @@ def post_randomizer_preset():
     request_preset = request.get_json()["preset_name"]
     is_spoiler_seed = request.get_json()["spoiler_seed"]
 
-    seed_dict = next(preset["settings"] for preset in presets if request_preset == preset["name"])
+    seed_request = next(preset["settings"] for preset in presets if request_preset == preset["name"])
     unique_seed_id = get_unique_seedID(db, firestore_seeds_collection)
-    seed_dict["SeedID"] = unique_seed_id
+    seed_request["SeedID"] = unique_seed_id
+    seed_request["SeedValue"] = random.randint(0, 0xFFFFFFFF)
     
-    seed_dict["CreationDate"] = datetime.now()
-    seed_dict["StarRodModVersion"] = CURRENT_MOD_VERSION # Use latest mod version no matter what's in the preset
+    seed_request["CreationDate"] = datetime.now()
+    seed_request["StarRodModVersion"] = CURRENT_MOD_VERSION # Use latest mod version no matter what's in the preset
 
     if is_spoiler_seed:
-        seed_dict["WriteSpoilerLog"] = True
+        seed_request["WriteSpoilerLog"] = True
     
     world_graph = init_world_graph()
 
-    print(f'Request settings {seed_dict}')
-    SeedRequestSchema().load(seed_dict)
+    print(f'Request settings {seed_request}')
+    SeedRequestSchema().load(seed_request)
 
-    rando_result = web_randomizer(json.dumps(seed_dict, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"), world_graph)
-    seed_dict["SeedValue"] = rando_result.seed_value
-    seed_dict["SeedHashItems"] = rando_result.hash_items
-    
-    seed_dict["PaletteOffset"] = rando_result.palette_offset
-    seed_dict["CosmeticsOffset"] = rando_result.cosmetics_offset
-    seed_dict["AudioOffset"] = rando_result.audio_offset
-    seed_dict["MusicOffset"] = rando_result.music_offset
+    try:
+        rando_result = web_randomizer(json.dumps(seed_request, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"), world_graph)
+    except Exception as err:
+        print(err)
+        set_document(db, firestore_failure_collection, str(unique_seed_id), seed_request)
+        raise err
 
-    set_document(db, firestore_seeds_collection, str(unique_seed_id))
+    seed_result = build_database_seed(seed_request, rando_result)
+
+    set_document(db, firestore_seeds_collection, str(unique_seed_id), seed_result)
 
     save_file_to_cloud(str(f'{environment}/patch/{unique_seed_id}.pmp'), rando_result.patchBytes)
     save_file_to_cloud(str(f'{environment}/spoiler/{unique_seed_id}.txt'), rando_result.spoilerLogBytes)
