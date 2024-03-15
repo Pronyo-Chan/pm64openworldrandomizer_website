@@ -59,7 +59,8 @@ class SeedViewModel:
             random_starpower_sp = seed_document["RandomStarpowerSP"],
             random_formations = seed_document["RandomFormations"],
             mystery_random_pick = seed_document["MysteryRandomPick"],
-            random_choice = seed_document["RandomChoice"]
+            random_choice = seed_document["RandomChoice"],
+            randomize_puzzles = seed_document.get("RandomizePuzzles")
         ).__dict__
 
         self.Cosmetics = Cosmetics(
