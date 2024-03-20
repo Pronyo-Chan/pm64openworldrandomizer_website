@@ -6,8 +6,8 @@ from firebase_admin import firestore
 # Requires you to have the service_account.json DB key in the parent folder
 # Usage: Edit setting_name and setting_value to desired name and value, then run >python query_setting.py
 def main():
-    setting_name = 'RandomText'
-    setting_value = True
+    setting_name = 'AlwaysSpeedySpin'
+    setting_value = False
     cred = credentials.Certificate('../service_account.json')
     firestore_seeds_collection = "seeds-prod"
     

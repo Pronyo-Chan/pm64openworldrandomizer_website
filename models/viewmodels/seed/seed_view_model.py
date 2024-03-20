@@ -59,7 +59,8 @@ class SeedViewModel:
             random_starpower_sp = seed_document["RandomStarpowerSP"],
             random_formations = seed_document["RandomFormations"],
             mystery_random_pick = seed_document["MysteryRandomPick"],
-            random_choice = seed_document["RandomChoice"]
+            random_choice = seed_document["RandomChoice"],
+            randomize_puzzles = seed_document.get("RandomizePuzzles")
         ).__dict__
 
         self.Cosmetics = Cosmetics(
@@ -92,6 +93,7 @@ class SeedViewModel:
             roman_numerals = seed_document["RomanNumerals"],
             random_text = seed_document["RandomText"],
             random_pitch = seed_document["RandomPitch"],
+            mute_danger_beeps = seed_document.get("MuteDangerBeeps"),
             shuffle_music = seed_document.get("ShuffleMusic"),
             shuffle_music_mode = seed_document.get("ShuffleMusicMode"),
             shuffle_jingles = seed_document.get("ShuffleJingles"),

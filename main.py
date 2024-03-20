@@ -1,4 +1,5 @@
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
+import random
 import gc
 from os import environ
 
@@ -19,12 +20,13 @@ import dill
 
 from marshmallow import ValidationError
 from models.database.cosmetic_settings import CosmeticSettings
-from models.database.seed import Seed
 from models.request.cosmetics_schema import CosmeticsShema
 from models.request.seed_schema import CURRENT_MOD_VERSION, SeedRequestSchema
 from models.viewmodels.seed.seed_view_model import SeedViewModel
 from services.cloud_storage_service import get_file_from_cloud, save_file_to_cloud
-from services.database_service import get_unique_seedID
+from services.database_service import get_unique_seedID, get_document, set_document
+import services.local_storage as local_storage
+from services.seed_util import build_database_seed
 
 #from werkzeug.middleware.profiler import ProfilerMiddleware
 #import memory_profiler as mem_profile
@@ -56,41 +58,47 @@ def create_app(test_config=None):
         # load the test config if passed in
         app.config.from_mapping(test_config)
 
-    cred = credentials.Certificate('service_account.json')
-    firebase_admin.initialize_app(cred)
+    if environment != "local":
+        cred = credentials.Certificate('service_account.json')
+        firebase_admin.initialize_app(cred)
+        global db
+        db = firestore.client()
 
     return app
-
-app = create_app()
-limiter = Limiter(key_func=get_client_ip, app=app, storage_uri="memory://")
-db = firestore.client()
-
-secret_manager = secretmanager.SecretManagerServiceClient()
-api_key = secret_manager.access_secret_version(request={"name": "projects/937462171520/secrets/api-key/versions/1"}).payload.data.decode("UTF-8")
 
 firestore_seeds_collection = "seeds"
 firestore_failure_collection = "seeds-fail"
 environment = "local"
+db = None
+
 
 if(environ.get("IS_UAT") == "true"): 
     environment = "uat"
     firestore_graphs_collection = "graphs-uat"
+    local_storage.use_local_storage = False
 
 if(environ.get("IS_PRODUCTION") == "true"): 
     firestore_seeds_collection = "seeds-prod"
     firestore_failure_collection = "seeds-fail-prod"
     firestore_graphs_collection = "graphs-prod"    
     environment = "prod"
+    local_storage.use_local_storage = False
+
+app = create_app()
+limiter = Limiter(key_func=get_client_ip, app=app, storage_uri="memory://")
+
+secret_manager = secretmanager.SecretManagerServiceClient()
+api_key = secret_manager.access_secret_version(request={"name": "projects/937462171520/secrets/api-key/versions/1"}).payload.data.decode("UTF-8")
 
 @app.route('/randomizer_settings/<seed_id>', methods=['GET'])
 def get_randomizer_settings(seed_id):
     if seed_id is None:
         abort(404)
-    document =  db.collection(firestore_seeds_collection).document(seed_id).get()
-    if not document.exists:
+
+    result = get_document(db, firestore_seeds_collection, seed_id)
+    if result is None:
         abort(404)
 
-    result = document.to_dict()
     result.pop("SeedValue", None)
             
     gc.collect()
@@ -100,11 +108,11 @@ def get_randomizer_settings(seed_id):
 def get_randomizer_settings_v2(seed_id):
     if seed_id is None:
         abort(404)
-    document =  db.collection(firestore_seeds_collection).document(seed_id).get()
-    if not document.exists:
+    
+    document_dict = get_document(db, firestore_seeds_collection, seed_id)
+    if document_dict is None:
         abort(404)
 
-    document_dict = document.to_dict()
     result = SeedViewModel(document_dict)
             
     gc.collect()
@@ -113,36 +121,34 @@ def get_randomizer_settings_v2(seed_id):
 @app.route('/randomizer_settings', methods=['POST'])
 @limiter.limit("10/hour")
 def post_randomizer_settings():
-    seed_dict = request.get_json()
+    seed_request = request.get_json()
     
     try:
-        SeedRequestSchema().load(seed_dict)
+        SeedRequestSchema().load(seed_request)
     except ValidationError as err:
         print(err)
         return err.messages, 400
 
     unique_seed_id = get_unique_seedID(db, firestore_seeds_collection)
-    seed_dict["SeedID"] = unique_seed_id
-    seed = Seed(**seed_dict)
+    seed_request["SeedID"] = unique_seed_id
+    seed_request["SeedValue"] = random.randint(0, 0xFFFFFFFF)
+    if seed_request.get("StarRodModVersion") is None:
+        seed_request["StarRodModVersion"] = CURRENT_MOD_VERSION
 
     world_graph = init_world_graph()
 
-    print(f'Request settings {seed.__dict__}')
+    print(f'Request settings {seed_request}')
 
     try:
-        rando_result = web_randomizer(json.dumps(seed.__dict__, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"), world_graph)
+        rando_result = web_randomizer(json.dumps(seed_request, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"), world_graph)
     except Exception as err:
         print(err)
-        db.collection(firestore_failure_collection).document(str(unique_seed_id)).set(seed.__dict__)
+        set_document(db, firestore_failure_collection, str(unique_seed_id), seed_request)
         raise err
-    
-    seed.PaletteOffset = rando_result.palette_offset
-    seed.CosmeticsOffset = rando_result.cosmetics_offset
-    seed.AudioOffset = rando_result.audio_offset
-    seed.MusicOffset = rando_result.music_offset
-    seed.SeedHashItems = rando_result.hash_items
 
-    db.collection(firestore_seeds_collection).document(str(unique_seed_id)).set(seed.__dict__)
+    seed_result = build_database_seed(seed_request, rando_result)
+
+    set_document(db, firestore_seeds_collection, str(unique_seed_id), seed_result)
 
     save_file_to_cloud(str(f'{environment}/patch/{unique_seed_id}.pmp'), rando_result.patchBytes)
     save_file_to_cloud(str(f'{environment}/spoiler/{unique_seed_id}.txt'), rando_result.spoilerLogBytes)
@@ -156,32 +162,32 @@ def post_randomizer_preset():
     request_preset = request.get_json()["preset_name"]
     is_spoiler_seed = request.get_json()["spoiler_seed"]
 
-    seed_dict = next(preset["settings"] for preset in presets if request_preset == preset["name"])
+    seed_request = next(preset["settings"] for preset in presets if request_preset == preset["name"])
     unique_seed_id = get_unique_seedID(db, firestore_seeds_collection)
-    seed_dict["SeedID"] = unique_seed_id
+    seed_request["SeedID"] = unique_seed_id
+    seed_request["SeedValue"] = random.randint(0, 0xFFFFFFFF)
     
-    seed_dict["CreationDate"] = datetime.now()
-    seed_dict["StarRodModVersion"] = CURRENT_MOD_VERSION # Use latest mod version no matter what's in the preset
+    seed_request["CreationDate"] = datetime.now()
+    seed_request["StarRodModVersion"] = CURRENT_MOD_VERSION # Use latest mod version no matter what's in the preset
 
     if is_spoiler_seed:
-        seed_dict["WriteSpoilerLog"] = True
+        seed_request["WriteSpoilerLog"] = True
     
     world_graph = init_world_graph()
 
-    print(f'Request settings {seed_dict}')
-    SeedRequestSchema().load(seed_dict)
+    print(f'Request settings {seed_request}')
+    SeedRequestSchema().load(seed_request)
 
-    rando_result = web_randomizer(json.dumps(seed_dict, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"), world_graph)
-    seed_dict["SeedValue"] = rando_result.seed_value
-    seed_dict["SeedHashItems"] = rando_result.hash_items
-    
-    seed_dict["PaletteOffset"] = rando_result.palette_offset
-    seed_dict["CosmeticsOffset"] = rando_result.cosmetics_offset
-    seed_dict["AudioOffset"] = rando_result.audio_offset
-    seed_dict["MusicOffset"] = rando_result.music_offset
+    try:
+        rando_result = web_randomizer(json.dumps(seed_request, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"), world_graph)
+    except Exception as err:
+        print(err)
+        set_document(db, firestore_failure_collection, str(unique_seed_id), seed_request)
+        raise err
 
+    seed_result = build_database_seed(seed_request, rando_result)
 
-    db.collection(firestore_seeds_collection).document(str(unique_seed_id)).set(seed_dict)
+    set_document(db, firestore_seeds_collection, str(unique_seed_id), seed_result)
 
     save_file_to_cloud(str(f'{environment}/patch/{unique_seed_id}.pmp'), rando_result.patchBytes)
     save_file_to_cloud(str(f'{environment}/spoiler/{unique_seed_id}.txt'), rando_result.spoilerLogBytes)
@@ -201,11 +207,10 @@ def get_cosmetic_patch():
 
     if cosmetics_dict["SeedID"] is None:
         abort(404)
-    document =  db.collection(firestore_seeds_collection).document(cosmetics_dict["SeedID"]).get()
-    if not document.exists:
-        abort(404)
     
-    seed_dict = document.to_dict()
+    seed_dict = get_document(db, firestore_seeds_collection, cosmetics_dict["SeedID"])
+    if seed_dict is None:
+        abort(404)
     
     cosmetic_settings = CosmeticSettings(**cosmetics_dict)
 
@@ -224,15 +229,13 @@ def post_reveal_spoiler_log():
     if request_api_key != api_key: #This endpoint is only called by the racetime bot
         abort(400)
 
-    document =  db.collection(firestore_seeds_collection).document(str(seed_id)).get()
-    if not document.exists:
+    seed_dict = get_document(db, firestore_seeds_collection, str(seed_id))
+    if seed_dict is None:
         abort(404)
-    
-    seed_dict = document.to_dict()
 
     seed_dict["WriteSpoilerLog"] = True
 
-    db.collection(firestore_seeds_collection).document(str(seed_id)).set(seed_dict)
+    set_document(db, firestore_seeds_collection, str(seed_id), seed_dict)
     gc.collect()
     return '', 200
 
@@ -240,12 +243,11 @@ def post_reveal_spoiler_log():
 def get_spoiler_log(seed_id):
     if seed_id is None:
         abort(404)
-    document =  db.collection(firestore_seeds_collection).document(seed_id).get()
-    if not document.exists:
+    seed_dict = get_document(db, firestore_seeds_collection, str(seed_id))
+    if seed_dict is None:
         abort(404)
 
-    document_dict = document.to_dict()
-    if document_dict["WriteSpoilerLog"] is False or ("RevealLogAtTime" in document_dict and datetime.now(timezone.utc) < document_dict["RevealLogAtTime"]):
+    if seed_dict["WriteSpoilerLog"] is False or ("RevealLogAtTime" in seed_dict and datetime.now(timezone.utc) < seed_dict["RevealLogAtTime"]):
         abort(400)
 
     spoiler_file = get_file_from_cloud(f'{environment}/spoiler/{seed_id}.txt')
@@ -259,8 +261,8 @@ def get_spoiler_log(seed_id):
 def get_patch(seed_id):
     if seed_id is None:
         abort(404)
-    document =  db.collection(firestore_seeds_collection).document(seed_id).get()
-    if not document.exists:
+    seed_dict = get_document(db, firestore_seeds_collection, str(seed_id))
+    if seed_dict is None:
         abort(404)
 
     patch_file = get_file_from_cloud(f"{environment}/patch/{seed_id}.pmp")
@@ -290,16 +292,16 @@ def init_world_graph():
 
         graph_version = environ.get("GRAPH_VERSION")
         graph_name = f"world_graph_{graph_version}"
-        graph_document = db.collection(firestore_graphs_collection).document(graph_name).get()
+        graph_dict = get_document(db, firestore_graphs_collection, graph_name)
 
-        if not graph_document.exists:
+        if graph_dict is None:
             print("Could not find world graph version: " + graph_name + " in collection: " + firestore_graphs_collection)
             print("Generating new graph and saving to db")
             world_graph = generate_world_graph(None, None)
             dilled_graph = dill.dumps(world_graph)
-            db.collection(firestore_graphs_collection).document(graph_name).set({'value':dilled_graph})
+            set_document(db, firestore_graphs_collection, graph_name, {'value':dilled_graph})
         else:
-            db_dill_graph = graph_document.to_dict()['value']
+            db_dill_graph = graph_dict['value']
             world_graph = dill.loads(db_dill_graph)
             print("Loaded world graph version:" + graph_name + " from collection:" + firestore_graphs_collection)
     return world_graph
