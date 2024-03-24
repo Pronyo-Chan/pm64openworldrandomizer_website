@@ -1,11 +1,11 @@
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timezone
 import random
 import gc
 from os import environ
 
 from flask_limiter import Limiter
 
-from flask import Flask, request, abort, send_file, jsonify
+from flask import Flask, request, abort, send_file, jsonify, make_response
 from flask_cors import CORS
 
 import firebase_admin
@@ -97,7 +97,7 @@ def handle_global_exception(e):
     if isinstance(e, ItemPoolTooSmallError):
         return "item_pool_too_small", 400
     else:
-        return jsonify(error=e), 500
+        return str(e), 500
     
 @app.route('/randomizer_settings/<seed_id>', methods=['GET'])
 def get_randomizer_settings(seed_id):
