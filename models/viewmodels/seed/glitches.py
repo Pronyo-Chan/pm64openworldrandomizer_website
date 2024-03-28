@@ -127,7 +127,6 @@ glitches_names = [
     "UltraHammerSkipLaki",
     "UltraHammerSkipSushie",
     "Flarakarry",
-    "ParakarrylessFlarakarryBombette",
     "ParakarrylessFlarakarryLaki",
     "VolcanoSushieGlitch",
 
