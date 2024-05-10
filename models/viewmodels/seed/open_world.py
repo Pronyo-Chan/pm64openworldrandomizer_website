@@ -21,8 +21,8 @@ class World:
         bowsers_castle_mode: bool,
         shuffle_dungeon_entrances: bool,
         star_hunt: bool,
-        star_hunt_ends_game: bool,
-        star_hunt_required: int,
+        seed_goal: bool,
+        starway_power_stars_needed: int,
         star_hunt_total: int,
         mirror_mode: int,
         static_map_mirroring: bool
@@ -42,6 +42,6 @@ class World:
         self.MirrorMode = 3 if static_map_mirroring else mirror_mode
         
         self.StarHunt = star_hunt
-        self.StarHuntEndsGame = star_hunt_ends_game
-        self.StarHuntRequired = star_hunt_required
+        self.SeedGoal = seed_goal
+        self.StarWayPowerStarsNeeded = starway_power_stars_needed
         self.StarHuntTotal = star_hunt_total
