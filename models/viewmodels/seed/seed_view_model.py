@@ -117,7 +117,10 @@ class SeedViewModel:
             require_specific_spirits = seed_document.get("RequireSpecificSpirits"),
             limit_chapter_logic = seed_document.get("LimitChapterLogic"),
             badge_synergy = seed_document.get("BadgeSynergy"),
-            drop_star_points = seed_document.get("DropStarPoints")
+            drop_star_points = seed_document.get("DropStarPoints"),
+            shuffle_star_beam = seed_document.get("ShuffleStarBeam"),
+            star_beam_spirits_needed = seed_document.get("StarBeamSpiritsNeeded"),
+            star_beam_power_stars_needed = seed_document.get("StarBeamPowerStarsNeeded")
         ).__dict__
 
         self.ItemPool = ItemPool(
