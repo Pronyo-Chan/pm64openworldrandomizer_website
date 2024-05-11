@@ -97,7 +97,7 @@ def handle_global_exception(e):
     if isinstance(e, ItemPoolTooSmallError):
         return "item_pool_too_small", 400
     else:
-        return str(e), 500
+        raise
     
 @app.route('/randomizer_settings/<seed_id>', methods=['GET'])
 def get_randomizer_settings(seed_id):
