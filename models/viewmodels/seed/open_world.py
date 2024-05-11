@@ -20,7 +20,6 @@ class World:
         forever_forest_open: bool,
         bowsers_castle_mode: bool,
         shuffle_dungeon_entrances: bool,
-        star_hunt: bool,
         seed_goal: bool,
         starway_power_stars_needed: int,
         star_hunt_total: int,
@@ -41,7 +40,6 @@ class World:
         self.ShuffleDungeonEntrances = shuffle_dungeon_entrances
         self.MirrorMode = 3 if static_map_mirroring else mirror_mode
         
-        self.StarHunt = star_hunt
         self.SeedGoal = seed_goal
         self.StarWayPowerStarsNeeded = starway_power_stars_needed
         self.StarHuntTotal = star_hunt_total

@@ -175,7 +175,6 @@ class SeedViewModel:
             forever_forest_open = seed_document.get("ForeverForestOpen"),
             bowsers_castle_mode = seed_document["BowsersCastleMode"],
             shuffle_dungeon_entrances = seed_document.get("ShuffleDungeonEntrances"),
-            star_hunt = seed_document.get("StarHunt"),
             seed_goal = seed_document.get("StarHuntEndsGame"),
             starway_power_stars_needed = seed_document.get("StarWayPowerStarsNeeded"),
             star_hunt_total = seed_document.get("StarHuntTotal"),
