@@ -4,14 +4,12 @@ class Goals:
         seed_goal: int, starway_power_stars_needed: int, star_hunt_total: int
     ):
 
-        self.RandomNumberOfStarWayStarSpirits = starway_spirits_needed == -1
-        self.RandomNumberOfStarBeamStarSpirits = star_beam_spirits_needed == -1
-        self.StarWaySpiritsNeeded = starway_spirits_needed
+        self.StarWaySpiritsNeeded = starway_spirits_needed if starway_spirits_needed > -1 else "Random"
         self.RequireSpecificSpirits = require_specific_spirits
         self.LimitChapterLogic = limit_chapter_logic
 
         self.ShuffleStarBeam = shuffle_star_beam
-        self.StarBeamSpiritsNeeded = star_beam_spirits_needed
+        self.StarBeamSpiritsNeeded = star_beam_spirits_needed if star_beam_spirits_needed > -1 else "Random"
         self.StarBeamPowerStarsNeeded = star_beam_power_stars_needed
 
         self.SeedGoal = seed_goal

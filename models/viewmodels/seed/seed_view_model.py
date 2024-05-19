@@ -119,7 +119,7 @@ class SeedViewModel:
         ).__dict__
 
         self.Goals = Goals(
-            starway_spirits_needed = seed_document.get("StarWaySpiritsNeededCnt") or seed_document.get("StarWaySpiritsNeeded"),
+            starway_spirits_needed = seed_document.get("StarWaySpiritsNeededCnt"),
             require_specific_spirits = seed_document.get("RequireSpecificSpirits"),
             limit_chapter_logic = seed_document.get("LimitChapterLogic"),
             shuffle_star_beam = seed_document.get("ShuffleStarBeam"),
