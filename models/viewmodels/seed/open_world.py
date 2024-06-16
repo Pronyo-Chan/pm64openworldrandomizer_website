@@ -20,10 +20,6 @@ class World:
         forever_forest_open: bool,
         bowsers_castle_mode: bool,
         shuffle_dungeon_entrances: bool,
-        star_hunt: bool,
-        star_hunt_ends_game: bool,
-        star_hunt_required: int,
-        star_hunt_total: int,
         mirror_mode: int,
         static_map_mirroring: bool
     ):
@@ -40,8 +36,3 @@ class World:
         self.BowsersCastleMode = bowsers_castle_mode
         self.ShuffleDungeonEntrances = shuffle_dungeon_entrances
         self.MirrorMode = 3 if static_map_mirroring else mirror_mode
-        
-        self.StarHunt = star_hunt
-        self.StarHuntEndsGame = star_hunt_ends_game
-        self.StarHuntRequired = star_hunt_required
-        self.StarHuntTotal = star_hunt_total

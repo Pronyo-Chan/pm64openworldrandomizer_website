@@ -1,3 +1,4 @@
+from models.viewmodels.seed.goals import Goals
 from models.viewmodels.seed.item_pool import ItemPool
 from models.viewmodels.seed.stats_and_gear import StatsAndGear
 from models.viewmodels.seed.cosmetics import Cosmetics
@@ -113,11 +114,20 @@ class SeedViewModel:
             no_save_blocks = seed_document["NoSaveBlocks"],
             no_heart_blocks = seed_document["NoHeartBlocks"],
             no_healing_items = seed_document["NoHealingItems"],
-            starway_spirits_needed = seed_document.get("StarWaySpiritsNeededCnt") or seed_document.get("StarWaySpiritsNeeded"),
+            badge_synergy = seed_document.get("BadgeSynergy"),
+            drop_star_points = seed_document.get("DropStarPoints"),
+        ).__dict__
+
+        self.Goals = Goals(
+            starway_spirits_needed = seed_document.get("StarWaySpiritsNeededCnt"),
             require_specific_spirits = seed_document.get("RequireSpecificSpirits"),
             limit_chapter_logic = seed_document.get("LimitChapterLogic"),
-            badge_synergy = seed_document.get("BadgeSynergy"),
-            drop_star_points = seed_document.get("DropStarPoints")
+            shuffle_star_beam = seed_document.get("ShuffleStarBeam"),
+            star_beam_spirits_needed = seed_document.get("StarBeamSpiritsNeeded"),
+            star_beam_power_stars_needed = seed_document.get("StarBeamPowerStarsNeeded"),            
+            seed_goal = seed_document.get("SeedGoal"),
+            starway_power_stars_needed = seed_document.get("StarWayPowerStarsNeeded"),
+            star_hunt_total = seed_document.get("StarHuntTotal"),
         ).__dict__
 
         self.ItemPool = ItemPool(
@@ -172,10 +182,6 @@ class SeedViewModel:
             forever_forest_open = seed_document.get("ForeverForestOpen"),
             bowsers_castle_mode = seed_document["BowsersCastleMode"],
             shuffle_dungeon_entrances = seed_document.get("ShuffleDungeonEntrances"),
-            star_hunt = seed_document.get("StarHunt"),
-            star_hunt_ends_game = seed_document.get("StarHuntEndsGame"),
-            star_hunt_required = seed_document.get("StarHuntRequired"),
-            star_hunt_total = seed_document.get("StarHuntTotal"),
             mirror_mode = seed_document.get("MirrorMode"),
             static_map_mirroring = seed_document.get("StaticMapMirroring"),
         ).__dict__

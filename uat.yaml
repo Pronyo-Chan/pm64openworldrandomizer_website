@@ -9,7 +9,7 @@ service: uat
 env_variables:
   IS_PRODUCTION: "false"
   IS_UAT: "true"
-  GRAPH_VERSION: "v22"
+  GRAPH_VERSION: "v23"
 
 entrypoint: gunicorn -b :8080 -w 3 main:app --timeout 90
 
