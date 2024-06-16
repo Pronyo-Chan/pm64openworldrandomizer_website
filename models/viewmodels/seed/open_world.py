@@ -25,7 +25,7 @@ class World:
     ):
 
         self.StartingLocation = starting_maps.get(starting_location)
-        self.MagicalSeedsRequired = "Random" if magical_seeds_required == 5 else str(magical_seeds_required)
+        self.MagicalSeedsRequired = "Random" if magical_seeds_required == -1 else str(magical_seeds_required)
         self.OpenBlueHouse = blue_house_open
         self.OpenToyBox = toybox_open
         self.OpenPrologue = prologue_open
