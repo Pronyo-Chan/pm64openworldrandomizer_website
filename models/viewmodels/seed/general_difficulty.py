@@ -20,7 +20,7 @@ class GeneralDifficulty:
 
         self.MerlowRewardsPricing = merlow_reward_pricing
         self.CapEnemyXP = cap_enemy_xp
-        self.XPMultiplier = xp_multiplier
+        self.XPMultiplier = xp_multiplier / 2
         self.OneHitKO = one_hit_ko
         self.NoSaveBlocks = no_save_blocks
         self.NoHeartBlocks = no_heart_blocks

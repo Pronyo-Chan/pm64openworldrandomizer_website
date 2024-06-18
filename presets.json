@@ -980,7 +980,7 @@
             "ChallengeMode": false,
             "CoinColor": 0,
             "DoubleDamage": false,
-            "MagicalSeedsRequired": 5,
+            "MagicalSeedsRequired": -1,
             "FoliageItemHints": false,
             "GearShuffleMode": 2,
             "PartnerUpgradeShuffle": 2,
