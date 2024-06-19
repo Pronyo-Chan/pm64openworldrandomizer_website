@@ -23,7 +23,7 @@ steps:
       args:
       - clone
       - --branch
-      - dev
+      - release_candidate/0.27.0
       - git@github.com:icebound777/PMR-SeedGenerator.git
       volumes:
       - name: 'ssh'
