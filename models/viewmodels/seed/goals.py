@@ -9,7 +9,10 @@ class Goals:
         self.LimitChapterLogic = limit_chapter_logic
 
         self.ShuffleStarBeam = shuffle_star_beam
-        self.StarBeamSpiritsNeeded = star_beam_spirits_needed if star_beam_spirits_needed > -1 else "Random"
+        #Can remove this if in a month once old seeds are wiped
+        if(star_beam_spirits_needed is not None):
+            self.StarBeamSpiritsNeeded = star_beam_spirits_needed if star_beam_spirits_needed > -1 else "Random"
+
         self.StarBeamPowerStarsNeeded = star_beam_power_stars_needed
 
         self.SeedGoal = seed_goal
