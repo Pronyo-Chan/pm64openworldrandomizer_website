@@ -28,7 +28,9 @@ glitches_names = [
     "ClippyBootsMetalBlockSkip",
     "IslandPipeBlooperSkip",
     "ParakarrylessSewerStarPiece",
+    "ClippySewersUpgradeBlock",
     "SewerBlocksWithoutUltraBoots",
+    "Chapter7BridgeWithSuperBoots",
     "FirstBlockToShiverCityWithoutSuperBoots",
     "BlocksToShiverCityWithKooperShellItemThrow",
     "SewerYellowBlockWithUltraBoots",
@@ -72,6 +74,7 @@ glitches_names = [
     "ParakarrylessSuperHammerRoomUltraBoots",
     "ParakarrylessSuperHammerRoomNormalBoots",
     "RuinsLocksSkipClippy",
+    "RuinsStoneSkip",
 
     # Glitches: Boo's Mansion
     "ForeverForestBackwards",
@@ -103,12 +106,14 @@ glitches_names = [
     "GourmetGuySkipLaki",
     "GourmetGuySkipParakarry",
     "BowlessGreenStation",
+    "ClippyGreenStationCoinBlock",
     "KooperlessRedStationShootingStar",
     "GearlessRedStationShootingStar",
     "ParakarrylessBlueBlockCityGap",
     "BlueSwitchSkipLaki",
     "BlueSwitchSkipUltraBoots",
     "RedBarricadeSkip",
+    "WattlessDarkRoom",
     "HammerlessBlueStationLaki",
     "HammerlessPinkStationLaki",
 
@@ -127,9 +132,9 @@ glitches_names = [
     "UltraHammerSkipLaki",
     "UltraHammerSkipSushie",
     "Flarakarry",
-    "ParakarrylessFlarakarryBombette",
     "ParakarrylessFlarakarryLaki",
     "VolcanoSushieGlitch",
+    "VolcanoSushieGlitchGoombario",
 
     # Glitches: Flower Fields
     "EarlyLakiLZS",
@@ -160,6 +165,7 @@ glitches_names = [
 
     # Glitches: Crystal Palace
     "MirrorClip",
+    "KooperPuzzleSkip",
 
     # Glitches: Bowser's Castle
     "BowlessBowsersCastleBasement",

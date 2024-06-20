@@ -20,16 +20,12 @@ class World:
         forever_forest_open: bool,
         bowsers_castle_mode: bool,
         shuffle_dungeon_entrances: bool,
-        star_hunt: bool,
-        star_hunt_ends_game: bool,
-        star_hunt_required: int,
-        star_hunt_total: int,
         mirror_mode: int,
         static_map_mirroring: bool
     ):
 
         self.StartingLocation = starting_maps.get(starting_location)
-        self.MagicalSeedsRequired = "Random" if magical_seeds_required == 5 else str(magical_seeds_required)
+        self.MagicalSeedsRequired = "Random" if magical_seeds_required == -1 else str(magical_seeds_required)
         self.OpenBlueHouse = blue_house_open
         self.OpenToyBox = toybox_open
         self.OpenPrologue = prologue_open
@@ -40,8 +36,3 @@ class World:
         self.BowsersCastleMode = bowsers_castle_mode
         self.ShuffleDungeonEntrances = shuffle_dungeon_entrances
         self.MirrorMode = 3 if static_map_mirroring else mirror_mode
-        
-        self.StarHunt = star_hunt
-        self.StarHuntEndsGame = star_hunt_ends_game
-        self.StarHuntRequired = star_hunt_required
-        self.StarHuntTotal = star_hunt_total

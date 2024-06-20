@@ -1,11 +1,11 @@
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timezone
 import random
 import gc
 from os import environ
 
 from flask_limiter import Limiter
 
-from flask import Flask, request, abort, send_file
+from flask import Flask, request, abort, send_file, jsonify, make_response
 from flask_cors import CORS
 
 import firebase_admin
@@ -34,6 +34,7 @@ from services.seed_util import build_database_seed
 sys.path.insert(0, str(Path(__file__).parent / 'PMR-SeedGenerator'))
 from randomizer import web_randomizer, web_apply_cosmetic_options
 from worldgraph import generate as generate_world_graph
+from rando_modules.item_pool_too_small_error import ItemPoolTooSmallError
 
 def get_client_ip():
     if request.headers.getlist("X-Forwarded-For"):
@@ -90,6 +91,14 @@ limiter = Limiter(key_func=get_client_ip, app=app, storage_uri="memory://")
 secret_manager = secretmanager.SecretManagerServiceClient()
 api_key = secret_manager.access_secret_version(request={"name": "projects/937462171520/secrets/api-key/versions/1"}).payload.data.decode("UTF-8")
 
+@app.errorhandler(Exception)
+def handle_global_exception(e):
+    print(e)
+    if isinstance(e, ItemPoolTooSmallError):
+        return "item_pool_too_small", 400
+    else:
+        raise
+    
 @app.route('/randomizer_settings/<seed_id>', methods=['GET'])
 def get_randomizer_settings(seed_id):
     if seed_id is None:

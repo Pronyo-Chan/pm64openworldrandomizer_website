@@ -1,6 +1,6 @@
 from marshmallow import EXCLUDE, Schema, fields, validate
 
-CURRENT_MOD_VERSION = 22
+CURRENT_MOD_VERSION = 23
 
 class SeedRequestSchema(Schema):
     class Meta:
