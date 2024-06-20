@@ -7,6 +7,7 @@ from flask_limiter import Limiter
 
 from flask import Flask, request, abort, send_file, jsonify, make_response
 from flask_cors import CORS
+from werkzeug.exceptions import HTTPException
 
 import firebase_admin
 from firebase_admin import credentials
@@ -94,6 +95,8 @@ api_key = secret_manager.access_secret_version(request={"name": "projects/937462
 @app.errorhandler(Exception)
 def handle_global_exception(e):
     print(e)
+    if isinstance(e, HTTPException):
+        return e
     if isinstance(e, ItemPoolTooSmallError):
         return "item_pool_too_small", 400
     else:
