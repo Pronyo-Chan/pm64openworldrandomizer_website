@@ -1276,7 +1276,7 @@
         }
     },
     {
-        "name": "s1",
+        "name": "acr",
         "settings": {
             "AddItemPouches": false,
             "AddUnusedBadgeDuplicates": false,
@@ -1373,7 +1373,7 @@
             "RandomText": false,
             "RevealLogInHours": 0,
             "RomanNumerals": false,
-            "SettingsName": "Standard Race (S1)",
+            "SettingsName": "All Chapters Race (S1)",
             "SettingsString": "(iIvejnSpf0Kdl0rbg2u0a6OM)(gb1f1p1s0Rzm0)(pSaRn1x1(pGktpbwsl))(qh2SiPZgc1ELt7DqFVo)(dd1ca1m1kshzw7eflvyp0b)(xq100r0t0xubpl128)(mc100h10f5b3s0j0a0irn0x16)(om2btwcrFPs65796o2dz0x?50!70Y)(cm7p20g20k20o20a20b20w20s20l20x2n2e2y2c5trhdu-1j)g)",
             "SettingsVersion": "1.0.0",
             "BowsersCastleMode": 2,
@@ -1381,7 +1381,7 @@
             "StarWayPowerStarsNeeded": 0,
             "StarHuntTotal": 0,
             "ShuffleBlocks": false,
-            "CutsceneMode": 1,
+            "CutsceneMode": 2,
             "ShuffleChapterDifficulty": true,
             "ShuffleItems": true,
             "ShuffleDungeonEntrances" : false,
