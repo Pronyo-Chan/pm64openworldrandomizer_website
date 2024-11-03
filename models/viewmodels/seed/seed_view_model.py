@@ -45,7 +45,7 @@ class SeedViewModel:
         ).__dict__
 
         self.Partners = Partners(
-            partners_in_default_locations = seed_document["PartnersInDefaultLocations"],
+            partners_in_default_locations = seed_document.get("PartnersInDefaultLocations"),
             partners_always_usable = seed_document["PartnersAlwaysUsable"],
             random_partners_max = seed_document.get("RandomPartnersMax"),
             random_partners_min = seed_document.get("RandomPartnersMin"),
