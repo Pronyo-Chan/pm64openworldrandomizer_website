@@ -181,7 +181,7 @@ class SeedViewModel:
             mt_rugged_open = seed_document.get("MtRuggedOpen"),
             forever_forest_open = seed_document.get("ForeverForestOpen"),
             bowsers_castle_mode = seed_document["BowsersCastleMode"],
-            shuffle_dungeon_entrances = seed_document.get("ShuffleDungeonEntrances"),
+            shuffle_dungeon_entrances = int(seed_document.get("ShuffleDungeonEntrances")),
             mirror_mode = seed_document.get("MirrorMode"),
             static_map_mirroring = seed_document.get("StaticMapMirroring"),
         ).__dict__
