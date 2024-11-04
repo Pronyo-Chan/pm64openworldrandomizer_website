@@ -30,7 +30,7 @@ class SeedViewModel:
             include_coins_blocks = seed_document.get("IncludeCoinsBlocks"),
             include_coins_favors = seed_document.get("IncludeCoinsFavors"),
             include_coins_foliage = seed_document.get("IncludeCoinsFoliage"),
-            include_dojo = seed_document["IncludeDojo"],
+            include_dojo = int(seed_document["IncludeDojo"]),
             include_favors_mode = seed_document["IncludeFavorsMode"],
             include_letters_mode = seed_document["IncludeLettersMode"],
             include_panels = seed_document["IncludePanels"],
@@ -41,11 +41,12 @@ class SeedViewModel:
             shuffle_blocks = seed_document["ShuffleBlocks"],
             shuffle_items = seed_document["ShuffleItems"],
             progression_on_merlow = seed_document.get("ProgressionOnMerlow"),
-            progression_on_rowf = seed_document.get("ProgressionOnRowf"),
+            progression_on_rowf = int(seed_document.get("ProgressionOnRowf")),
         ).__dict__
 
         self.Partners = Partners(
-            partners_in_default_locations = seed_document.get("PartnersInDefaultLocations"),
+            partners_in_default_locations = seed_document.get("PartnersInDefaultLocations"), #TODO: Remove after no seeds with this setting remain
+            partner_shuffle = seed_document.get("PartnerShuffle"),
             partners_always_usable = seed_document["PartnersAlwaysUsable"],
             random_partners_max = seed_document.get("RandomPartnersMax"),
             random_partners_min = seed_document.get("RandomPartnersMin"),
