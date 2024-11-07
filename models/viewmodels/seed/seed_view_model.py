@@ -62,7 +62,8 @@ class SeedViewModel:
             random_formations = seed_document["RandomFormations"],
             mystery_random_pick = seed_document["MysteryRandomPick"],
             random_choice = seed_document["RandomChoice"],
-            randomize_puzzles = seed_document.get("RandomizePuzzles")
+            randomize_puzzles = seed_document.get("RandomizePuzzles"),
+            boss_shuffle_mode = seed_document.get("BossShuffleMode")
         ).__dict__
 
         self.Cosmetics = Cosmetics(
