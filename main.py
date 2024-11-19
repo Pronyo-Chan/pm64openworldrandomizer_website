@@ -142,8 +142,11 @@ def post_randomizer_settings():
         return err.messages, 400
 
     unique_seed_id = get_unique_seedID(db, firestore_seeds_collection)
+
     seed_request["SeedID"] = unique_seed_id
     seed_request["SeedValue"] = random.randint(0, 0xFFFFFFFF)
+    seed_request["CreationDate"] = datetime.now()
+    
     if seed_request.get("StarRodModVersion") is None:
         seed_request["StarRodModVersion"] = CURRENT_MOD_VERSION
 
