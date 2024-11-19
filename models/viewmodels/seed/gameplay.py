@@ -8,7 +8,8 @@ class Gameplay:
         random_formations: bool,
         mystery_random_pick: bool,
         random_choice: bool,
-        randomize_puzzles: bool
+        randomize_puzzles: bool,
+        boss_shuffle_mode: int
     ):
 
         self.BadgesBP = random_badges_bp
@@ -17,6 +18,7 @@ class Gameplay:
         self.StarPowerSP = random_starpower_sp
         self.ShuffleBattleFormations = random_formations
         self.RandomizePuzzles = randomize_puzzles
+        self.BossShuffle = boss_shuffle_mode
 
         self.MysteryMode = 0
 

@@ -19,7 +19,7 @@ class World:
         mt_rugged_open: bool,
         forever_forest_open: bool,
         bowsers_castle_mode: bool,
-        shuffle_dungeon_entrances: bool,
+        shuffle_dungeon_entrances: int,
         mirror_mode: int,
         static_map_mirroring: bool
     ):

@@ -30,7 +30,7 @@ class SeedViewModel:
             include_coins_blocks = seed_document.get("IncludeCoinsBlocks"),
             include_coins_favors = seed_document.get("IncludeCoinsFavors"),
             include_coins_foliage = seed_document.get("IncludeCoinsFoliage"),
-            include_dojo = seed_document["IncludeDojo"],
+            include_dojo = int(seed_document["IncludeDojo"]),
             include_favors_mode = seed_document["IncludeFavorsMode"],
             include_letters_mode = seed_document["IncludeLettersMode"],
             include_panels = seed_document["IncludePanels"],
@@ -41,11 +41,12 @@ class SeedViewModel:
             shuffle_blocks = seed_document["ShuffleBlocks"],
             shuffle_items = seed_document["ShuffleItems"],
             progression_on_merlow = seed_document.get("ProgressionOnMerlow"),
-            progression_on_rowf = seed_document.get("ProgressionOnRowf"),
+            progression_on_rowf = int(seed_document.get("ProgressionOnRowf")),
         ).__dict__
 
         self.Partners = Partners(
-            partners_in_default_locations = seed_document["PartnersInDefaultLocations"],
+            partners_in_default_locations = seed_document.get("PartnersInDefaultLocations"), #TODO: Remove after no seeds with this setting remain
+            partner_shuffle = seed_document.get("PartnerShuffle"),
             partners_always_usable = seed_document["PartnersAlwaysUsable"],
             random_partners_max = seed_document.get("RandomPartnersMax"),
             random_partners_min = seed_document.get("RandomPartnersMin"),
@@ -61,7 +62,8 @@ class SeedViewModel:
             random_formations = seed_document["RandomFormations"],
             mystery_random_pick = seed_document["MysteryRandomPick"],
             random_choice = seed_document["RandomChoice"],
-            randomize_puzzles = seed_document.get("RandomizePuzzles")
+            randomize_puzzles = seed_document.get("RandomizePuzzles"),
+            boss_shuffle_mode = seed_document.get("BossShuffleMode")
         ).__dict__
 
         self.Cosmetics = Cosmetics(
@@ -181,7 +183,7 @@ class SeedViewModel:
             mt_rugged_open = seed_document.get("MtRuggedOpen"),
             forever_forest_open = seed_document.get("ForeverForestOpen"),
             bowsers_castle_mode = seed_document["BowsersCastleMode"],
-            shuffle_dungeon_entrances = seed_document.get("ShuffleDungeonEntrances"),
+            shuffle_dungeon_entrances = int(seed_document.get("ShuffleDungeonEntrances")),
             mirror_mode = seed_document.get("MirrorMode"),
             static_map_mirroring = seed_document.get("StaticMapMirroring"),
         ).__dict__

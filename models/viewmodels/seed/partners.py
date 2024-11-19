@@ -2,6 +2,7 @@ class Partners:
     def __init__(
         self,
         partners_in_default_locations: bool,
+        partner_shuffle: int,
         partners_always_usable: bool,
         start_with_random_partners: bool,
         random_partners_min: bool,
@@ -14,6 +15,11 @@ class Partners:
         self.StartWithRandomPartners = start_with_random_partners
         self.MinNumberOfStartingPartners = random_partners_min
         self.MaxNumberOfStartingPartners = random_partners_max
+
+        if partners_in_default_locations:
+            self.ShufflePartners = 0 if partners_in_default_locations  else 2
+        else:
+            self.ShufflePartners = partner_shuffle
 
         if start_with_partners is None:
             return
