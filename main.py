@@ -34,6 +34,7 @@ from services.seed_util import build_database_seed
 
 sys.path.insert(0, str(Path(__file__).parent / 'PMR-SeedGenerator'))
 from randomizer import web_randomizer, web_apply_cosmetic_options
+from plandomizer.plando_validator import validate_from_dict
 from worldgraph import generate as generate_world_graph
 from rando_modules.item_pool_too_small_error import ItemPoolTooSmallError
 
@@ -134,6 +135,8 @@ def get_randomizer_settings_v2(seed_id):
 @limiter.limit("10/hour")
 def post_randomizer_settings():
     seed_request = request.get_json()
+    seed_settings = seed_request["settings"]
+    plando_request = seed_request["plandomizer"]
     
     try:
         SeedRequestSchema().load(seed_request)
@@ -143,25 +146,34 @@ def post_randomizer_settings():
 
     unique_seed_id = get_unique_seedID(db, firestore_seeds_collection)
 
-    seed_request["SeedID"] = unique_seed_id
-    seed_request["SeedValue"] = random.randint(0, 0xFFFFFFFF)
-    seed_request["CreationDate"] = datetime.now()
+    seed_settings["SeedID"] = unique_seed_id
+    seed_settings["SeedValue"] = random.randint(0, 0xFFFFFFFF)
+    seed_settings["CreationDate"] = datetime.now()
     
-    if seed_request.get("StarRodModVersion") is None:
-        seed_request["StarRodModVersion"] = CURRENT_MOD_VERSION
+    if seed_settings.get("StarRodModVersion") is None:
+        seed_settings["StarRodModVersion"] = CURRENT_MOD_VERSION
 
     world_graph = init_world_graph()
 
-    print(f'Request settings {seed_request}')
+    print(f'Request settings {seed_settings}')
 
     try:
-        rando_result = web_randomizer(json.dumps(seed_request, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"), world_graph)
+        validated_plando_settings = None
+        if(plando_request is not None):
+            (validated_plando_settings, errors) = validate_from_dict(plando_request)
+            print("validated plando settings: ", validated_plando_settings)
+            print("plando errors: ", errors)
+        
+        rando_result = web_randomizer(
+            json.dumps(seed_settings, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"),
+            validated_plando_settings,
+            world_graph)
     except Exception as err:
         print(err)
-        set_document(db, firestore_failure_collection, str(unique_seed_id), seed_request)
+        set_document(db, firestore_failure_collection, str(unique_seed_id), seed_settings)
         raise err
 
-    seed_result = build_database_seed(seed_request, rando_result)
+    seed_result = build_database_seed(seed_settings, rando_result)
 
     set_document(db, firestore_seeds_collection, str(unique_seed_id), seed_result)
 

@@ -150,6 +150,7 @@ class SeedViewModel:
             starting_max_hp = seed_document["StartingMaxHP"],
             starting_max_bp = seed_document["StartingMaxBP"],
             starting_max_fp = seed_document["StartingMaxFP"],
+            random_starting_stats_level = seed_document.get("RandomStartingStatsLevel"),
             starting_star_power = seed_document["StartingStarPower"],
             start_with_random_items = seed_document["StartWithRandomItems"],
             random_items_min = seed_document["RandomItemsMin"],
