@@ -22,8 +22,9 @@ steps:
     - name: 'gcr.io/cloud-builders/git'
       args:
       - clone
-      - --branch
+      - --branch 
       - dev
+      - --recurse-submodules
       - git@github.com:icebound777/PMR-SeedGenerator.git
       volumes:
       - name: 'ssh'
