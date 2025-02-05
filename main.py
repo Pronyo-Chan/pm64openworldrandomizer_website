@@ -163,6 +163,8 @@ def post_randomizer_settings():
             (validated_plando_settings, errors) = validate_from_dict(plando_request)
             print("validated plando settings: ", validated_plando_settings)
             print("plando errors: ", errors)
+            if(len(errors.get("errors")) > 0):
+                return errors, 400
         
         rando_result = web_randomizer(
             json.dumps(seed_settings, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"),
