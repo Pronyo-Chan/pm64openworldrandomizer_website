@@ -308,6 +308,14 @@ def get_preset_names():
     gc.collect()
     return str(preset_names)
 
+@app.route('/validate-plandomizer', methods=['POST'])
+def post_validate_plandomizer():
+    plando_request = request.get_json()
+
+    (_, errors) = validate_from_dict(plando_request)
+
+    return errors, 200
+
 @app.route('/_ah/warmup')
 def warmup():
     # Server stub to warmup service
