@@ -37,6 +37,7 @@ from randomizer import web_randomizer, web_apply_cosmetic_options
 from plandomizer.plando_validator import validate_from_dict
 from worldgraph import generate as generate_world_graph
 from rando_modules.item_pool_too_small_error import ItemPoolTooSmallError
+from rando_modules.unbeatable_plando_placement_error import UnbeatablPlandoPlacementError
 
 def get_client_ip():
     if request.headers.getlist("X-Forwarded-For"):
@@ -100,6 +101,9 @@ def handle_global_exception(e):
         return e
     if isinstance(e, ItemPoolTooSmallError):
         return "item_pool_too_small", 400
+    if isinstance(e, UnbeatablPlandoPlacementError):
+        print(str(e))
+        return str(e), 400
     else:
         raise
     
