@@ -159,7 +159,7 @@ def post_randomizer_settings():
 
     world_graph = init_world_graph()
 
-    print(f'Request settings {seed_settings}')
+    print(f'Request settings {seed_request}')
 
     try:
         validated_plando_settings = None
