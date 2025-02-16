@@ -38,6 +38,7 @@ from plandomizer.plando_validator import validate_from_dict
 from worldgraph import generate as generate_world_graph
 from rando_modules.item_pool_too_small_error import ItemPoolTooSmallError
 from rando_modules.unbeatable_plando_placement_error import UnbeatablPlandoPlacementError
+from rando_modules.plando_settings_mismatch_error import PlandoSettingsMismatchError
 
 def get_client_ip():
     if request.headers.getlist("X-Forwarded-For"):
@@ -175,6 +176,11 @@ def post_randomizer_settings():
             json.dumps(seed_settings, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"),
             validated_plando_settings,
             world_graph)
+        
+    except PlandoSettingsMismatchError as err:
+        print(err)
+        return str(err), 400
+    
     except Exception as err:
         print(err)
         set_document(db, firestore_failure_collection, str(unique_seed_id), seed_settings)
