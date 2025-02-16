@@ -186,7 +186,7 @@ def post_randomizer_settings():
         set_document(db, firestore_failure_collection, str(unique_seed_id), seed_settings)
         raise err
 
-    seed_result = build_database_seed(seed_settings, rando_result)
+    seed_result = build_database_seed(seed_settings, plando_request is not None, rando_result)
 
     set_document(db, firestore_seeds_collection, str(unique_seed_id), seed_result)
 
