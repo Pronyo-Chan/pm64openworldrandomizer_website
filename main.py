@@ -169,8 +169,8 @@ def post_randomizer_settings():
             print("validated plando settings: ", validated_plando_settings)
             print("plando errors: ", errors)
             if(len(errors.get("errors")) > 0):
-                errorMessage = f"Invalid plandomizer config: {errors}"
-                return errorMessage, 400
+                error_message = f"Invalid plandomizer config: {errors}"
+                return error_message, 400
         
         rando_result = web_randomizer(
             json.dumps(seed_settings, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"),
@@ -322,7 +322,6 @@ def get_preset_names():
 @app.route('/validate-plandomizer', methods=['POST'])
 def post_validate_plandomizer():
     plando_request = request.get_json()
-
     (_, errors) = validate_from_dict(plando_request)
 
     return errors, 200
