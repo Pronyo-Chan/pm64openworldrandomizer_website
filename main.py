@@ -34,8 +34,11 @@ from services.seed_util import build_database_seed
 
 sys.path.insert(0, str(Path(__file__).parent / 'PMR-SeedGenerator'))
 from randomizer import web_randomizer, web_apply_cosmetic_options
+from plandomizer.plando_validator import validate_from_dict
 from worldgraph import generate as generate_world_graph
 from rando_modules.item_pool_too_small_error import ItemPoolTooSmallError
+from rando_modules.unbeatable_plando_placement_error import UnbeatablPlandoPlacementError
+from rando_modules.plando_settings_mismatch_error import PlandoSettingsMismatchError
 
 def get_client_ip():
     if request.headers.getlist("X-Forwarded-For"):
@@ -99,6 +102,9 @@ def handle_global_exception(e):
         return e
     if isinstance(e, ItemPoolTooSmallError):
         return "item_pool_too_small", 400
+    if isinstance(e, UnbeatablPlandoPlacementError):
+        print(str(e))
+        return str(e), 400
     else:
         raise
     
@@ -134,6 +140,8 @@ def get_randomizer_settings_v2(seed_id):
 @limiter.limit("10/hour")
 def post_randomizer_settings():
     seed_request = request.get_json()
+    seed_settings = seed_request["settings"]
+    plando_request = seed_request["plandomizer"]
     
     try:
         SeedRequestSchema().load(seed_request)
@@ -143,25 +151,42 @@ def post_randomizer_settings():
 
     unique_seed_id = get_unique_seedID(db, firestore_seeds_collection)
 
-    seed_request["SeedID"] = unique_seed_id
-    seed_request["SeedValue"] = random.randint(0, 0xFFFFFFFF)
-    seed_request["CreationDate"] = datetime.now()
+    seed_settings["SeedID"] = unique_seed_id
+    seed_settings["SeedValue"] = random.randint(0, 0xFFFFFFFF)
+    seed_settings["CreationDate"] = datetime.now()
     
-    if seed_request.get("StarRodModVersion") is None:
-        seed_request["StarRodModVersion"] = CURRENT_MOD_VERSION
+    if seed_settings.get("StarRodModVersion") is None:
+        seed_settings["StarRodModVersion"] = CURRENT_MOD_VERSION
 
     world_graph = init_world_graph()
 
     print(f'Request settings {seed_request}')
 
     try:
-        rando_result = web_randomizer(json.dumps(seed_request, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"), world_graph)
+        validated_plando_settings = None
+        if(plando_request is not None):
+            (validated_plando_settings, errors) = validate_from_dict(plando_request)
+            print("validated plando settings: ", validated_plando_settings)
+            print("plando errors: ", errors)
+            if(len(errors.get("errors")) > 0):
+                error_message = f"Invalid plandomizer config: {errors}"
+                return error_message, 400
+        
+        rando_result = web_randomizer(
+            json.dumps(seed_settings, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"),
+            validated_plando_settings,
+            world_graph)
+        
+    except PlandoSettingsMismatchError as err:
+        print(err)
+        return str(err), 400
+    
     except Exception as err:
         print(err)
-        set_document(db, firestore_failure_collection, str(unique_seed_id), seed_request)
+        set_document(db, firestore_failure_collection, str(unique_seed_id), seed_settings)
         raise err
 
-    seed_result = build_database_seed(seed_request, rando_result)
+    seed_result = build_database_seed(seed_settings, plando_request is not None, rando_result)
 
     set_document(db, firestore_seeds_collection, str(unique_seed_id), seed_result)
 
@@ -293,6 +318,13 @@ def get_preset_names():
     preset_names =  [preset["name"] for preset in presets]
     gc.collect()
     return str(preset_names)
+
+@app.route('/validate-plandomizer', methods=['POST'])
+def post_validate_plandomizer():
+    plando_request = request.get_json()
+    (_, errors) = validate_from_dict(plando_request)
+
+    return errors, 200
 
 @app.route('/_ah/warmup')
 def warmup():

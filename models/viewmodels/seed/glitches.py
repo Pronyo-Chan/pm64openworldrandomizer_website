@@ -14,6 +14,7 @@ glitches_names = [
     "BlueHouseSkip",
     "BlueHouseSkipLaki",
     "BlueHouseSkipToadLure",
+    "JumplessDaneTLetters",
     "BowlessToyBoxHammer",
     "BowlessToyBoxHammerlessLure",
     "EarlyStoreroomParakarry",
@@ -21,7 +22,12 @@ glitches_names = [
     "EarlyStoreroomHammerlessLure",
     "WhaleEarly",
     "SushielessToadTownStarPiece",
+    "ToadTownSushieGlitchGearless",
     "ToadTownSushieGlitch",
+    "ToadTownSushieGlitchFullGear",
+
+    # Glitches: Shooting Star Summit
+    "JumplessSummitClimb",
 
     # Glitches: Toad Town Tunnels
     "ClippyBootsStoneBlockSkip",
@@ -42,6 +48,7 @@ glitches_names = [
     "InvisibleBridgeClipLzs",
     "InvisibleBridgeClipLaki",
     "KooperlessPleasantPathThunderBolt",
+    "JumplessKoopaVillageBluePipe",
 
     # Glitches: Koopa Bros Fortress
     "BombettelessKbfFpPlusLZS",
@@ -53,6 +60,7 @@ glitches_names = [
     # Glitches: Mt. Rugged
     "MtRuggedQuakeHammerAndLetterWithLaki",
     "ParakarrylessMtRuggedSeed",
+    "ParakarrylessMtRuggedSeedClippy",
     "BuzzarGapSkipClippy",
     "ParakarrylessMtRuggedStarPiece",
     "MtRuggedCoinsWithKooper",
@@ -74,6 +82,7 @@ glitches_names = [
     "ParakarrylessSuperHammerRoomUltraBoots",
     "ParakarrylessSuperHammerRoomNormalBoots",
     "RuinsLocksSkipClippy",
+    "RuinsPuzzleSolutionEarly",
     "RuinsStoneSkip",
 
     # Glitches: Boo's Mansion
@@ -98,6 +107,7 @@ glitches_names = [
     "TubbasTableLakiJumpStudy",
     "TubbasTableUltraBoots",
     "TubbasCastleSuperBootsSkip",
+    "JumplessMegaRush",
     "ParakarrylessMegaRush",
 
     # Glitches: Toy Box
@@ -120,6 +130,7 @@ glitches_names = [
     # Glitches: Jade Jungle
     "RaphSkipEnglish",
     "RaphSkipParakarry",
+    "RaphSkipLakilester",
     "Ch5SushieGlitch",
     "SushielessJungleStarpieceAndLetter",
     "JumplessDeepJungleLaki",
@@ -166,12 +177,20 @@ glitches_names = [
     # Glitches: Crystal Palace
     "MirrorClip",
     "KooperPuzzleSkip",
+    "BombettePuzzleSkip",
 
     # Glitches: Bowser's Castle
     "BowlessBowsersCastleBasement",
+    "WattlessDarkBasement",
+    "BasementSkipParakarry",
+    "BasementSkipLakilester",
+    "BasementSkipHammer",
+    "BowsersCastleHub1StairClip",
     "BombettelessBowsersCastleBasement",
     "FastFloodRoomKooper",
+    "FastFloodRoomKooperless",
     "FastFloodRoomBombetteUltraBoots",
+    "Cannonless",
 
     # Glitches: Global
     "BreakStoneBlocksWithUltraBoots",

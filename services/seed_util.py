@@ -1,6 +1,6 @@
 from datetime import datetime, timezone, timedelta
 
-def build_database_seed(seed_request, rando_result):
+def build_database_seed(seed_request, is_plando_seed, rando_result):
     seed_result = rando_result.web_settings
     seed_result["PaletteOffset"] = rando_result.palette_offset
     seed_result["CosmeticsOffset"] = rando_result.cosmetics_offset
@@ -15,5 +15,7 @@ def build_database_seed(seed_request, rando_result):
     if seed_request.get("WriteSpoilerLog") and seed_request.get("RevealLogInHours") != 0:
         seed_result["RevealLogAtTime"] = datetime.now(timezone.utc) + timedelta(hours = seed_request["RevealLogInHours"])
     seed_result["SeedValue"] = seed_request["SeedValue"]
+    seed_result["IsPlandomizerSeed"] = is_plando_seed
+    
 
     return seed_result

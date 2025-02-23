@@ -20,7 +20,8 @@ class SeedViewModel:
             creation_date = seed_document["CreationDate"],
             seed_hash_items = seed_document["SeedHashItems"],
             settings_string = seed_document["SettingsString"],
-            star_rod_mod_version = seed_document["StarRodModVersion"]
+            star_rod_mod_version = seed_document["StarRodModVersion"],
+            is_plandomizer_seed = seed_document.get("IsPlandomizerSeed")
         ).__dict__
 
         self.Items = Items(
@@ -150,6 +151,7 @@ class SeedViewModel:
             starting_max_hp = seed_document["StartingMaxHP"],
             starting_max_bp = seed_document["StartingMaxBP"],
             starting_max_fp = seed_document["StartingMaxFP"],
+            random_starting_stats_level = seed_document.get("RandomStartingStatsLevel"),
             starting_star_power = seed_document["StartingStarPower"],
             start_with_random_items = seed_document["StartWithRandomItems"],
             random_items_min = seed_document["RandomItemsMin"],
