@@ -219,7 +219,7 @@ def post_randomizer_preset():
     SeedRequestSchema().load(seed_request)
 
     try:
-        rando_result = web_randomizer(json.dumps(seed_request, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"), world_graph)
+        rando_result = web_randomizer(json.dumps(seed_request, default = lambda o: f"<<non-serializable: {type(o).__qualname__}>>"), None, world_graph)
     except Exception as err:
         print(err)
         set_document(db, firestore_failure_collection, str(unique_seed_id), seed_request)
