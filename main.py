@@ -140,11 +140,11 @@ def get_randomizer_settings_v2(seed_id):
 @limiter.limit("10/hour")
 def post_randomizer_settings():
     seed_request = request.get_json()
-    seed_settings = seed_request["settings"]
-    plando_request = seed_request["plandomizer"]
+    seed_settings = seed_request.get("settings")
+    plando_request = seed_request.get("plandomizer")
     
     try:
-        SeedRequestSchema().load(seed_request)
+        SeedRequestSchema().load(seed_settings)
     except ValidationError as err:
         print(err)
         return err.messages, 400
