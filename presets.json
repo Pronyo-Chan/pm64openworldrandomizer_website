@@ -2323,7 +2323,7 @@
             "RipCheatoItemsInLogic": 6,
             "RomanNumerals": false,
             "SettingsName": "Blitz Race (S4)",
-            "SettingsString": "(iIVejnSpf0Kd0l0rbg2u2a6o5M)(gb3f3p3s0Rzm2o)(ps2aRn1x1(pGktpbwsl))(qh3SiPZgc2ELt1DQFVO)(dd1ca1.5m1kshlvyp0b)(xq100r0t0Xubpl128)(mc150h10f5b3s0j0a0i00150041rn0x16)(om2btwcrFPs65796o2d0z0)(lw4Es@0F?0!0y0#0p)(cm7p20g20k20o20a20b20w20s20l20x2n2e2y2c5trhdu-1j)g)",
+            "SettingsString": "(iIVejnSpf0Kd0l0rbg2u2a6o5M)(gb3f3p3s0Rzm2o)(ps2aRn1x1(pGktpbwsl))(qh3SiPZgc2ELt3DQFVO)(dd1ca1.5m1kshlvyp0b)(xq100r0t0Xubpl128)(mc150h10f5b3l1ws0j0a0i00150041rn0x16)(om2btwcrFPs65796o2d0z0)(lw4Es@0F?0!0y0#0p)(cm7p20g20k20o20a20b20w20s20l20x2n2e2y2c5trhdu-1j)g)",
             "CutsceneMode": 2,
             "ShuffleBlocks": false,
             "ShuffleChapterDifficulty": true,
@@ -2371,7 +2371,8 @@
             "WattSetting": 2,
             "WattSprite": 0,
             "WriteSpoilerLog": false,
-            "XPMultiplier": 1.5
+            "XPMultiplier": 1.5,
+            "RandomStartingStatsLevel": -1
         }
     }
 ]
