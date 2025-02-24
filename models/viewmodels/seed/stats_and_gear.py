@@ -7,6 +7,7 @@ class StatsAndGear:
         starting_max_hp: int,
         starting_max_bp: int,
         starting_max_fp: int,
+        random_starting_stats_level: int,
         starting_star_power: int,
         start_with_random_items: bool,
         random_items_min: int,
@@ -36,6 +37,8 @@ class StatsAndGear:
         self.BP = starting_max_bp
         self.FP = starting_max_fp
         self.StarPower = starting_star_power
+
+        self.RandomStartingStatsLevel = random_starting_stats_level
 
         self.StartingItems = []
 
