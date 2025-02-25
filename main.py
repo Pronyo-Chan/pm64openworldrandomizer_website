@@ -101,6 +101,7 @@ def handle_global_exception(e):
     if isinstance(e, HTTPException):
         return e
     if isinstance(e, ItemPoolTooSmallError):
+        print(str(e))
         return "item_pool_too_small", 400
     if isinstance(e, UnbeatablPlandoPlacementError):
         print(str(e))
