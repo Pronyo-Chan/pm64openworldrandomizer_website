@@ -201,6 +201,7 @@ class SeedViewModel:
             quizmo_always_appears = seed_document["QuizmoAlwaysAppears"],
             foliage_item_hints = seed_document["FoliageItemHints"],
             hidden_panel_visibility = seed_document["HiddenPanelVisibility"],
+            i_spy_panel_hints = seed_document.get("ISpyPanelHints"),
             cook_without_frying_pan = seed_document["CookWithoutFryingPan"],
             shorten_cutscenes = seed_document.get("ShortenCutscenes"),
             cutscene_mode = seed_document.get("CutsceneMode"),
