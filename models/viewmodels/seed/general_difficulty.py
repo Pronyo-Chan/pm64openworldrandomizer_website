@@ -1,7 +1,7 @@
 class GeneralDifficulty:
     def __init__(self, progressive_scaling: bool, shuffle_chapter_difficulty: bool, double_damage: bool, quadruple_damage: bool,
         merlow_reward_pricing: bool, cap_enemy_xp: bool, xp_multiplier: float, one_hit_ko: bool, no_save_blocks: bool,
-        no_heart_blocks: bool, no_healing_items: bool, badge_synergy: bool, drop_star_points: bool,
+        no_heart_blocks: bool, no_healing_items: bool, badge_synergy: bool, drop_star_points: bool, chet_rippo_available: bool
     ):
 
         if progressive_scaling:
@@ -26,5 +26,6 @@ class GeneralDifficulty:
         self.NoHeartBlocks = no_heart_blocks
         self.NoHealingItems = no_healing_items
         self.DropStarPoints = drop_star_points
+        self.ChetRippoAvailable = chet_rippo_available
         self.BadgeSynergy = badge_synergy
         
