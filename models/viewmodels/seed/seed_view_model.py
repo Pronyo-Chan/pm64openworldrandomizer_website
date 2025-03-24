@@ -120,7 +120,8 @@ class SeedViewModel:
             no_healing_items = seed_document["NoHealingItems"],
             badge_synergy = seed_document.get("BadgeSynergy"),
             drop_star_points = seed_document.get("DropStarPoints"),
-            chet_rippo_available = seed_document.get("ChetRippoAvailable")
+            chet_rippo_available = seed_document.get("ChetRippoAvailable"),
+            bowser_door_quiz = seed_document.get("BowserDoorQuiz")
         ).__dict__
 
         self.Goals = Goals(
