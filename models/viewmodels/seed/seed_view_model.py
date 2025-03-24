@@ -121,7 +121,8 @@ class SeedViewModel:
             badge_synergy = seed_document.get("BadgeSynergy"),
             drop_star_points = seed_document.get("DropStarPoints"),
             chet_rippo_available = seed_document.get("ChetRippoAvailable"),
-            bowser_door_quiz = seed_document.get("BowserDoorQuiz")
+            bowser_door_quiz = seed_document.get("BowserDoorQuiz"),
+            kent_c_koopa = seed_document.get("KentCKoopa")
         ).__dict__
 
         self.Goals = Goals(
