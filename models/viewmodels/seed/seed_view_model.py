@@ -127,8 +127,7 @@ class SeedViewModel:
 
         self.Goals = Goals(
             starway_spirits_needed = seed_document.get("StarWaySpiritsNeededCnt"),
-            require_specific_spirits = seed_document.get("RequireSpecificSpirits"),
-            limit_chapter_logic = seed_document.get("LimitChapterLogic"),
+            require_spirits = seed_document.get("RequiredSpirits"),
             shuffle_star_beam = seed_document.get("ShuffleStarBeam"),
             star_beam_spirits_needed = seed_document.get("StarBeamSpiritsNeeded"),
             star_beam_power_stars_needed = seed_document.get("StarBeamPowerStarsNeeded"),            
