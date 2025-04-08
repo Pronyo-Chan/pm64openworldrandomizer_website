@@ -4,6 +4,8 @@ glitches_names = [
     "ReverseGoombaKingBridge",
     "GoombaVillageEntryFenceClip",
     "GoombaVillageNpcLureExit",
+    "ClippyLedgeStarPiece",
+    "JumplessFireFlower",
     "HammerlessJrPlaygroundLaki",
     "GoombaVillageLakiExit",
     "PrologueSushieGlitchKsj",
@@ -44,6 +46,7 @@ glitches_names = [
 
     # Glitches: Plesant Path
     "KooperlessPleasantPathStarPiece",
+    "PleasantPathClippyTraversal",
     "HammerlessPleasantPathBridgeUltraBootsParakarry",
     "InvisibleBridgeClipLzs",
     "InvisibleBridgeClipLaki",
@@ -59,17 +62,21 @@ glitches_names = [
 
     # Glitches: Mt. Rugged
     "MtRuggedQuakeHammerAndLetterWithLaki",
+    "MtRuggedQuakeHammerRoomJumplessClippy",
     "ParakarrylessMtRuggedSeed",
     "ParakarrylessMtRuggedSeedClippy",
     "BuzzarGapSkipClippy",
     "ParakarrylessMtRuggedStarPiece",
+    "ParakarrylessMtRuggedStarPieceClippy",
     "MtRuggedCoinsWithKooper",
     "MtRuggedStationJumplessClimbBombette",
     "MtRuggedStationJumplessClimbLaki",
+    "MtRuggedStationJumplessClimbLakiBlockClip",
     "JumplessMtRuggedTrainPlatformParakarry",
 
     # Glitches: Dry Dry Desert
     "DesertBrickBlockItemWithParakarry",
+    "JumplessAttackFXC",
     "EarlyRuinsLakiJump",
     "EarlyRuinsUltraBoots",
 
@@ -100,6 +107,7 @@ glitches_names = [
     "KooperlessGustyGulchDizzyDialLaki",
     "KooperlessGustyGulchDizzyDialParakarry",
     "GustyGulchGapSkip",
+    "GustyGulchClippyTraversal",
 
     # Glitches: Tubba's Castle
     "BowlessTubbasCastle",
@@ -150,6 +158,7 @@ glitches_names = [
     # Glitches: Flower Fields
     "EarlyLakiLZS",
     "EarlyLakiBombettePush",
+    "LakilessElevatorRoom",
     "BombettelessMegaSmash",
     "SunTowerSkip",
     "YellowBerryGateSkipLZS",

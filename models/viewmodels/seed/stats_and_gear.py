@@ -42,41 +42,40 @@ class StatsAndGear:
 
         self.StartingItems = []
 
-        if not start_with_random_items:
-            if starting_item_0:
-                self.StartingItems.append(starting_item_0)
-            if starting_item_1:
-                self.StartingItems.append(starting_item_1)
-            if starting_item_2:
-                self.StartingItems.append(starting_item_2)
-            if starting_item_3:
-                self.StartingItems.append(starting_item_3)
-            if starting_item_4:
-                self.StartingItems.append(starting_item_4)
-            if starting_item_5:
-                self.StartingItems.append(starting_item_5)
-            if starting_item_6:
-                self.StartingItems.append(starting_item_6)
-            if starting_item_7:
-                self.StartingItems.append(starting_item_7)
-            if starting_item_8:
-                self.StartingItems.append(starting_item_8)
-            if starting_item_9:
-                self.StartingItems.append(starting_item_9)
-            if starting_item_A:
-                self.StartingItems.append(starting_item_A)
-            if starting_item_B:
-                self.StartingItems.append(starting_item_B)
-            if starting_item_C:
-                self.StartingItems.append(starting_item_C)
-            if starting_item_D:
-                self.StartingItems.append(starting_item_D)
-            if starting_item_E:
-                self.StartingItems.append(starting_item_E)
-            if starting_item_F:
-                self.StartingItems.append(starting_item_F)
-        else:
-            self.StartingItems.append("Random")
+        if starting_item_0:
+            self.StartingItems.append(starting_item_0)
+        if starting_item_1:
+            self.StartingItems.append(starting_item_1)
+        if starting_item_2:
+            self.StartingItems.append(starting_item_2)
+        if starting_item_3:
+            self.StartingItems.append(starting_item_3)
+        if starting_item_4:
+            self.StartingItems.append(starting_item_4)
+        if starting_item_5:
+            self.StartingItems.append(starting_item_5)
+        if starting_item_6:
+            self.StartingItems.append(starting_item_6)
+        if starting_item_7:
+            self.StartingItems.append(starting_item_7)
+        if starting_item_8:
+            self.StartingItems.append(starting_item_8)
+        if starting_item_9:
+            self.StartingItems.append(starting_item_9)
+        if starting_item_A:
+            self.StartingItems.append(starting_item_A)
+        if starting_item_B:
+            self.StartingItems.append(starting_item_B)
+        if starting_item_C:
+            self.StartingItems.append(starting_item_C)
+        if starting_item_D:
+            self.StartingItems.append(starting_item_D)
+        if starting_item_E:
+            self.StartingItems.append(starting_item_E)
+        if starting_item_F:
+            self.StartingItems.append(starting_item_F)
+
+        if start_with_random_items:
             self.MinNumberOfStartingItems = random_items_min
             self.MaxNumberOfStartingItems = random_items_max
         

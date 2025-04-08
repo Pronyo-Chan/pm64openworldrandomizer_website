@@ -39,7 +39,8 @@ class SeedViewModel:
             include_shops = seed_document["IncludeShops"],
             key_items_outside_dungeon = seed_document["KeyitemsOutsideDungeon"],
             rip_cheato_items_in_logic = seed_document["RipCheatoItemsInLogic"],
-            shuffle_blocks = seed_document["ShuffleBlocks"],
+            shuffle_blocks = seed_document.get("ShuffleBlocks"),
+            multi_coin_block_shuffle = seed_document.get("MultiCoinBlockShuffle"),
             shuffle_items = seed_document["ShuffleItems"],
             progression_on_merlow = seed_document.get("ProgressionOnMerlow"),
             progression_on_rowf = int(seed_document.get("ProgressionOnRowf")),
@@ -119,12 +120,14 @@ class SeedViewModel:
             no_healing_items = seed_document["NoHealingItems"],
             badge_synergy = seed_document.get("BadgeSynergy"),
             drop_star_points = seed_document.get("DropStarPoints"),
+            chet_rippo_available = seed_document.get("ChetRippoAvailable"),
+            bowser_door_quiz = seed_document.get("BowserDoorQuiz"),
+            kent_c_koopa = seed_document.get("KentCKoopa")
         ).__dict__
 
         self.Goals = Goals(
             starway_spirits_needed = seed_document.get("StarWaySpiritsNeededCnt"),
-            require_specific_spirits = seed_document.get("RequireSpecificSpirits"),
-            limit_chapter_logic = seed_document.get("LimitChapterLogic"),
+            require_spirits = seed_document.get("RequiredSpirits"),
             shuffle_star_beam = seed_document.get("ShuffleStarBeam"),
             star_beam_spirits_needed = seed_document.get("StarBeamSpiritsNeeded"),
             star_beam_power_stars_needed = seed_document.get("StarBeamPowerStarsNeeded"),            
@@ -200,6 +203,7 @@ class SeedViewModel:
             quizmo_always_appears = seed_document["QuizmoAlwaysAppears"],
             foliage_item_hints = seed_document["FoliageItemHints"],
             hidden_panel_visibility = seed_document["HiddenPanelVisibility"],
+            i_spy_panel_hints = seed_document.get("ISpyPanelHints"),
             cook_without_frying_pan = seed_document["CookWithoutFryingPan"],
             shorten_cutscenes = seed_document.get("ShortenCutscenes"),
             cutscene_mode = seed_document.get("CutsceneMode"),
