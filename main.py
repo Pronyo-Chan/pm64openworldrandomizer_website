@@ -90,7 +90,7 @@ if(environ.get("IS_PRODUCTION") == "true"):
     local_storage.use_local_storage = False
 
 app = create_app()
-limiter = Limiter(key_func=get_client_ip, app=app, storage_uri="memory://")
+limiter = Limiter(key_func=get_client_ip, app=app, storage_uri="memory://", strategy="moving-window")
 
 secret_manager = secretmanager.SecretManagerServiceClient()
 api_key = secret_manager.access_secret_version(request={"name": "projects/937462171520/secrets/api-key/versions/1"}).payload.data.decode("UTF-8")
@@ -137,7 +137,7 @@ def get_randomizer_settings_v2(seed_id):
     return result.__dict__
 
 @app.route('/randomizer_settings', methods=['POST'])
-@limiter.limit("10/hour")
+@limiter.limit("10 per 10 minutes; 20 per hour")
 def post_randomizer_settings():
     seed_request = request.get_json()
     seed_settings = seed_request.get("settings")
