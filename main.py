@@ -4,6 +4,7 @@ import gc
 from os import environ
 
 from flask_limiter import Limiter
+from flask_limiter.errors import RateLimitExceeded
 
 from flask import Flask, request, abort, send_file, jsonify, make_response
 from flask_cors import CORS
@@ -94,6 +95,15 @@ limiter = Limiter(key_func=get_client_ip, app=app, storage_uri="memory://", stra
 
 secret_manager = secretmanager.SecretManagerServiceClient()
 api_key = secret_manager.access_secret_version(request={"name": "projects/937462171520/secrets/api-key/versions/1"}).payload.data.decode("UTF-8")
+
+@app.errorhandler(RateLimitExceeded)
+def handle_rate_limit_exceeded(e):
+    response = jsonify({
+        "error": "Rate limit exceeded",
+        "message": str(e)
+    })
+    response.status_code = 429
+    return response
 
 @app.errorhandler(Exception)
 def handle_global_exception(e):
