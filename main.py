@@ -137,7 +137,7 @@ def get_randomizer_settings_v2(seed_id):
     return result.__dict__
 
 @app.route('/randomizer_settings', methods=['POST'])
-@limiter.limit("10/hour")
+@limiter.limit("10 per 10 minutes; 20 per hour")
 def post_randomizer_settings():
     seed_request = request.get_json()
     seed_settings = seed_request.get("settings")
