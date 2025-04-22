@@ -10,7 +10,7 @@ env_variables:
   IS_UAT: "false"
   GRAPH_VERSION: "v26"
 
-entrypoint: gunicorn -b :8080 -w 3 main:app --timeout 90
+entrypoint: gunicorn -b :8080 main:app --timeout 90 --workers 1 --threads 8
 
 automatic_scaling:
   max_instances: 2
