@@ -4,7 +4,6 @@ import gc
 from os import environ
 
 from flask_limiter import Limiter
-from flask_limiter.errors import RateLimitExceeded
 
 from flask import Flask, request, abort, send_file, jsonify, make_response
 from flask_cors import CORS
@@ -42,16 +41,10 @@ from rando_modules.unbeatable_plando_placement_error import UnbeatablPlandoPlace
 from rando_modules.plando_settings_mismatch_error import PlandoSettingsMismatchError
 
 def get_client_ip():
-    # Check if the X-Forwarded-For header exists
-    if request.headers.get("X-Forwarded-For"):
-        print("X-Forwarded-For header found")
-        # Extract the last IP in the list (the client's IP)
-        forwarded_for = request.headers.get("X-Forwarded-For").split(",")
-        print("X-Forwarded-For header: ", forwarded_for)
-        return forwarded_for[-1].strip()
-    # Fallback to remote_addr if X-Forwarded-For is not present
-    print("X-Forwarded-For header not found, using remote_addr")
-    return request.remote_addr
+    if request.headers.getlist("X-Forwarded-For"):
+        return request.headers.getlist("X-Forwarded-For")[0]
+    else:
+        return request.remote_addr
 
 def create_app(test_config=None):
     # create and configure the app
@@ -102,41 +95,6 @@ limiter = Limiter(key_func=get_client_ip, app=app, storage_uri="memory://")
 secret_manager = secretmanager.SecretManagerServiceClient()
 api_key = secret_manager.access_secret_version(request={"name": "projects/937462171520/secrets/api-key/versions/1"}).payload.data.decode("UTF-8")
 
-
-@app.before_request
-def handle_preflight():
-    if request.method == 'OPTIONS':
-        response = make_response()
-        response.headers.add('Access-Control-Allow-Origin', '*')
-        response.headers.add('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
-        response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
-        response.headers.add('Access-Control-Max-Age', '3600')
-        return response
-
-@app.errorhandler(RateLimitExceeded)
-def handle_rate_limit_exceeded(e):
-    print("Rate limit exceeded handler triggered")
-    response = make_response(
-        jsonify({
-            "error": "Rate limit exceeded",
-            "message": str(e)
-        })
-    )
-    response.status_code = 429
-    response.headers.add('Access-Control-Allow-Origin', '*')
-    response.headers.add('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
-    response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
-    response.headers.add('Content-Type', 'application/json')
-    print(f"Sending response: {response.get_data(as_text=True)}")
-    return response
-
-@app.after_request
-def after_request(response):
-    if response.status_code == 429:
-        print(f"429 Response Headers: {dict(response.headers)}")
-        print(f"429 Response Body: {response.get_data(as_text=True)}")
-    return response
-
 @app.errorhandler(Exception)
 def handle_global_exception(e):
     print(e)
@@ -147,8 +105,6 @@ def handle_global_exception(e):
     if isinstance(e, UnbeatablPlandoPlacementError):
         print(str(e))
         return str(e), 400
-    if isinstance(e, RateLimitExceeded):
-        return handle_rate_limit_exceeded(e)
     else:
         raise
     
@@ -181,7 +137,7 @@ def get_randomizer_settings_v2(seed_id):
     return result.__dict__
 
 @app.route('/randomizer_settings', methods=['POST'])
-@limiter.limit("1 per 10 minutes; 2 per hour")
+@limiter.limit("10 per 10 minutes; 20 per hour")
 def post_randomizer_settings():
     seed_request = request.get_json()
     seed_settings = seed_request.get("settings")
