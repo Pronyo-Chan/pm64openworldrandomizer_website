@@ -26,6 +26,7 @@ class SeedViewModel:
 
         self.Items = Items(
             gear_shuffle_mode = seed_document["GearShuffleMode"],
+            spirit_shuffle_mode = seed_document.get("SpiritShuffleMode"),
             partner_upgrade_shuffle = seed_document.get("PartnerUpgradeShuffle"),
             include_coins_overworld = seed_document.get("IncludeCoinsOverworld"),
             include_coins_blocks = seed_document.get("IncludeCoinsBlocks"),
@@ -127,9 +128,11 @@ class SeedViewModel:
 
         self.Goals = Goals(
             starway_spirits_needed = seed_document.get("StarWaySpiritsNeededCnt"),
-            require_spirits = seed_document.get("RequiredSpirits"),
+            starway_chapters_needed = seed_document.get("StarWayChaptersNeededCnt"),
+            required_spirits = seed_document.get("RequiredSpirits"),
             shuffle_star_beam = seed_document.get("ShuffleStarBeam"),
             star_beam_spirits_needed = seed_document.get("StarBeamSpiritsNeeded"),
+            star_beam_chapters_needed = seed_document.get("StarBeamChaptersNeeded"),
             star_beam_power_stars_needed = seed_document.get("StarBeamPowerStarsNeeded"),            
             seed_goal = seed_document.get("SeedGoal"),
             starway_power_stars_needed = seed_document.get("StarWayPowerStarsNeeded"),
