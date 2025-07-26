@@ -130,6 +130,7 @@ class SeedViewModel:
             starway_spirits_needed = seed_document.get("StarWaySpiritsNeededCnt"),
             starway_chapters_needed = seed_document.get("StarWayChaptersNeededCnt"),
             required_spirits = seed_document.get("RequiredSpirits"),
+            required_chapters = seed_document.get("RequiredChapters"),
             shuffle_star_beam = seed_document.get("ShuffleStarBeam"),
             star_beam_spirits_needed = seed_document.get("StarBeamSpiritsNeeded"),
             star_beam_chapters_needed = seed_document.get("StarBeamChaptersNeeded"),

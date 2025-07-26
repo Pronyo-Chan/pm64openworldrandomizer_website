@@ -16,7 +16,7 @@ class Items:
         self.IncludeTradingEventRewards = include_radio_trade_events
         self.ShuffleSuperAndMulticoinBlocks = shuffle_blocks if shuffle_blocks else multi_coin_block_shuffle
         self.GearShuffle = gear_shuffle_mode
-        self.SpiritShuffleMode = spirit_shuffle_mode
+        self.SpiritShuffle = spirit_shuffle_mode
         self.LetterDeliveryRewards = include_letters_mode
         self.KoopaKootFavors = include_favors_mode
         self.RipCheatoItemsInLogic = rip_cheato_items_in_logic
