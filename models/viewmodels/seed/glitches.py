@@ -12,7 +12,6 @@ glitches_names = [
     "PrologueSushieGlitchUltraBootsLaki",
 
     # Glitches: Toad Town
-    "OddKeyEarly",
     "BlueHouseSkip",
     "BlueHouseSkipLaki",
     "BlueHouseSkipToadLure",
@@ -203,6 +202,7 @@ glitches_names = [
 
     # Glitches: Global
     "BreakStoneBlocksWithUltraBoots",
+    "HammerClipItemGrab",
     "BreakYellowBlocksWithSuperBoots",
     "KnowsHiddenBlocks",
     "KnowsPuzzleSolutions",

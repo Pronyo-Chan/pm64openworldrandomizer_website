@@ -176,7 +176,6 @@
             "PrologueSushieGlitchKsj": false,
             "PrologueSushieGlitchUltraBootsLaki": false,
 
-            "OddKeyEarly": false,
             "BlueHouseSkip": false,
             "BlueHouseSkipLaki": false,
             "BlueHouseSkipToadLure": false,
@@ -319,6 +318,7 @@
             "FastFloodRoomBombetteUltraBoots": false,
 
             "BreakStoneBlocksWithUltraBoots": false,
+            "HammerClipItemGrab": false,
             "KnowsPuzzleSolutions": false,
             "BreakYellowBlocksWithSuperBoots": false,
             "KnowsHiddenBlocks": false,
@@ -502,7 +502,6 @@
             "PrologueSushieGlitchKsj": false,
             "PrologueSushieGlitchUltraBootsLaki": false,
 
-            "OddKeyEarly": false,
             "BlueHouseSkip": false,
             "BlueHouseSkipLaki": false,
             "BlueHouseSkipToadLure": false,
@@ -645,6 +644,7 @@
             "FastFloodRoomBombetteUltraBoots": false,
 
             "BreakStoneBlocksWithUltraBoots": false,
+            "HammerClipItemGrab": false,
             "KnowsPuzzleSolutions": false,
             "BreakYellowBlocksWithSuperBoots": false,
             "KnowsHiddenBlocks": false,
@@ -828,7 +828,6 @@
             "PrologueSushieGlitchKsj": false,
             "PrologueSushieGlitchUltraBootsLaki": false,
 
-            "OddKeyEarly": false,
             "BlueHouseSkip": false,
             "BlueHouseSkipLaki": false,
             "BlueHouseSkipToadLure": false,
@@ -971,6 +970,7 @@
             "FastFloodRoomBombetteUltraBoots": false,
 
             "BreakStoneBlocksWithUltraBoots": false,
+            "HammerClipItemGrab": false,
             "KnowsPuzzleSolutions": false,
             "BreakYellowBlocksWithSuperBoots": false,
             "KnowsHiddenBlocks": false,
@@ -1154,7 +1154,6 @@
             "PrologueSushieGlitchKsj": false,
             "PrologueSushieGlitchUltraBootsLaki": false,
 
-            "OddKeyEarly": false,
             "BlueHouseSkip": false,
             "BlueHouseSkipLaki": false,
             "BlueHouseSkipToadLure": false,
@@ -1297,6 +1296,7 @@
             "FastFloodRoomBombetteUltraBoots": false,
 
             "BreakStoneBlocksWithUltraBoots": false,
+            "HammerClipItemGrab": false,
             "KnowsPuzzleSolutions": false,
             "BreakYellowBlocksWithSuperBoots": false,
             "KnowsHiddenBlocks": false,
@@ -1480,7 +1480,6 @@
             "PrologueSushieGlitchKsj": false,
             "PrologueSushieGlitchUltraBootsLaki": false,
 
-            "OddKeyEarly": false,
             "BlueHouseSkip": false,
             "BlueHouseSkipLaki": false,
             "BlueHouseSkipToadLure": false,
@@ -1623,6 +1622,7 @@
             "FastFloodRoomBombetteUltraBoots": false,
 
             "BreakStoneBlocksWithUltraBoots": false,
+            "HammerClipItemGrab": false,
             "KnowsPuzzleSolutions": false,
             "BreakYellowBlocksWithSuperBoots": false,
             "KnowsHiddenBlocks": false,
@@ -1676,6 +1676,7 @@
             "Box5ColorA": 2865791231,
             "Box5ColorB": 1199264767,
             "BreakStoneBlocksWithUltraBoots": false,
+            "HammerClipItemGrab": false,
             "BreakYellowBlocksWithSuperBoots": false,
             "BubbleBerryTreeLakiJump": false,
             "BubbleBerryTreeUltraBoots": false,
@@ -1789,7 +1790,6 @@
             "NoHeartBlocks": false,
             "NoSaveBlocks": false,
             "OHKO": false,
-            "OddKeyEarly": false,
             "PaletteOffset": 30422296,
             "ParakarrySetting": 2,
             "ParakarrySprite": 0,
@@ -1989,6 +1989,7 @@
             "Box5ColorA": 2865791231,
             "Box5ColorB": 1199264767,
             "BreakStoneBlocksWithUltraBoots": false,
+            "HammerClipItemGrab": false,
             "BreakYellowBlocksWithSuperBoots": false,
             "BubbleBerryTreeLakiJump": false,
             "BubbleBerryTreeUltraBoots": false,
@@ -2101,7 +2102,6 @@
             "NoHeartBlocks": false,
             "NoSaveBlocks": false,
             "OHKO": false,
-            "OddKeyEarly": false,
             "PaletteOffset": 30422296,
             "ParakarrySetting": 2,
             "ParakarrySprite": 0,
