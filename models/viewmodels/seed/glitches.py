@@ -34,6 +34,7 @@ glitches_names = [
     "ClippyBootsStoneBlockSkip",
     "ClippyBootsMetalBlockSkip",
     "IslandPipeBlooperSkip",
+    "JumplessIslandPipe",
     "ParakarrylessSewerStarPiece",
     "ClippySewersUpgradeBlock",
     "SewerBlocksWithoutUltraBoots",
@@ -85,6 +86,7 @@ glitches_names = [
     "RuinsKeyLakiJump",
     "ParakarrylessSecondSandRoomUltraBoots",
     "ParakarrylessSecondSandRoomNormalBoots",
+    "RuinsBombWallSkip",
     "ParakarrylessSuperHammerRoomUltraBoots",
     "ParakarrylessSuperHammerRoomNormalBoots",
     "RuinsLocksSkipClippy",
@@ -141,6 +143,7 @@ glitches_names = [
     "Ch5SushieGlitch",
     "SushielessJungleStarpieceAndLetter",
     "JumplessDeepJungleLaki",
+    "JumplessDeepJungleLedge",
 
     # Glitches: Mt. Lavalava
     "KooperlessLavalavaPowBlockParakarry",
