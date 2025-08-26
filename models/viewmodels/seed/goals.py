@@ -5,7 +5,7 @@ class Goals:
     ):
 
         self.StarWaySpiritsNeeded = starway_spirits_needed if starway_spirits_needed > -1 else "Random"
-        if(star_beam_spirits_needed is not None):
+        if(starway_chapters_needed is not None):
             self.StarWayChaptersNeeded = starway_chapters_needed if starway_chapters_needed > -1 else "Random"
         #TODO: Clean up this logic once old seeds are wiped
         self.RequiredChapters = required_chapters if required_chapters is not None else required_spirits
