@@ -2762,7 +2762,8 @@
             "XPMultiplier": 3,
             "YellowBerryGateSkipBombettePush": false,
             "YellowBerryGateSkipLZS": false,
-            "YellowBerryGateSkipLaki": false
+            "YellowBerryGateSkipLaki": false,
+            "RevealLogInHours": 0
         }
     }
 ]
