@@ -2,6 +2,7 @@
     {
         "name": "beginner",
         "settings": {
+            "AntiGuySkip": false,
             "AddItemPouches": true,
             "AddUnusedBadgeDuplicates": false,
             "AddBetaItems": false,
@@ -328,6 +329,7 @@
     {
         "name": "openworld",
         "settings": {
+            "AntiGuySkip": false,
             "AddItemPouches": true,
             "AddUnusedBadgeDuplicates": false,
             "AddBetaItems": false,
@@ -654,6 +656,7 @@
     {
         "name": "intermediate",
         "settings": {
+            "AntiGuySkip": false,
             "AddItemPouches": true,
             "AddUnusedBadgeDuplicates": false,
             "AddBetaItems": false,
@@ -980,6 +983,7 @@
     {
         "name": "extremeshuffle",
         "settings": {
+            "AntiGuySkip": false,
             "AddItemPouches": false,
             "AddUnusedBadgeDuplicates": false,
             "AddBetaItems": false,
@@ -1306,6 +1310,7 @@
     {
         "name": "acr",
         "settings": {
+            "AntiGuySkip": false,
             "AddItemPouches": false,
             "AddUnusedBadgeDuplicates": false,
             "AddBetaItems": false,
@@ -1632,6 +1637,7 @@
     {
         "name": "s2",
         "settings": {
+            "AntiGuySkip": false,
             "AddBetaItems": false,
             "AddItemPouches": false,
             "AddUnusedBadgeDuplicates": false,
@@ -1945,6 +1951,7 @@
     {
         "name": "s3",
         "settings": {
+            "AntiGuySkip": false,
             "AddBetaItems": false,
             "AddItemPouches": true,
             "AddUnusedBadgeDuplicates": false,
@@ -2256,6 +2263,7 @@
     {
         "name": "s4",
         "settings": {
+            "AntiGuySkip": false,
             "AddBetaItems": false,
             "AddItemPouches": true,
             "AddUnusedBadgeDuplicates": false,
@@ -2426,6 +2434,7 @@
     {
         "name": "s5",
         "settings": {
+            "AntiGuySkip": false,
             "AddBetaItems": false,
             "AddItemPouches": true,
             "AddUnusedBadgeDuplicates": false,
@@ -2769,6 +2778,7 @@
     {
         "name": "summer",
         "settings": {
+            "AntiGuySkip": false,
             "AddBetaItems": false,
             "AddItemPouches": true,
             "AddUnusedBadgeDuplicates": false,

@@ -129,6 +129,7 @@ glitches_names = [
     "KooperlessRedStationShootingStar",
     "GearlessRedStationShootingStar",
     "ParakarrylessBlueBlockCityGap",
+    "AntiGuySkip",
     "BlueSwitchSkipLaki",
     "BlueSwitchSkipUltraBoots",
     "RedBarricadeSkip",
