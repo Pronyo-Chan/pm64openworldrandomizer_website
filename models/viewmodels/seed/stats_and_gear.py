@@ -9,7 +9,7 @@ class StatsAndGear:
         starting_max_fp: int,
         random_starting_stats_level: int,
         starting_star_power: int,
-        start_with_random_items: bool,
+        start_with_random_items: int,
         random_items_min: int,
         random_items_max: int,
         starting_item_0: int,
@@ -75,7 +75,10 @@ class StatsAndGear:
         if starting_item_F:
             self.StartingItems.append(starting_item_F)
 
-        if start_with_random_items:
+        # Older seeds stored this as a bool; normalize to the 0-3 mode.
+        self.StartWithRandomItems = int(start_with_random_items or 0)
+
+        if self.StartWithRandomItems > 0:
             self.MinNumberOfStartingItems = random_items_min
             self.MaxNumberOfStartingItems = random_items_max
         

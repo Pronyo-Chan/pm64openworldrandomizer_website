@@ -51,6 +51,7 @@ class SeedViewModel:
             partners_in_default_locations = seed_document.get("PartnersInDefaultLocations"), #TODO: Remove after no seeds with this setting remain
             partner_shuffle = seed_document.get("PartnerShuffle"),
             partners_always_usable = seed_document["PartnersAlwaysUsable"],
+            progressive_partners = seed_document.get("ProgressivePartners", False),
             random_partners_max = seed_document.get("RandomPartnersMax"),
             random_partners_min = seed_document.get("RandomPartnersMin"),
             start_with_random_partners = seed_document["StartWithRandomPartners"],
@@ -123,7 +124,9 @@ class SeedViewModel:
             drop_star_points = seed_document.get("DropStarPoints"),
             chet_rippo_available = seed_document.get("ChetRippoAvailable"),
             bowser_door_quiz = seed_document.get("BowserDoorQuiz"),
-            kent_c_koopa = seed_document.get("KentCKoopa")
+            kent_c_koopa = seed_document.get("KentCKoopa"),
+            max_blooper = seed_document.get("MaxBlooper", 2),
+            jr_troopa = seed_document.get("JrTroopa", 0)
         ).__dict__
 
         self.Goals = Goals(
@@ -160,7 +163,7 @@ class SeedViewModel:
             starting_max_fp = seed_document["StartingMaxFP"],
             random_starting_stats_level = seed_document.get("RandomStartingStatsLevel"),
             starting_star_power = seed_document["StartingStarPower"],
-            start_with_random_items = seed_document["StartWithRandomItems"],
+            start_with_random_items = seed_document.get("StartWithRandomItems", 0),
             random_items_min = seed_document["RandomItemsMin"],
             random_items_max = seed_document["RandomItemsMax"],
             starting_item_0 = seed_document["StartingItem0"],
@@ -212,6 +215,7 @@ class SeedViewModel:
             shorten_cutscenes = seed_document.get("ShortenCutscenes"),
             cutscene_mode = seed_document.get("CutsceneMode"),
             skip_epilogue = seed_document["SkipEpilogue"],
+            always_run_away = seed_document.get("AlwaysRunAway", False),
         ).__dict__
 
         self.Spoiler = Spoiler(

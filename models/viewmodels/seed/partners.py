@@ -4,6 +4,7 @@ class Partners:
         partners_in_default_locations: bool,
         partner_shuffle: int,
         partners_always_usable: bool,
+        progressive_partners: bool,
         start_with_random_partners: bool,
         random_partners_min: bool,
         random_partners_max: bool,
@@ -12,6 +13,7 @@ class Partners:
 
         self.ShufflePartners = not partners_in_default_locations
         self.PartnersAlwaysUsable = partners_always_usable
+        self.ProgressivePartners = progressive_partners
         self.StartWithRandomPartners = start_with_random_partners
         self.MinNumberOfStartingPartners = random_partners_min
         self.MaxNumberOfStartingPartners = random_partners_max

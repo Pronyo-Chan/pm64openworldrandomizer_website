@@ -185,6 +185,7 @@ glitches_names = [
     "ShiverMountainSwitchSkip",
     "SushielessWarehouseKeyBombette",
     "SushielessWarehouseKeyKooper",
+    "IceStaircaseSkip",
 
     # Glitches: Crystal Palace
     "MirrorClip",
