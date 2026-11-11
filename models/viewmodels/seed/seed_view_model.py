@@ -27,7 +27,6 @@ class SeedViewModel:
         self.Items = Items(
             gear_shuffle_mode = seed_document["GearShuffleMode"],
             spirit_shuffle_mode = seed_document.get("SpiritShuffleMode"),
-            partner_upgrade_shuffle = seed_document.get("PartnerUpgradeShuffle"),
             include_coins_overworld = seed_document.get("IncludeCoinsOverworld"),
             include_coins_blocks = seed_document.get("IncludeCoinsBlocks"),
             include_coins_favors = seed_document.get("IncludeCoinsFavors"),
@@ -51,6 +50,7 @@ class SeedViewModel:
             partners_in_default_locations = seed_document.get("PartnersInDefaultLocations"), #TODO: Remove after no seeds with this setting remain
             partner_shuffle = seed_document.get("PartnerShuffle"),
             partners_always_usable = seed_document["PartnersAlwaysUsable"],
+            partner_upgrade_shuffle = seed_document.get("PartnerUpgradeShuffle"),
             progressive_partners = seed_document.get("ProgressivePartners", False),
             random_partners_max = seed_document.get("RandomPartnersMax"),
             random_partners_min = seed_document.get("RandomPartnersMin"),
