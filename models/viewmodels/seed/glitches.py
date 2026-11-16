@@ -58,10 +58,12 @@ glitches_names = [
     "BombettelessKbfFpPlusLaki",
     "LakiJailbreak",
     "BombettelessRightFortressJailKey",
+    "BombettelessRefundChest",
     "WaterStaircaseSkip",
 
     # Glitches: Mt. Rugged
     "MtRuggedQuakeHammerAndLetterWithLaki",
+    "MtRuggedQuakeHammerAndLetterPartnerless",
     "MtRuggedQuakeHammerRoomJumplessClippy",
     "ParakarrylessMtRuggedSeed",
     "ParakarrylessMtRuggedSeedClippy",
@@ -90,6 +92,7 @@ glitches_names = [
     "ParakarrylessSuperHammerRoomUltraBoots",
     "ParakarrylessSuperHammerRoomNormalBoots",
     "RuinsLocksSkipClippy",
+    "RuinsLocksSkipLZS",
     "RuinsPuzzleSolutionEarly",
     "RuinsStoneSkip",
 
@@ -114,6 +117,7 @@ glitches_names = [
     "BowlessTubbasCastle",
     "TubbasTableLakiJumpClock",
     "TubbasTableLakiJumpStudy",
+    "TubbasTableJumplessStudy",
     "TubbasTableUltraBoots",
     "TubbasCastleSuperBootsSkip",
     "JumplessMegaRush",
@@ -129,6 +133,7 @@ glitches_names = [
     "KooperlessRedStationShootingStar",
     "GearlessRedStationShootingStar",
     "ParakarrylessBlueBlockCityGap",
+    "AntiGuySkip",
     "BlueSwitchSkipLaki",
     "BlueSwitchSkipUltraBoots",
     "RedBarricadeSkip",
@@ -184,6 +189,7 @@ glitches_names = [
     "ShiverMountainSwitchSkip",
     "SushielessWarehouseKeyBombette",
     "SushielessWarehouseKeyKooper",
+    "IceStaircaseSkip",
 
     # Glitches: Crystal Palace
     "MirrorClip",
