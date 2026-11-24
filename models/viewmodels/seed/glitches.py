@@ -133,9 +133,11 @@ glitches_names = [
     "KooperlessRedStationShootingStar",
     "GearlessRedStationShootingStar",
     "ParakarrylessBlueBlockCityGap",
+    "BlueStationTrainJumpless",
     "AntiGuySkip",
     "BlueSwitchSkipLaki",
     "BlueSwitchSkipUltraBoots",
+    "MovingPlatformsLakiJump",
     "RedBarricadeSkip",
     "WattlessDarkRoom",
     "HammerlessBlueStationLaki",
@@ -216,4 +218,6 @@ glitches_names = [
     "KnowsHiddenBlocks",
     "KnowsPuzzleSolutions",
     "ReachHighBlocksWithSuperBoots",
+    "JumplessBlocksWithParakarry",
+    "HiddenBlocksWithBombette",
 ]

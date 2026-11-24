@@ -2,6 +2,7 @@
     {
         "name": "beginner",
         "settings": {
+            "BlueStationTrainJumpless": false,
             "AntiGuySkip": false,
             "AddItemPouches": true,
             "AddUnusedBadgeDuplicates": false,
@@ -273,6 +274,7 @@
             "ParakarrylessBlueBlockCityGap": false,
             "BlueSwitchSkipLaki": false,
             "BlueSwitchSkipUltraBoots": false,
+            "MovingPlatformsLakiJump": false,
             "RedBarricadeSkip": false,
             "HammerlessBlueStationLaki": false,
             "HammerlessPinkStationLaki": false,
@@ -332,12 +334,15 @@
             "KnowsPuzzleSolutions": false,
             "BreakYellowBlocksWithSuperBoots": false,
             "KnowsHiddenBlocks": false,
-            "ReachHighBlocksWithSuperBoots": false
+            "ReachHighBlocksWithSuperBoots": false,
+            "JumplessBlocksWithParakarry": false,
+            "HiddenBlocksWithBombette": false
         }
     },
     {
         "name": "openworld",
         "settings": {
+            "BlueStationTrainJumpless": false,
             "AntiGuySkip": false,
             "AddItemPouches": true,
             "AddUnusedBadgeDuplicates": false,
@@ -609,6 +614,7 @@
             "ParakarrylessBlueBlockCityGap": false,
             "BlueSwitchSkipLaki": false,
             "BlueSwitchSkipUltraBoots": false,
+            "MovingPlatformsLakiJump": false,
             "RedBarricadeSkip": false,
             "HammerlessBlueStationLaki": false,
             "HammerlessPinkStationLaki": false,
@@ -668,12 +674,15 @@
             "KnowsPuzzleSolutions": false,
             "BreakYellowBlocksWithSuperBoots": false,
             "KnowsHiddenBlocks": false,
-            "ReachHighBlocksWithSuperBoots": false
+            "ReachHighBlocksWithSuperBoots": false,
+            "JumplessBlocksWithParakarry": false,
+            "HiddenBlocksWithBombette": false
         }
     },
     {
         "name": "intermediate",
         "settings": {
+            "BlueStationTrainJumpless": false,
             "AntiGuySkip": false,
             "AddItemPouches": true,
             "AddUnusedBadgeDuplicates": false,
@@ -945,6 +954,7 @@
             "ParakarrylessBlueBlockCityGap": false,
             "BlueSwitchSkipLaki": false,
             "BlueSwitchSkipUltraBoots": false,
+            "MovingPlatformsLakiJump": false,
             "RedBarricadeSkip": false,
             "HammerlessBlueStationLaki": false,
             "HammerlessPinkStationLaki": false,
@@ -1004,12 +1014,15 @@
             "KnowsPuzzleSolutions": false,
             "BreakYellowBlocksWithSuperBoots": false,
             "KnowsHiddenBlocks": false,
-            "ReachHighBlocksWithSuperBoots": false
+            "ReachHighBlocksWithSuperBoots": false,
+            "JumplessBlocksWithParakarry": false,
+            "HiddenBlocksWithBombette": false
         }
     },
     {
         "name": "extremeshuffle",
         "settings": {
+            "BlueStationTrainJumpless": false,
             "AntiGuySkip": false,
             "AddItemPouches": false,
             "AddUnusedBadgeDuplicates": false,
@@ -1281,6 +1294,7 @@
             "ParakarrylessBlueBlockCityGap": false,
             "BlueSwitchSkipLaki": false,
             "BlueSwitchSkipUltraBoots": false,
+            "MovingPlatformsLakiJump": false,
             "RedBarricadeSkip": false,
             "HammerlessBlueStationLaki": false,
             "HammerlessPinkStationLaki": false,
@@ -1340,12 +1354,15 @@
             "KnowsPuzzleSolutions": false,
             "BreakYellowBlocksWithSuperBoots": false,
             "KnowsHiddenBlocks": false,
-            "ReachHighBlocksWithSuperBoots": false
+            "ReachHighBlocksWithSuperBoots": false,
+            "JumplessBlocksWithParakarry": false,
+            "HiddenBlocksWithBombette": false
         }
     },
     {
         "name": "acr",
         "settings": {
+            "BlueStationTrainJumpless": false,
             "AntiGuySkip": false,
             "AddItemPouches": false,
             "AddUnusedBadgeDuplicates": false,
@@ -1617,6 +1634,7 @@
             "ParakarrylessBlueBlockCityGap": false,
             "BlueSwitchSkipLaki": false,
             "BlueSwitchSkipUltraBoots": false,
+            "MovingPlatformsLakiJump": false,
             "RedBarricadeSkip": false,
             "HammerlessBlueStationLaki": false,
             "HammerlessPinkStationLaki": false,
@@ -1676,12 +1694,15 @@
             "KnowsPuzzleSolutions": false,
             "BreakYellowBlocksWithSuperBoots": false,
             "KnowsHiddenBlocks": false,
-            "ReachHighBlocksWithSuperBoots": false
+            "ReachHighBlocksWithSuperBoots": false,
+            "JumplessBlocksWithParakarry": false,
+            "HiddenBlocksWithBombette": false
         }
     },
     {
         "name": "s2",
         "settings": {
+            "BlueStationTrainJumpless": false,
             "AntiGuySkip": false,
             "AddBetaItems": false,
             "AddItemPouches": false,
@@ -1892,9 +1913,12 @@
             "RaphSkipEnglish": false,
             "RaphSkipParakarry": false,
             "ReachHighBlocksWithSuperBoots": false,
+            "JumplessBlocksWithParakarry": false,
+            "HiddenBlocksWithBombette": false,
             "ForeverForestBackwards": false,
             "RecordSkipBombettePush": false,
             "RecordSkipNoBombettePush": false,
+            "MovingPlatformsLakiJump": false,
             "RedBarricadeSkip": false,
             "RedBerryGateSkipBombettePush": false,
             "RedBerryGateSkipLaki": false,
@@ -2005,6 +2029,7 @@
     {
         "name": "s3",
         "settings": {
+            "BlueStationTrainJumpless": false,
             "AntiGuySkip": false,
             "AddBetaItems": false,
             "AddItemPouches": true,
@@ -2213,9 +2238,12 @@
             "RaphSkipEnglish": false,
             "RaphSkipParakarry": false,
             "ReachHighBlocksWithSuperBoots": false,
+            "JumplessBlocksWithParakarry": false,
+            "HiddenBlocksWithBombette": false,
             "ForeverForestBackwards": false,
             "RecordSkipBombettePush": false,
             "RecordSkipNoBombettePush": false,
+            "MovingPlatformsLakiJump": false,
             "RedBarricadeSkip": false,
             "RedBerryGateSkipBombettePush": false,
             "RedBerryGateSkipLaki": false,
@@ -2326,6 +2354,7 @@
     {
         "name": "s4",
         "settings": {
+            "BlueStationTrainJumpless": false,
             "AntiGuySkip": false,
             "AddBetaItems": false,
             "AddItemPouches": true,
@@ -2467,6 +2496,9 @@
             "MtRuggedQuakeHammerAndLetterPartnerless": false,
             "RuinsLocksSkipLZS": false,
             "TubbasTableJumplessStudy": false,
+            "MovingPlatformsLakiJump": false,
+            "JumplessBlocksWithParakarry": false,
+            "HiddenBlocksWithBombette": false,
             "StartWithRandomPartners": true,
             "StartingBoots": 0,
             "StartingCoins": 150,
@@ -2506,6 +2538,7 @@
     {
         "name": "s5",
         "settings": {
+            "BlueStationTrainJumpless": false,
             "AntiGuySkip": false,
             "AddBetaItems": false,
             "AddItemPouches": true,
@@ -2745,8 +2778,11 @@
             "RaphSkipLakilester": false,
             "RaphSkipParakarry": false,
             "ReachHighBlocksWithSuperBoots": false,
+            "JumplessBlocksWithParakarry": false,
+            "HiddenBlocksWithBombette": false,
             "RecordSkipBombettePush": false,
             "RecordSkipNoBombettePush": false,
+            "MovingPlatformsLakiJump": false,
             "RedBarricadeSkip": false,
             "RedBerryGateSkipBombettePush": false,
             "RedBerryGateSkipLaki": false,
@@ -2859,6 +2895,7 @@
     {
         "name": "summer",
         "settings": {
+            "BlueStationTrainJumpless": false,
             "AntiGuySkip": false,
             "AddBetaItems": false,
             "AddItemPouches": true,
@@ -3098,8 +3135,11 @@
             "RaphSkipLakilester": false,
             "RaphSkipParakarry": false,
             "ReachHighBlocksWithSuperBoots": false,
+            "JumplessBlocksWithParakarry": false,
+            "HiddenBlocksWithBombette": false,
             "RecordSkipBombettePush": false,
             "RecordSkipNoBombettePush": false,
+            "MovingPlatformsLakiJump": false,
             "RedBarricadeSkip": false,
             "RedBerryGateSkipBombettePush": false,
             "RedBerryGateSkipLaki": false,
